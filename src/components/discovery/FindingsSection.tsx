@@ -2,13 +2,28 @@ import { motion } from "framer-motion";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { findings } from "@/data/discoveryData";
 
-const impactStyles = {
-  alto: "bg-destructive/10 text-destructive border-destructive/20",
-  medio: "bg-amber-500/10 text-amber-600 border-amber-500/20",
-  bajo: "bg-primary/10 text-primary border-primary/20",
+const impactBorderColors = {
+  alto: "border-l-destructive",
+  medio: "border-l-amber-500",
+  bajo: "border-l-primary",
+} as const;
+
+const impactBgColors = {
+  alto: "bg-destructive/10",
+  medio: "bg-amber-500/10",
+  bajo: "bg-primary/10",
+} as const;
+
+const impactTextColors = {
+  alto: "text-destructive",
+  medio: "text-amber-600",
+  bajo: "text-primary",
 } as const;
 
 const FindingsSection = () => {
+  const [hero, ...rest] = findings;
+  const HeroIcon = hero.icon;
+
   return (
     <section className="py-16 md:py-20">
       <div className="container mx-auto max-w-5xl px-6">
@@ -26,38 +41,56 @@ const FindingsSection = () => {
             Principales oportunidades identificadas durante la sesión de discovery.
           </motion.p>
 
-          <div className="mt-10 space-y-3">
-            {findings.map((finding, i) => {
+          {/* Hero finding */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-10 section-dark rounded-xl border-l-4 border-l-destructive overflow-hidden relative group"
+          >
+            <div className="p-6 md:p-8 flex items-start gap-5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-destructive/15 text-destructive ring-1 ring-destructive/20 shrink-0">
+                <HeroIcon className="h-6 w-6" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl font-bold">{hero.title}</h3>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {hero.description}
+                </p>
+              </div>
+              <span className="text-4xl font-black font-mono opacity-10 shrink-0 leading-none">
+                01
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Grid 2x2 */}
+          <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+            {rest.map((finding, i) => {
               const Icon = finding.icon;
-              const impact = impactStyles[finding.impact];
+              const borderColor = impactBorderColors[finding.impact];
+              const bgColor = impactBgColors[finding.impact];
+              const textColor = impactTextColors[finding.impact];
               return (
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5"
+                  className={`group relative rounded-xl border border-border bg-card border-l-4 ${borderColor} p-5 transition-all duration-300 hover:shadow-md hover:shadow-primary/5 hover:-translate-y-0.5`}
                 >
-                  {/* Icon */}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/10 shrink-0 mt-0.5">
-                    <Icon className="h-5 w-5" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-semibold text-sm text-foreground">{finding.title}</h3>
-                      <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${impact}`}>
-                        {finding.impact}
-                      </span>
+                  <div className="flex items-start gap-4">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${bgColor} ${textColor} ring-1 ring-current/10 shrink-0`}>
+                      <Icon className="h-5 w-5" />
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                      {finding.description}
-                    </p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-sm text-foreground">{finding.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {finding.description}
+                      </p>
+                    </div>
+                    <span className="text-3xl font-black font-mono text-muted-foreground/10 shrink-0 leading-none">
+                      {String(i + 2).padStart(2, "0")}
+                    </span>
                   </div>
-
-                  {/* Index */}
-                  <span className="text-xs font-bold text-muted-foreground/20 font-mono shrink-0">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                 </motion.div>
               );
             })}
