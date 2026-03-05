@@ -44,21 +44,19 @@ const FindingsSection = () => {
           {/* Hero finding */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 section-dark rounded-xl border-l-4 border-l-destructive overflow-hidden relative group"
+            className="mt-10 rounded-xl border border-border bg-card border-l-4 border-l-destructive overflow-hidden relative group transition-all duration-300 hover:shadow-md hover:shadow-primary/5"
           >
             <div className="p-6 md:p-8 flex items-start gap-5">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-destructive/15 text-destructive ring-1 ring-destructive/20 shrink-0">
                 <HeroIcon className="h-6 w-6" />
               </div>
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-3">
-                  <h3 className="text-xl font-bold">{hero.title}</h3>
-                </div>
+                <h3 className="text-xl font-bold text-foreground">{hero.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {hero.description}
                 </p>
               </div>
-              <span className="text-4xl font-black font-mono opacity-10 shrink-0 leading-none">
+              <span className="text-4xl font-black font-mono text-muted-foreground/10 shrink-0 leading-none">
                 01
               </span>
             </div>
