@@ -31,6 +31,9 @@ const Index = () => {
     ).then(setDeals);
   }, []);
 
+  const templateDeal = deals.find((d) => d.slug === "demo");
+  const clientDeals = deals.filter((d) => d.slug !== "demo");
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -43,33 +46,88 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Deal grid */}
-      <main className="container mx-auto px-6 py-12">
+      <main className="container mx-auto px-6 py-10 space-y-10">
         {deals.length === 0 ? (
           <p className="text-muted-foreground">Cargando...</p>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {deals.map((deal) => (
+          <>
+            {/* Template banner */}
+            {templateDeal && (
               <Link
-                key={deal.slug}
-                to={`/${deal.slug}`}
-                className="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/50 hover:bg-card/80"
+                to={`/${templateDeal.slug}`}
+                className="group block rounded-xl border border-dashed border-primary/40 bg-accent/50 p-6 transition-all hover:border-primary hover:bg-accent"
               >
-                <p className="text-xs text-muted-foreground">
-                  {deal.meetingDate}
-                </p>
-                <h2 className="mt-1 font-display text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
-                  {deal.clientName}
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-accent-foreground">
+                    Plantilla
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {templateDeal.meetingDate}
+                  </span>
+                </div>
+                <h2 className="mt-2 font-display text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
+                  {templateDeal.clientName}
                 </h2>
-                <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
-                  {deal.subtitle}
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {templateDeal.subtitle}
                 </p>
-                <span className="mt-4 inline-block text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  Ver resumen →
-                </span>
               </Link>
-            ))}
-          </div>
+            )}
+
+            {/* Client deals table */}
+            {clientDeals.length > 0 && (
+              <div>
+                <h2 className="mb-4 text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                  Clientes
+                </h2>
+                <div className="overflow-hidden rounded-lg border border-border bg-card">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/40">
+                        <th className="px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                          Cliente
+                        </th>
+                        <th className="hidden sm:table-cell px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                          Descripción
+                        </th>
+                        <th className="px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider text-right">
+                          Fecha
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {clientDeals.map((deal, i) => (
+                        <tr
+                          key={deal.slug}
+                          className={`group transition-colors hover:bg-accent/40 ${
+                            i < clientDeals.length - 1 ? "border-b border-border" : ""
+                          }`}
+                        >
+                          <td className="px-5 py-4">
+                            <Link
+                              to={`/${deal.slug}`}
+                              className="font-medium group-hover:text-primary transition-colors"
+                            >
+                              {deal.clientName}
+                              <span className="ml-2 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                                →
+                              </span>
+                            </Link>
+                          </td>
+                          <td className="hidden sm:table-cell px-5 py-4 text-sm text-muted-foreground">
+                            {deal.subtitle}
+                          </td>
+                          <td className="px-5 py-4 text-sm text-muted-foreground text-right whitespace-nowrap">
+                            {deal.meetingDate}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+          </>
         )}
       </main>
 
