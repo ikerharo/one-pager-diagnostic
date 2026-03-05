@@ -12,7 +12,7 @@ const ownerConfig: Record<TimelineOwner, { label: string; icon: typeof Users; co
 
 const NextStepsSection = () => {
   return (
-    <section className="border-t border-border bg-muted/30 py-16 md:py-20">
+    <section className="border-t border-border bg-muted/30 py-16 md:py-20 overflow-hidden">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.h2

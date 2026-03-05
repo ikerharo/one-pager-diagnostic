@@ -6,7 +6,7 @@ const TrustedBySection = () => {
   if (!trustedClients || trustedClients.length === 0) return null;
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-12 md:py-16 overflow-hidden">
       <div className="container mx-auto max-w-5xl px-6">
         <AnimatedSection>
           <motion.p
