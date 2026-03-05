@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ChevronRight } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { quickWins } from "@/data/discoveryData";
 
@@ -26,7 +26,7 @@ const QuickWinsSection = () => {
               <motion.div
                 key={i}
                 variants={itemVariants}
-                className="flex flex-col gap-0 rounded-xl border border-border bg-card overflow-hidden sm:flex-row sm:items-stretch"
+                className="group flex flex-col gap-0 rounded-xl border border-border bg-card overflow-hidden sm:flex-row sm:items-stretch"
               >
                 {/* Before */}
                 <div className="flex-1 px-5 py-4 bg-destructive/[0.03]">
@@ -36,11 +36,11 @@ const QuickWinsSection = () => {
                   <p className="mt-1 text-sm text-foreground">{win.before}</p>
                 </div>
 
-                {/* Gradient divider */}
-                <div className="hidden sm:flex items-center px-0">
-                  <div className="h-full w-[3px] bg-gradient-to-b from-destructive/20 via-primary/40 to-primary/60" />
+                {/* Arrow divider */}
+                <div className="hidden sm:flex items-center justify-center px-1">
+                  <ChevronRight className="h-5 w-5 text-primary transition-transform duration-300 group-hover:translate-x-0.5" />
                 </div>
-                <div className="flex sm:hidden justify-center py-0">
+                <div className="flex sm:hidden justify-center py-1">
                   <div className="w-full h-[2px] bg-gradient-to-r from-destructive/20 via-primary/40 to-primary/60" />
                 </div>
 

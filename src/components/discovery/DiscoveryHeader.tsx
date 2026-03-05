@@ -6,7 +6,7 @@ import heroVideo from "@/assets/hero-loop.mp4";
 
 const DiscoveryHeader = () => {
   return (
-    <section className="relative overflow-hidden border-b border-border bg-background">
+    <section className="section-dark relative overflow-hidden border-b border-border">
       {/* Background loop video */}
       <div className="relative h-48 md:h-64 w-full overflow-hidden">
         <video
@@ -18,7 +18,7 @@ const DiscoveryHeader = () => {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--uvicuo-dark))]/30 via-[hsl(var(--uvicuo-dark))]/50 to-[hsl(var(--uvicuo-dark))]" />
       </div>
 
       {/* Content */}
@@ -57,6 +57,9 @@ const DiscoveryHeader = () => {
           </AnimatedSection>
         </div>
       </div>
+
+      {/* Accent gradient line */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
     </section>
   );
 };

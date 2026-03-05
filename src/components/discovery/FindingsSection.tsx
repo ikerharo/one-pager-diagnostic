@@ -27,7 +27,7 @@ const FindingsSection = () => {
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="group relative rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5"
+                  className="group relative rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 border-t-[0px] hover:border-t-[3px] hover:border-t-primary"
                 >
                   {/* Index number */}
                   <span className="absolute top-4 right-4 text-xs font-bold text-muted-foreground/30 font-mono">
