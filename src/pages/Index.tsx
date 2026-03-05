@@ -4,28 +4,30 @@ import QuickWinsSection from "@/components/discovery/QuickWinsSection";
 import SolutionSection from "@/components/discovery/SolutionSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
+import ScrollProgress from "@/components/discovery/ScrollProgress";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgress />
       {/* Card-stack: each section is sticky and covers the previous one */}
-      <div className="sticky top-0 z-10">
+      <div id="header" className="sticky top-0 z-10">
         <DiscoveryHeader />
       </div>
 
-      <div className="sticky top-0 z-20">
+      <div id="findings" className="sticky top-0 z-20">
         <FindingsSection />
       </div>
 
-      <div className="sticky top-0 z-30">
+      <div id="quickwins" className="sticky top-0 z-30">
         <QuickWinsSection />
       </div>
 
-      <div className="sticky top-0 z-40">
+      <div id="solution" className="sticky top-0 z-40">
         <SolutionSection />
       </div>
 
-      <div className="sticky top-0 z-50">
+      <div id="nextsteps" className="sticky top-0 z-50">
         <NextStepsSection />
       </div>
 
