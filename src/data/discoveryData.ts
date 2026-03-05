@@ -169,7 +169,10 @@ export const trustedClients = [
   { name: "99 Minutos", logoUrl: "/logos/99minutos.png" },
   { name: "Bimbo", logoUrl: "/logos/bimbo.jpg" },
   { name: "Express Sinaloa 8W", logoUrl: "/logos/express8w.png" },
-  { name: "SAC Transportes", logoUrl: "/logos/sac.png" },
+  { name: "SAC Transportes", logoUrl: "/logos/sac-2.png" },
   { name: "Tractotermos del Sureste", logoUrl: "/logos/tractotermos.png" },
   { name: "Dolphy Helados", logoUrl: "/logos/dolphy.png" },
+  { name: "Sanimex", logoUrl: "/logos/sanimex.webp" },
+  { name: "Fulem", logoUrl: "/logos/fulem.png" },
+  { name: "Maeda", logoUrl: "/logos/maeda.png" },
 ];
