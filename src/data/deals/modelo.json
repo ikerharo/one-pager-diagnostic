@@ -15,87 +15,79 @@
   },
   "findings": [
     {
+      "icon": "Gauge",
+      "title": "Odometros manuales que rompen la calidad de los datos de rendimiento",
+      "description": "Hoy el kilometraje se registra a mano. Con datos inconsistentes es imposible calcular rendimientos reales, detectar retrocesos sospechosos o comparar consumo entre operadores. Las anomalias se descubren al final del mes — si se descubren.",
+      "impact": "alto",
+      "quote": "La unica manera de obtener esta informacion es con una entrada manual que te rompe todos los datos. Te enteras al final del mes.",
+      "quoteAuthor": "Iker Haro, Uvicuo"
+    },
+    {
       "icon": "DollarSign",
-      "title": "Sobreprecio sistematico en combustible por red cerrada — $1.5-2.25M USD/ano en una flota de este tamano",
-      "description": "Los TAGs de red cerrada limitan las estaciones disponibles. Donde hay una sola estacion afiliada, el precio sube sin alternativa. Datos de CRE muestran variaciones de $2-4 MXN/litro en la misma zona. En ~3,000 unidades con $50-75M USD/ano en combustible, un sobreprecio del 3% se paga de mas sin que nadie lo note.",
+      "title": "Red cerrada de combustible: demanda cautiva, precio cautivo",
+      "description": "Cada unidad carga con TAGs de red cerrada. Si en una zona solo una estacion acepta el medio de pago, esa estacion pone el precio. No hay alternativa, no hay comparacion. El sobreprecio es silencioso — nadie lo ve porque no hay con que comparar.",
       "impact": "alto",
-      "quote": "Estas soluciones de red cerrada, el costo de combustible al que tienen acceso es en promedio un 3 a 4% mas elevado... porque ya tienen la demanda cautiva.",
-      "quoteAuthor": "Iker Haro, dato presentado en sesion"
-    },
-    {
-      "icon": "Shield",
-      "title": "Cero visibilidad de fraude en tiempo real — entre 5% y 15% del fuel se pierde sin detectar",
-      "description": "Anomalias como retrocesos de odometro, montos distintos a factura y rendimientos fuera de rango se detectan semanas despues. En la industria mexicana de transporte, el 5-15% del presupuesto de combustible se pierde por fraude o uso no autorizado. Para esta flota, eso puede ser $2.5-11M USD anuales en fuga no detectada.",
-      "impact": "alto",
-      "quote": "Me gustaria ver un poco mas el tema del control... como controlamos toda la parte de robos, como controlamos toda la parte de perdidas.",
-      "quoteAuthor": "Milena Castillo, Manager Transformation Mile MAZ"
-    },
-    {
-      "icon": "Eye",
-      "title": "Presupuesto fragmentado: el gasto ocurre en la operacion pero la visibilidad esta en corporativo",
-      "description": "Reparto no maneja presupuesto directo — el control es corporativo. No hay un solo lugar donde se vea cuanto cuesta operar una ruta, una unidad o una zona. Las decisiones de presupuesto se toman con datos incompletos o atrasados, sin conectar el gasto real con la operacion que lo genera.",
-      "impact": "alto",
-      "quote": "La realidad es que nosotros la parte de reparto muy poco tiene control de presupuesto, eso lo ve un poco mas a nivel corporativo.",
-      "quoteAuthor": "Milena Castillo, Manager Transformation Mile MAZ"
+      "quote": "Si tu vas a una region, 15 estaciones, pero solo una acepta tu medio de pago, ellos pueden subir el precio y tu vas a seguir yendo ahi.",
+      "quoteAuthor": "Iker Haro, Uvicuo"
     },
     {
       "icon": "Calculator",
-      "title": "Cobros erroneos en TAGs que se pagan sin cuestionarse — 3-8% de error documentado",
-      "description": "Cobros dobles, ejes mal clasificados, recorridos fantasma. Auditorias internacionales documentan 3-8% de errores. PROFECO registro 63 quejas contra Pase TAG. CAPUFE-IAVE resuelve solo el 50% de reclamos. En 3,000+ unidades con transitos diarios, cada error no reclamado se acumula.",
+      "title": "Errores de cobro en TAGs que se pagan sin cuestionarse",
+      "description": "Las antenas cometen errores: cobros dobles, ejes mal clasificados, cruces fantasma. El estado de cuenta llega 10 dias despues. Conciliarlo contra el bancario y el Fleet Manager, y meter cada aclaracion una por una, es una labor que en la practica nadie hace.",
       "impact": "medio",
-      "quote": "Las antenas cometen de 3 a 6 por ciento de errores... es una labor muy dificil porque te llega despues de 10 dias tu estado de cuenta.",
-      "quoteAuthor": "Iker Haro, dato presentado en sesion"
+      "quote": "Te llega despues de 10 dias tu estado de cuenta de cruces, tienes que conciliarlo y luego ir a meter cada una de estas aclaraciones.",
+      "quoteAuthor": "Iker Haro, Uvicuo"
     },
     {
-      "icon": "Clock",
-      "title": "Pago manual de infracciones — tiempo administrativo que se multiplica por miles de unidades",
-      "description": "Cada infraccion requiere intervencion humana, seguimiento individual, y genera recargos cuando se retrasa. Multiplicado por miles de unidades en 8 paises, el costo no es la multa — es el tiempo administrativo consumido en un proceso que podria estar automatizado.",
-      "impact": "medio",
-      "quote": "Otro frente podria ser el pago de infracciones... automatizar desde el Fleet Management estos pagos.",
-      "quoteAuthor": "Iris Sosa, Product Manager Fleet Management"
+      "icon": "Shield",
+      "title": "Sin forma de detectar fraude o perdidas en tiempo real",
+      "description": "Hoy no hay mecanismo para alertar cuando un monto no coincide con la factura, cuando un operador consume mas que sus pares en la misma ruta, o cuando un odometro retrocede. Las anomalias se acumulan sin consecuencia.",
+      "impact": "alto",
+      "quote": "Como controlamos toda la parte de robos, como controlamos toda la parte de perdidas.",
+      "quoteAuthor": "Milena Castillo, Transformation Mile MAZ"
     }
   ],
   "quickWins": [
     {
-      "before": "Red cerrada: se paga el precio que la estacion decida, sin alternativas",
-      "after": "Red abierta: la plataforma elige la mejor estacion por precio, desvio y litros completos"
+      "before": "Odometros manuales que rompen datos de rendimiento",
+      "after": "Foto del tablero: IA extrae kilometraje automaticamente"
     },
     {
-      "before": "Anomalias de combustible se detectan semanas despues en el estado de cuenta",
-      "after": "Alertas en tiempo real: retroceso de odometro, monto distinto a factura, rendimientos fuera de rango"
+      "before": "Red cerrada sin alternativa de precio",
+      "after": "Red abierta: mejor estacion por precio, desvio y litros completos"
     },
     {
-      "before": "Presupuesto corporativo sin visibilidad de gasto real por ruta o unidad",
-      "after": "Dashboard centralizado: cada ruta, cada unidad, cada peso — visible en tiempo real"
+      "before": "Errores de TAG se pagan sin reclamar",
+      "after": "Conciliacion automatica: cobro fuera de rango genera aclaracion inmediata"
     },
     {
-      "before": "Cobros erroneos de TAG se pagan sin cuestionarse",
-      "after": "Conciliacion automatica: cada transaccion fuera de rango genera aclaracion inmediata"
+      "before": "Anomalias se detectan semanas despues (o nunca)",
+      "after": "Alertas en tiempo real: retroceso de odometro, monto distinto a factura"
     }
   ],
-  "exclusionNote": "No incluimos gestion de activos ni trazabilidad end-to-end porque el equipo de Milena ya tiene una herramienta de Fleet Management que cubre esos frentes. Nos enfocamos donde el impacto financiero es inmediato.",
+  "exclusionNote": "No incluimos gestion de activos ni trazabilidad end-to-end porque ya tienen una herramienta de Fleet Management para eso. Nos enfocamos donde el impacto es inmediato.",
   "uvicuoPositioning": {
     "headline": "Plataforma de control y visibilidad en tiempo real de gastos operativos de flota",
-    "description": "Uvicuo centraliza combustible, casetas, viaticos, refacciones e infracciones en un solo lugar — con controles por categoria, alertas de fraude y comprobacion automatica. La diferencia: no solo registra gastos, los controla antes de que ocurran.",
+    "description": "Centraliza combustible, casetas, viaticos, refacciones e infracciones en un solo lugar — con controles por categoria, alertas de fraude y comprobacion automatica.",
     "capabilities": [
       {
         "title": "Combustible en red abierta",
-        "description": "Acceso a todas las estaciones del pais. Optimiza por precio, ubicacion y litros completos. Sin comision de intermediario, sin capital parado."
+        "description": "Acceso a todas las estaciones. Optimiza por precio, ubicacion y litros completos."
       },
       {
         "title": "Deteccion de fraude con IA",
-        "description": "Foto del tablero, extraccion automatica de kilometraje, alertas de retroceso de odometro, monto distinto a factura, rendimientos anormales. En tiempo real."
+        "description": "Foto del tablero, extraccion automatica de kilometraje, alertas en tiempo real."
       },
       {
         "title": "Conciliacion automatica de TAGs",
-        "description": "Cada cruce se valida contra el costo esperado para esa ruta y configuracion de unidad. Errores se disputan automaticamente."
+        "description": "Cada cruce se valida contra el costo esperado. Errores se disputan automaticamente."
       }
     ]
   },
   "pastInteractions": [
     {
       "date": "23 Feb 2026",
-      "title": "Sesion de discovery — primera reunion",
+      "title": "Sesion de discovery",
       "participants": ["Iker Haro (Uvicuo)", "Milena Castillo (Transformation Mile MAZ)", "Iris Sosa (PM Fleet Management)", "Majo Sanchez (Compras Tech)"],
       "topics": ["Demo Uvicuo", "Control de fraude", "Sobreprecio combustible", "TAGs y casetas", "Infracciones"],
       "owner": "both"
@@ -105,24 +97,24 @@
     {
       "week": "Paso 1",
       "title": "Validacion con equipo Mexico",
-      "description": "Conectar con el equipo de logistica/lastmile de Modelo Mexico para entender el detalle operativo: tamano de flota, volumen de combustible, cruces de caseta y procesos actuales.",
+      "description": "Conectar con logistica/lastmile Mexico para entender detalle operativo: flota, volumen de combustible, cruces de caseta, procesos de control.",
       "owner": "both"
     },
     {
       "week": "Paso 2",
       "title": "Analisis personalizado",
-      "description": "Con datos reales, Uvicuo cuantifica: cuanto se paga de mas en combustible, cuanto se pierde en errores de TAG, y cual es el retorno estimado.",
+      "description": "Con datos reales, Uvicuo cuantifica impacto y retorno estimado.",
       "owner": "uvicuo"
     },
     {
       "week": "Paso 3",
       "title": "Sesion de resultados",
-      "description": "Revisar los numeros juntos con equipo Mexico + Milena/Iris y decidir si hay oportunidad para un piloto.",
+      "description": "Revisar numeros juntos y decidir si hay oportunidad para piloto en Mexico.",
       "owner": "both"
     }
   ],
   "closingQuote": "Me gusto mucho por la parte del control.",
-  "closingQuoteAuthor": "Milena Castillo, Manager Transformation Mile MAZ — AB InBev",
+  "closingQuoteAuthor": "Milena Castillo, Transformation Mile MAZ — AB InBev",
   "trustedClients": [
     { "name": "Bimbo", "logoUrl": "/logos/bimbo.jpg" },
     { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
