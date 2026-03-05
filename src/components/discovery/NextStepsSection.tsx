@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, CalendarCheck } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
+import { Button } from "@/components/ui/button";
 import { nextSteps, contactInfo } from "@/data/discoveryData";
 
 const NextStepsSection = () => {
@@ -37,6 +38,15 @@ const NextStepsSection = () => {
             <p className="mt-4 text-xs text-muted-foreground/60">
               {contactInfo.name} · {contactInfo.role}
             </p>
+
+            <div className="mt-6">
+              <Button asChild size="lg" className="gap-2">
+                <a href={`mailto:${contactInfo.email}?subject=Agendar sesión de deep-dive`}>
+                  <CalendarCheck className="h-4 w-4" />
+                  Agendar sesión
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </AnimatedSection>
       </div>
