@@ -1,33 +1,41 @@
 
 
-## Transiciones tipo "láminas" entre secciones
+## Sección ligera de solución + CTA a uvicuo.com
 
-Entiendo perfectamente: quieres que cada sección se comporte como una diapositiva/lámina que entra en vista con un efecto de revelado mientras haces scroll, como si fueran paneles que se deslizan uno sobre otro.
+Tienes razón: los problemas están muy bien planteados, pero el "cómo" queda implícito. Agregar una página completa sobre Uvicuo rompería el ritmo del one-pager (que es sobre el cliente, no sobre ti). La mejor opción es un enfoque híbrido:
 
-### Enfoque técnico
+### Propuesta
 
-Usar `framer-motion` con `whileInView` para que cada sección haga una transición de "slide-up + fade-in" al entrar en el viewport. Cada sección se sentirá como una lámina nueva que se revela al hacer scroll.
+Añadir una sección compacta **"Cómo lo resolvemos"** entre Quick Wins y Siguientes Pasos. No es una página de producto — son 3-4 pilares cortos (icono + título + una línea) que conectan los hallazgos con capacidades concretas de Uvicuo. Al final, un CTA elegante tipo "Conoce la plataforma →" que lleva a uvicuo.com.
 
-No usaré scroll-snap (forzar paradas) porque en un one-pager con contenido variable se siente rígido. En su lugar, cada sección tendrá una animación de entrada suave que da el mismo efecto visual sin forzar el scroll.
+Esto cierra el gap: Problemas → Quick Wins → **Así funciona** → Pasos siguientes.
+
+### Estructura de la sección
+
+```text
+┌─────────────────────────────────────────┐
+│  Cómo lo resolvemos                     │
+│                                         │
+│  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐│
+│  │ 🔄   │  │ 📊   │  │ 🛡️   │  │ ⚡   ││
+│  │Auto- │  │Visi- │  │Con-  │  │Inte- ││
+│  │mati- │  │bili- │  │trol  │  │gra-  ││
+│  │zación│  │dad   │  │      │  │ción  ││
+│  │      │  │      │  │      │  │      ││
+│  │1 línea│  │1 línea│  │1 línea│  │1 línea││
+│  └──────┘  └──────┘  └──────┘  └──────┘│
+│                                         │
+│        [ Conoce la plataforma → ]       │
+└─────────────────────────────────────────┘
+```
 
 ### Implementación
 
-**`src/pages/Index.tsx`** -- Envolver cada sección en un componente `motion.div` con:
-- `initial={{ opacity: 0, y: 60 }}` 
-- `whileInView={{ opacity: 1, y: 0 }}`
-- `viewport={{ once: true, margin: "-100px" }}`
-- `transition={{ duration: 0.7, ease: "easeOut" }}`
-- Cada sección con un `delay` incremental sutil para que se sientan secuenciales
-
-Además, añadir un separador visual sutil entre secciones (una línea gradiente fina o un espacio con transición de fondo) para reforzar el efecto de "láminas apiladas".
-
-**`src/components/discovery/FindingsSection.tsx`**, **`QuickWinsSection.tsx`**, **`NextStepsSection.tsx`**, **`TrustedBySection.tsx`** -- Añadir `overflow-hidden` a cada `<section>` para que el contenido no se desborde durante la animación de entrada.
-
 | Archivo | Cambio |
 |---|---|
-| `src/pages/Index.tsx` | Envolver secciones en `motion.div` con animación slide-up + separadores entre láminas |
-| `FindingsSection.tsx` | Añadir `overflow-hidden` al `<section>` |
-| `QuickWinsSection.tsx` | Añadir `overflow-hidden` al `<section>` |
-| `NextStepsSection.tsx` | Añadir `overflow-hidden` al `<section>` |
-| `TrustedBySection.tsx` | Añadir `overflow-hidden` al `<section>` |
+| `src/data/discoveryData.ts` | Añadir array `solutionPillars` con 4 items (icono, título, descripción corta) y `ctaUrl` |
+| `src/components/discovery/SolutionSection.tsx` | Nuevo componente: grid 2x2 (mobile) / 4 cols (desktop) con pilares + CTA button |
+| `src/pages/Index.tsx` | Insertar `SolutionSection` entre Quick Wins y Next Steps, con la misma animación de lámina |
+
+Los pilares se gestionan desde `discoveryData.ts` como todo lo demás, para mantener consistencia.
 
