@@ -1,48 +1,34 @@
 
 
-## Efecto de "card stack" con scroll pegajoso + Solución basada en reunión
+## Indicadores de navegación: barra de progreso + scroll hint + botón "siguiente"
 
-### 1. Efecto de scroll tipo láminas apiladas
+### Problema
+Un usuario no técnico puede no saber que debe hacer scroll, especialmente en mobile donde el efecto de card-stack es menos intuitivo.
 
-Entiendo perfectamente: cada sección ocupa la pantalla completa, se queda "pegada" mientras scrolleas, y la siguiente sección sube y la tapa — como una baraja de cartas que se van apilando. Esto se logra con `position: sticky` + `top: 0` en cada sección.
+### Solución: 3 elementos ligeros
 
-**Enfoque técnico:**
-- Cada sección principal se envuelve en un contenedor con `position: sticky; top: 0` y `min-height: 100vh`
-- Cada sección tiene `bg-background` (o su propio fondo) para que tape la anterior al subir
-- Se asigna un `z-index` incremental para que cada sección quede visualmente encima de la anterior
-- El header ya no necesita sticky porque es la primera "carta" del stack
-- Footer y TrustedBySection quedan fuera del efecto sticky (son el cierre natural)
+**1. Scroll hint animado en el Header**
+- Una flecha/chevron animada (bounce) en la parte inferior del hero que indica "desliza hacia abajo"
+- Desaparece después del primer scroll (con `IntersectionObserver` o escuchando `scroll`)
 
-```text
-Scroll ↓
-┌────────────┐
-│   Header   │ ← sticky, z-10, se queda atrás
-├────────────┤
-│  Hallazgos │ ← sticky, z-20, sube y tapa header
-├────────────┤
-│ Quick Wins │ ← sticky, z-30, sube y tapa hallazgos
-├────────────┤
-│  Solución  │ ← sticky, z-40
-├────────────┤
-│   Pasos    │ ← sticky, z-50
-├────────────┤
-│  Logos/Ftr │ ← normal flow, cierra la página
-└────────────┘
-```
+**2. Barra de progreso fija (top)**
+- Una barra delgada (3-4px) fija en la parte superior de la pantalla (`fixed top-0 z-[60]`)
+- Se llena proporcionalmente al scroll de la página (0% arriba, 100% al final)
+- Color `primary` (verde Uvicuo), con fondo semi-transparente
+- Sutil, no distrae, pero da contexto de "dónde estoy"
 
-### 2. "Cómo lo resolvemos" basado en la reunión
+**3. Botón flotante "Siguiente sección" (mobile)**
+- Un botón pequeño fijo en la esquina inferior derecha (`fixed bottom-6 right-6`)
+- Icono de chevron-down con texto opcional "Siguiente"
+- Al hacer click, hace `scrollBy` suave una pantalla completa (o usa IDs de sección)
+- Se oculta en la última sección
+- Solo visible en mobile (`md:hidden`) para no ensuciar desktop
 
-Actualizar `solutionPillars` en `discoveryData.ts` para que el contenido refleje que son conclusiones de la reunión, no una descripción genérica de producto. Cambiar el título a algo como "Lo que proponemos a partir de lo que encontramos" y los pilares a puntos específicos derivados del discovery.
-
-### Archivos a modificar
+### Archivos
 
 | Archivo | Cambio |
 |---|---|
-| `src/pages/Index.tsx` | Envolver cada sección en un div con `sticky top-0 min-h-screen z-[N]` + fondo sólido. Quitar los `motion.div` wrapper actuales (la animación interna de cada sección ya existe) |
-| `src/components/discovery/DiscoveryHeader.tsx` | Añadir `min-h-screen` + `sticky top-0` al section |
-| `src/components/discovery/FindingsSection.tsx` | Añadir `min-h-screen flex items-center` para centrar verticalmente |
-| `src/components/discovery/QuickWinsSection.tsx` | Igual: `min-h-screen flex items-center` |
-| `src/components/discovery/SolutionSection.tsx` | Igual + actualizar título/subtítulo para reflejar contexto de reunión |
-| `src/components/discovery/NextStepsSection.tsx` | `min-h-screen flex items-center` (puede ser más alto por el contenido dual) |
-| `src/data/discoveryData.ts` | Actualizar textos de `solutionPillars` para que sean propuestas derivadas de hallazgos |
+| `src/components/discovery/ScrollProgress.tsx` | **Nuevo**: barra de progreso fija + botón flotante "siguiente" |
+| `src/components/discovery/DiscoveryHeader.tsx` | Añadir chevron animado al fondo del hero |
+| `src/pages/Index.tsx` | Importar `ScrollProgress`, añadir `id` a cada sección sticky para navegación por anclas |
 
