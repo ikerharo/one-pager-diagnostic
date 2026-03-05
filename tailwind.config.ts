@@ -100,6 +100,10 @@ export default {
           "0%": { transform: "scale(1)", opacity: "0.8" },
           "75%, 100%": { transform: "scale(2.5)", opacity: "0" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -108,6 +112,7 @@ export default {
         "dot-grid": "dot-grid-scroll 20s linear infinite",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "ping-slow": "ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite",
+        marquee: "marquee 30s linear infinite",
       },
     },
   },

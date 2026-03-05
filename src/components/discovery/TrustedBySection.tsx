@@ -5,6 +5,9 @@ import { trustedClients } from "@/data/discoveryData";
 const TrustedBySection = () => {
   if (!trustedClients || trustedClients.length === 0) return null;
 
+  // Duplicate list for seamless infinite scroll
+  const doubled = [...trustedClients, ...trustedClients];
+
   return (
     <section className="py-12 md:py-16 overflow-hidden">
       <div className="container mx-auto max-w-5xl px-6">
@@ -15,35 +18,29 @@ const TrustedBySection = () => {
           >
             Empresas que ya confían en nosotros
           </motion.p>
-
-          <motion.div
-            variants={itemVariants}
-            className="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-12"
-          >
-            {trustedClients.map((client, i) => (
-              <div
-                key={i}
-                className="grayscale opacity-40 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
-              >
-                <img
-                  src={client.logoUrl}
-                  alt={client.name}
-                  className="h-8 w-auto max-w-[120px] object-contain"
-                  onError={(e) => {
-                    // Show name as fallback if logo fails to load
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = "block";
-                  }}
-                />
-                <span className="hidden text-sm font-medium text-muted-foreground">
-                  {client.name}
-                </span>
-              </div>
-            ))}
-          </motion.div>
         </AnimatedSection>
+      </div>
+
+      {/* Infinite marquee */}
+      <div className="relative mt-8">
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
+
+        <div className="flex animate-marquee">
+          {doubled.map((client, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 px-8 md:px-12 flex items-center"
+            >
+              <img
+                src={client.logoUrl}
+                alt={client.name}
+                className="h-8 w-auto max-w-[120px] object-contain grayscale opacity-30 transition-all duration-500 hover:grayscale-0 hover:opacity-80"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
