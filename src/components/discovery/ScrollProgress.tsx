@@ -2,8 +2,6 @@ import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const SECTION_IDS = ["header", "findings", "quickwins", "solution", "nextsteps"];
-
 const ScrollProgress = () => {
   const [progress, setProgress] = useState(0);
   const [isAtEnd, setIsAtEnd] = useState(false);
@@ -21,20 +19,7 @@ const ScrollProgress = () => {
   }, []);
 
   const scrollToNext = useCallback(() => {
-    const scrollY = window.scrollY;
-    const vh = window.innerHeight;
-    for (const id of SECTION_IDS) {
-      const el = document.getElementById(id);
-      if (el) {
-        const top = el.getBoundingClientRect().top + scrollY;
-        if (top > scrollY + 50) {
-          window.scrollTo({ top, behavior: "smooth" });
-          return;
-        }
-      }
-    }
-    // fallback: scroll one viewport
-    window.scrollBy({ top: vh, behavior: "smooth" });
+    window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" });
   }, []);
 
   return (

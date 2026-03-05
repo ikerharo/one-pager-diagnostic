@@ -5,7 +5,7 @@ import { quickWins } from "@/data/discoveryData";
 
 const QuickWinsSection = () => {
   return (
-    <section className="py-16 md:py-20 overflow-hidden min-h-screen flex items-center bg-background">
+    <section className="py-16 md:py-20 overflow-hidden bg-background">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.h2

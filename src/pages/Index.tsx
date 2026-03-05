@@ -10,26 +10,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <ScrollProgress />
-      {/* Card-stack: each section is sticky and covers the previous one */}
-      <div id="header" className="sticky top-0 z-10">
-        <DiscoveryHeader />
-      </div>
 
-      <div id="findings" className="sticky top-0 z-20">
-        <FindingsSection />
-      </div>
-
-      <div id="quickwins" className="sticky top-0 z-30">
-        <QuickWinsSection />
-      </div>
-
-      <div id="solution" className="sticky top-0 z-40">
-        <SolutionSection />
-      </div>
-
-      <div id="nextsteps" className="sticky top-0 z-50">
-        <NextStepsSection />
-      </div>
+      <DiscoveryHeader />
+      <FindingsSection />
+      <QuickWinsSection />
+      <SolutionSection />
+      <NextStepsSection />
 
       {/* Non-sticky closing sections */}
       <TrustedBySection />
