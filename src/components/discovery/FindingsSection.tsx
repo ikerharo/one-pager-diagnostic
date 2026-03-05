@@ -2,9 +2,15 @@ import { motion } from "framer-motion";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { findings } from "@/data/discoveryData";
 
+const impactStyles = {
+  alto: "bg-destructive/10 text-destructive border-destructive/20",
+  medio: "bg-amber-500/10 text-amber-600 border-amber-500/20",
+  bajo: "bg-primary/10 text-primary border-primary/20",
+} as const;
+
 const FindingsSection = () => {
   return (
-    <section className="bg-muted/30 py-16 md:py-20">
+    <section className="py-16 md:py-20">
       <div className="container mx-auto max-w-5xl px-6">
         <AnimatedSection>
           <motion.h2
@@ -20,27 +26,38 @@ const FindingsSection = () => {
             Principales oportunidades identificadas durante la sesión de discovery.
           </motion.p>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 space-y-3">
             {findings.map((finding, i) => {
               const Icon = finding.icon;
+              const impact = impactStyles[finding.impact];
               return (
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="group relative rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 border-t-[0px] hover:border-t-[3px] hover:border-t-primary"
+                  className="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5"
                 >
-                  {/* Index number */}
-                  <span className="absolute top-4 right-4 text-xs font-bold text-muted-foreground/30 font-mono">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-
-                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/10">
+                  {/* Icon */}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/10 shrink-0 mt-0.5">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-semibold text-sm text-foreground">{finding.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    {finding.description}
-                  </p>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="font-semibold text-sm text-foreground">{finding.title}</h3>
+                      <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${impact}`}>
+                        {finding.impact}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {finding.description}
+                    </p>
+                  </div>
+
+                  {/* Index */}
+                  <span className="text-xs font-bold text-muted-foreground/20 font-mono shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </motion.div>
               );
             })}
