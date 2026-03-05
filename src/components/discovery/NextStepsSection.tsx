@@ -30,8 +30,15 @@ const NextStepsSection = () => {
 
           {/* Timeline */}
           <div className="mt-10 relative">
-            {/* Vertical line */}
-            <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/40 via-primary/20 to-transparent hidden sm:block" />
+            {/* Animated vertical line */}
+            <motion.div
+              className="absolute left-[19px] top-0 bottom-0 w-[2px] hidden sm:block"
+              style={{ background: "linear-gradient(to bottom, hsl(var(--primary) / 0.5), hsl(var(--primary) / 0.2), transparent)" }}
+              initial={{ scaleY: 0, originY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+            />
 
             <div className="space-y-4">
               {timelineSteps.map((step, i) => {
@@ -43,9 +50,12 @@ const NextStepsSection = () => {
                     variants={itemVariants}
                     className="flex gap-4 sm:gap-6"
                   >
-                    {/* Timeline dot */}
+                    {/* Timeline dot with ping */}
                     <div className="hidden sm:flex flex-col items-center pt-1">
-                      <div className="h-[10px] w-[10px] rounded-full bg-primary ring-4 ring-primary/10 flex-shrink-0" />
+                      <div className="relative h-[10px] w-[10px] flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full bg-primary/40 animate-ping-slow" />
+                        <div className="absolute inset-0 rounded-full bg-primary ring-4 ring-primary/10" />
+                      </div>
                     </div>
 
                     {/* Card */}

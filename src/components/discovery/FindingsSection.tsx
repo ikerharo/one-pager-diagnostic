@@ -44,7 +44,7 @@ const FindingsSection = () => {
           {/* Hero finding */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 rounded-xl border border-border bg-card border-l-4 border-l-destructive overflow-hidden relative group transition-all duration-300 hover:shadow-md hover:shadow-primary/5"
+            className="mt-10 rounded-xl border border-border bg-card border-l-4 border-l-destructive overflow-hidden relative group transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
           >
             <div className="p-6 md:p-8 flex items-start gap-5">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-destructive/15 text-destructive ring-1 ring-destructive/20 shrink-0">
@@ -62,8 +62,13 @@ const FindingsSection = () => {
             </div>
           </motion.div>
 
+          {/* Connecting dotted line */}
+          <div className="flex justify-center my-1">
+            <div className="h-6 w-[2px] border-l-2 border-dashed border-primary/20" />
+          </div>
+
           {/* Grid 2x2 */}
-          <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {rest.map((finding, i) => {
               const Icon = finding.icon;
               const borderColor = impactBorderColors[finding.impact];
@@ -73,7 +78,7 @@ const FindingsSection = () => {
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className={`group relative rounded-xl border border-border bg-card border-l-4 ${borderColor} p-5 transition-all duration-300 hover:shadow-md hover:shadow-primary/5 hover:-translate-y-0.5`}
+                  className={`group relative rounded-xl border border-border bg-card border-l-4 ${borderColor} p-5 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-primary/30`}
                 >
                   <div className="flex items-start gap-4">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${bgColor} ${textColor} ring-1 ring-current/10 shrink-0`}>
