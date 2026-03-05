@@ -6,7 +6,7 @@ export const discoveryConfig = {
   presenterName: "Javier Fernández",
   presenterRole: "Account Executive",
   presenterEmail: "javier@uvicuo.com",
-  heroVideoUrl: "", // YouTube/Vimeo URL or empty to hide
+  heroVideoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 };
 
 export const findings = [
