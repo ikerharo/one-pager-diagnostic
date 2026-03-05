@@ -8,7 +8,7 @@ const iconMap = { RefreshCw, BarChart3, ShieldCheck, Plug } as const;
 
 const SolutionSection = () => {
   return (
-    <section className="border-t border-border py-16 md:py-20 min-h-screen flex items-center bg-background">
+    <section className="border-t border-border py-16 md:py-20 bg-background">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.span
