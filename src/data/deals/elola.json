@@ -17,15 +17,15 @@
     {
       "icon": "AlertTriangle",
       "title": "Cada anticipo a nomina es una contingencia fiscal y laboral acumulandose",
-      "description": "Al depositar anticipos operativos a la cuenta de nomina, el SAT y el IMSS los registran como percepcion salarial. Con 270 operadores recibiendo anticipos recurrentes, la base gravable crece artificialmente — y en caso de demanda laboral, esos montos se vuelven liquidacion. Es una bomba de tiempo que crece con cada deposito.",
+      "description": "El SAT y el IMSS registran esos depositos como percepcion salarial. La base gravable crece artificialmente, y en demanda laboral, esos montos se vuelven liquidacion.",
       "impact": "alto",
       "quote": "Seria muy buena oportunidad de que su tarjeta de sueldo sea para su sueldo y la tarjeta de gastos sea de la empresa.",
       "quoteAuthor": "Carlos Arellano"
     },
     {
       "icon": "DollarSign",
-      "title": "Dinero operativo sin control: no saben cuanto se pierde en cada viaje",
-      "description": "Una vez que el anticipo llega a la cuenta del operador, deja de ser rastreable. Se desvia, se presta, se gasta en otra cosa. Cuando surge una emergencia real en ruta, el operador no tiene con que resolver — y el camion no se mueve. Cada viaje tiene una fuga invisible que hoy nadie mide.",
+      "title": "Sin visibilidad de cuanto se gasta realmente por viaje",
+      "description": "El anticipo llega a la cuenta personal del operador y deja de ser rastreable. No hay forma de saber cuanto se uso en lo operativo, cuanto se desvio, ni cuanto se quedo sin comprobar. Hoy nadie tiene ese numero.",
       "impact": "alto",
       "quote": null,
       "quoteAuthor": null
@@ -33,15 +33,15 @@
     {
       "icon": "Clock",
       "title": "Cada hora de liquidacion manual es una hora que el camion no genera ingreso",
-      "description": "El operador regresa al patio, hace fila, entrega tickets fisicos. 2 personas procesan 270 operadores. Mientras tanto, el tracto esta parado esperando la siguiente asignacion. Esas horas muertas entre viajes — multiplicadas por la flota — son ingresos que no se generan.",
+      "description": "El operador regresa, hace fila, entrega tickets. 2 personas procesan 270 operadores. Mientras, el tracto esta parado esperando asignacion.",
       "impact": "alto",
       "quote": "El liquida en ruta, ya esta libre para otra ruta... porque hoy tambien me toma tiempo llegar con la companera, entregar, hacer cuentas.",
       "quoteAuthor": "Equipo Elola"
     },
     {
       "icon": "Receipt",
-      "title": "Gastos reales que no se pueden deducir: cada peso sin CFDI es un peso que pagan doble",
-      "description": "Los gastos en efectivo no generan CFDI. Talachas, refacciones menores, comidas en ruta — todo sin factura. Lo que supera el tope de gastos carreteros deducibles se pierde fiscalmente. Es dinero que se gasto, pero que ademas se paga en impuestos porque no se puede comprobar.",
+      "title": "Gastos en efectivo que hoy no se pueden comprobar — y podrian deducirse mas",
+      "description": "Talachas, refacciones, comidas en ruta — hoy son efectivo sin CFDI. Donde si hay comercio formal, Uvicuo puede capturar el comprobante. No sera el 100%, pero cada peso que se logre deducir es dinero que hoy se pierde.",
       "impact": "medio",
       "quote": "No lo tenemos porque es efectivo.",
       "quoteAuthor": "Memo"
@@ -49,7 +49,7 @@
     {
       "icon": "Zap",
       "title": "Emergencias en ruta que paran operacion por falta de un proceso agil",
-      "description": "Fuera de horario, no hay forma rapida de fondear al operador. Un gerente tiene que abrir su banca personal, sacar token, hacer transferencia. Mientras tanto, el camion esta parado — con carga, con cliente esperando. El costo no es solo la transferencia: es el retraso en la entrega y el riesgo de penalizacion.",
+      "description": "Fuera de horario, un gerente abre su banca personal para transferir. Mientras, el camion esta parado con carga y cliente esperando.",
       "impact": "medio",
       "quote": null,
       "quoteAuthor": null
@@ -57,38 +57,38 @@
   ],
   "quickWins": [
     {
-      "before": "Anticipos a nomina que acumulan contingencia fiscal y laboral con cada deposito",
-      "after": "Tarjeta corporativa separada — el dinero operativo nunca toca la nomina, cero riesgo acumulado"
+      "before": "Anticipos a nomina que acumulan contingencia fiscal",
+      "after": "Tarjeta corporativa separada — dinero operativo nunca toca la nomina"
     },
     {
-      "before": "Camiones parados mientras el operador hace fila para liquidar en patio",
-      "after": "Comprobacion en ruta via WhatsApp — el operador liquida y se libera para el siguiente viaje"
+      "before": "Camiones parados mientras el operador hace fila para liquidar",
+      "after": "Comprobacion en ruta — el operador se libera para el siguiente viaje"
     },
     {
-      "before": "Gastos reales sin CFDI que se pagan doble: el gasto + el impuesto no deducido",
-      "after": "Foto del gasto desde ruta, validacion con IA, registro fiscal automatico"
+      "before": "Gastos en efectivo sin CFDI que no se deducen",
+      "after": "Donde hay comercio formal, captura automatica del comprobante"
     },
     {
-      "before": "Emergencias que paran camiones porque no hay forma agil de fondear fuera de horario",
-      "after": "Fondeo inmediato desde la app — el camion se mueve, la entrega no se retrasa"
+      "before": "Emergencias que paran camiones fuera de horario",
+      "after": "Fondeo inmediato desde la app, sin depender de banca personal"
     }
   ],
   "exclusionNote": "No incluimos combustible ni casetas porque Elola ya tiene esos rubros bajo control con autoconsumo, Ultragas e IAVE/Amex. Nos enfocamos donde el impacto es real.",
   "uvicuoPositioning": {
     "headline": "Plataforma de control de efectivo y gastos operativos para flotas",
-    "description": "Uvicuo reemplaza el ciclo de anticipos, efectivo y liquidaciones manuales con una plataforma digital que le da a cada operador una tarjeta corporativa con reglas, y a la empresa visibilidad en tiempo real de cada peso gastado en ruta.",
+    "description": "Tarjeta corporativa por operador con reglas, comprobacion en ruta, y visibilidad en tiempo real de cada peso gastado.",
     "capabilities": [
       {
-        "title": "Tarjetas corporativas por operador",
-        "description": "Cada operador recibe una tarjeta con limites y reglas por rubro. El dinero es de la empresa, no del operador."
+        "title": "Tarjeta corporativa por operador",
+        "description": "Con limites y reglas por rubro. El dinero es de la empresa, no del operador."
       },
       {
-        "title": "Comprobacion en ruta via WhatsApp",
-        "description": "El operador manda foto del gasto desde ruta. IA valida, clasifica y registra sin esperar al patio."
+        "title": "Comprobacion en ruta",
+        "description": "Foto del gasto desde ruta. IA valida y registra sin esperar al patio."
       },
       {
         "title": "Visibilidad en tiempo real",
-        "description": "Dashboard con el estatus de cada viaje, cada gasto y cada operador. Sin esperar a que regresen."
+        "description": "Cada viaje, cada gasto, cada operador. Sin esperar a que regresen."
       }
     ]
   },
@@ -97,7 +97,7 @@
       "date": "17 Feb 2026",
       "title": "Primera visita presencial",
       "participants": ["Iker Haro (Uvicuo)", "Guillermo Calderon", "Karla Gonzalez", "Carlos Arellano", "Dulce Ruiz", "Paola Garcia"],
-      "topics": ["Tarjeta corporativa", "Control de combustible", "Peajes", "Integracion con SAM"],
+      "topics": ["Tarjeta corporativa", "Control de combustible", "Peajes", "Integracion con LIS ZAM"],
       "owner": "both"
     },
     {
@@ -112,25 +112,19 @@
     {
       "week": "Paso 1",
       "title": "Elola entrega datos historicos",
-      "description": "Reporte de anticipos y gastos de 1-2 meses del sistema Lyz, movimientos y emergencias en ruta, y volumen de comisiones de cajero.",
+      "description": "De LIS ZAM: reporte de anticipos por operador (monto y frecuencia) y gastos liquidados de los ultimos 2 meses. Ademas: volumen de emergencias en ruta y comisiones de cajero por retiro.",
       "owner": "client"
     },
     {
       "week": "Paso 2",
       "title": "Analisis costo-beneficio",
-      "description": "Uvicuo prepara analisis con numeros reales de Elola para cuantificar el impacto.",
+      "description": "Con esos datos, Uvicuo cuantifica: contingencia fiscal acumulada, fuga estimada por falta de control, y costo de horas muertas en liquidacion.",
       "owner": "uvicuo"
     },
     {
       "week": "Paso 3",
       "title": "Reunion de revision",
-      "description": "Revisar hallazgos cuantificados y decidir si avanzar. ~1 semana despues de recibir datos.",
-      "owner": "both"
-    },
-    {
-      "week": "Paso 4",
-      "title": "Decision informada",
-      "description": "Con datos concretos, decidir juntos el siguiente movimiento.",
+      "description": "Revisar los numeros juntos y decidir si avanzar. ~1 semana despues de recibir datos.",
       "owner": "both"
     }
   ],
