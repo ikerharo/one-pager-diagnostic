@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, ChevronRight } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, ArrowDown } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { quickWins } from "@/data/discoveryData";
 
@@ -26,33 +26,49 @@ const QuickWinsSection = () => {
               <motion.div
                 key={i}
                 variants={itemVariants}
-                className="group flex flex-col gap-0 rounded-xl border border-border bg-card overflow-hidden sm:flex-row sm:items-stretch"
+                className="group relative rounded-xl border border-border bg-card overflow-hidden"
               >
-                {/* Before */}
-                <div className="flex-1 px-5 py-4 bg-destructive/[0.03]">
-                  <span className="text-xs font-medium uppercase tracking-wider text-destructive/60">
-                    Antes
-                  </span>
-                  <p className="mt-1 text-sm text-foreground">{win.before}</p>
-                </div>
+                {/* Number badge */}
+                <span className="absolute top-3 right-4 text-2xl font-black font-mono text-muted-foreground/10 leading-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
 
-                {/* Arrow divider */}
-                <div className="hidden sm:flex items-center justify-center px-1">
-                  <ChevronRight className="h-5 w-5 text-primary transition-transform duration-300 group-hover:translate-x-0.5" />
-                </div>
-                <div className="flex sm:hidden justify-center py-1">
-                  <div className="w-full h-[2px] bg-gradient-to-r from-destructive/20 via-primary/40 to-primary/60" />
-                </div>
-
-                {/* After */}
-                <div className="flex-1 px-5 py-4 bg-primary/[0.03]">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-xs font-medium uppercase tracking-wider text-primary">
-                      Con Uvicuo
-                    </span>
-                    <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
+                <div className="flex flex-col sm:flex-row sm:items-stretch">
+                  {/* Before */}
+                  <div className="flex-1 px-5 py-4 bg-destructive/[0.06]">
+                    <div className="flex items-center gap-1.5">
+                      <XCircle className="h-3.5 w-3.5 text-destructive" />
+                      <span className="text-xs font-semibold uppercase tracking-wider text-destructive">
+                        Antes
+                      </span>
+                    </div>
+                    <p className="mt-1.5 text-sm text-foreground leading-relaxed">{win.before}</p>
                   </div>
-                  <p className="mt-1 text-sm text-foreground">{win.after}</p>
+
+                  {/* Arrow divider - desktop */}
+                  <div className="hidden sm:flex items-center justify-center px-2">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
+                      <ArrowRight className="h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+
+                  {/* Arrow divider - mobile */}
+                  <div className="flex sm:hidden justify-center py-2">
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
+                      <ArrowDown className="h-3.5 w-3.5 text-primary" />
+                    </div>
+                  </div>
+
+                  {/* After */}
+                  <div className="flex-1 px-5 py-4 bg-primary/[0.06]">
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
+                      <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+                        Con Uvicuo
+                      </span>
+                    </div>
+                    <p className="mt-1.5 text-sm text-foreground leading-relaxed">{win.after}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
