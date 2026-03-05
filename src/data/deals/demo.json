@@ -16,40 +16,40 @@
   "findings": [
     {
       "icon": "AlertTriangle",
-      "title": "Hallazgo principal de alto impacto",
-      "description": "Descripcion del problema principal detectado durante el discovery. Este hallazgo tiene impacto directo en la operacion diaria.",
+      "title": "Hallazgo principal: nombrar el problema Y su costo",
+      "description": "Describir el problema Y conectarlo con impacto financiero. No basta decir 'esto pasa' — hay que decir 'esto pasa y les cuesta X porque Y'. Si no hay cifra exacta, describir el mecanismo de perdida: dinero que se fuga, riesgo que se acumula, ingreso que no se genera.",
       "impact": "alto",
-      "quote": "Esto es algo que nos quita el sueno todos los dias.",
+      "quote": "Una frase textual del prospecto que ancle el dolor.",
       "quoteAuthor": "Director de Operaciones"
     },
     {
       "icon": "DollarSign",
-      "title": "Segundo hallazgo relevante",
-      "description": "Otro problema detectado que genera costos ocultos o ineficiencias operativas significativas.",
+      "title": "Segundo hallazgo: fuga o riesgo financiero concreto",
+      "description": "Cada hallazgo debe terminar en '...y esto les cuesta dinero porque...'. Puede ser estimado ('con N operadores, esto representa ~$X al mes') o descriptivo ('cada vez que pasa, pierden Y horas de operacion productiva').",
       "impact": "alto",
       "quote": null,
       "quoteAuthor": null
     },
     {
       "icon": "Clock",
-      "title": "Proceso manual que consume tiempo",
-      "description": "Un proceso que actualmente se hace de forma manual y que podria automatizarse para liberar recursos.",
+      "title": "Tiempo muerto que se traduce en ingresos no generados",
+      "description": "Proceso manual que consume tiempo. No basta con decir 'toma 3 dias' — hay que conectar: '3 dias donde el equipo/activo esta parado y no genera valor. Multiplicado por la frecuencia, son N horas al mes de capacidad desperdiciada'.",
       "impact": "alto",
       "quote": "Nos toma 3 dias hacer algo que deberia tomar horas.",
       "quoteAuthor": "Equipo operativo"
     },
     {
       "icon": "Receipt",
-      "title": "Hallazgo de impacto medio",
-      "description": "Un area de oportunidad que no es critica pero que suma al caso de negocio general.",
+      "title": "Costo oculto que crece silenciosamente",
+      "description": "Un area de oportunidad que suma al caso de negocio. Conectar con el costo acumulado: 'esto pasa N veces al mes, cada vez cuesta X — al ano son Y pesos que se pudieron evitar'.",
       "impact": "medio",
       "quote": null,
       "quoteAuthor": null
     },
     {
       "icon": "Zap",
-      "title": "Oportunidad de mejora adicional",
-      "description": "Un punto detectado que complementa los hallazgos principales y refuerza la propuesta de valor.",
+      "title": "Riesgo operativo con consecuencias financieras",
+      "description": "Problema que no es diario pero cuando pasa, cuesta caro. Describir el peor escenario y su costo: 'cuando falla, el impacto es X — y pasa con suficiente frecuencia como para que no sea despreciable'.",
       "impact": "medio",
       "quote": null,
       "quoteAuthor": null
@@ -57,16 +57,16 @@
   ],
   "quickWins": [
     {
-      "before": "Proceso manual que toma dias",
-      "after": "Automatizado en minutos con la plataforma"
+      "before": "Proceso manual de N dias que cuesta X horas-hombre y retrasa operacion",
+      "after": "Automatizado en minutos — esas horas se redirigen a operacion productiva"
     },
     {
-      "before": "Sin visibilidad hasta fin de mes",
-      "after": "Dashboard en tiempo real con alertas"
+      "before": "Sin visibilidad hasta fin de mes: decisiones a ciegas que cuestan dinero",
+      "after": "Dashboard en tiempo real — detectar fugas antes de que se acumulen"
     },
     {
-      "before": "Errores frecuentes en captura de datos",
-      "after": "Validacion automatica con IA"
+      "before": "Errores de captura que generan reproceso, multas o deducciones perdidas",
+      "after": "Validacion automatica con IA — cada gasto registrado correctamente desde el origen"
     }
   ],
   "exclusionNote": null,

@@ -16,40 +16,40 @@
   "findings": [
     {
       "icon": "AlertTriangle",
-      "title": "Anticipos a cuenta de nomina = riesgo fiscal y laboral",
-      "description": "El anticipo se deposita a la misma cuenta de nomina del operador. Ante el SAT y el IMSS, ese deposito acumula como percepcion. En caso de una demanda laboral, ese monto se pierde.",
+      "title": "Cada anticipo a nomina es una contingencia fiscal y laboral acumulandose",
+      "description": "Al depositar anticipos operativos a la cuenta de nomina, el SAT y el IMSS los registran como percepcion salarial. Con 270 operadores recibiendo anticipos recurrentes, la base gravable crece artificialmente — y en caso de demanda laboral, esos montos se vuelven liquidacion. Es una bomba de tiempo que crece con cada deposito.",
       "impact": "alto",
       "quote": "Seria muy buena oportunidad de que su tarjeta de sueldo sea para su sueldo y la tarjeta de gastos sea de la empresa.",
       "quoteAuthor": "Carlos Arellano"
     },
     {
       "icon": "DollarSign",
-      "title": "El operador controla el destino del dinero",
-      "description": "Una vez que el anticipo llega a la cuenta del operador, no hay forma de asegurar que se use en lo operativo. Se desvia, se presta, y cuando hay una emergencia en ruta: no me muevo.",
+      "title": "Dinero operativo sin control: no saben cuanto se pierde en cada viaje",
+      "description": "Una vez que el anticipo llega a la cuenta del operador, deja de ser rastreable. Se desvia, se presta, se gasta en otra cosa. Cuando surge una emergencia real en ruta, el operador no tiene con que resolver — y el camion no se mueve. Cada viaje tiene una fuga invisible que hoy nadie mide.",
       "impact": "alto",
       "quote": null,
       "quoteAuthor": null
     },
     {
       "icon": "Clock",
-      "title": "Liquidaciones a posteriori y manuales",
-      "description": "El operador regresa al patio, hace fila, entrega tickets fisicos. 2 personas para 270 operadores. El proceso es lento, propenso a errores, y retrasa la siguiente asignacion de ruta.",
+      "title": "Cada hora de liquidacion manual es una hora que el camion no genera ingreso",
+      "description": "El operador regresa al patio, hace fila, entrega tickets fisicos. 2 personas procesan 270 operadores. Mientras tanto, el tracto esta parado esperando la siguiente asignacion. Esas horas muertas entre viajes — multiplicadas por la flota — son ingresos que no se generan.",
       "impact": "alto",
       "quote": "El liquida en ruta, ya esta libre para otra ruta... porque hoy tambien me toma tiempo llegar con la companera, entregar, hacer cuentas.",
       "quoteAuthor": "Equipo Elola"
     },
     {
       "icon": "Receipt",
-      "title": "Comprobaciones sin validez fiscal",
-      "description": "Los gastos en efectivo no generan CFDI. Las notas de talacha no tienen factura. Aproximadamente 1 millon de pesos se deduce como gastos carreteros, pero lo que supera ese monto se pierde.",
+      "title": "Gastos reales que no se pueden deducir: cada peso sin CFDI es un peso que pagan doble",
+      "description": "Los gastos en efectivo no generan CFDI. Talachas, refacciones menores, comidas en ruta — todo sin factura. Lo que supera el tope de gastos carreteros deducibles se pierde fiscalmente. Es dinero que se gasto, pero que ademas se paga en impuestos porque no se puede comprobar.",
       "impact": "medio",
       "quote": "No lo tenemos porque es efectivo.",
       "quoteAuthor": "Memo"
     },
     {
       "icon": "Zap",
-      "title": "Emergencias lentas de resolver",
-      "description": "Fuera de horario, los gerentes depositan desde sus cuentas personales. El proceso es lento: token, sistema bancario, transferencia. A veces el operador termina poniendo de su bolsa.",
+      "title": "Emergencias en ruta que paran operacion por falta de un proceso agil",
+      "description": "Fuera de horario, no hay forma rapida de fondear al operador. Un gerente tiene que abrir su banca personal, sacar token, hacer transferencia. Mientras tanto, el camion esta parado — con carga, con cliente esperando. El costo no es solo la transferencia: es el retraso en la entrega y el riesgo de penalizacion.",
       "impact": "medio",
       "quote": null,
       "quoteAuthor": null
@@ -57,20 +57,20 @@
   ],
   "quickWins": [
     {
-      "before": "Anticipos depositados a la cuenta de nomina del operador",
-      "after": "Tarjeta corporativa separada — el sueldo es sueldo, los gastos son de la empresa"
+      "before": "Anticipos a nomina que acumulan contingencia fiscal y laboral con cada deposito",
+      "after": "Tarjeta corporativa separada — el dinero operativo nunca toca la nomina, cero riesgo acumulado"
     },
     {
-      "before": "Liquidacion manual en patio con fila y tickets fisicos",
-      "after": "Comprobacion en ruta via WhatsApp — el operador se libera para la siguiente asignacion"
+      "before": "Camiones parados mientras el operador hace fila para liquidar en patio",
+      "after": "Comprobacion en ruta via WhatsApp — el operador liquida y se libera para el siguiente viaje"
     },
     {
-      "before": "Notas sin factura ni CFDI que se pierden fiscalmente",
-      "after": "Validacion automatica con IA — foto del gasto, registro inmediato"
+      "before": "Gastos reales sin CFDI que se pagan doble: el gasto + el impuesto no deducido",
+      "after": "Foto del gasto desde ruta, validacion con IA, registro fiscal automatico"
     },
     {
-      "before": "Emergencias resueltas con transferencias manuales fuera de horario",
-      "after": "Autorizacion rapida desde la app, sin depender de horarios de oficina"
+      "before": "Emergencias que paran camiones porque no hay forma agil de fondear fuera de horario",
+      "after": "Fondeo inmediato desde la app — el camion se mueve, la entrega no se retrasa"
     }
   ],
   "exclusionNote": "No incluimos combustible ni casetas porque Elola ya tiene esos rubros bajo control con autoconsumo, Ultragas e IAVE/Amex. Nos enfocamos donde el impacto es real.",
