@@ -21,6 +21,15 @@ const DiscoveryHeader = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--uvicuo-dark))]/60 via-[hsl(var(--uvicuo-dark))]/80 to-[hsl(var(--uvicuo-dark))]" />
       </div>
 
+      {/* Dot grid overlay */}
+      <div
+        className="absolute inset-0 z-[1] opacity-20 animate-dot-grid pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, hsl(var(--uvicuo-green) / 0.4) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
       {/* Content */}
       <div className="relative z-10 py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-6 text-center">
@@ -43,7 +52,7 @@ const DiscoveryHeader = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="text-5xl font-bold tracking-tight md:text-7xl text-white drop-shadow-lg"
+              className="text-5xl font-bold tracking-tight md:text-7xl text-white drop-shadow-lg animate-glow-pulse"
             >
               {discoveryConfig.clientName}
             </motion.h1>

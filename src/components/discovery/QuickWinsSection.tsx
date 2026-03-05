@@ -47,14 +47,16 @@ const QuickWinsSection = () => {
 
                   {/* Arrow divider - desktop */}
                   <div className="hidden sm:flex items-center justify-center px-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
-                      <ArrowRight className="h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-0.5" />
+                    <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 ring-2 ring-primary/25 shadow-md shadow-primary/10">
+                      <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping-slow" />
+                      <ArrowRight className="h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </div>
 
                   {/* Arrow divider - mobile */}
                   <div className="flex sm:hidden justify-center py-2">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20">
+                    <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 ring-2 ring-primary/25 shadow-md shadow-primary/10">
+                      <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping-slow" />
                       <ArrowDown className="h-3.5 w-3.5 text-primary" />
                     </div>
                   </div>

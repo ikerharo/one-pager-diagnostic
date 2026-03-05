@@ -13,6 +13,7 @@ const Index = () => {
       <NextStepsSection />
       <TrustedBySection />
 
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
       <footer className="border-t border-border py-10">
         <div className="container mx-auto flex items-center justify-center gap-3 px-6">
           <img src="/uvicuo-icon.png" alt="Uvicuo" className="h-5 opacity-60" />
