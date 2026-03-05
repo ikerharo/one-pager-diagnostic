@@ -1,17 +1,43 @@
+import { motion } from "framer-motion";
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import FindingsSection from "@/components/discovery/FindingsSection";
 import QuickWinsSection from "@/components/discovery/QuickWinsSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
 
+const slideUp = {
+  initial: { opacity: 0, y: 60 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.7, ease: "easeOut" as const },
+};
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <DiscoveryHeader />
-      <FindingsSection />
-      <QuickWinsSection />
-      <NextStepsSection />
-      <TrustedBySection />
+
+      <motion.div {...slideUp}>
+        <FindingsSection />
+      </motion.div>
+
+      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.1 }}>
+        <QuickWinsSection />
+      </motion.div>
+
+      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.15 }}>
+        <NextStepsSection />
+      </motion.div>
+
+      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.2 }}>
+        <TrustedBySection />
+      </motion.div>
 
       <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
       <footer className="border-t border-border py-10">
