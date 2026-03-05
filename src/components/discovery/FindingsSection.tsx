@@ -4,14 +4,14 @@ import { findings } from "@/data/discoveryData";
 
 const FindingsSection = () => {
   return (
-    <section className="py-16 md:py-20">
+    <section className="bg-muted/30 py-16 md:py-20">
       <div className="container mx-auto max-w-5xl px-6">
         <AnimatedSection>
           <motion.h2
             variants={itemVariants}
-            className="text-2xl font-bold tracking-tight md:text-3xl"
+            className="text-2xl font-bold tracking-tight md:text-3xl text-foreground"
           >
-            Hallazgos <span className="text-gradient-green">Clave</span>
+            Hallazgos <span className="text-primary">Clave</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -29,10 +29,10 @@ const FindingsSection = () => {
                   variants={itemVariants}
                   className="group rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-md hover:shadow-primary/5"
                 >
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-primary">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-semibold text-sm">{finding.title}</h3>
+                  <h3 className="font-semibold text-sm text-foreground">{finding.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                     {finding.description}
                   </p>

@@ -5,12 +5,7 @@ import { discoveryConfig } from "@/data/discoveryData";
 
 const DiscoveryHeader = () => {
   return (
-    <section className="section-dark relative overflow-hidden py-16 md:py-24">
-      {/* Subtle background glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-primary/5 blur-[120px]" />
-      </div>
-
+    <section className="border-b border-border bg-background py-16 md:py-24">
       <div className="container relative z-10 mx-auto max-w-4xl px-6 text-center">
         <AnimatedSection>
           <motion.div variants={itemVariants} className="mb-6">
@@ -29,9 +24,9 @@ const DiscoveryHeader = () => {
 
           <motion.h1
             variants={itemVariants}
-            className="text-3xl font-bold tracking-tight md:text-5xl"
+            className="text-3xl font-bold tracking-tight md:text-5xl text-foreground"
           >
-            <span className="text-gradient-green">{discoveryConfig.clientName}</span>
+            {discoveryConfig.clientName}
           </motion.h1>
 
           <motion.p
