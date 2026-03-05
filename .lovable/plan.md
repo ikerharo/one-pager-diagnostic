@@ -1,46 +1,28 @@
 
 
-## Rediseño de Hallazgos Clave
+## Mejoras: Hallazgos Clave + Quick Wins
 
-El problema actual: las tarjetas son todas iguales visualmente -- misma estructura de lista vertical con icono + texto + badge. Es monótono y no genera impacto. La sección se siente como una lista de pendientes, no como hallazgos estratégicos.
+### 1. Hallazgos Clave -- suavizar la tarjeta hero
 
-### Propuesta: Layout tipo "dashboard de diagnóstico"
+El problema: la tarjeta hero usa `section-dark` (fondo oscuro completo) mientras las demás son claras. El contraste es demasiado agresivo.
 
-Cambiar de lista vertical uniforme a un **grid asimétrico** donde el hallazgo principal (#1, impacto alto) ocupa más espacio y los demás se distribuyen en un grid 2x2 debajo. Esto crea jerarquía visual y hace que la sección se sienta como un diagnóstico profesional, no una lista.
+**Solución**: Quitar `section-dark` del hero y usar en su lugar el mismo estilo de tarjeta que las demás, pero más grande y con más presencia. Mantener el borde izquierdo grueso y el icono grande, pero sobre fondo `bg-card` como las demás. La diferenciación viene del tamaño (ocupa todo el ancho), padding más generoso, título más grande y el número "01" prominente -- no del color de fondo.
 
-```text
-┌─────────────────────────────────────┐
-│  🔴 HALLAZGO PRINCIPAL (alto)       │
-│  Título grande, descripción,        │
-│  métrica destacada                  │
-└─────────────────────────────────────┘
-┌────────────────┐  ┌────────────────┐
-│ 🔴 Hallazgo 2  │  │ 🟡 Hallazgo 3 │
-│ (alto)         │  │ (medio)        │
-└────────────────┘  └────────────────┘
-┌────────────────┐  ┌────────────────┐
-│ 🔴 Hallazgo 4  │  │ 🟡 Hallazgo 5 │
-│ (alto)         │  │ (medio)        │
-└────────────────┘  └────────────────┘
-```
+### 2. Quick Wins -- rediseño más impactante
 
-### Detalles de diseño
+El problema actual: las tarjetas de antes/después se sienten planas y repetitivas. El chevron entre ambos lados es pequeño y no transmite transformación.
 
-1. **Tarjeta hero** (primer hallazgo): fondo oscuro (`section-dark`), icono grande, título en `text-xl`, borde izquierdo grueso con color de impacto (rojo para alto). Se siente como el hallazgo estrella.
+**Solución**: Rediseñar como tarjetas con dos columnas más diferenciadas visualmente:
+- **Lado "Antes"**: fondo ligeramente rojo/destructive con un icono de `X` o tachado, texto con estilo que sugiera "problema"
+- **Lado "Con Uvicuo"**: fondo ligeramente verde/primary con icono de check, texto que sugiera "solución"
+- **Flecha central** más prominente: un círculo con flecha que actúe como separador visual claro
+- Añadir un **número de orden** sutil (01, 02, 03) para dar estructura
+- En mobile: apilar verticalmente con una flecha hacia abajo en lugar de gradient line
 
-2. **Grid 2x2** para los demás: tarjetas más compactas con borde izquierdo de color según impacto (rojo/ámbar). Hover sutil con elevación.
-
-3. **Borde lateral de color** en lugar de badge flotante: una barra vertical de 3-4px a la izquierda de cada tarjeta indica el nivel de impacto visualmente sin necesidad de leer texto.
-
-4. **Número grande** en cada tarjeta (01, 02...) como detalle tipográfico sutil en la esquina.
-
-5. En **mobile**: todo se apila verticalmente, la tarjeta hero mantiene su estilo diferenciado.
-
-### Archivo a modificar
+### Archivos a modificar
 
 | Archivo | Cambio |
 |---|---|
-| `src/components/discovery/FindingsSection.tsx` | Rediseño completo del layout: tarjeta hero + grid 2x2, bordes de color por impacto |
-
-Sin cambios en datos ni en otros archivos.
+| `src/components/discovery/FindingsSection.tsx` | Quitar `section-dark` del hero, usar `bg-card` con border + padding más grande |
+| `src/components/discovery/QuickWinsSection.tsx` | Rediseño de tarjetas antes/después con mejor contraste visual y flecha central prominente |
 
