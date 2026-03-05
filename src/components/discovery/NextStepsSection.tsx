@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { Mail, Phone, CalendarCheck, Users, Building2, Handshake, CheckCircle2, MessageSquare } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { Button } from "@/components/ui/button";
-import { timelineSteps, pastInteractions, contactInfo, closingQuote, closingQuoteAuthor, type TimelineOwner } from "@/data/discoveryData";
+import { useDeal } from "@/context/DealContext";
+import type { TimelineOwner } from "@/data/discoveryData";
 
 const ownerConfig: Record<TimelineOwner, { label: string; icon: typeof Users; colorClass: string }> = {
   uvicuo: { label: "Uvicuo", icon: Building2, colorClass: "bg-primary/15 text-primary border-primary/30" },
@@ -11,6 +12,7 @@ const ownerConfig: Record<TimelineOwner, { label: string; icon: typeof Users; co
 };
 
 const NextStepsSection = () => {
+  const { timelineSteps, pastInteractions, contactInfo, closingQuote, closingQuoteAuthor } = useDeal();
   return (
     <section className="border-t border-border bg-muted/30 py-16 md:py-20 overflow-hidden">
       <div className="container mx-auto max-w-4xl px-6">

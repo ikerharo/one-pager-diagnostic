@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
-import { findings } from "@/data/discoveryData";
+import { useDeal } from "@/context/DealContext";
 
 const impactBorderColors = {
   alto: "border-l-destructive",
@@ -21,6 +21,7 @@ const impactTextColors = {
 } as const;
 
 const FindingsSection = () => {
+  const { findings } = useDeal();
   const [hero, ...rest] = findings;
   const HeroIcon = hero.icon;
 

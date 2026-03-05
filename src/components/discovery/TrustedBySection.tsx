@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
-import { trustedClients } from "@/data/discoveryData";
+import { useDeal } from "@/context/DealContext";
 
 const TrustedBySection = () => {
+  const { trustedClients } = useDeal();
   if (!trustedClients || trustedClients.length === 0) return null;
 
   // Duplicate list for seamless infinite scroll

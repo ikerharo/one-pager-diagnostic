@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, ArrowRight, ArrowDown } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
-import { quickWins, exclusionNote } from "@/data/discoveryData";
+import { useDeal } from "@/context/DealContext";
 
 const QuickWinsSection = () => {
+  const { quickWins, exclusionNote } = useDeal();
   return (
     <section className="py-16 md:py-20 overflow-hidden bg-background">
       <div className="container mx-auto max-w-4xl px-6">

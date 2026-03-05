@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { Badge } from "@/components/ui/badge";
-import { discoveryConfig } from "@/data/discoveryData";
+import { useDeal } from "@/context/DealContext";
 import heroVideo from "@/assets/hero-loop.mp4";
 import { ChevronDown } from "lucide-react";
 
 const DiscoveryHeader = () => {
+  const { discoveryConfig } = useDeal();
   const [showHint, setShowHint] = useState(true);
 
   useEffect(() => {

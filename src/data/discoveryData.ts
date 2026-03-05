@@ -18,7 +18,6 @@ import {
   Package,
   type LucideIcon,
 } from "lucide-react";
-import content from "./content.json";
 
 // Icon mapping — add more as needed
 const iconMap: Record<string, LucideIcon> = {
@@ -43,31 +42,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 const defaultIcon = Eye;
 
-// --- Exported data (consumed by components) ---
-
-export const discoveryConfig = {
-  clientName: content.config.clientName,
-  meetingDate: content.config.meetingDate,
-  subtitle: content.config.subtitle,
-  websiteUrl: content.config.websiteUrl,
-};
-
-export const contactInfo = content.contact;
-
-export const findings = content.findings.map((f) => ({
-  icon: iconMap[f.icon] || defaultIcon,
-  title: f.title,
-  description: f.description,
-  impact: f.impact as "alto" | "medio" | "bajo",
-  quote: f.quote,
-  quoteAuthor: f.quoteAuthor,
-}));
-
-export const quickWins = content.quickWins;
-
-export const exclusionNote = content.exclusionNote;
-
-export const uvicuoPositioning = content.uvicuoPositioning;
+// --- Types ---
 
 export type TimelineOwner = "uvicuo" | "client" | "both";
 
@@ -79,11 +54,6 @@ export interface PastInteraction {
   owner: TimelineOwner;
 }
 
-export const pastInteractions: PastInteraction[] = content.pastInteractions.map((i) => ({
-  ...i,
-  owner: i.owner as TimelineOwner,
-}));
-
 export interface TimelineStep {
   week: string;
   title: string;
@@ -91,16 +61,80 @@ export interface TimelineStep {
   owner: TimelineOwner;
 }
 
-export const timelineSteps: TimelineStep[] = content.timeline.map((s) => ({
-  ...s,
-  owner: s.owner as TimelineOwner,
-}));
+export interface Finding {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  impact: "alto" | "medio" | "bajo";
+  quote: string | null;
+  quoteAuthor: string | null;
+}
 
-export const nextSteps = {
-  description: "",
-};
+export interface UvicuoPositioning {
+  headline: string;
+  description: string;
+  capabilities: { title: string; description: string }[];
+}
 
-export const closingQuote = content.closingQuote;
-export const closingQuoteAuthor = content.closingQuoteAuthor;
+export interface DealData {
+  discoveryConfig: {
+    clientName: string;
+    meetingDate: string;
+    subtitle: string;
+    websiteUrl: string;
+  };
+  contactInfo: {
+    name: string;
+    role: string;
+    email: string;
+    phone: string;
+    ctaText: string;
+    ctaSubject: string;
+  };
+  findings: Finding[];
+  quickWins: { before: string; after: string }[];
+  exclusionNote: string | null;
+  uvicuoPositioning: UvicuoPositioning | null;
+  pastInteractions: PastInteraction[];
+  timelineSteps: TimelineStep[];
+  closingQuote: string | null;
+  closingQuoteAuthor: string | null;
+  trustedClients: { name: string; logoUrl: string }[];
+}
 
-export const trustedClients = content.trustedClients;
+// --- Process raw JSON into typed DealData ---
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function processDealContent(content: any): DealData {
+  return {
+    discoveryConfig: {
+      clientName: content.config.clientName,
+      meetingDate: content.config.meetingDate,
+      subtitle: content.config.subtitle,
+      websiteUrl: content.config.websiteUrl,
+    },
+    contactInfo: content.contact,
+    findings: content.findings.map((f: any) => ({
+      icon: iconMap[f.icon] || defaultIcon,
+      title: f.title,
+      description: f.description,
+      impact: f.impact as "alto" | "medio" | "bajo",
+      quote: f.quote,
+      quoteAuthor: f.quoteAuthor,
+    })),
+    quickWins: content.quickWins,
+    exclusionNote: content.exclusionNote ?? null,
+    uvicuoPositioning: content.uvicuoPositioning ?? null,
+    pastInteractions: (content.pastInteractions ?? []).map((i: any) => ({
+      ...i,
+      owner: i.owner as TimelineOwner,
+    })),
+    timelineSteps: content.timeline.map((s: any) => ({
+      ...s,
+      owner: s.owner as TimelineOwner,
+    })),
+    closingQuote: content.closingQuote ?? null,
+    closingQuoteAuthor: content.closingQuoteAuthor ?? null,
+    trustedClients: content.trustedClients ?? [],
+  };
+}

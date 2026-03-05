@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
-import { uvicuoPositioning } from "@/data/discoveryData";
+import { useDeal } from "@/context/DealContext";
 
 const UvicuoSection = () => {
+  const { uvicuoPositioning } = useDeal();
   if (!uvicuoPositioning) return null;
 
   return (
