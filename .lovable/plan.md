@@ -1,45 +1,33 @@
 
 
-## Hacer el diseño más tecnológico con efectos visuales
+## Transiciones tipo "láminas" entre secciones
 
-El one-pager ya tiene buena estructura. Para darle un feel más tech/premium sin sobrecargar, propongo añadir efectos sutiles que transmitan modernidad:
+Entiendo perfectamente: quieres que cada sección se comporte como una diapositiva/lámina que entra en vista con un efecto de revelado mientras haces scroll, como si fueran paneles que se deslizan uno sobre otro.
 
-### Cambios propuestos
+### Enfoque técnico
 
-**1. Partículas / grid animado en el Hero** (`DiscoveryHeader.tsx`)
-- Añadir un overlay de grid punteado sutil (CSS `radial-gradient` pattern) sobre el video, con una animación lenta de desplazamiento. Da un efecto "matrix/tech" sin depender de librerías pesadas.
-- Añadir un glow animado detrás del título del cliente (sombra verde pulsante con keyframes).
+Usar `framer-motion` con `whileInView` para que cada sección haga una transición de "slide-up + fade-in" al entrar en el viewport. Cada sección se sentirá como una lámina nueva que se revela al hacer scroll.
 
-**2. Líneas de conexión en Hallazgos** (`FindingsSection.tsx`)
-- Añadir una línea vertical punteada sutil que conecte la tarjeta hero con el grid inferior, sugiriendo relación entre hallazgos.
-- Hover más expresivo: las tarjetas hacen un leve `scale(1.02)` + un border glow verde tenue.
+No usaré scroll-snap (forzar paradas) porque en un one-pager con contenido variable se siente rígido. En su lugar, cada sección tendrá una animación de entrada suave que da el mismo efecto visual sin forzar el scroll.
 
-**3. Transición animada en Quick Wins** (`QuickWinsSection.tsx`)
-- La flecha central pulsa suavemente (keyframe `pulse` en el círculo).
-- Al hacer hover, la flecha se desplaza ligeramente hacia la derecha (`group-hover:translate-x-1`).
+### Implementación
 
-**4. Timeline con línea animada** (`NextStepsSection.tsx`)
-- La línea vertical del timeline se anima con un `background-size` gradient que crece de arriba a abajo al entrar en viewport (via framer-motion).
-- Los nodos del timeline tienen un ring animado tipo "ping" sutil.
+**`src/pages/Index.tsx`** -- Envolver cada sección en un componente `motion.div` con:
+- `initial={{ opacity: 0, y: 60 }}` 
+- `whileInView={{ opacity: 1, y: 0 }}`
+- `viewport={{ once: true, margin: "-100px" }}`
+- `transition={{ duration: 0.7, ease: "easeOut" }}`
+- Cada sección con un `delay` incremental sutil para que se sientan secuenciales
 
-**5. Footer tech touch** (`Index.tsx`)
-- Añadir la misma línea gradiente verde (como la del hero) arriba del footer.
+Además, añadir un separador visual sutil entre secciones (una línea gradiente fina o un espacio con transición de fondo) para reforzar el efecto de "láminas apiladas".
 
-**6. Nuevos keyframes globales** (`src/index.css`)
-- `dot-grid-scroll`: animación lenta del grid punteado.
-- `glow-pulse`: pulsación sutil de sombra verde para el título.
-- `ping-slow`: ping más lento para nodos del timeline.
-
-### Archivos a modificar
+**`src/components/discovery/FindingsSection.tsx`**, **`QuickWinsSection.tsx`**, **`NextStepsSection.tsx`**, **`TrustedBySection.tsx`** -- Añadir `overflow-hidden` a cada `<section>` para que el contenido no se desborde durante la animación de entrada.
 
 | Archivo | Cambio |
 |---|---|
-| `src/index.css` | Añadir keyframes: `dot-grid-scroll`, `glow-pulse`, `ping-slow` |
-| `src/components/discovery/DiscoveryHeader.tsx` | Overlay de grid punteado animado + glow en título |
-| `src/components/discovery/FindingsSection.tsx` | Línea conectora punteada + hover glow |
-| `src/components/discovery/QuickWinsSection.tsx` | Flecha pulsante + hover translate |
-| `src/components/discovery/NextStepsSection.tsx` | Línea de timeline animada + ping en nodos |
-| `src/pages/Index.tsx` | Línea gradiente sobre footer |
-
-Todo con CSS puro y framer-motion (ya instalado). Sin librerías adicionales.
+| `src/pages/Index.tsx` | Envolver secciones en `motion.div` con animación slide-up + separadores entre láminas |
+| `FindingsSection.tsx` | Añadir `overflow-hidden` al `<section>` |
+| `QuickWinsSection.tsx` | Añadir `overflow-hidden` al `<section>` |
+| `NextStepsSection.tsx` | Añadir `overflow-hidden` al `<section>` |
+| `TrustedBySection.tsx` | Añadir `overflow-hidden` al `<section>` |
 
