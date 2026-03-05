@@ -1,56 +1,43 @@
 
 
-## Plan: Mejorar diseño del One-Pager + Video hero + Logos de clientes
+## Design Improvements for the Discovery One-Pager
 
-### Mejoras de diseño
+After reviewing the full codebase and current preview, here are targeted design upgrades to elevate the template:
 
-**Header (DiscoveryHeader.tsx)**
-- Hacer el hero mas impactante: fondo con gradiente sutil (blanco a gris claro) con un patrón geométrico sutil o un efecto de puntos/grid usando CSS
-- Agregar un campo `heroVideoUrl` opcional en `discoveryData.ts` -- si existe, se muestra un video embebido (iframe de YouTube/Vimeo o `<video>`) centrado debajo del título, con aspect ratio 16:9 y bordes redondeados con sombra
-- Mejorar la jerarquía tipográfica: título del cliente mas grande, badge con mejor contraste
+### 1. Dark hero section
+The header with the video currently uses the light theme. Wrapping it in the existing `section-dark` utility would make the video pop, the wordmark glow, and the gradient overlay feel more cinematic. The client name and subtitle would render in white against the dark video.
 
-**FindingsSection.tsx**
-- Agregar un número/índice a cada card (01, 02, 03...) para dar sensación de orden y priorización
-- Hover con borde verde sutil animado
-- Iconos con fondo mas prominente
+### 2. Subtle accent line under the header
+Add a thin gradient line (green → transparent) at the bottom of the hero to visually separate it from the findings section — a small detail that adds polish.
 
-**QuickWinsSection.tsx**
-- Cambiar la flecha por una transición visual mas elegante (linea con gradiente verde)
-- Agregar un check mark o indicador de "resuelto" en el lado "Con Uvicuo"
+### 3. Finding cards — hover micro-interaction
+Currently the cards lift with shadow on hover. Adding a subtle green top-border animation on hover (from 0 to 3px) would make the interaction feel more intentional.
 
-**NextStepsSection.tsx**
-- Mejorar con un card contenedor con borde verde sutil, separandolo visualmente del resto
+### 4. Quick Wins — arrow indicator between Before/After
+Replace the plain gradient divider with a small animated chevron-right icon (on desktop) to reinforce the "transformation" metaphor visually.
 
-**Nueva seccion: TrustedBySection.tsx**
-- Fila de logos de empresas que confian en Uvicuo, en escala de grises con hover a color
-- Datos en `discoveryData.ts`: array de `trustedClients` con `name` y `logoUrl`
-- Texto introductorio: "Empresas que ya confian en nosotros"
-- Se ubica entre NextSteps y el footer
+### 5. Next Steps CTA — add a button
+The "Siguientes Pasos" section has contact info but no clear call-to-action. Adding a primary button like "Agendar sesión" that opens a `mailto:` or a Calendly link would improve conversion.
 
-### Cambios en datos (discoveryData.ts)
+### 6. Footer — more breathing room and a subtle divider
+The footer feels tight. Adding more vertical padding and a faint green accent dot next to the copyright would tie it back to the brand.
 
-```typescript
-// Agregar:
-heroVideoUrl: "[URL_VIDEO_OPCIONAL]", // en discoveryConfig
+### 7. Remove `App.css` dead styles
+The `App.css` file has leftover Vite boilerplate (logo spin, `.card`, `.read-the-docs`) that isn't used. Cleaning it up keeps things tidy.
 
-trustedClients: [
-  { name: "Empresa 1", logoUrl: "/logos/client-1.png" },
-  { name: "Empresa 2", logoUrl: "/logos/client-2.png" },
-  // ...placeholder logos
-]
-```
+---
 
-### Archivos a modificar/crear
+### Files to modify
 
-| Accion | Archivo |
-|--------|---------|
-| Mejorar | `src/components/discovery/DiscoveryHeader.tsx` -- gradiente, video embed |
-| Mejorar | `src/components/discovery/FindingsSection.tsx` -- numeros, hover mejorado |
-| Mejorar | `src/components/discovery/QuickWinsSection.tsx` -- transicion visual |
-| Mejorar | `src/components/discovery/NextStepsSection.tsx` -- card contenedor |
-| Crear | `src/components/discovery/TrustedBySection.tsx` -- logos de clientes |
-| Editar | `src/data/discoveryData.ts` -- heroVideoUrl + trustedClients |
-| Editar | `src/pages/Index.tsx` -- agregar TrustedBySection |
+| File | Changes |
+|---|---|
+| `src/components/discovery/DiscoveryHeader.tsx` | Add `section-dark` class, accent line div |
+| `src/components/discovery/FindingsSection.tsx` | Add hover top-border animation to cards |
+| `src/components/discovery/QuickWinsSection.tsx` | Add chevron icon between before/after |
+| `src/components/discovery/NextStepsSection.tsx` | Add CTA button |
+| `src/pages/Index.tsx` | Increase footer padding, add accent dot |
+| `src/App.css` | Remove unused boilerplate styles |
+| `src/index.css` | Add small keyframe for border animation if needed |
 
-Sin cambios de base de datos.
+All changes are CSS/layout only — no data or structural changes required.
 
