@@ -6,6 +6,7 @@ export const discoveryConfig = {
   presenterName: "Javier Fernández",
   presenterRole: "Account Executive",
   presenterEmail: "javier@uvicuo.com",
+  heroVideoUrl: "", // YouTube/Vimeo URL or empty to hide
 };
 
 export const findings = [
@@ -62,3 +63,12 @@ export const nextSteps = {
   contactEmail: "javier@uvicuo.com",
   contactPhone: "+52 55 1234 5678",
 };
+
+export const trustedClients = [
+  { name: "Empresa 1", logoUrl: "/logos/client-1.png" },
+  { name: "Empresa 2", logoUrl: "/logos/client-2.png" },
+  { name: "Empresa 3", logoUrl: "/logos/client-3.png" },
+  { name: "Empresa 4", logoUrl: "/logos/client-4.png" },
+  { name: "Empresa 5", logoUrl: "/logos/client-5.png" },
+  { name: "Empresa 6", logoUrl: "/logos/client-6.png" },
+];

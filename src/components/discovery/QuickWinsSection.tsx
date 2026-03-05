@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { quickWins } from "@/data/discoveryData";
 
@@ -26,21 +26,32 @@ const QuickWinsSection = () => {
               <motion.div
                 key={i}
                 variants={itemVariants}
-                className="flex flex-col gap-3 rounded-xl border border-border bg-card p-5 sm:flex-row sm:items-center"
+                className="flex flex-col gap-0 rounded-xl border border-border bg-card overflow-hidden sm:flex-row sm:items-stretch"
               >
-                <div className="flex-1 rounded-lg bg-destructive/5 px-4 py-3">
-                  <span className="text-xs font-medium uppercase tracking-wider text-destructive/70">
+                {/* Before */}
+                <div className="flex-1 px-5 py-4 bg-destructive/[0.03]">
+                  <span className="text-xs font-medium uppercase tracking-wider text-destructive/60">
                     Antes
                   </span>
                   <p className="mt-1 text-sm text-foreground">{win.before}</p>
                 </div>
 
-                <ArrowRight className="mx-auto h-5 w-5 shrink-0 text-primary sm:mx-0" />
+                {/* Gradient divider */}
+                <div className="hidden sm:flex items-center px-0">
+                  <div className="h-full w-[3px] bg-gradient-to-b from-destructive/20 via-primary/40 to-primary/60" />
+                </div>
+                <div className="flex sm:hidden justify-center py-0">
+                  <div className="w-full h-[2px] bg-gradient-to-r from-destructive/20 via-primary/40 to-primary/60" />
+                </div>
 
-                <div className="flex-1 rounded-lg bg-primary/5 px-4 py-3">
-                  <span className="text-xs font-medium uppercase tracking-wider text-primary">
-                    Con Uvicuo
-                  </span>
+                {/* After */}
+                <div className="flex-1 px-5 py-4 bg-primary/[0.03]">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs font-medium uppercase tracking-wider text-primary">
+                      Con Uvicuo
+                    </span>
+                    <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
+                  </div>
                   <p className="mt-1 text-sm text-foreground">{win.after}</p>
                 </div>
               </motion.div>

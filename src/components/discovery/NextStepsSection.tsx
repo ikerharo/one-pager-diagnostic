@@ -15,33 +15,29 @@ const NextStepsSection = () => {
             Siguientes <span className="text-primary">Pasos</span>
           </motion.h2>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-4 text-muted-foreground leading-relaxed"
-          >
-            {nextSteps.description}
-          </motion.p>
-
           <motion.div
             variants={itemVariants}
-            className="mt-6 flex flex-col gap-2 text-sm text-muted-foreground"
+            className="mt-6 rounded-xl border border-primary/20 bg-card p-6 md:p-8 shadow-sm"
           >
-            <div className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-primary" />
-              <span>{nextSteps.contactEmail}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-primary" />
-              <span>{nextSteps.contactPhone}</span>
-            </div>
-          </motion.div>
+            <p className="text-muted-foreground leading-relaxed">
+              {nextSteps.description}
+            </p>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-4 text-xs text-muted-foreground/60"
-          >
-            {discoveryConfig.presenterName} · {discoveryConfig.presenterRole}
-          </motion.p>
+            <div className="mt-5 flex flex-col gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-primary" />
+                <span>{nextSteps.contactEmail}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-primary" />
+                <span>{nextSteps.contactPhone}</span>
+              </div>
+            </div>
+
+            <p className="mt-4 text-xs text-muted-foreground/60">
+              {discoveryConfig.presenterName} · {discoveryConfig.presenterRole}
+            </p>
+          </motion.div>
         </AnimatedSection>
       </div>
     </section>

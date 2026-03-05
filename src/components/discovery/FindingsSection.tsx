@@ -27,9 +27,14 @@ const FindingsSection = () => {
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="group rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-md hover:shadow-primary/5"
+                  className="group relative rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5"
                 >
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  {/* Index number */}
+                  <span className="absolute top-4 right-4 text-xs font-bold text-muted-foreground/30 font-mono">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/10">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="font-semibold text-sm text-foreground">{finding.title}</h3>
