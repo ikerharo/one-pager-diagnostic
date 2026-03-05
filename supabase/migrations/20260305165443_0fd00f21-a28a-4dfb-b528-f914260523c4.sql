@@ -1,0 +1,1 @@
+CREATE POLICY "Block all inserts" ON public.proposals FOR INSERT TO public WITH CHECK (false);
