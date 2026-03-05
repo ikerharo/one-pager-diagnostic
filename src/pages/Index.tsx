@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import FindingsSection from "@/components/discovery/FindingsSection";
 import QuickWinsSection from "@/components/discovery/QuickWinsSection";
+import SolutionSection from "@/components/discovery/SolutionSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
 
@@ -27,9 +28,13 @@ const Index = () => {
         <QuickWinsSection />
       </motion.div>
 
+      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.15 }}>
+        <SolutionSection />
+      </motion.div>
+
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.15 }}>
+      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.2 }}>
         <NextStepsSection />
       </motion.div>
 

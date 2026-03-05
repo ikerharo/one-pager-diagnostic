@@ -139,6 +139,31 @@ export const nextSteps = {
     "Como siguiente paso, sugerimos agendar una sesión de deep-dive técnico de 60 minutos donde revisaremos en detalle el flujo actual de gastos, la integración con su ERP y un plan de implementación personalizado.",
 };
 
+export const solutionPillars = [
+  {
+    icon: "RefreshCw" as const,
+    title: "Automatización",
+    description: "Conciliación, matching de facturas y cierre contable sin intervención manual.",
+  },
+  {
+    icon: "BarChart3" as const,
+    title: "Visibilidad",
+    description: "Dashboard en tiempo real con alertas de desvío y reportes bajo demanda.",
+  },
+  {
+    icon: "ShieldCheck" as const,
+    title: "Control",
+    description: "Políticas de gasto, aprobaciones previas y límites dinámicos por usuario.",
+  },
+  {
+    icon: "Plug" as const,
+    title: "Integración",
+    description: "Conexión nativa con tu ERP, bancos y sistemas de facturación existentes.",
+  },
+];
+
+export const ctaUrl = "https://uvicuo.com";
+
 export const trustedClients = [
   { name: "Paquetexpress", logoUrl: "/logos/paquetexpress.png" },
   { name: "99 Minutos", logoUrl: "/logos/99minutos.png" },
