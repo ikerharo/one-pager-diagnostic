@@ -1,0 +1,141 @@
+{
+  "config": {
+    "clientName": "Empresa Demo",
+    "meetingDate": "Marzo 2026",
+    "subtitle": "Resumen de hallazgos y plan de accion tras la reunion exploratoria",
+    "websiteUrl": "https://uvicuo.com"
+  },
+  "contact": {
+    "name": "Iker Haro Escandon",
+    "role": "CEO Fundador",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Agendar sesion",
+    "ctaSubject": "Agendar revision de hallazgos"
+  },
+  "findings": [
+    {
+      "icon": "AlertTriangle",
+      "title": "Hallazgo principal de alto impacto",
+      "description": "Descripcion del problema principal detectado durante el discovery. Este hallazgo tiene impacto directo en la operacion diaria.",
+      "impact": "alto",
+      "quote": "Esto es algo que nos quita el sueno todos los dias.",
+      "quoteAuthor": "Director de Operaciones"
+    },
+    {
+      "icon": "DollarSign",
+      "title": "Segundo hallazgo relevante",
+      "description": "Otro problema detectado que genera costos ocultos o ineficiencias operativas significativas.",
+      "impact": "alto",
+      "quote": null,
+      "quoteAuthor": null
+    },
+    {
+      "icon": "Clock",
+      "title": "Proceso manual que consume tiempo",
+      "description": "Un proceso que actualmente se hace de forma manual y que podria automatizarse para liberar recursos.",
+      "impact": "alto",
+      "quote": "Nos toma 3 dias hacer algo que deberia tomar horas.",
+      "quoteAuthor": "Equipo operativo"
+    },
+    {
+      "icon": "Receipt",
+      "title": "Hallazgo de impacto medio",
+      "description": "Un area de oportunidad que no es critica pero que suma al caso de negocio general.",
+      "impact": "medio",
+      "quote": null,
+      "quoteAuthor": null
+    },
+    {
+      "icon": "Zap",
+      "title": "Oportunidad de mejora adicional",
+      "description": "Un punto detectado que complementa los hallazgos principales y refuerza la propuesta de valor.",
+      "impact": "medio",
+      "quote": null,
+      "quoteAuthor": null
+    }
+  ],
+  "quickWins": [
+    {
+      "before": "Proceso manual que toma dias",
+      "after": "Automatizado en minutos con la plataforma"
+    },
+    {
+      "before": "Sin visibilidad hasta fin de mes",
+      "after": "Dashboard en tiempo real con alertas"
+    },
+    {
+      "before": "Errores frecuentes en captura de datos",
+      "after": "Validacion automatica con IA"
+    }
+  ],
+  "exclusionNote": null,
+  "uvicuoPositioning": {
+    "headline": "Plataforma de control de gastos operativos",
+    "description": "Uvicuo digitaliza y automatiza el control de gastos operativos, dando visibilidad en tiempo real y eliminando procesos manuales.",
+    "capabilities": [
+      {
+        "title": "Capability 1",
+        "description": "Descripcion de la primera capacidad relevante para este prospecto."
+      },
+      {
+        "title": "Capability 2",
+        "description": "Descripcion de la segunda capacidad relevante para este prospecto."
+      },
+      {
+        "title": "Capability 3",
+        "description": "Descripcion de la tercera capacidad relevante para este prospecto."
+      }
+    ]
+  },
+  "pastInteractions": [
+    {
+      "date": "15 Ene 2026",
+      "title": "Discovery call inicial",
+      "participants": ["Iker Haro (Uvicuo)", "Dir. Finanzas (Cliente)"],
+      "topics": ["Panorama general de gastos", "Pain points actuales", "Objetivos a corto plazo"],
+      "owner": "both"
+    },
+    {
+      "date": "22 Ene 2026",
+      "title": "Revision de procesos actuales",
+      "participants": ["Equipo Uvicuo", "Controller financiero", "Equipo contable"],
+      "topics": ["Flujo de conciliacion", "Integraciones con ERP", "Volumen de transacciones"],
+      "owner": "both"
+    }
+  ],
+  "timeline": [
+    {
+      "week": "Paso 1",
+      "title": "Cliente entrega datos historicos",
+      "description": "Reporte de gastos de los ultimos 1-2 meses para analisis.",
+      "owner": "client"
+    },
+    {
+      "week": "Paso 2",
+      "title": "Analisis costo-beneficio",
+      "description": "Uvicuo prepara analisis con numeros reales para cuantificar el impacto.",
+      "owner": "uvicuo"
+    },
+    {
+      "week": "Paso 3",
+      "title": "Reunion de revision",
+      "description": "Revisar hallazgos cuantificados y decidir siguiente paso.",
+      "owner": "both"
+    }
+  ],
+  "closingQuote": null,
+  "closingQuoteAuthor": null,
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.jpg" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" },
+    { "name": "SAC Transportes", "logoUrl": "/logos/sac-2.png" },
+    { "name": "Tractotermos del Sureste", "logoUrl": "/logos/tractotermos.png" },
+    { "name": "Dolphy Helados", "logoUrl": "/logos/dolphy.png" },
+    { "name": "Sanimex", "logoUrl": "/logos/sanimex.webp" },
+    { "name": "Fulem", "logoUrl": "/logos/fulem.png" },
+    { "name": "Maeda", "logoUrl": "/logos/maeda.png" }
+  ]
+}
