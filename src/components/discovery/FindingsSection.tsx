@@ -25,7 +25,7 @@ const FindingsSection = () => {
   const HeroIcon = hero.icon;
 
   return (
-    <section className="py-16 md:py-20 overflow-hidden">
+    <section className="py-16 md:py-20 overflow-hidden min-h-screen flex items-center bg-background">
       <div className="container mx-auto max-w-5xl px-6">
         <AnimatedSection>
           <motion.h2

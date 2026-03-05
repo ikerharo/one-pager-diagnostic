@@ -6,7 +6,7 @@ import heroVideo from "@/assets/hero-loop.mp4";
 
 const DiscoveryHeader = () => {
   return (
-    <section className="section-dark relative overflow-hidden">
+    <section className="section-dark relative overflow-hidden min-h-screen flex flex-col justify-center">
       {/* Full-bleed video background */}
       <div className="absolute inset-0">
         <video

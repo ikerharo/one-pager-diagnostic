@@ -8,21 +8,27 @@ const iconMap = { RefreshCw, BarChart3, ShieldCheck, Plug } as const;
 
 const SolutionSection = () => {
   return (
-    <section className="border-t border-border py-16 md:py-20">
+    <section className="border-t border-border py-16 md:py-20 min-h-screen flex items-center bg-background">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.span
             variants={itemVariants}
             className="text-xs font-bold uppercase tracking-wider text-primary"
           >
-            Nuestra solución
+            A partir de lo que encontramos
           </motion.span>
           <motion.h2
             variants={itemVariants}
             className="mt-1 text-2xl font-bold tracking-tight md:text-3xl text-foreground"
           >
-            Cómo lo <span className="text-primary">resolvemos</span>
+            Lo que <span className="text-primary">proponemos</span>
           </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            className="mt-2 text-muted-foreground max-w-2xl"
+          >
+            Soluciones específicas derivadas de los hallazgos de nuestras sesiones de discovery.
+          </motion.p>
 
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
             {solutionPillars.map((pillar, i) => {

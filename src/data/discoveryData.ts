@@ -142,23 +142,23 @@ export const nextSteps = {
 export const solutionPillars = [
   {
     icon: "RefreshCw" as const,
-    title: "Automatización",
-    description: "Conciliación, matching de facturas y cierre contable sin intervención manual.",
+    title: "Conciliación automática",
+    description: "Eliminamos las 40+ horas mensuales de conciliación manual con matching inteligente de facturas y movimientos.",
   },
   {
     icon: "BarChart3" as const,
-    title: "Visibilidad",
-    description: "Dashboard en tiempo real con alertas de desvío y reportes bajo demanda.",
+    title: "Visibilidad inmediata",
+    description: "Dashboard consolidado para que tu equipo deje de esperar al cierre de mes para tomar decisiones.",
   },
   {
     icon: "ShieldCheck" as const,
-    title: "Control",
-    description: "Políticas de gasto, aprobaciones previas y límites dinámicos por usuario.",
+    title: "Prevención de fraude",
+    description: "Validación automática para detectar duplicados y gastos no autorizados antes de que ocurran.",
   },
   {
     icon: "Plug" as const,
-    title: "Integración",
-    description: "Conexión nativa con tu ERP, bancos y sistemas de facturación existentes.",
+    title: "Conexión con tu ERP",
+    description: "Integración directa con tu sistema actual para reducir los 5-7 días extra de cierre contable.",
   },
 ];
 

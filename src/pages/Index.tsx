@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import FindingsSection from "@/components/discovery/FindingsSection";
 import QuickWinsSection from "@/components/discovery/QuickWinsSection";
@@ -6,46 +5,34 @@ import SolutionSection from "@/components/discovery/SolutionSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
 
-const slideUp = {
-  initial: { opacity: 0, y: 60 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.7, ease: "easeOut" as const },
-};
-
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <DiscoveryHeader />
+      {/* Card-stack: each section is sticky and covers the previous one */}
+      <div className="sticky top-0 z-10">
+        <DiscoveryHeader />
+      </div>
 
-      <motion.div {...slideUp}>
+      <div className="sticky top-0 z-20">
         <FindingsSection />
-      </motion.div>
+      </div>
 
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
-      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.1 }}>
+      <div className="sticky top-0 z-30">
         <QuickWinsSection />
-      </motion.div>
+      </div>
 
-      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.15 }}>
+      <div className="sticky top-0 z-40">
         <SolutionSection />
-      </motion.div>
+      </div>
 
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
-      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.2 }}>
+      <div className="sticky top-0 z-50">
         <NextStepsSection />
-      </motion.div>
+      </div>
 
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      {/* Non-sticky closing sections */}
+      <TrustedBySection />
 
-      <motion.div {...slideUp} transition={{ ...slideUp.transition, delay: 0.2 }}>
-        <TrustedBySection />
-      </motion.div>
-
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
-      <footer className="border-t border-border py-10">
+      <footer className="border-t border-border py-10 bg-background">
         <div className="container mx-auto flex items-center justify-center gap-3 px-6">
           <img src="/uvicuo-icon.png" alt="Uvicuo" className="h-5 opacity-60" />
           <span className="inline-block h-1 w-1 rounded-full bg-primary/50" />
