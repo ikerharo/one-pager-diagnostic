@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, ArrowRight, ArrowDown } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
-import { quickWins } from "@/data/discoveryData";
+import { quickWins, exclusionNote } from "@/data/discoveryData";
 
 const QuickWinsSection = () => {
   return (
@@ -75,6 +75,15 @@ const QuickWinsSection = () => {
               </motion.div>
             ))}
           </div>
+
+          {exclusionNote && (
+            <motion.p
+              variants={itemVariants}
+              className="mt-6 text-xs text-muted-foreground/70 italic max-w-2xl"
+            >
+              {exclusionNote}
+            </motion.p>
+          )}
         </AnimatedSection>
       </div>
     </section>

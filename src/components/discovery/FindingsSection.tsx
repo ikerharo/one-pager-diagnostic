@@ -55,6 +55,12 @@ const FindingsSection = () => {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {hero.description}
                 </p>
+                {hero.quote && (
+                  <blockquote className="mt-3 border-l-2 border-primary/30 pl-3 text-sm italic text-muted-foreground/80">
+                    "{hero.quote}"
+                    {hero.quoteAuthor && <span className="block mt-1 text-xs not-italic text-muted-foreground/60">— {hero.quoteAuthor}</span>}
+                  </blockquote>
+                )}
               </div>
               <span className="text-4xl font-black font-mono text-muted-foreground/10 shrink-0 leading-none">
                 01
@@ -89,6 +95,12 @@ const FindingsSection = () => {
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                         {finding.description}
                       </p>
+                      {finding.quote && (
+                        <blockquote className="mt-2 border-l-2 border-primary/30 pl-3 text-xs italic text-muted-foreground/80">
+                          "{finding.quote}"
+                          {finding.quoteAuthor && <span className="block mt-0.5 not-italic text-muted-foreground/60">— {finding.quoteAuthor}</span>}
+                        </blockquote>
+                      )}
                     </div>
                     <span className="text-3xl font-black font-mono text-muted-foreground/10 shrink-0 leading-none">
                       {String(i + 2).padStart(2, "0")}

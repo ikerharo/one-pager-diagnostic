@@ -1,0 +1,151 @@
+{
+  "config": {
+    "clientName": "Transportes Elola",
+    "meetingDate": "Marzo 2026",
+    "subtitle": "Control inteligente de efectivo y gastos en ruta",
+    "websiteUrl": "https://uvicuo.com"
+  },
+  "contact": {
+    "name": "Iker Haro Escandon",
+    "role": "CEO Fundador",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Agendar sesion",
+    "ctaSubject": "Agendar revision de hallazgos"
+  },
+  "findings": [
+    {
+      "icon": "AlertTriangle",
+      "title": "Anticipos a cuenta de nomina = riesgo fiscal y laboral",
+      "description": "El anticipo se deposita a la misma cuenta de nomina del operador. Ante el SAT y el IMSS, ese deposito acumula como percepcion. En caso de una demanda laboral, ese monto se pierde.",
+      "impact": "alto",
+      "quote": "Seria muy buena oportunidad de que su tarjeta de sueldo sea para su sueldo y la tarjeta de gastos sea de la empresa.",
+      "quoteAuthor": "Carlos Arellano"
+    },
+    {
+      "icon": "DollarSign",
+      "title": "El operador controla el destino del dinero",
+      "description": "Una vez que el anticipo llega a la cuenta del operador, no hay forma de asegurar que se use en lo operativo. Se desvia, se presta, y cuando hay una emergencia en ruta: no me muevo.",
+      "impact": "alto",
+      "quote": null,
+      "quoteAuthor": null
+    },
+    {
+      "icon": "Clock",
+      "title": "Liquidaciones a posteriori y manuales",
+      "description": "El operador regresa al patio, hace fila, entrega tickets fisicos. 2 personas para 270 operadores. El proceso es lento, propenso a errores, y retrasa la siguiente asignacion de ruta.",
+      "impact": "alto",
+      "quote": "El liquida en ruta, ya esta libre para otra ruta... porque hoy tambien me toma tiempo llegar con la companera, entregar, hacer cuentas.",
+      "quoteAuthor": "Equipo Elola"
+    },
+    {
+      "icon": "Receipt",
+      "title": "Comprobaciones sin validez fiscal",
+      "description": "Los gastos en efectivo no generan CFDI. Las notas de talacha no tienen factura. Aproximadamente 1 millon de pesos se deduce como gastos carreteros, pero lo que supera ese monto se pierde.",
+      "impact": "medio",
+      "quote": "No lo tenemos porque es efectivo.",
+      "quoteAuthor": "Memo"
+    },
+    {
+      "icon": "Zap",
+      "title": "Emergencias lentas de resolver",
+      "description": "Fuera de horario, los gerentes depositan desde sus cuentas personales. El proceso es lento: token, sistema bancario, transferencia. A veces el operador termina poniendo de su bolsa.",
+      "impact": "medio",
+      "quote": null,
+      "quoteAuthor": null
+    }
+  ],
+  "quickWins": [
+    {
+      "before": "Anticipos depositados a la cuenta de nomina del operador",
+      "after": "Tarjeta corporativa separada — el sueldo es sueldo, los gastos son de la empresa"
+    },
+    {
+      "before": "Liquidacion manual en patio con fila y tickets fisicos",
+      "after": "Comprobacion en ruta via WhatsApp — el operador se libera para la siguiente asignacion"
+    },
+    {
+      "before": "Notas sin factura ni CFDI que se pierden fiscalmente",
+      "after": "Validacion automatica con IA — foto del gasto, registro inmediato"
+    },
+    {
+      "before": "Emergencias resueltas con transferencias manuales fuera de horario",
+      "after": "Autorizacion rapida desde la app, sin depender de horarios de oficina"
+    }
+  ],
+  "exclusionNote": "No incluimos combustible ni casetas porque Elola ya tiene esos rubros bajo control con autoconsumo, Ultragas e IAVE/Amex. Nos enfocamos donde el impacto es real.",
+  "uvicuoPositioning": {
+    "headline": "Plataforma de control de efectivo y gastos operativos para flotas",
+    "description": "Uvicuo reemplaza el ciclo de anticipos, efectivo y liquidaciones manuales con una plataforma digital que le da a cada operador una tarjeta corporativa con reglas, y a la empresa visibilidad en tiempo real de cada peso gastado en ruta.",
+    "capabilities": [
+      {
+        "title": "Tarjetas corporativas por operador",
+        "description": "Cada operador recibe una tarjeta con limites y reglas por rubro. El dinero es de la empresa, no del operador."
+      },
+      {
+        "title": "Comprobacion en ruta via WhatsApp",
+        "description": "El operador manda foto del gasto desde ruta. IA valida, clasifica y registra sin esperar al patio."
+      },
+      {
+        "title": "Visibilidad en tiempo real",
+        "description": "Dashboard con el estatus de cada viaje, cada gasto y cada operador. Sin esperar a que regresen."
+      }
+    ]
+  },
+  "pastInteractions": [
+    {
+      "date": "17 Feb 2026",
+      "title": "Primera visita presencial",
+      "participants": ["Iker Haro (Uvicuo)", "Guillermo Calderon", "Karla Gonzalez", "Carlos Arellano", "Dulce Ruiz", "Paola Garcia"],
+      "topics": ["Tarjeta corporativa", "Control de combustible", "Peajes", "Integracion con SAM"],
+      "owner": "both"
+    },
+    {
+      "date": "19 Feb 2026",
+      "title": "Segunda visita — profundizacion en gastos en ruta",
+      "participants": ["Iker Haro (Uvicuo)", "Guillermo Calderon", "Carlos Arellano", "Equipo administrativo"],
+      "topics": ["Presupuestos y anticipos", "Tarjetas vs efectivo", "Validacion de comprobantes con IA", "Riesgo fiscal"],
+      "owner": "both"
+    }
+  ],
+  "timeline": [
+    {
+      "week": "Paso 1",
+      "title": "Elola entrega datos historicos",
+      "description": "Reporte de anticipos y gastos de 1-2 meses del sistema Lyz, movimientos y emergencias en ruta, y volumen de comisiones de cajero.",
+      "owner": "client"
+    },
+    {
+      "week": "Paso 2",
+      "title": "Analisis costo-beneficio",
+      "description": "Uvicuo prepara analisis con numeros reales de Elola para cuantificar el impacto.",
+      "owner": "uvicuo"
+    },
+    {
+      "week": "Paso 3",
+      "title": "Reunion de revision",
+      "description": "Revisar hallazgos cuantificados y decidir si avanzar. ~1 semana despues de recibir datos.",
+      "owner": "both"
+    },
+    {
+      "week": "Paso 4",
+      "title": "Decision informada",
+      "description": "Con datos concretos, decidir juntos el siguiente movimiento.",
+      "owner": "both"
+    }
+  ],
+  "closingQuote": null,
+  "closingQuoteAuthor": null,
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.jpg" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" },
+    { "name": "SAC Transportes", "logoUrl": "/logos/sac-2.png" },
+    { "name": "Tractotermos del Sureste", "logoUrl": "/logos/tractotermos.png" },
+    { "name": "Dolphy Helados", "logoUrl": "/logos/dolphy.png" },
+    { "name": "Sanimex", "logoUrl": "/logos/sanimex.webp" },
+    { "name": "Fulem", "logoUrl": "/logos/fulem.png" },
+    { "name": "Maeda", "logoUrl": "/logos/maeda.png" }
+  ]
+}

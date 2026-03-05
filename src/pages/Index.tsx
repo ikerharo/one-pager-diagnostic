@@ -1,7 +1,7 @@
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import FindingsSection from "@/components/discovery/FindingsSection";
 import QuickWinsSection from "@/components/discovery/QuickWinsSection";
-import SolutionSection from "@/components/discovery/SolutionSection";
+import UvicuoSection from "@/components/discovery/UvicuoSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
 import ScrollProgress from "@/components/discovery/ScrollProgress";
@@ -14,7 +14,7 @@ const Index = () => {
       <DiscoveryHeader />
       <FindingsSection />
       <QuickWinsSection />
-      <SolutionSection />
+      <UvicuoSection />
       <NextStepsSection />
 
       {/* Non-sticky closing sections */}

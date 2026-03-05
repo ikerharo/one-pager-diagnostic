@@ -74,7 +74,7 @@ const DiscoveryHeader = () => {
               className="mt-5 text-base md:text-lg max-w-xl mx-auto"
               style={{ color: "hsl(var(--uvicuo-dark-muted))" }}
             >
-              Resumen de hallazgos y plan de acción tras la reunión exploratoria
+              {discoveryConfig.subtitle}
             </motion.p>
           </AnimatedSection>
         </div>
