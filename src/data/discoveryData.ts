@@ -142,6 +142,9 @@ export const nextSteps = {
 export const trustedClients = [
   { name: "Paquetexpress", logoUrl: "/logos/paquetexpress.png" },
   { name: "99 Minutos", logoUrl: "/logos/99minutos.png" },
-  { name: "Bimbo", logoUrl: "/logos/bimbo.png" },
+  { name: "Bimbo", logoUrl: "/logos/bimbo.jpg" },
   { name: "Express Sinaloa 8W", logoUrl: "/logos/express8w.png" },
+  { name: "SAC Transportes", logoUrl: "/logos/sac.png" },
+  { name: "Tractotermos del Sureste", logoUrl: "/logos/tractotermos.png" },
+  { name: "Dolphy Helados", logoUrl: "/logos/dolphy.png" },
 ];
