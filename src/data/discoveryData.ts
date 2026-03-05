@@ -3,10 +3,14 @@ import { AlertTriangle, Eye, Calculator, Shield, Clock } from "lucide-react";
 export const discoveryConfig = {
   clientName: "[NOMBRE DEL CLIENTE]",
   meetingDate: "[FECHA DE REUNIÓN]",
-  presenterName: "Javier Fernández",
-  presenterRole: "Account Executive",
-  presenterEmail: "javier@uvicuo.com",
-  heroVideoUrl: "",
+  websiteUrl: "https://uvicuo.com",
+};
+
+export const contactInfo = {
+  name: "Iker Haro Escandón",
+  role: "CEO Fundador",
+  email: "iker@uvicuo.com",
+  phone: "+52 55 1700 1612",
 };
 
 export const findings = [
@@ -60,15 +64,11 @@ export const quickWins = [
 export const nextSteps = {
   description:
     "Como siguiente paso, sugerimos agendar una sesión de deep-dive técnico de 60 minutos donde revisaremos en detalle el flujo actual de gastos, la integración con su ERP y un plan de implementación personalizado.",
-  contactEmail: "javier@uvicuo.com",
-  contactPhone: "+52 55 1234 5678",
 };
 
 export const trustedClients = [
-  { name: "Empresa 1", logoUrl: "/logos/client-1.png" },
-  { name: "Empresa 2", logoUrl: "/logos/client-2.png" },
-  { name: "Empresa 3", logoUrl: "/logos/client-3.png" },
-  { name: "Empresa 4", logoUrl: "/logos/client-4.png" },
-  { name: "Empresa 5", logoUrl: "/logos/client-5.png" },
-  { name: "Empresa 6", logoUrl: "/logos/client-6.png" },
+  { name: "Paquetexpress", logoUrl: "/logos/paquetexpress.png" },
+  { name: "99 Minutos", logoUrl: "/logos/99minutos.png" },
+  { name: "Bimbo", logoUrl: "/logos/bimbo.png" },
+  { name: "Express Sinaloa 8W", logoUrl: "/logos/express8w.png" },
 ];

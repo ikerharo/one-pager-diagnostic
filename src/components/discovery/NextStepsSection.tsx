@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
-import { nextSteps, discoveryConfig } from "@/data/discoveryData";
+import { nextSteps, contactInfo } from "@/data/discoveryData";
 
 const NextStepsSection = () => {
   return (
@@ -26,16 +26,16 @@ const NextStepsSection = () => {
             <div className="mt-5 flex flex-col gap-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>{nextSteps.contactEmail}</span>
+                <span>{contactInfo.email}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>{nextSteps.contactPhone}</span>
+                <span>{contactInfo.phone}</span>
               </div>
             </div>
 
             <p className="mt-4 text-xs text-muted-foreground/60">
-              {discoveryConfig.presenterName} · {discoveryConfig.presenterRole}
+              {contactInfo.name} · {contactInfo.role}
             </p>
           </motion.div>
         </AnimatedSection>

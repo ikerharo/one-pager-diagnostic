@@ -18,7 +18,6 @@ const DiscoveryHeader = () => {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        {/* Gradient overlay to blend into content */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
       </div>
 
@@ -27,11 +26,13 @@ const DiscoveryHeader = () => {
         <div className="container mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection>
             <motion.div variants={itemVariants} className="mb-8">
-              <img
-                src="/uvicuo-wordmark.png"
-                alt="Uvicuo"
-                className="mx-auto h-8 opacity-70"
-              />
+              <a href={discoveryConfig.websiteUrl} target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/uvicuo-wordmark.png"
+                  alt="Uvicuo"
+                  className="mx-auto h-8 opacity-70 transition-opacity hover:opacity-100"
+                />
+              </a>
             </motion.div>
 
             <motion.div variants={itemVariants}>
@@ -53,17 +54,6 @@ const DiscoveryHeader = () => {
             >
               Hallazgos de reunión exploratoria · {discoveryConfig.meetingDate}
             </motion.p>
-
-            <motion.div
-              variants={itemVariants}
-              className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground"
-            >
-              <span>{discoveryConfig.presenterName}</span>
-              <span className="text-primary/40">·</span>
-              <span>{discoveryConfig.presenterRole}</span>
-              <span className="text-primary/40">·</span>
-              <span>{discoveryConfig.presenterEmail}</span>
-            </motion.div>
           </AnimatedSection>
         </div>
       </div>
