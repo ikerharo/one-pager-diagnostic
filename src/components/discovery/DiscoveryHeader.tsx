@@ -1,10 +1,22 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { Badge } from "@/components/ui/badge";
 import { discoveryConfig } from "@/data/discoveryData";
 import heroVideo from "@/assets/hero-loop.mp4";
+import { ChevronDown } from "lucide-react";
 
 const DiscoveryHeader = () => {
+  const [showHint, setShowHint] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 80) setShowHint(false);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section className="section-dark relative overflow-hidden min-h-screen flex flex-col justify-center">
       {/* Full-bleed video background */}
@@ -67,6 +79,24 @@ const DiscoveryHeader = () => {
           </AnimatedSection>
         </div>
       </div>
+
+      {/* Scroll hint */}
+      {showHint && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1"
+        >
+          <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Desliza</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown size={20} className="text-primary" />
+          </motion.div>
+        </motion.div>
+      )}
 
       {/* Accent gradient line */}
       <div className="relative z-10 h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
