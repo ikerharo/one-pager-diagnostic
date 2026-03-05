@@ -68,6 +68,38 @@ export const quickWins = [
 
 export type TimelineOwner = "uvicuo" | "client" | "both";
 
+export interface PastInteraction {
+  date: string;
+  title: string;
+  participants: string[];
+  topics: string[];
+  owner: TimelineOwner;
+}
+
+export const pastInteractions: PastInteraction[] = [
+  {
+    date: "15 Ene 2026",
+    title: "Discovery call inicial",
+    participants: ["Iker Haro (Uvicuo)", "Dir. Finanzas (Cliente)"],
+    topics: ["Panorama general de gastos", "Pain points actuales", "Objetivos a corto plazo"],
+    owner: "both",
+  },
+  {
+    date: "22 Ene 2026",
+    title: "Revisión de procesos actuales",
+    participants: ["Equipo Uvicuo", "Controller financiero", "Equipo contable"],
+    topics: ["Flujo de conciliación", "Integraciones con ERP", "Volumen de transacciones"],
+    owner: "both",
+  },
+  {
+    date: "29 Ene 2026",
+    title: "Demo de la plataforma",
+    participants: ["Iker Haro (Uvicuo)", "Dir. Finanzas", "CTO"],
+    topics: ["Dashboard en tiempo real", "Automatización de aprobaciones", "Reportería"],
+    owner: "uvicuo",
+  },
+];
+
 export interface TimelineStep {
   week: string;
   title: string;
