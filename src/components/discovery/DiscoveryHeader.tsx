@@ -6,60 +6,61 @@ import heroVideo from "@/assets/hero-loop.mp4";
 
 const DiscoveryHeader = () => {
   return (
-    <section className="section-dark relative overflow-hidden border-b border-border">
-      {/* Background loop video */}
-      <div className="relative h-48 md:h-64 w-full overflow-hidden">
+    <section className="section-dark relative overflow-hidden">
+      {/* Full-bleed video background */}
+      <div className="absolute inset-0">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--uvicuo-dark))]/30 via-[hsl(var(--uvicuo-dark))]/50 to-[hsl(var(--uvicuo-dark))]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--uvicuo-dark))]/60 via-[hsl(var(--uvicuo-dark))]/80 to-[hsl(var(--uvicuo-dark))]" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 -mt-12 pb-16 md:pb-20">
+      <div className="relative z-10 py-20 md:py-28">
         <div className="container mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection>
-            <motion.div variants={itemVariants} className="mb-8">
+            <motion.div variants={itemVariants} className="mb-6">
               <a href={discoveryConfig.websiteUrl} target="_blank" rel="noopener noreferrer">
                 <img
                   src="/uvicuo-wordmark.png"
                   alt="Uvicuo"
-                  className="mx-auto h-8 opacity-70 transition-opacity hover:opacity-100"
+                  className="mx-auto h-7 opacity-50 transition-opacity hover:opacity-90"
                 />
               </a>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Badge className="mb-5 bg-primary/15 text-primary border-primary/30 hover:bg-primary/20 font-medium px-3 py-1">
-                Discovery Summary
+              <Badge className="mb-6 bg-primary/15 text-primary border-primary/30 hover:bg-primary/20 font-medium px-3 py-1 text-xs">
+                Discovery Summary · {discoveryConfig.meetingDate}
               </Badge>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl font-bold tracking-tight md:text-6xl text-foreground"
+              className="text-5xl font-bold tracking-tight md:text-7xl text-white drop-shadow-lg"
             >
               {discoveryConfig.clientName}
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="mt-4 text-muted-foreground text-base md:text-lg"
+              className="mt-5 text-base md:text-lg max-w-xl mx-auto"
+              style={{ color: "hsl(var(--uvicuo-dark-muted))" }}
             >
-              Hallazgos de reunión exploratoria · {discoveryConfig.meetingDate}
+              Resumen de hallazgos y plan de acción tras la reunión exploratoria
             </motion.p>
           </AnimatedSection>
         </div>
       </div>
 
       {/* Accent gradient line */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
+      <div className="relative z-10 h-[2px] w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
     </section>
   );
 };

@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, CalendarCheck } from "lucide-react";
+import { Mail, Phone, CalendarCheck, Users, Building2, Handshake } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { Button } from "@/components/ui/button";
-import { nextSteps, contactInfo } from "@/data/discoveryData";
+import { timelineSteps, contactInfo, type TimelineOwner } from "@/data/discoveryData";
+
+const ownerConfig: Record<TimelineOwner, { label: string; icon: typeof Users; colorClass: string }> = {
+  uvicuo: { label: "Uvicuo", icon: Building2, colorClass: "bg-primary/15 text-primary border-primary/30" },
+  client: { label: "Tu equipo", icon: Users, colorClass: "bg-accent text-accent-foreground border-accent-foreground/20" },
+  both: { label: "Conjunto", icon: Handshake, colorClass: "bg-secondary text-secondary-foreground border-border" },
+};
 
 const NextStepsSection = () => {
   return (
     <section className="border-t border-border bg-muted/30 py-16 md:py-20">
-      <div className="container mx-auto max-w-3xl px-6">
+      <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.h2
             variants={itemVariants}
@@ -15,38 +21,81 @@ const NextStepsSection = () => {
           >
             Siguientes <span className="text-primary">Pasos</span>
           </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            className="mt-2 text-muted-foreground max-w-2xl"
+          >
+            Plan de acción con responsables y tiempos estimados.
+          </motion.p>
 
+          {/* Timeline */}
+          <div className="mt-10 relative">
+            {/* Vertical line */}
+            <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/40 via-primary/20 to-transparent hidden sm:block" />
+
+            <div className="space-y-4">
+              {timelineSteps.map((step, i) => {
+                const config = ownerConfig[step.owner];
+                const OwnerIcon = config.icon;
+                return (
+                  <motion.div
+                    key={i}
+                    variants={itemVariants}
+                    className="flex gap-4 sm:gap-6"
+                  >
+                    {/* Timeline dot */}
+                    <div className="hidden sm:flex flex-col items-center pt-1">
+                      <div className="h-[10px] w-[10px] rounded-full bg-primary ring-4 ring-primary/10 flex-shrink-0" />
+                    </div>
+
+                    {/* Card */}
+                    <div className="flex-1 rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:shadow-md hover:shadow-primary/5">
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <span className="text-xs font-bold text-primary font-mono uppercase tracking-wider">
+                          {step.week}
+                        </span>
+                        <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${config.colorClass}`}>
+                          <OwnerIcon className="h-3 w-3" />
+                          {config.label}
+                        </span>
+                      </div>
+                      <h3 className="font-semibold text-sm text-foreground">{step.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Contact CTA */}
           <motion.div
             variants={itemVariants}
-            className="mt-6 rounded-xl border border-primary/20 bg-card p-6 md:p-8 shadow-sm"
+            className="mt-10 rounded-xl border border-primary/20 bg-card p-6 md:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
           >
-            <p className="text-muted-foreground leading-relaxed">
-              {nextSteps.description}
-            </p>
-
-            <div className="mt-5 flex flex-col gap-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-primary" />
-                <span>{contactInfo.email}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary" />
-                <span>{contactInfo.phone}</span>
+            <div>
+              <p className="text-sm font-semibold text-foreground">{contactInfo.name}</p>
+              <p className="text-xs text-muted-foreground">{contactInfo.role}</p>
+              <div className="mt-3 flex flex-col gap-1.5 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Mail className="h-3.5 w-3.5 text-primary" />
+                  <span>{contactInfo.email}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="h-3.5 w-3.5 text-primary" />
+                  <span>{contactInfo.phone}</span>
+                </div>
               </div>
             </div>
 
-            <p className="mt-4 text-xs text-muted-foreground/60">
-              {contactInfo.name} · {contactInfo.role}
-            </p>
-
-            <div className="mt-6">
-              <Button asChild size="lg" className="gap-2">
-                <a href={`mailto:${contactInfo.email}?subject=Agendar sesión de deep-dive`}>
-                  <CalendarCheck className="h-4 w-4" />
-                  Agendar sesión
-                </a>
-              </Button>
-            </div>
+            <Button asChild size="lg" className="gap-2 shrink-0">
+              <a href={`mailto:${contactInfo.email}?subject=Agendar sesión de deep-dive`}>
+                <CalendarCheck className="h-4 w-4" />
+                Agendar sesión
+              </a>
+            </Button>
           </motion.div>
         </AnimatedSection>
       </div>
