@@ -1,65 +1,62 @@
 
 
-## Animation Enhancements — Techy & Elegant
+## Discovery One-Pager Template — Plan
 
-The current proposal has minimal animation: the Hero has SVG path-drawing and framer-motion fade-ins, but the remaining 5 sections (Problem, Solution, Impact, Proposal, Acceptance) are completely static. Adding scroll-triggered, staggered animations will make the presentation feel polished and high-tech without being distracting.
+### Context
 
-### What to Add
+The current project is a full commercial proposal with 6 steps (Hero → Problem → Solution → Impact → Proposal → Acceptance). The user wants a **separate, simpler template**: a one-pager summarizing findings from an initial discovery meeting. It should feel less formal, more Uvicuo-branded, and be reusable across clients.
 
-**1. Scroll-triggered stagger animations on all section content**
-- Each section header (badge, title, subtitle) fades up with a slight stagger (0 → 0.1s → 0.2s delay)
-- Cards/rows animate in with `fadeInUp` + stagger per item (0.08s offset per card)
-- Uses framer-motion `whileInView` with `viewport={{ once: true }}` so animations fire once on scroll
+### Proposed Structure for the Discovery One-Pager
 
-**2. Problem Section — Glitch/scan-line effect on icon hover**
-- Cards get a subtle `scale(1.02)` + green border glow on hover via framer-motion `whileHover`
-- Stat numbers use a counting/typewriter-style reveal when they scroll into view
-- A faint animated horizontal scan line sweeps across the card grid background (pure CSS, very subtle)
+A single scrollable page (no step navigation) with these sections:
 
-**3. Solution Section — Row-by-row "data stream" reveal**
-- Each before/after row slides in from left/right respectively with stagger
-- The arrow icon pulses once on entry
-- The static SVG dot pattern gets a slow drift animation (CSS `translateY` loop)
+1. **Header** — Uvicuo logo + client name + meeting date + "Discovery Summary" badge. Dark section matching brand.
 
-**4. Impact Section — Animated counters + chart entrance**
-- The 3 big metric values (Ahorro, Payback, ROI) use a number-counting animation on scroll entry
-- Donut chart segments animate in sequentially (recharts supports `isAnimationActive` — already built-in, just needs `animationBegin` stagger)
-- Savings rows fade in with stagger from bottom
-- The dark panel's circuit SVG lines get a slow path-drawing animation similar to the Hero
+2. **Key Findings** (3-5 cards) — Each card has an icon, a short title, and 1-2 sentence description of the problem/concern discovered. Grid layout, animated on scroll.
 
-**5. Proposal Section — Timeline node pulse + connector draw**
-- The horizontal connector line animates its width from 0 to full (like a loading bar)
-- Each phase card pops in sequentially with `scale(0.9) → 1` + `opacity(0 → 1)`
-- Phase number circles get a subtle pulse ring animation on entry
+3. **Priority Concerns** — A ranked list (numbered) of the top concerns with severity indicators (High/Medium/Low tags). Simple, scannable.
 
-**6. Acceptance Section — Form field focus glow**
-- Section content fades in on scroll
-- Interactive glow ring on input focus (green tint)
-- Submit button gets a subtle shimmer/gradient sweep animation on hover
+4. **Quick Win Opportunities** — 2-3 bullet points showing immediate improvements Uvicuo can deliver, with a brief "before → after" framing.
 
-**7. Global: Floating particle layer (optional, very subtle)**
-- A reusable `<FloatingParticles />` component renders 5-8 tiny green dots that float slowly across sections using CSS keyframes
-- Extremely low opacity (0.04-0.08), adds depth without distraction
+5. **Client Reference** — A compact testimonial/case study card from an existing Uvicuo client (logo, company name, one-line quote, key metric like "40% reduction in reconciliation time").
 
-### Files to Create/Edit
+6. **Next Steps** — A simple CTA section: "Schedule a deep-dive" or similar, with contact info.
 
-| File | Action |
-|------|--------|
-| `src/components/proposal/AnimatedSection.tsx` | **Create** — Reusable wrapper with `whileInView` stagger logic |
-| `src/components/proposal/AnimatedCounter.tsx` | **Create** — Number counting animation component |
-| `src/components/proposal/FloatingParticles.tsx` | **Create** — Subtle background particle layer |
-| `src/components/proposal/ProblemSection.tsx` | **Edit** — Add stagger, hover glow, scroll reveal |
-| `src/components/proposal/SolutionSection.tsx` | **Edit** — Row slide-in, SVG drift, arrow pulse |
-| `src/components/proposal/ImpactSection.tsx` | **Edit** — Counter animation, circuit path draw, chart stagger |
-| `src/components/proposal/ProposalSection.tsx` | **Edit** — Timeline connector draw, card pop-in sequence |
-| `src/components/proposal/AcceptanceSection.tsx` | **Edit** — Scroll fade-in, button shimmer |
-| `src/index.css` | **Edit** — Add scan-line, shimmer, particle keyframes |
+### Implementation Plan
 
-### Technical Notes
+1. **New route `/discovery`** — Add to App.tsx
+2. **New page `src/pages/DiscoveryPage.tsx`** — Single scrollable page, uses existing Uvicuo brand tokens (dark header, green accents, Space Grotesk headings, Inter body)
+3. **New components under `src/components/discovery/`**:
+   - `DiscoveryHeader.tsx` — Dark hero-like header, simpler than current HeroSection
+   - `FindingsSection.tsx` — Card grid with placeholder findings
+   - `ConcernsSection.tsx` — Ranked concern list
+   - `QuickWinsSection.tsx` — Before/after bullets
+   - `ClientReference.tsx` — Testimonial card
+   - `NextStepsSection.tsx` — CTA with contact info
+4. **Placeholder data** in a `src/data/discoveryData.ts` file — All text uses `[PLACEHOLDER]` patterns so it's easy to customize per client
 
-- All animations use `framer-motion` (already installed) with `whileInView` and `viewport={{ once: true, margin: "-50px" }}` to trigger slightly before entering the viewport
-- No new dependencies needed
-- Counter animation uses `useEffect` + `requestAnimationFrame` for smooth number interpolation
-- All animations are performant (transform/opacity only, no layout triggers)
-- Reduced motion is respected via framer-motion's built-in `useReducedMotion`
+### Design Approach
+
+- Reuse existing CSS utilities (`section-dark`, `text-gradient-green`, `glow-green`)
+- Reuse `AnimatedSection` and `itemVariants` for scroll animations
+- No step-by-step wizard — just a clean vertical scroll
+- More casual tone than the formal proposal
+- Compact: designed to fit on a single screen or very short scroll
+- No Navbar wizard controls, just a simple top bar with logo
+
+### Files to Create/Modify
+
+| Action | File |
+|--------|------|
+| Create | `src/data/discoveryData.ts` |
+| Create | `src/pages/DiscoveryPage.tsx` |
+| Create | `src/components/discovery/DiscoveryHeader.tsx` |
+| Create | `src/components/discovery/FindingsSection.tsx` |
+| Create | `src/components/discovery/ConcernsSection.tsx` |
+| Create | `src/components/discovery/QuickWinsSection.tsx` |
+| Create | `src/components/discovery/ClientReference.tsx` |
+| Create | `src/components/discovery/NextStepsSection.tsx` |
+| Edit | `src/App.tsx` — Add `/discovery` route |
+
+No database changes needed.
 
