@@ -10,9 +10,9 @@ const QuickWinsSection = () => {
         <AnimatedSection>
           <motion.h2
             variants={itemVariants}
-            className="text-2xl font-bold tracking-tight md:text-3xl"
+            className="text-2xl font-bold tracking-tight md:text-3xl text-foreground"
           >
-            Quick Wins con <span className="text-gradient-green">Uvicuo</span>
+            Quick Wins con <span className="text-primary">Uvicuo</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -37,7 +37,7 @@ const QuickWinsSection = () => {
 
                 <ArrowRight className="mx-auto h-5 w-5 shrink-0 text-primary sm:mx-0" />
 
-                <div className="flex-1 rounded-lg bg-accent px-4 py-3">
+                <div className="flex-1 rounded-lg bg-primary/5 px-4 py-3">
                   <span className="text-xs font-medium uppercase tracking-wider text-primary">
                     Con Uvicuo
                   </span>

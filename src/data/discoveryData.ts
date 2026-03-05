@@ -41,42 +41,6 @@ export const findings = [
   },
 ];
 
-export type Severity = "Alta" | "Media" | "Baja";
-
-export interface Concern {
-  title: string;
-  severity: Severity;
-  detail: string;
-}
-
-export const concerns: Concern[] = [
-  {
-    title: "Visibilidad del gasto en tiempo real",
-    severity: "Alta",
-    detail: "Decisiones de negocio se toman sin datos actualizados de gasto.",
-  },
-  {
-    title: "Conciliación manual excesiva",
-    severity: "Alta",
-    detail: "Alto costo operativo y riesgo de errores humanos.",
-  },
-  {
-    title: "Ausencia de controles preventivos",
-    severity: "Media",
-    detail: "Solo se detectan desvíos después de que ocurren.",
-  },
-  {
-    title: "Tiempos de cierre contable",
-    severity: "Media",
-    detail: "Impacto en reportes financieros y cumplimiento.",
-  },
-  {
-    title: "Gestión de comprobantes físicos",
-    severity: "Baja",
-    detail: "Riesgo de extravío y dificultad para auditorías.",
-  },
-];
-
 export const quickWins = [
   {
     before: "Conciliación manual de 40+ horas/mes",
@@ -92,21 +56,9 @@ export const quickWins = [
   },
 ];
 
-export const clientReference = {
-  companyName: "[EMPRESA REFERENCIA]",
-  industry: "Retail / Servicios Financieros",
-  quote:
-    "\"Con Uvicuo redujimos el tiempo de conciliación de 5 días a 4 horas y ganamos visibilidad total sobre el gasto corporativo.\"",
-  contactName: "[NOMBRE CONTACTO]",
-  contactRole: "CFO",
-  metric: "40%",
-  metricLabel: "reducción en tiempo de conciliación",
-};
-
 export const nextSteps = {
-  cta: "Agendar deep-dive técnico",
   description:
-    "En una sesión de 60 minutos revisaremos en detalle tu flujo actual, integración con tu ERP y un plan de implementación personalizado.",
+    "Como siguiente paso, sugerimos agendar una sesión de deep-dive técnico de 60 minutos donde revisaremos en detalle el flujo actual de gastos, la integración con su ERP y un plan de implementación personalizado.",
   contactEmail: "javier@uvicuo.com",
   contactPhone: "+52 55 1234 5678",
 };
