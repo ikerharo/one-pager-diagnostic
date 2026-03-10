@@ -2,7 +2,7 @@
   "config": {
     "clientName": "Nadro",
     "meetingDate": "Febrero 2026",
-    "subtitle": "Control inteligente de gastos operativos de flota",
+    "subtitle": "Diagnóstico de oportunidades en gestión de gastos de flota",
     "websiteUrl": "https://uvicuo.com"
   },
   "contact": {
@@ -45,6 +45,14 @@
       "impact": "medio",
       "quote": "Tengo que andar subiendo una por una, es algo muy engorroso. Te lleva hora y media haciendo una comprobación.",
       "quoteAuthor": "Carlos Jiménez"
+    },
+    {
+      "icon": "Camera",
+      "title": "Fotos de inspección sin validación ni trazabilidad",
+      "description": "Hoy los operadores toman fotos de inspección (odómetro, daños, mantenimiento) pero no hay validación de que la foto corresponda a lo que debería. Una foto del asiento dañado no se asocia automáticamente a la unidad. Una foto de una botella de agua pasa como si fuera el odómetro. Con 1,300+ unidades y múltiples inspecciones diarias, la calidad del dato depende 100% de la disciplina individual.",
+      "impact": "medio",
+      "quote": "Le tomaste la foto a la botellita de agua, pasa el sistema. Me tomé la foto al asiento, está dañado, pero no sé qué unidad es la foto del asiento.",
+      "quoteAuthor": "Joaquín Oviedo"
     },
     {
       "icon": "Wallet",
@@ -92,6 +100,10 @@
       "after": "Alerta en tiempo real: monto distinto a factura, retroceso de odómetro, anomalía de rendimiento"
     },
     {
+      "before": "Fotos de inspección sin validar: no sabes si la foto es del odómetro o de una botella de agua, ni a qué unidad pertenece",
+      "after": "IA valida cada foto en tiempo real: detecta qué es, la vincula a la unidad correcta y alerta si algo no cuadra"
+    },
+    {
       "before": "Comprobaciones manuales: ticket físico → especialista → sistema",
       "after": "Foto en WhatsApp → IA valida → factura automática → aprobación en un clic"
     },
@@ -118,8 +130,8 @@
         "description": "Sin prefondeo. Optimización automática por precio, desvío y litros completos. Ahorro demostrado de 3-5% vs red cerrada."
       },
       {
-        "title": "Detección de fraude con IA",
-        "description": "Foto del odómetro con extracción automática. Alertas en tiempo real: retroceso sospechoso, monto distinto a factura, rendimientos anómalos."
+        "title": "Validación inteligente con IA",
+        "description": "Extracción automática de odómetro, validación de fotos de inspección y mantenimiento. La IA detecta si la foto no corresponde (botella de agua, asiento, foto repetida). Cada imagen queda vinculada a la unidad, ruta y operador correcto."
       },
       {
         "title": "Comprobación vía WhatsApp",
@@ -134,26 +146,26 @@
   "timeline": [
     {
       "week": "Paso 1",
-      "title": "Nadro entrega datos de estaciones y cruces",
-      "description": "3 estaciones frecuentes de Edenred + 1 ruta + reporte de cruces del último mes",
-      "owner": "client"
-    },
-    {
-      "week": "Paso 2",
       "title": "Sesión de diagnóstico",
-      "description": "Mapeo de procesos a profundidad en cada categoría de gasto (1 hora)",
+      "description": "1 hora para mapear procesos a profundidad en combustible, casetas, viáticos e inspecciones",
       "owner": "both"
     },
     {
+      "week": "Paso 2",
+      "title": "Estudio de ahorros personalizado",
+      "description": "Uvicuo analiza datos reales de Nadro y cuantifica el ahorro por categoría",
+      "owner": "uvicuo"
+    },
+    {
       "week": "Paso 3",
-      "title": "Presentación de hallazgos + business case",
-      "description": "Con números reales de Nadro y plan de arranque detallado",
+      "title": "Presentación de business case",
+      "description": "Números reales + plan de arranque + ROI proyectado para presentar a dirección",
       "owner": "uvicuo"
     },
     {
       "week": "Paso 4",
-      "title": "Decisión y arranque de piloto",
-      "description": "Piloto de 2-3 meses con categorías de quick win: viáticos, casetas, comprobaciones",
+      "title": "Piloto con categorías de quick win",
+      "description": "2-3 meses con viáticos, comprobaciones e inspecciones. Sin tocar Edenred.",
       "owner": "both"
     }
   ],
