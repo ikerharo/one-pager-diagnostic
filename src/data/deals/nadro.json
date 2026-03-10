@@ -19,7 +19,7 @@
       "title": "Sobreprecio oculto en red cerrada de combustible",
       "description": "Edenred acepta en solo ~30% de estaciones y les cobra 2-3% por aceptar el medio de pago. Ese costo lo absorbe la estación subiendo el precio. En zonas con poca cobertura, una sola estación puede poner el precio que quiera. El resultado: un sobreprecio invisible del 3-5% sobre $14M MXN/mes = $420K MXN/mes que se paga sin que aparezca como comisión.",
       "impact": "alto",
-      "quote": "Hicimos una buena estrategia el año pasado, pero me dicen: gastamos igual lo mismo. Sí, pero consumimos menos litros.",
+      "quote": "Al final, viendo qué tuercas afinar, aunque ya tienes todas bien apretadas, ver cuál se está desacomodando.",
       "quoteAuthor": "Carlos Jiménez"
     },
     {
@@ -33,7 +33,7 @@
     {
       "icon": "Calculator",
       "title": "Errores en casetas que se pagan sin conciliar",
-      "description": "$3M MXN/mes en casetas con Llave Llave. Los radares erran en 3-6% de los cruces. La revisión es manual, una vez al mes, y depende de la diligencia de cada administrador en cada sucursal. Estimado: $150K MXN/mes en errores no reclamados.",
+      "description": "$3M MXN/mes en casetas con IAVE. Los radares erran en 3-6% de los cruces. La revisión es manual, una vez al mes, y depende de la diligencia de cada administrador en cada sucursal. Estimado: $150K MXN/mes en errores no reclamados.",
       "impact": "alto",
       "quote": "Lo permeamos a cada administrador y me hace la revisión ruta por ruta, uno por uno de confianza que haya hecho su revisión bien diligente.",
       "quoteAuthor": "Carlos Jiménez"
@@ -57,10 +57,26 @@
   ],
   "impactSummary": {
     "items": [
-      { "concept": "Sobreprecio combustible (red cerrada)", "monthly": "$420K MXN", "annual": "$5.0M MXN" },
-      { "concept": "Fugas/fraude en cargas (1% conservador)", "monthly": "$140K MXN", "annual": "$1.7M MXN" },
-      { "concept": "Errores en casetas no reclamados", "monthly": "$150K MXN", "annual": "$1.8M MXN" },
-      { "concept": "Costo de capital parado", "monthly": "$148K MXN", "annual": "$1.8M MXN" }
+      {
+        "concept": "Sobreprecio combustible (red cerrada)",
+        "monthly": "$420K MXN",
+        "annual": "$5.0M MXN"
+      },
+      {
+        "concept": "Fugas/fraude en cargas (1% conservador)",
+        "monthly": "$140K MXN",
+        "annual": "$1.7M MXN"
+      },
+      {
+        "concept": "Errores en casetas no reclamados",
+        "monthly": "$150K MXN",
+        "annual": "$1.8M MXN"
+      },
+      {
+        "concept": "Costo de capital parado",
+        "monthly": "$148K MXN",
+        "annual": "$1.8M MXN"
+      }
     ],
     "totalMonthly": "$858K MXN",
     "totalAnnual": "$10.3M MXN",
@@ -144,9 +160,21 @@
   "closingQuote": "Yo lo veo, lo visualizo y es algo que en algún momento estuve buscando. No cualquiera lo tiene.",
   "closingQuoteAuthor": "Carlos Jiménez, Nadro",
   "trustedClients": [
-    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
-    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
-    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
-    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" }
+    {
+      "name": "Paquetexpress",
+      "logoUrl": "/logos/paquetexpress.png"
+    },
+    {
+      "name": "99 Minutos",
+      "logoUrl": "/logos/99minutos.png"
+    },
+    {
+      "name": "Bimbo",
+      "logoUrl": "/logos/bimbo.png"
+    },
+    {
+      "name": "Express Sinaloa 8W",
+      "logoUrl": "/logos/express8w.png"
+    }
   ]
 }

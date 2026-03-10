@@ -36,7 +36,7 @@ const UvicuoSection = () => {
           </motion.p>
 
           {uvicuoPositioning.capabilities.length > 0 && (
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {uvicuoPositioning.capabilities.map((cap, i) => (
                 <motion.div
                   key={i}
