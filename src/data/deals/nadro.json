@@ -1,0 +1,152 @@
+{
+  "config": {
+    "clientName": "Nadro",
+    "meetingDate": "Febrero 2026",
+    "subtitle": "Control inteligente de gastos operativos de flota",
+    "websiteUrl": "https://uvicuo.com"
+  },
+  "contact": {
+    "name": "Iker Haro Escandon",
+    "role": "CEO Fundador",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Agendar diagnóstico",
+    "ctaSubject": "Diagnóstico Uvicuo x Nadro — Siguientes pasos"
+  },
+  "findings": [
+    {
+      "icon": "DollarSign",
+      "title": "Sobreprecio oculto en red cerrada de combustible",
+      "description": "Edenred acepta en solo ~30% de estaciones y les cobra 2-3% por aceptar el medio de pago. Ese costo lo absorbe la estación subiendo el precio. En zonas con poca cobertura, una sola estación puede poner el precio que quiera. El resultado: un sobreprecio invisible del 3-5% sobre $14M MXN/mes = $420K MXN/mes que se paga sin que aparezca como comisión.",
+      "impact": "alto",
+      "quote": "Hicimos una buena estrategia el año pasado, pero me dicen: gastamos igual lo mismo. Sí, pero consumimos menos litros.",
+      "quoteAuthor": "Carlos Jiménez"
+    },
+    {
+      "icon": "AlertTriangle",
+      "title": "Fraude en cargas de combustible sin detección en tiempo real",
+      "description": "No hay manera de validar en el momento si el monto cobrado coincide con lo cargado. El operador y el despachador pueden cobrar $1,000 y cargar $500. Con 1,500 operadores y $14M/mes, incluso un 1% de fuga representa $140K MXN/mes = $1.7M MXN/año.",
+      "impact": "alto",
+      "quote": "Hemos detectado dónde el operador se lo pone en su bolsa, como no tiene que tener un ticket.",
+      "quoteAuthor": "Carlos Jiménez"
+    },
+    {
+      "icon": "Calculator",
+      "title": "Errores en casetas que se pagan sin conciliar",
+      "description": "$3M MXN/mes en casetas con Llave Llave. Los radares erran en 3-6% de los cruces. La revisión es manual, una vez al mes, y depende de la diligencia de cada administrador en cada sucursal. Estimado: $150K MXN/mes en errores no reclamados.",
+      "impact": "alto",
+      "quote": "Lo permeamos a cada administrador y me hace la revisión ruta por ruta, uno por uno de confianza que haya hecho su revisión bien diligente.",
+      "quoteAuthor": "Carlos Jiménez"
+    },
+    {
+      "icon": "Clock",
+      "title": "14 especialistas dedicando 20% de su tiempo a comprobaciones",
+      "description": "Cada sucursal tiene un especialista que dedica 1-1.5 horas al día a validar tickets físicos de viáticos y gastos en efectivo. Equivale a casi 3 FTEs completos en talacha administrativa que no genera valor.",
+      "impact": "medio",
+      "quote": "Tengo que andar subiendo una por una, es algo muy engorroso. Te lleva hora y media haciendo una comprobación.",
+      "quoteAuthor": "Carlos Jiménez"
+    },
+    {
+      "icon": "Wallet",
+      "title": "$15M MXN en capital parado en prefondeos y fondos fijos",
+      "description": "$14M MXN en prefondeo Edenred + $750K en fondos fijos de operadores + $28K en fondos por sucursal. Capital que no genera rendimiento. Al 1% mensual de costo de oportunidad: $148K MXN/mes que se podrían estar invirtiendo en la operación.",
+      "impact": "medio",
+      "quote": "Esa lana traes parada. No es mucho, pero es dinero que está asentado en fondos fijos, no se invirtieron.",
+      "quoteAuthor": "Carlos Jiménez"
+    }
+  ],
+  "impactSummary": {
+    "items": [
+      { "concept": "Sobreprecio combustible (red cerrada)", "monthly": "$420K MXN", "annual": "$5.0M MXN" },
+      { "concept": "Fugas/fraude en cargas (1% conservador)", "monthly": "$140K MXN", "annual": "$1.7M MXN" },
+      { "concept": "Errores en casetas no reclamados", "monthly": "$150K MXN", "annual": "$1.8M MXN" },
+      { "concept": "Costo de capital parado", "monthly": "$148K MXN", "annual": "$1.8M MXN" }
+    ],
+    "totalMonthly": "$858K MXN",
+    "totalAnnual": "$10.3M MXN",
+    "note": "Estimados conservadores basados en datos de la industria y los volúmenes compartidos por Nadro."
+  },
+  "quickWins": [
+    {
+      "before": "Red cerrada Edenred: una estación pone el precio, tú pagas sin alternativa",
+      "after": "Red abierta: la plataforma recomienda la mejor estación por precio, ruta y litros completos"
+    },
+    {
+      "before": "El fraude se detecta al final del mes, si alguien lo busca",
+      "after": "Alerta en tiempo real: monto distinto a factura, retroceso de odómetro, anomalía de rendimiento"
+    },
+    {
+      "before": "Comprobaciones manuales: ticket físico → especialista → sistema",
+      "after": "Foto en WhatsApp → IA valida → factura automática → aprobación en un clic"
+    },
+    {
+      "before": "Conciliación de casetas manual, ruta por ruta, una vez al mes",
+      "after": "Cruce automático: cada cobro se valida contra la ruta. Error → aclaración automática"
+    },
+    {
+      "before": "$15M MXN parados en prefondeos y fondos fijos",
+      "after": "Línea de crédito Uvicuo: cero prefondeo, capital libre para la operación"
+    },
+    {
+      "before": "Rendimientos estimados 'a ojo' sin dato real",
+      "after": "Foto del odómetro cada carga → rendimientos reales por unidad, ruta y operador"
+    }
+  ],
+  "exclusionNote": null,
+  "uvicuoPositioning": {
+    "headline": "La primera fintech especializada en control de gastos de flotas de transporte",
+    "description": "Centraliza combustible, casetas, viáticos y efectivo en una sola plataforma. Con medio de pago propio (tarjeta de crédito de red abierta), controles por ruta, inteligencia artificial para detección de fraude y comprobación automática vía WhatsApp.",
+    "capabilities": [
+      {
+        "title": "Combustible en red abierta",
+        "description": "Sin prefondeo. Optimización automática por precio, desvío y litros completos. Ahorro demostrado de 3-5% vs red cerrada."
+      },
+      {
+        "title": "Detección de fraude con IA",
+        "description": "Foto del odómetro con extracción automática. Alertas en tiempo real: retroceso sospechoso, monto distinto a factura, rendimientos anómalos."
+      },
+      {
+        "title": "Comprobación vía WhatsApp",
+        "description": "El operador sube foto del ticket, la IA lo lee, pide la factura automáticamente. Sin apps nuevas, sin logins."
+      },
+      {
+        "title": "Conciliación automática de casetas",
+        "description": "Cada cruce se valida contra el costo esperado. Errores se disputan automáticamente con la concesionaria."
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "week": "Paso 1",
+      "title": "Nadro entrega datos de estaciones y cruces",
+      "description": "3 estaciones frecuentes de Edenred + 1 ruta + reporte de cruces del último mes",
+      "owner": "client"
+    },
+    {
+      "week": "Paso 2",
+      "title": "Sesión de diagnóstico",
+      "description": "Mapeo de procesos a profundidad en cada categoría de gasto (1 hora)",
+      "owner": "both"
+    },
+    {
+      "week": "Paso 3",
+      "title": "Presentación de hallazgos + business case",
+      "description": "Con números reales de Nadro y plan de arranque detallado",
+      "owner": "uvicuo"
+    },
+    {
+      "week": "Paso 4",
+      "title": "Decisión y arranque de piloto",
+      "description": "Piloto de 2-3 meses con categorías de quick win: viáticos, casetas, comprobaciones",
+      "owner": "both"
+    }
+  ],
+  "closingQuote": "Yo lo veo, lo visualizo y es algo que en algún momento estuve buscando. No cualquiera lo tiene.",
+  "closingQuoteAuthor": "Carlos Jiménez, Nadro",
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" }
+  ]
+}
