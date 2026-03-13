@@ -17,7 +17,7 @@
         {
             "icon": "DollarSign",
             "title": "Sobreprecio oculto en red cerrada de combustible",
-            "description": "TOCA y Edenred operan con red cerrada: solo aceptan en ~30% de estaciones, que pagan 2-3% de comisión al proveedor y lo compensan subiendo el precio. Con 600 unidades cargando en estaciones de red cerrada, el sobreprecio es del 3-4% sobre el consumo. A $6.8M MXN/mes = ~$204K-272K MXN/mes que se pagan de más sin que aparezca como comisión.",
+            "description": "TOKA y Edenred operan con red cerrada: solo aceptan en ~30% de estaciones, que pagan 2-3% de comisión al proveedor y lo compensan subiendo el precio. Con 600 unidades cargando en estaciones de red cerrada, el sobreprecio es del 3-4% sobre el consumo. A $6.8M MXN/mes = ~$204K-272K MXN/mes que se pagan de más sin que aparezca como comisión.",
             "impact": "alto",
             "quote": "Hay vehículos dispersos en varios estados de la República que hemos detectado incidencias y creo que también merece que les pongamos un foco.",
             "quoteAuthor": "Luis China"
