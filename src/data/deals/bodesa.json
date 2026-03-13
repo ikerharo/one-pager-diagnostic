@@ -36,7 +36,7 @@
             "description": "No hay validación al momento de la carga. El operador puede pedir $1,000 y que le carguen $500. Con proveedores de red cerrada, el kilometraje lo ingresa el despachador en su terminal — le dan $20 y pone lo que quiera. Uvicuo pide foto del odómetro al operador, la IA extrae el dato real, y alerta si hay un retroceso, un incremento anormal o un monto distinto a la factura.",
             "impact": "alto",
             "quote": "El kilometraje lo captura el despachador en su terminal. Le das veinte pesos y te pone lo que quiera.",
-            "quoteAuthor": "Luis China"
+            "quoteAuthor": "Iker Haro"
         },
         {
             "icon": "Calculator",
