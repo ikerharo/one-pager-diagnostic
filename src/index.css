@@ -120,4 +120,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
 /* Smooth fade-in for scroll animations handled by framer-motion */
