@@ -39,7 +39,9 @@ const DealPage = () => {
         <DiscoveryHeader />
         <FindingsSection />
         <QuickWinsSection />
+        <FuelImpactSection />
         <UvicuoSection />
+        <BeyondFuelSection />
         <NextStepsSection />
         <TrustedBySection />
 
