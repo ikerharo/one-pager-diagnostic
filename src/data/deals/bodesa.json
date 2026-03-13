@@ -17,7 +17,7 @@
         {
             "icon": "DollarSign",
             "title": "Sobreprecio oculto en red cerrada de combustible",
-            "description": "TOCA y Edenred operan con red cerrada: solo aceptan en ~30% de estaciones, que pagan 2-3% de comisión al proveedor y lo compensan subiendo el precio. Con 600 unidades cargando en estaciones de red cerrada, el sobreprecio es del 3-4% sobre el consumo. A $6.8M MXN/mes = ~$204K-272K MXN/mes que se pagan de más sin que aparezca como comisión.",
+            "description": "TOKA y Edenred operan con red cerrada: solo aceptan en ~30% de estaciones, que pagan 2-3% de comisión al proveedor y lo compensan subiendo el precio. Con 600 unidades cargando en estaciones de red cerrada, el sobreprecio es del 3-4% sobre el consumo. A $6.8M MXN/mes = ~$204K-272K MXN/mes que se pagan de más sin que aparezca como comisión.",
             "impact": "alto",
             "quote": "Hay vehículos dispersos en varios estados de la República que hemos detectado incidencias y creo que también merece que les pongamos un foco.",
             "quoteAuthor": "Luis China"
@@ -25,7 +25,7 @@
         {
             "icon": "AlertTriangle",
             "title": "Sin segregación fiscal gasolina vs diésel = IEPS perdido",
-            "description": "La tarjeta TOCA no separa cargas de gasolina y diésel. 'Chile, mole, pozole' mezclado. Con 600 unidades mixtas (tractos diésel + sedanes gasolina), Bodesa no puede acceder al estímulo fiscal del IEPS porque no tiene una bitácora limpia por tipo de combustible. Uvicuo segrega automáticamente por tipo de combustible en el reporte de facturas.",
+            "description": "La tarjeta TOKA no separa cargas de gasolina y diésel. 'Chile, mole, pozole' mezclado. Con 600 unidades mixtas (tractos diésel + sedanes gasolina), Bodesa no puede acceder al estímulo fiscal del IEPS porque no tiene una bitácora limpia por tipo de combustible. Uvicuo segrega automáticamente por tipo de combustible en el reporte de facturas.",
             "impact": "alto",
             "quote": "La solución que queremos es que la tarjeta de gasolina solo pueda consumir gasolina y la de diésel solo diésel. Hoy como está todo mezclado, no hay forma de acceder al estímulo fiscal.",
             "quoteAuthor": "Luis China"
@@ -33,15 +33,15 @@
         {
             "icon": "ShieldAlert",
             "title": "Fraude en cargas sin detección en tiempo real",
-            "description": "No hay validación al momento de la carga. El operador puede pedir $1,000 y que le carguen $500. Con TOCA, el kilometraje lo ingresa el despachador en su terminal — le dan $20 y pone lo que quiera. Uvicuo pide foto del odómetro al operador, la IA extrae el dato real, y alerta si hay un retroceso, un incremento anormal o un monto distinto a la factura.",
+            "description": "No hay validación al momento de la carga. El operador puede pedir $1,000 y que le carguen $500. Con TOKA, el kilometraje lo ingresa el despachador en su terminal — le dan $20 y pone lo que quiera. Uvicuo pide foto del odómetro al operador, la IA extrae el dato real, y alerta si hay un retroceso, un incremento anormal o un monto distinto a la factura.",
             "impact": "alto",
             "quote": "Las calcomanías te hacen pensar que tienes control, pero van con el despachador y le dicen escáname mi calcomanía y carga el coche de atrás.",
             "quoteAuthor": "Iker Haro, en referencia a controles de red cerrada"
         },
         {
             "icon": "Calculator",
-            "title": "Comisión de TOCA + prepago = doble costo",
-            "description": "TOCA cobra ~1.5% de comisión sobre el gasto y opera con prepago: Bodesa tiene que dispersar fondos antes de que los operadores puedan cargar. Ese capital parado no genera rendimiento. Uvicuo opera con línea de crédito (cero prepago) y cero comisión — solo cobra suscripción por usuario.",
+            "title": "Comisión de TOKA + prepago = doble costo",
+            "description": "TOKA cobra ~1.5% de comisión sobre el gasto y opera con prepago: Bodesa tiene que dispersar fondos antes de que los operadores puedan cargar. Ese capital parado no genera rendimiento. Uvicuo opera con línea de crédito (cero prepago) y cero comisión — solo cobra suscripción por usuario.",
             "impact": "medio",
             "quote": "A final de cuentas aquí la decisión va más contigo Luis, tú conoces más de la operación.",
             "quoteAuthor": "José Martínez"
@@ -71,7 +71,7 @@
                 "annual": "$2.4-3.3M MXN"
             },
             {
-                "concept": "Eliminación comisión TOCA (~1.5%)",
+                "concept": "Eliminación comisión TOKA (~1.5%)",
                 "monthly": "$102K MXN",
                 "annual": "$1.2M MXN"
             },
@@ -101,7 +101,7 @@
             "after": "Reporte segregado por tipo de combustible → bitácora limpia para estímulo fiscal"
         },
         {
-            "before": "Red cerrada TOCA/Edenred: 30% de estaciones, precios inflados",
+            "before": "Red cerrada TOKA/Edenred: 30% de estaciones, precios inflados",
             "after": "Red abierta Mastercard: cualquier estación, mejor precio + optimización por IA"
         },
         {
