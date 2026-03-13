@@ -1,0 +1,194 @@
+{
+    "config": {
+        "clientName": "Bodesa",
+        "meetingDate": "Marzo 2026",
+        "subtitle": "Diagnóstico de oportunidades en gestión de combustible y gastos de flota",
+        "websiteUrl": "https://uvicuo.com"
+    },
+    "contact": {
+        "name": "Iker Haro Escandon",
+        "role": "CEO Fundador",
+        "email": "iker@uvicuo.com",
+        "phone": "+52 55 1700 1612",
+        "ctaText": "Agendar diagnóstico",
+        "ctaSubject": "Diagnóstico Uvicuo x Bodesa — Siguientes pasos"
+    },
+    "findings": [
+        {
+            "icon": "DollarSign",
+            "title": "Sobreprecio oculto en red cerrada de combustible",
+            "description": "TOCA y Edenred operan con red cerrada: solo aceptan en ~30% de estaciones, que pagan 2-3% de comisión al proveedor y lo compensan subiendo el precio. Con 600 unidades cargando en estaciones de red cerrada, el sobreprecio es del 3-4% sobre el consumo. A $6.8M MXN/mes = ~$204K-272K MXN/mes que se pagan de más sin que aparezca como comisión.",
+            "impact": "alto",
+            "quote": "Hay vehículos dispersos en varios estados de la República que hemos detectado incidencias y creo que también merece que les pongamos un foco.",
+            "quoteAuthor": "Luis China"
+        },
+        {
+            "icon": "AlertTriangle",
+            "title": "Sin segregación fiscal gasolina vs diésel = IEPS perdido",
+            "description": "La tarjeta TOCA no separa cargas de gasolina y diésel. 'Chile, mole, pozole' mezclado. Con 600 unidades mixtas (tractos diésel + sedanes gasolina), Bodesa no puede acceder al estímulo fiscal del IEPS porque no tiene una bitácora limpia por tipo de combustible. Uvicuo segrega automáticamente por tipo de combustible en el reporte de facturas.",
+            "impact": "alto",
+            "quote": "La solución que queremos es que la tarjeta de gasolina solo pueda consumir gasolina y la de diésel solo diésel. Hoy como está todo mezclado, no hay forma de acceder al estímulo fiscal.",
+            "quoteAuthor": "Luis China"
+        },
+        {
+            "icon": "ShieldAlert",
+            "title": "Fraude en cargas sin detección en tiempo real",
+            "description": "No hay validación al momento de la carga. El operador puede pedir $1,000 y que le carguen $500. Con TOCA, el kilometraje lo ingresa el despachador en su terminal — le dan $20 y pone lo que quiera. Uvicuo pide foto del odómetro al operador, la IA extrae el dato real, y alerta si hay un retroceso, un incremento anormal o un monto distinto a la factura.",
+            "impact": "alto",
+            "quote": "Las calcomanías te hacen pensar que tienes control, pero van con el despachador y le dicen escáname mi calcomanía y carga el coche de atrás.",
+            "quoteAuthor": "Iker Haro, en referencia a controles de red cerrada"
+        },
+        {
+            "icon": "Calculator",
+            "title": "Comisión de TOCA + prepago = doble costo",
+            "description": "TOCA cobra ~1.5% de comisión sobre el gasto y opera con prepago: Bodesa tiene que dispersar fondos antes de que los operadores puedan cargar. Ese capital parado no genera rendimiento. Uvicuo opera con línea de crédito (cero prepago) y cero comisión — solo cobra suscripción por usuario.",
+            "impact": "medio",
+            "quote": "A final de cuentas aquí la decisión va más contigo Luis, tú conoces más de la operación.",
+            "quoteAuthor": "José Martínez"
+        },
+        {
+            "icon": "FileText",
+            "title": "Póliza contable manual para SAP",
+            "description": "Hoy Bodesa arma manualmente la dispersión de gastos de combustible por centro de costo para cargarla en SAP. Con 600 unidades, diferentes departamentos y razones sociales, es un proceso repetitivo que consume tiempo de contabilidad cada mes. Uvicuo genera la póliza contable automáticamente con los códigos de centro de costo, departamento, categoría y retenciones.",
+            "impact": "medio",
+            "quote": "Cada vehículo tiene que dispersarse a su centro de costo. Si el tracto 1 consumió 20 mil pesos al mes, se vayan directo a ese departamento.",
+            "quoteAuthor": "José Martínez"
+        },
+        {
+            "icon": "Smartphone",
+            "title": "Esquema especial de motos de cobranza sin solución digital",
+            "description": "Las motocicletas de Progressa (financiera del grupo) tienen un esquema variable: se les deposita semanalmente según visitas efectivas. No tienen saldo fijo. Hoy este proceso es manual. Uvicuo puede automatizarlo con cargas masivas vía API/endpoint.",
+            "impact": "bajo",
+            "quote": "Esas tarjetas nunca tienen saldo, se les dispersa conforme a un cálculo que genera una plataforma. Es variable cada semana.",
+            "quoteAuthor": "Luis China"
+        }
+    ],
+    "impactSummary": {
+        "items": [
+            {
+                "concept": "Sobreprecio combustible (red cerrada → red abierta)",
+                "monthly": "$204K-272K MXN",
+                "annual": "$2.4-3.3M MXN"
+            },
+            {
+                "concept": "Eliminación comisión TOCA (~1.5%)",
+                "monthly": "$102K MXN",
+                "annual": "$1.2M MXN"
+            },
+            {
+                "concept": "Recuperación estímulo IEPS",
+                "monthly": "Por cuantificar",
+                "annual": "Significativo"
+            },
+            {
+                "concept": "Costo de oportunidad prepago → crédito",
+                "monthly": "$68K MXN",
+                "annual": "$816K MXN"
+            },
+            {
+                "concept": "Cashback Uvicuo (0.3%, primer año)",
+                "monthly": "$20K MXN",
+                "annual": "$245K MXN"
+            }
+        ],
+        "totalMonthly": "$394K-462K MXN + IEPS",
+        "totalAnnual": "$4.7-5.5M MXN + IEPS",
+        "note": "Cifras conservadoras basadas en gasto de $6.8M MXN/mes. El estímulo IEPS se cuantificará con el desglose gasolina/diésel."
+    },
+    "beforeAfter": [
+        {
+            "before": "Gasolina y diésel mezclados en la misma tarjeta — sin acceso a IEPS",
+            "after": "Reporte segregado por tipo de combustible → bitácora limpia para estímulo fiscal"
+        },
+        {
+            "before": "Red cerrada TOCA/Edenred: 30% de estaciones, precios inflados",
+            "after": "Red abierta Mastercard: cualquier estación, mejor precio + optimización por IA"
+        },
+        {
+            "before": "Prepago + 1.5% comisión = capital parado + costo directo",
+            "after": "Línea de crédito sin comisión + cashback 0.3%"
+        },
+        {
+            "before": "Kilometraje capturado por el despachador en terminal (punto de fallo)",
+            "after": "Foto del odómetro por el operador → IA extrae dato real, alertas automáticas"
+        },
+        {
+            "before": "Póliza contable manual para SAP, dispersión por centro de costo a mano",
+            "after": "Reporte contable automático con códigos de centro de costo, IEPS, IVA, ISH desglosados"
+        },
+        {
+            "before": "Motos de cobranza con depósitos manuales variables cada semana",
+            "after": "Carga masiva vía API: endpoint automatizado para esquemas variables"
+        }
+    ],
+    "exclusionNote": "Este diagnóstico se enfoca en combustible. Uvicuo también centraliza peajes, viáticos y gestión de efectivo en la misma plataforma, sin costo adicional por categoría.",
+    "uvicuoPositioning": {
+        "headline": "La primera fintech especializada en control de gastos de flotas",
+        "description": "Centraliza combustible, casetas, viáticos y efectivo en una sola plataforma. Con medio de pago propio (tarjeta de crédito de red abierta), controles por categoría y monto, inteligencia artificial para detección de fraude y comprobación automática vía WhatsApp.",
+        "capabilities": [
+            {
+                "title": "Combustible en red abierta",
+                "description": "Sin prepago, sin comisión. Optimización automática por precio y desvío. Ahorro demostrado de 3-5% vs red cerrada. Segregación automática gasolina/diésel para IEPS."
+            },
+            {
+                "title": "Control inteligente por vehículo",
+                "description": "Límite por capacidad de tanque, tipo de combustible, monto y categoría. Alertas en tiempo real si hay anomalías. Foto de odómetro con IA."
+            },
+            {
+                "title": "Comprobación vía WhatsApp",
+                "description": "El operador sube foto del ticket, la IA lo lee, Uvicuo recupera la factura automáticamente. Sin apps nuevas, sin logins."
+            },
+            {
+                "title": "Integración contable para SAP",
+                "description": "Póliza contable armada con centro de costo, departamento, categoría, retenciones. Descarga CSV lista para SAP. Reporte de facturas con IEPS, IVA y litros desglosados."
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "week": "Paso 1",
+            "title": "Sesión con contabilidad",
+            "description": "Presentación de Uvicuo al equipo contable para validar la solución fiscal (IEPS, segregación, póliza)",
+            "owner": "both"
+        },
+        {
+            "week": "Paso 2",
+            "title": "Propuesta con business case",
+            "description": "Números reales de ahorro + análisis de sobreprecio en rutas de Bodesa + ROI proyectado",
+            "owner": "uvicuo"
+        },
+        {
+            "week": "Paso 3",
+            "title": "Periodo de prueba (3 meses)",
+            "description": "Arranque con grupo piloto. Criterios de éxito definidos. Sin riesgo: salida libre si no funciona.",
+            "owner": "both"
+        },
+        {
+            "week": "Paso 4",
+            "title": "Expansión a las 600 unidades",
+            "description": "Implementación presencial en Colima e Irapuato. Capacitación de operadores y admins.",
+            "owner": "both"
+        }
+    ],
+    "closingQuote": "Todas las plataformas que hemos visto tienen sus pros y sus contras. Sería ver qué pesa más en la operación del día a día.",
+    "closingQuoteAuthor": "José Martínez, Bodesa",
+    "trustedClients": [
+        {
+            "name": "Paquetexpress",
+            "logoUrl": "/logos/paquetexpress.png"
+        },
+        {
+            "name": "99 Minutos",
+            "logoUrl": "/logos/99minutos.png"
+        },
+        {
+            "name": "Bimbo",
+            "logoUrl": "/logos/bimbo.png"
+        },
+        {
+            "name": "Express Sinaloa 8W",
+            "logoUrl": "/logos/express8w.png"
+        }
+    ],
+    "_lastSync": "2026-03-13T16:30:00Z"
+}
