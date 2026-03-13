@@ -40,7 +40,7 @@ const features = [
 const logos = [
   { name: "Paquetexpress", src: "/logos/paquetexpress.png" },
   { name: "99 Minutos", src: "/logos/99minutos.png" },
-  { name: "Bimbo", src: "/logos/bimbo.jpg" },
+  { name: "Bimbo", src: "/logos/bimbo.png" },
   { name: "Express 8W", src: "/logos/express8w.png" },
   { name: "Sanimex", src: "/logos/sanimex.webp" },
   { name: "Fulem", src: "/logos/fulem.png" },
