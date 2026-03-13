@@ -33,7 +33,7 @@
         {
             "icon": "ShieldAlert",
             "title": "Fraude en cargas sin detección en tiempo real",
-            "description": "No hay validación al momento de la carga. El operador puede pedir $1,000 y que le carguen $500. Con TOKA, el kilometraje lo ingresa el despachador en su terminal — le dan $20 y pone lo que quiera. Uvicuo pide foto del odómetro al operador, la IA extrae el dato real, y alerta si hay un retroceso, un incremento anormal o un monto distinto a la factura.",
+            "description": "No hay validación al momento de la carga. El operador puede pedir $1,000 y que le carguen $500. Con Edenred, el kilometraje lo ingresa el despachador en su terminal — le dan $20 y pone lo que quiera. Uvicuo pide foto del odómetro al operador, la IA extrae el dato real, y alerta si hay un retroceso, un incremento anormal o un monto distinto a la factura.",
             "impact": "alto",
             "quote": "Las calcomanías te hacen pensar que tienes control, pero van con el despachador y le dicen escáname mi calcomanía y carga el coche de atrás.",
             "quoteAuthor": "Iker Haro, en referencia a controles de red cerrada"
