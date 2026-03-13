@@ -25,7 +25,7 @@
         {
             "icon": "AlertTriangle",
             "title": "Sin segregación fiscal gasolina vs diésel = IEPS perdido",
-            "description": "La tarjeta TOCA no separa cargas de gasolina y diésel. 'Chile, mole, pozole' mezclado. Con 600 unidades mixtas (tractos diésel + sedanes gasolina), Bodesa no puede acceder al estímulo fiscal del IEPS porque no tiene una bitácora limpia por tipo de combustible. Uvicuo segrega automáticamente por tipo de combustible en el reporte de facturas.",
+            "description": "La tarjeta TOKA no separa cargas de gasolina y diésel. 'Chile, mole, pozole' mezclado. Con 600 unidades mixtas (tractos diésel + sedanes gasolina), Bodesa no puede acceder al estímulo fiscal del IEPS porque no tiene una bitácora limpia por tipo de combustible. Uvicuo segrega automáticamente por tipo de combustible en el reporte de facturas.",
             "impact": "alto",
             "quote": "La solución que queremos es que la tarjeta de gasolina solo pueda consumir gasolina y la de diésel solo diésel. Hoy como está todo mezclado, no hay forma de acceder al estímulo fiscal.",
             "quoteAuthor": "Luis China"
