@@ -6,7 +6,9 @@ import { DealProvider } from "@/context/DealContext";
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import FindingsSection from "@/components/discovery/FindingsSection";
 import QuickWinsSection from "@/components/discovery/QuickWinsSection";
+import FuelImpactSection from "@/components/discovery/FuelImpactSection";
 import UvicuoSection from "@/components/discovery/UvicuoSection";
+import BeyondFuelSection from "@/components/discovery/BeyondFuelSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
 import ScrollProgress from "@/components/discovery/ScrollProgress";
@@ -37,7 +39,9 @@ const DealPage = () => {
         <DiscoveryHeader />
         <FindingsSection />
         <QuickWinsSection />
+        <FuelImpactSection />
         <UvicuoSection />
+        <BeyondFuelSection />
         <NextStepsSection />
         <TrustedBySection />
 

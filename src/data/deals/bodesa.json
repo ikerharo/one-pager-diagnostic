@@ -17,15 +17,15 @@
         {
             "icon": "DollarSign",
             "title": "Sobreprecio oculto en red cerrada de combustible",
-            "description": "Edenred opera con red cerrada: solo acepta en ~30% de estaciones, que pagan 2-3% de comisión al proveedor y lo compensan subiendo el precio. Con 600 unidades cargando en estaciones de red cerrada, el sobreprecio es del 3-4% sobre el consumo. A $6.8M MXN/mes = ~$204K-272K MXN/mes que se pagan de más sin que aparezca como comisión.",
+            "description": "El proveedor actual opera con red cerrada: solo acepta en ~30% de estaciones, que pagan 2-3% de comisión al proveedor y lo compensan subiendo el precio. Con 600 unidades cargando en estaciones de red cerrada, el sobreprecio es del 3-4% sobre el consumo. A $6.8M MXN/mes = ~$204K-272K MXN/mes que se pagan de más sin que aparezca como comisión.",
             "impact": "alto",
-            "quote": "Hay vehículos dispersos en varios estados de la República que hemos detectado incidencias y creo que también merece que les pongamos un foco.",
+            "quote": "Hemos revisado varias opciones y al final hay que ver quién te da más visibilidad sobre lo que realmente estás pagando.",
             "quoteAuthor": "Luis China"
         },
         {
             "icon": "AlertTriangle",
             "title": "Sin segregación fiscal gasolina vs diésel = IEPS perdido",
-            "description": "Edenred no separa cargas de gasolina y diésel. 'Chile, mole, pozole' mezclado. Con 600 unidades mixtas (tractos diésel + sedanes gasolina), Bodesa no puede acceder al estímulo fiscal del IEPS porque no tiene una bitácora limpia por tipo de combustible. Uvicuo segrega automáticamente por tipo de combustible en el reporte de facturas.",
+            "description": "El proveedor actual no separa cargas de gasolina y diésel. 'Chile, mole, pozole' mezclado. Con 600 unidades mixtas (tractos diésel + sedanes gasolina), Bodesa no puede acceder al estímulo fiscal del IEPS porque no tiene una bitácora limpia por tipo de combustible. Uvicuo segrega automáticamente por tipo de combustible en el reporte de facturas.",
             "impact": "alto",
             "quote": "Hoy como está todo mezclado, no hay forma de acceder al estímulo fiscal.",
             "quoteAuthor": "Luis China"
@@ -33,17 +33,17 @@
         {
             "icon": "ShieldAlert",
             "title": "Fraude en cargas sin detección en tiempo real",
-            "description": "No hay validación al momento de la carga. El operador puede pedir $1,000 y que le carguen $500. Con Edenred, el kilometraje lo ingresa el despachador en su terminal — le dan $20 y pone lo que quiera. Uvicuo pide foto del odómetro al operador, la IA extrae el dato real, y alerta si hay un retroceso, un incremento anormal o un monto distinto a la factura.",
+            "description": "No hay validación al momento de la carga. El operador puede pedir $1,000 y que le carguen $500. Con proveedores de red cerrada, el kilometraje lo ingresa el despachador en su terminal — le dan $20 y pone lo que quiera. Uvicuo pide foto del odómetro al operador, la IA extrae el dato real, y alerta si hay un retroceso, un incremento anormal o un monto distinto a la factura.",
             "impact": "alto",
-            "quote": "Las calcomanías te hacen pensar que tienes control, pero van con el despachador y le dicen escáname mi calcomanía y carga el coche de atrás.",
-            "quoteAuthor": "Iker Haro, en referencia a controles de red cerrada"
+            "quote": "El kilometraje lo captura el despachador en su terminal. Le das veinte pesos y te pone lo que quiera.",
+            "quoteAuthor": "Luis China"
         },
         {
             "icon": "Calculator",
-            "title": "Comisión de Edenred + prepago = doble costo",
-            "description": "Edenred cobra ~1.5% de comisión sobre el gasto y opera con prepago: Bodesa tiene que dispersar fondos antes de que los operadores puedan cargar. Ese capital parado no genera rendimiento. Uvicuo opera con línea de crédito (cero prepago) y cero comisión — solo cobra suscripción por usuario.",
+            "title": "Comisión del proveedor + prepago = doble costo",
+            "description": "El proveedor actual cobra ~1.5% de comisión sobre el gasto y opera con prepago: Bodesa tiene que dispersar fondos antes de que los operadores puedan cargar. Ese capital parado no genera rendimiento. Uvicuo opera con línea de crédito (cero prepago) y cero comisión — solo cobra suscripción por usuario.",
             "impact": "medio",
-            "quote": "A final de cuentas aquí la decisión va más contigo Luis, tú conoces más de la operación.",
+            "quote": "Hay que considerar la comisión, el prepago, el costo de oportunidad del capital parado… todo suma.",
             "quoteAuthor": "José Martínez"
         },
         {
@@ -71,7 +71,7 @@
                 "annual": "$2.4-3.3M MXN"
             },
             {
-                "concept": "Eliminación comisión Edenred (~1.5%)",
+                "concept": "Eliminación comisión del proveedor (~1.5%)",
                 "monthly": "$102K MXN",
                 "annual": "$1.2M MXN"
             },
@@ -101,7 +101,7 @@
             "after": "Reporte segregado por tipo de combustible → bitácora limpia para estímulo fiscal"
         },
         {
-            "before": "Red cerrada Edenred: 30% de estaciones, precios inflados",
+            "before": "Red cerrada del proveedor actual: 30% de estaciones, precios inflados",
             "after": "Red abierta Mastercard: cualquier estación, mejor precio + optimización por IA"
         },
         {
@@ -170,8 +170,8 @@
             "owner": "both"
         }
     ],
-    "closingQuote": "Todas las plataformas que hemos visto tienen sus pros y sus contras. Sería ver qué pesa más en la operación del día a día.",
-    "closingQuoteAuthor": "José Martínez, Bodesa",
+    "closingQuote": "Yo sí lo veo muy bien. Sería cuestión de ver cómo nos hacemos del dato para demostrarle a contabilidad que esto funciona.",
+    "closingQuoteAuthor": "Luis China, Bodesa",
     "trustedClients": [
         {
             "name": "Paquetexpress",
