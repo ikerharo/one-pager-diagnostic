@@ -40,8 +40,8 @@
         },
         {
             "icon": "Calculator",
-            "title": "Comisión de TOCA + prepago = doble costo",
-            "description": "TOCA cobra ~1.5% de comisión sobre el gasto y opera con prepago: Bodesa tiene que dispersar fondos antes de que los operadores puedan cargar. Ese capital parado no genera rendimiento. Uvicuo opera con línea de crédito (cero prepago) y cero comisión — solo cobra suscripción por usuario.",
+            "title": "Comisión de TOKA + prepago = doble costo",
+            "description": "TOKA cobra ~1.5% de comisión sobre el gasto y opera con prepago: Bodesa tiene que dispersar fondos antes de que los operadores puedan cargar. Ese capital parado no genera rendimiento. Uvicuo opera con línea de crédito (cero prepago) y cero comisión — solo cobra suscripción por usuario.",
             "impact": "medio",
             "quote": "A final de cuentas aquí la decisión va más contigo Luis, tú conoces más de la operación.",
             "quoteAuthor": "José Martínez"
