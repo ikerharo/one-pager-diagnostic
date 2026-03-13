@@ -122,7 +122,7 @@ export function processDealContent(content: any): DealData {
       quote: f.quote,
       quoteAuthor: f.quoteAuthor,
     })),
-    quickWins: content.quickWins,
+    quickWins: content.quickWins ?? content.beforeAfter ?? [],
     exclusionNote: content.exclusionNote ?? null,
     uvicuoPositioning: content.uvicuoPositioning ?? null,
     pastInteractions: (content.pastInteractions ?? []).map((i: any) => ({
