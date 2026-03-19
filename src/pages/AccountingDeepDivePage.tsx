@@ -20,10 +20,13 @@ import {
   Fuel,
   Building2,
   ListChecks,
+  Download,
+  FileSpreadsheet,
 } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ScrollProgress from "@/components/discovery/ScrollProgress";
 import heroVideo from "@/assets/hero-loop.mp4";
 import { useEffect, useState } from "react";
@@ -406,46 +409,212 @@ const AccountingDeepDivePage = () => {
         </div>
       </section>
 
-      {/* ═══ PÓLIZA CONTABLE ═══ */}
+      {/* ═══ REPORTES UVICUO ═══ */}
       <section className="py-16 md:py-20 overflow-hidden bg-background border-t border-border">
-        <div className="container mx-auto max-w-4xl px-6">
+        <div className="container mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
-              <FileText className="h-5 w-5 text-primary" />
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">Export contable</span>
+              <FileSpreadsheet className="h-5 w-5 text-primary" />
+              <span className="text-xs font-bold uppercase tracking-wider text-primary">Reportes reales</span>
             </motion.div>
             <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
-              La póliza contable de <span className="text-primary">Uvicuo</span>
+              Así se ven los reportes de <span className="text-primary">Uvicuo</span>
             </motion.h2>
             <motion.p variants={itemVariants} className="mt-2 text-muted-foreground max-w-2xl">
-              Así se ve el export contable que genera Uvicuo, listo para cargar a SAP.
+              Datos reales de febrero 2026. Descarga los CSV y ábrelos en Excel para explorar a detalle.
             </motion.p>
 
-            {/* Placeholder for screenshot */}
-            <motion.div variants={itemVariants} className="mt-8 rounded-xl border-2 border-dashed border-primary/20 bg-primary/[0.02] p-8 md:p-12 text-center">
-              <FileText className="h-12 w-12 text-primary/30 mx-auto mb-3" />
-              <p className="text-sm font-medium text-muted-foreground">
-                Vista previa de la póliza contable
-              </p>
-              <p className="text-xs text-muted-foreground/60 mt-1">
-                Screenshot / archivo descargable — próximamente
-              </p>
-            </motion.div>
+            <motion.div variants={itemVariants} className="mt-8">
+              <Tabs defaultValue="poliza" className="w-full">
+                <TabsList className="w-full max-w-md bg-muted/60">
+                  <TabsTrigger value="poliza" className="flex-1 gap-1.5 text-xs sm:text-sm">
+                    <FileText className="h-3.5 w-3.5" />
+                    Póliza Contable
+                  </TabsTrigger>
+                  <TabsTrigger value="facturas" className="flex-1 gap-1.5 text-xs sm:text-sm">
+                    <Receipt className="h-3.5 w-3.5" />
+                    Facturas Validadas
+                  </TabsTrigger>
+                </TabsList>
 
-            {/* Fields list */}
-            <motion.div variants={itemVariants} className="mt-6 rounded-xl border border-border bg-card p-5 md:p-6">
-              <h4 className="text-sm font-bold text-foreground mb-3">Campos incluidos:</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {polizaFields.map((field, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{field}</span>
+                {/* ── Póliza Contable ── */}
+                <TabsContent value="poliza" className="mt-6 space-y-4">
+                  <div className="rounded-xl border border-border bg-card p-5 md:p-6">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+                      <div>
+                        <h4 className="text-base font-bold text-foreground">Póliza contable — Febrero 2026</h4>
+                        <p className="mt-1 text-sm text-muted-foreground leading-relaxed max-w-xl">
+                          Cada gasto ya viene desglosado por <strong className="text-foreground">centro de costo</strong>, <strong className="text-foreground">departamento</strong>, <strong className="text-foreground">tipo de línea</strong> (gasto base, IVA acreditable, IEPS, ISH) y con el <strong className="text-foreground">UUID de la factura</strong>. Listo para cargar a SAP sin tocar nada.
+                        </p>
+                      </div>
+                      <Button asChild variant="outline" size="sm" className="gap-2 shrink-0">
+                        <a href="/reports/poliza_contable_feb2026.csv" download>
+                          <Download className="h-3.5 w-3.5" />
+                          Descargar CSV
+                        </a>
+                      </Button>
+                    </div>
+
+                    {/* Preview table */}
+                    <div className="relative rounded-lg border border-border overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-[11px] sm:text-xs">
+                          <thead>
+                            <tr className="bg-muted/50 border-b border-border">
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Fecha</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Categoría</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Descripción</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Tipo Línea</th>
+                              <th className="px-3 py-2.5 text-right font-semibold text-foreground whitespace-nowrap">Monto</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Empleado</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Depto</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">CC</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {[
+                              { fecha: "28-02", cat: "Combustible", desc: "SERV ALAMEDA TOLUCA", tipo: "GASTO_BASE", monto: "$1,214.50", emp: "Raul Estrada", depto: "Logistica", cc: "MEX_1" },
+                              { fecha: "28-02", cat: "Combustible", desc: "SERV ALAMEDA TOLUCA", tipo: "IVA_ACREDITABLE", monto: "$194.32", emp: "Raul Estrada", depto: "Logistica", cc: "MEX_1" },
+                              { fecha: "26-02", cat: "Alimentos", desc: "WM EXPRESS STA FE", tipo: "GASTO_BASE", monto: "$306.03", emp: "Raul Estrada", depto: "Logistica", cc: "MEX_1" },
+                              { fecha: "24-02", cat: "Alojamiento", desc: "HAUSUITES SANTA FE", tipo: "GASTO_BASE", monto: "$3,159.31", emp: "Diego Galico", depto: "Dirección", cc: "BAR_1" },
+                              { fecha: "24-02", cat: "Alojamiento", desc: "HAUSUITES SANTA FE", tipo: "ISH", monto: "$110.58", emp: "Diego Galico", depto: "Dirección", cc: "BAR_1" },
+                              { fecha: "24-02", cat: "Alojamiento", desc: "HAUSUITES SANTA FE", tipo: "IVA_ACREDITABLE", monto: "$505.49", emp: "Diego Galico", depto: "Dirección", cc: "BAR_1" },
+                            ].map((row, i) => (
+                              <tr key={i} className="border-b border-border last:border-b-0 hover:bg-muted/20 transition-colors">
+                                <td className="px-3 py-2 text-muted-foreground whitespace-nowrap">{row.fecha}</td>
+                                <td className="px-3 py-2 text-foreground whitespace-nowrap">{row.cat}</td>
+                                <td className="px-3 py-2 text-muted-foreground whitespace-nowrap max-w-[160px] truncate">{row.desc}</td>
+                                <td className="px-3 py-2 whitespace-nowrap">
+                                  <span className={`inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-medium ring-1 ring-inset ${
+                                    row.tipo === "GASTO_BASE" ? "bg-primary/10 text-primary ring-primary/20" :
+                                    row.tipo === "IVA_ACREDITABLE" ? "bg-blue-500/10 text-blue-600 ring-blue-500/20" :
+                                    row.tipo === "ISH" ? "bg-amber-500/10 text-amber-600 ring-amber-500/20" :
+                                    "bg-muted text-muted-foreground ring-border"
+                                  }`}>
+                                    {row.tipo}
+                                  </span>
+                                </td>
+                                <td className="px-3 py-2 text-right font-mono text-foreground whitespace-nowrap">{row.monto}</td>
+                                <td className="px-3 py-2 text-muted-foreground whitespace-nowrap">{row.emp}</td>
+                                <td className="px-3 py-2 text-muted-foreground whitespace-nowrap">{row.depto}</td>
+                                <td className="px-3 py-2 text-muted-foreground whitespace-nowrap">{row.cc}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      {/* Fade overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-card to-transparent pointer-events-none" />
+                    </div>
+                    <p className="mt-3 text-[11px] text-muted-foreground/60 text-center">
+                      Mostrando 6 de 71 registros · El CSV completo incluye UUID, RFC, tasa de IVA, código de flujo y más
+                    </p>
                   </div>
-                ))}
-              </div>
-              <p className="mt-4 text-xs text-muted-foreground/70 italic">
-                Se configura una sola vez con el equipo contable. Después, cada gasto se clasifica y desglosa automáticamente.
-              </p>
+
+                  {/* Key highlights */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {[
+                      { label: "Tipos de línea", value: "Gasto base · IVA · IEPS · ISH", desc: "Cada impuesto en su propia fila" },
+                      { label: "Centros de costo", value: "MEX_1 · BAR_1 · LOG-1", desc: "Asignados automáticamente" },
+                      { label: "Categorías", value: "Combustible · Alimentos · Hotel", desc: "Con código SAP incluido" },
+                    ].map((item, i) => (
+                      <div key={i} className="rounded-lg border border-border bg-muted/20 p-4">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-primary">{item.label}</span>
+                        <p className="mt-1 text-sm font-semibold text-foreground">{item.value}</p>
+                        <p className="mt-0.5 text-[11px] text-muted-foreground">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+
+                {/* ── Facturas Validadas ── */}
+                <TabsContent value="facturas" className="mt-6 space-y-4">
+                  <div className="rounded-xl border border-border bg-card p-5 md:p-6">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
+                      <div>
+                        <h4 className="text-base font-bold text-foreground">Reporte de facturas — Febrero 2026</h4>
+                        <p className="mt-1 text-sm text-muted-foreground leading-relaxed max-w-xl">
+                          Cada factura validada contra el SAT, con desglose de <strong className="text-foreground">IVA</strong>, <strong className="text-foreground">IEPS</strong>, <strong className="text-foreground">ISH</strong>, y para combustible: <strong className="text-foreground">litros</strong>, <strong className="text-foreground">tipo de gasolina</strong> y <strong className="text-foreground">precio por litro</strong>. Sin intervención manual.
+                        </p>
+                      </div>
+                      <Button asChild variant="outline" size="sm" className="gap-2 shrink-0">
+                        <a href="/reports/reporte_facturas_feb2026.csv" download>
+                          <Download className="h-3.5 w-3.5" />
+                          Descargar CSV
+                        </a>
+                      </Button>
+                    </div>
+
+                    {/* Preview table */}
+                    <div className="relative rounded-lg border border-border overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-[11px] sm:text-xs">
+                          <thead>
+                            <tr className="bg-muted/50 border-b border-border">
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Fecha</th>
+                              <th className="px-3 py-2.5 text-right font-semibold text-foreground whitespace-nowrap">Total</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Subida por</th>
+                              <th className="px-3 py-2.5 text-right font-semibold text-foreground whitespace-nowrap">Base Real</th>
+                              <th className="px-3 py-2.5 text-right font-semibold text-foreground whitespace-nowrap">IVA</th>
+                              <th className="px-3 py-2.5 text-right font-semibold text-foreground whitespace-nowrap">IEPS</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Litros</th>
+                              <th className="px-3 py-2.5 text-left font-semibold text-foreground whitespace-nowrap">Tipo</th>
+                              <th className="px-3 py-2.5 text-right font-semibold text-foreground whitespace-nowrap">$/litro</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {[
+                              { fecha: "28/02", total: "$1,450.00", subida: "Raul Estrada", base: "$1,214.50", iva: "$194.32", ieps: "-", litros: "57.11", tipo: "Premium", precio: "$25.39" },
+                              { fecha: "25/02", total: "$700.00", subida: "Uvicuo", base: "$587.00", iva: "$93.92", ieps: "-", litros: "26.27", tipo: "Premium", precio: "$26.65" },
+                              { fecha: "22/02", total: "$1,360.16", subida: "Uvicuo", base: "$1,140.00", iva: "$182.40", ieps: "-", litros: "52.33", tipo: "Premium", precio: "$25.99" },
+                              { fecha: "26/02", total: "$3,775.38", subida: "Diego Galico", base: "$3,159.31", iva: "$505.49", ieps: "-", litros: "-", tipo: "-", precio: "-" },
+                              { fecha: "21/02", total: "$289.51", subida: "Uvicuo", base: "$397.70", iva: "$15.87", ieps: "$9.93", litros: "-", tipo: "-", precio: "-" },
+                              { fecha: "12/02", total: "$1,988.72", subida: "Uvicuo", base: "$1,663.78", iva: "$266.20", ieps: "-", litros: "81.41", tipo: "Premium", precio: "$24.43" },
+                            ].map((row, i) => (
+                              <tr key={i} className="border-b border-border last:border-b-0 hover:bg-muted/20 transition-colors">
+                                <td className="px-3 py-2 text-muted-foreground whitespace-nowrap">{row.fecha}</td>
+                                <td className="px-3 py-2 text-right font-mono font-medium text-foreground whitespace-nowrap">{row.total}</td>
+                                <td className="px-3 py-2 whitespace-nowrap">
+                                  <span className={`inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-medium ring-1 ring-inset ${
+                                    row.subida === "Uvicuo" ? "bg-primary/10 text-primary ring-primary/20" : "bg-muted text-muted-foreground ring-border"
+                                  }`}>
+                                    {row.subida}
+                                  </span>
+                                </td>
+                                <td className="px-3 py-2 text-right font-mono text-muted-foreground whitespace-nowrap">{row.base}</td>
+                                <td className="px-3 py-2 text-right font-mono text-muted-foreground whitespace-nowrap">{row.iva}</td>
+                                <td className="px-3 py-2 text-right font-mono text-muted-foreground whitespace-nowrap">{row.ieps}</td>
+                                <td className="px-3 py-2 text-muted-foreground whitespace-nowrap">{row.litros}</td>
+                                <td className="px-3 py-2 text-muted-foreground whitespace-nowrap">{row.tipo}</td>
+                                <td className="px-3 py-2 text-right font-mono text-muted-foreground whitespace-nowrap">{row.precio}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-card to-transparent pointer-events-none" />
+                    </div>
+                    <p className="mt-3 text-[11px] text-muted-foreground/60 text-center">
+                      Mostrando 6 de 33 facturas · El CSV incluye folio fiscal (UUID), RFC emisor, método y forma de pago, uso del CFDI
+                    </p>
+                  </div>
+
+                  {/* Key highlights */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {[
+                      { label: "Recuperación automática", value: "Uvicuo sube el 60%+", desc: "Sin que el empleado haga nada" },
+                      { label: "Desglose fiscal completo", value: "IVA · IEPS · ISH · ISR", desc: "Cada impuesto separado por factura" },
+                      { label: "Detalle de combustible", value: "Litros · Tipo · Precio/L", desc: "Segregación gasolina vs diésel" },
+                    ].map((item, i) => (
+                      <div key={i} className="rounded-lg border border-border bg-muted/20 p-4">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-primary">{item.label}</span>
+                        <p className="mt-1 text-sm font-semibold text-foreground">{item.value}</p>
+                        <p className="mt-0.5 text-[11px] text-muted-foreground">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+              </Tabs>
             </motion.div>
           </AnimatedSection>
         </div>
