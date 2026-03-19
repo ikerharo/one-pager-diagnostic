@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link, useParams } from "react-router-dom";
+import { FileText } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { useDeal } from "@/context/DealContext";
 
@@ -22,8 +24,10 @@ const impactTextColors = {
 
 const FindingsSection = () => {
   const { findings } = useDeal();
+  const { slug } = useParams<{ slug: string }>();
   const [hero, ...rest] = findings;
   const HeroIcon = hero.icon;
+  const showDeepDiveLink = slug === "bodesa";
 
   return (
     <section className="py-16 md:py-20 overflow-hidden bg-background">
@@ -111,6 +115,19 @@ const FindingsSection = () => {
               );
             })}
           </div>
+
+          {showDeepDiveLink && (
+            <motion.div variants={itemVariants} className="mt-8 flex justify-center">
+              <Link
+                to="/bodesa/contable"
+                className="group inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/[0.04] px-5 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary/10 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10"
+              >
+                <FileText className="h-4 w-4" />
+                Ver diagnóstico contable completo
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </motion.div>
+          )}
         </AnimatedSection>
       </div>
     </section>
