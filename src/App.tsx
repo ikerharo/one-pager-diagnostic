@@ -20,6 +20,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/directorio" element={<Index />} />
+          <Route path="/bodesa/contable" element={<AccountingDeepDivePage />} />
           <Route path="/:slug" element={<DealPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -115,6 +115,19 @@ const FindingsSection = () => {
               );
             })}
           </div>
+
+          {showDeepDiveLink && (
+            <motion.div variants={itemVariants} className="mt-8 flex justify-center">
+              <Link
+                to="/bodesa/contable"
+                className="group inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/[0.04] px-5 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary/10 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10"
+              >
+                <FileText className="h-4 w-4" />
+                Ver diagnóstico contable completo
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </motion.div>
+          )}
         </AnimatedSection>
       </div>
     </section>
