@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Index from "./pages/Index";
 import DealPage from "./pages/DealPage";
+import AccountingDeepDivePage from "./pages/AccountingDeepDivePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
