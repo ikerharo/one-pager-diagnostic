@@ -24,8 +24,10 @@ const impactTextColors = {
 
 const FindingsSection = () => {
   const { findings } = useDeal();
+  const { slug } = useParams<{ slug: string }>();
   const [hero, ...rest] = findings;
   const HeroIcon = hero.icon;
+  const showDeepDiveLink = slug === "bodesa";
 
   return (
     <section className="py-16 md:py-20 overflow-hidden bg-background">
