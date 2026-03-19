@@ -20,10 +20,13 @@ import {
   Fuel,
   Building2,
   ListChecks,
+  Download,
+  FileSpreadsheet,
 } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ScrollProgress from "@/components/discovery/ScrollProgress";
 import heroVideo from "@/assets/hero-loop.mp4";
 import { useEffect, useState } from "react";
