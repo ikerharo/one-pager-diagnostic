@@ -513,19 +513,19 @@ const AccountingDeepDivePage = () => {
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary">Después de Uvicuo</span>
                 </div>
                 <ul className="space-y-2">
-                  <li className="text-sm text-foreground flex items-start gap-2">
+                  <li className="text-sm text-white/90 flex items-start gap-2">
                     <span className="text-primary mt-1 shrink-0">•</span>
                     Cierre contable el mismo día del corte — la póliza ya está lista
                   </li>
-                  <li className="text-sm text-foreground flex items-start gap-2">
+                  <li className="text-sm text-white/90 flex items-start gap-2">
                     <span className="text-primary mt-1 shrink-0">•</span>
                     Las 2 personas se dedican a análisis, no a captura
                   </li>
-                  <li className="text-sm text-foreground flex items-start gap-2">
+                  <li className="text-sm text-white/90 flex items-start gap-2">
                     <span className="text-primary mt-1 shrink-0">•</span>
                     98% de gastos facturados automáticamente
                   </li>
-                  <li className="text-sm text-foreground flex items-start gap-2">
+                  <li className="text-sm text-white/90 flex items-start gap-2">
                     <span className="text-primary mt-1 shrink-0">•</span>
                     Cero errores de centro de costo
                   </li>
