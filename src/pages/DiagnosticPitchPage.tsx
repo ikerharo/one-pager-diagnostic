@@ -447,17 +447,8 @@ const DiagnosticPitchContent = () => {
   </div>
   );
 };
-    <TrustedBySection />
-    <CtaSection />
-    <footer className="border-t border-border py-10 bg-background">
-      <div className="container mx-auto flex items-center justify-center gap-3 px-6">
-        <img src="/uvicuo-icon.png" alt="Uvicuo" className="h-5 opacity-60" />
-        <span className="inline-block h-1 w-1 rounded-full bg-primary/50" />
-        <span className="text-xs text-muted-foreground">© {new Date().getFullYear()} Uvicuo · Confidencial</span>
-      </div>
-    </footer>
-  </div>
-);
+
+
 
 const DiagnosticPitchPage = () => {
   const { slug } = useParams<{ slug: string }>();
