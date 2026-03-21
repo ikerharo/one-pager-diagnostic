@@ -43,7 +43,7 @@ const DealPage = () => {
         <UvicuoSection />
         <BeyondFuelSection />
         <NextStepsSection />
-        <TrustedBySection />
+        <TrustedBySection clients={deal.trustedClients} />
 
         <footer className="border-t border-border py-10 bg-background">
           <div className="container mx-auto flex items-center justify-center gap-3 px-6">
