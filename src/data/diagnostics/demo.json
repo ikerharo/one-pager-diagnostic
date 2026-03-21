@@ -3,7 +3,14 @@
     "clientName": "Empresa Demo",
     "heroQuestion": "¿Cuánto le cuesta a su operación lo que no puede medir?",
     "subtitle": "Diagnóstico de Eficiencia Operativa",
-    "websiteUrl": "https://uvicuo.com"
+    "websiteUrl": "https://uvicuo.com",
+    "preparedFor": {
+      "label": "Preparado para",
+      "recipients": [
+        { "name": "Dir. General", "role": "Dirección General" },
+        { "name": "Dir. Finanzas", "role": "VP Finanzas" }
+      ]
+    }
   },
   "contact": {
     "name": "Iker Haro Escandón",

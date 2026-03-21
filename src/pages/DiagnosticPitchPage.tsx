@@ -88,6 +88,28 @@ const DiagnosticHero = () => {
               Un diagnóstico sin costo, sin compromiso — diseñado para <span className="text-white font-medium">{config.clientName}</span>
             </motion.p>
 
+            {/* Prepared For — exclusivity element */}
+            {config.preparedFor && config.preparedFor.recipients.length > 0 && (
+              <motion.div variants={itemVariants} className="mt-8 inline-flex flex-col items-center">
+                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm px-8 py-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "hsl(var(--uvicuo-dark-muted) / 0.6)" }}>
+                    {config.preparedFor.label}
+                  </p>
+                  <div className="flex flex-wrap items-center justify-center gap-4">
+                    {config.preparedFor.recipients.map((r, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        {i > 0 && <span className="hidden sm:block h-4 w-[1px] bg-white/10" />}
+                        <div className="text-left">
+                          <p className="text-sm font-semibold text-white">{r.name}</p>
+                          <p className="text-[11px]" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>{r.role}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
             <motion.div variants={itemVariants} className="mt-10">
               <Button asChild size="lg" className="gap-2 text-base px-8 py-6 rounded-xl shadow-lg shadow-primary/20">
                 <a href={`mailto:${contact.email}?subject=${encodeURIComponent(contact.ctaSubject)}`}>
