@@ -8,7 +8,16 @@ import {
 const iconMap: Record<string, LucideIcon> = { Truck, Calculator, Gauge };
 
 export interface DiagnosticData {
-  config: { clientName: string; heroQuestion: string; subtitle: string; websiteUrl: string };
+  config: {
+    clientName: string;
+    heroQuestion: string;
+    subtitle: string;
+    websiteUrl: string;
+    preparedFor?: {
+      label: string;
+      recipients: { name: string; role: string }[];
+    };
+  };
   contact: { name: string; role: string; email: string; phone: string; ctaText: string; ctaSubject: string };
   guarantee: { headline: string; text: string; footnote: string };
   whyQualify: { headline: string; description: string; reasons: string[]; closingLine: string };
