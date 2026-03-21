@@ -482,12 +482,19 @@ const MethodologySection = () => {
   );
 };
 
-/* ── Uvicuo Capabilities ─────────────────────── */
-const UvicuoCapabilitiesSection = () => {
-  const { uvicuoCapabilities } = useDiagnostic();
+/* ── Uvicuo Strategic Positioning ─────────────── */
+const UvicuoPositioningSection = () => {
+  const { uvicuoPositioning } = useDiagnostic();
   return (
-    <section className="border-t border-border bg-muted/30 py-16 md:py-20">
-      <div className="container mx-auto max-w-4xl px-6">
+    <section className="section-dark py-16 md:py-20 relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, hsl(var(--uvicuo-green)) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div className="container mx-auto max-w-4xl px-6 relative z-10">
         <AnimatedSection>
           <div className="flex items-center gap-3 mb-1">
             <img src="/uvicuo-icon.png" alt="Uvicuo" className="h-6" />
@@ -495,20 +502,37 @@ const UvicuoCapabilitiesSection = () => {
               Quién respalda el diagnóstico
             </motion.span>
           </div>
-          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
-            Quién es <span className="text-primary">Uvicuo</span>
+          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-white">
+            {uvicuoPositioning.tagline}
           </motion.h2>
-          <motion.p variants={itemVariants} className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-2xl">
-            Fintech especializada en gestión de gastos operativos para flotas. Centralizamos el control de combustible, casetas, viáticos y efectivo — desde la tarjeta hasta la póliza contable.
+          <motion.p variants={itemVariants} className="mt-3 text-sm leading-relaxed max-w-2xl" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
+            {uvicuoPositioning.description}
           </motion.p>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {uvicuoCapabilities.map((cap, i) => (
-              <motion.div key={i} variants={itemVariants} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-all duration-300 hover:shadow-md hover:shadow-primary/5">
-                <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm text-muted-foreground">{cap}</span>
+
+          {/* Differentiators grid */}
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {uvicuoPositioning.differentiators.map((d, i) => (
+              <motion.div key={i} variants={itemVariants} className="rounded-xl border border-[hsl(var(--uvicuo-dark-border))] bg-[hsl(var(--uvicuo-dark-card))] p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
+                <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary mb-3">
+                  {d.category}
+                </span>
+                <h3 className="font-semibold text-sm text-white">{d.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
+                  {d.description}
+                </p>
               </motion.div>
             ))}
           </div>
+
+          {/* Proof points */}
+          <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
+            {uvicuoPositioning.proofPoints.map((point, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                <span className="text-sm font-medium text-white/80">{point}</span>
+              </div>
+            ))}
+          </motion.div>
         </AnimatedSection>
       </div>
     </section>
@@ -581,7 +605,7 @@ const DiagnosticPitchContent = () => {
       <TracksSection />
       <DeliverablesSection />
       <MethodologySection />
-      <UvicuoCapabilitiesSection />
+      <UvicuoPositioningSection />
       <TrustedBySection clients={trustedClients} />
       <CtaSection />
       <footer className="border-t border-border py-10 bg-background">

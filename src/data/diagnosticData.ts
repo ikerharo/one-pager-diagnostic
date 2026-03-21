@@ -32,7 +32,12 @@ export interface DiagnosticData {
   deliverables: { number: string; title: string; description: string }[];
   methodology: { phase: string; title: string; who: string; duration: string; covers: string }[];
   timeline: { week: string; description: string }[];
-  uvicuoCapabilities: string[];
+  uvicuoPositioning: {
+    tagline: string;
+    description: string;
+    differentiators: { title: string; description: string; category: string }[];
+    proofPoints: string[];
+  };
   trustedClients: { name: string; logoUrl: string }[];
 }
 

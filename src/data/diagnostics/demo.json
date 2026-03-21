@@ -186,14 +186,47 @@
     { "week": "Semana 2", "description": "Nuestro equipo analiza, modela financieramente y prepara hallazgos" },
     { "week": "Semana 3", "description": "Presentación ejecutiva con diagnóstico completo y análisis de impacto" }
   ],
-  "uvicuoCapabilities": [
-    "Tarjeta Mastercard con controles granulares por gasto, categoría, monto, ubicación y horario",
-    "Recuperación automática de facturas con IA desde WhatsApp",
-    "Motor contable: póliza lista para SAP, Epicor o cualquier ERP",
-    "Red abierta de combustible — 4.4% más económica que redes cerradas",
-    "Detección de fraude en tiempo real (odómetro, montos, tipo de combustible)",
-    "Financiamiento operativo hasta 15 días"
-  ],
+  "uvicuoPositioning": {
+    "tagline": "La fintech de IA que opera las flotas más grandes de México",
+    "description": "No somos una tarjeta de gasolina. Somos el sistema operativo financiero de la flota — combinamos infraestructura de pagos, inteligencia artificial y automatización contable para eliminar todo lo que se interpone entre el gasto y la póliza.",
+    "differentiators": [
+      {
+        "title": "IA que trabaja por WhatsApp",
+        "description": "Operadores mandan foto del ticket. Nuestra IA extrae datos, valida UUID, segrega IEPS y genera la línea contable. Sin apps, sin capacitación.",
+        "category": "Inteligencia Artificial"
+      },
+      {
+        "title": "Motor contable listo para ERP",
+        "description": "Póliza automatizada con los campos que su sistema necesita — SAP, Epicor, Oracle. Cero captura manual, cero retrabajo.",
+        "category": "Automatización"
+      },
+      {
+        "title": "Red abierta de combustible",
+        "description": "4.4% más económica que redes cerradas como Edenred. Cualquier gasolinera, mismo control. Sin candados comerciales.",
+        "category": "Infraestructura"
+      },
+      {
+        "title": "Detección de fraude en tiempo real",
+        "description": "Cruzamos odómetro, capacidad de tanque, tipo de combustible y geolocalización. Las anomalías se detectan antes de que se conviertan en pérdida.",
+        "category": "Control"
+      },
+      {
+        "title": "Tarjeta Mastercard con reglas granulares",
+        "description": "Controles por categoría, monto, ubicación, horario y tipo de comercio. Cada peso tiene una regla antes de que se gaste.",
+        "category": "Pagos"
+      },
+      {
+        "title": "Financiamiento operativo",
+        "description": "Hasta 15 días de crédito sobre el gasto de flota. Liberen capital de trabajo sin comprometer el control.",
+        "category": "Fintech"
+      }
+    ],
+    "proofPoints": [
+      "50+ flotillas operando en México",
+      "Grupo Bimbo, Paquetexpress, Sanimex entre nuestros clientes",
+      "Procesamos +$500M MXN en gasto operativo anualmente"
+    ]
+  },
   "trustedClients": [
     { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
     { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
