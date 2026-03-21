@@ -1,0 +1,151 @@
+{
+  "config": {
+    "clientName": "Empresa Demo",
+    "subtitle": "Diagnóstico de Eficiencia Operativa",
+    "websiteUrl": "https://uvicuo.com"
+  },
+  "contact": {
+    "name": "Iker Haro Escandón",
+    "role": "CEO Fundador",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Agendar primera sesión",
+    "ctaSubject": "Agendar diagnóstico de eficiencia operativa"
+  },
+  "whyQualify": {
+    "headline": "Por qué su empresa",
+    "description": "En Uvicuo no trabajamos con cualquier empresa. Este diagnóstico lo reservamos para operaciones con la escala, la complejidad y la visión donde sabemos que podemos generar un impacto medible.",
+    "reasons": [
+      "Escala de flota que justifica una optimización profunda",
+      "Complejidad multi-sucursal con oportunidad de estandarización",
+      "Volumen de gasto operativo donde cada punto porcentual de ahorro es significativo",
+      "Visión de transformación digital en la dirección"
+    ],
+    "closingLine": "No venimos a vender. Venimos a entender su operación a profundidad y demostrar con datos dónde están las oportunidades."
+  },
+  "whatIsIt": {
+    "headline": "Un estudio consultivo, no una demo de producto",
+    "description": "Mapeamos cada etapa del flujo de gastos operativos — desde que se presupuesta un viaje hasta que se cierra la póliza contable. Identificamos ineficiencias, puntos de fuga, riesgo fiscal y oportunidades de ahorro. Lo cuantificamos todo.",
+    "stats": [
+      { "value": "15–25", "label": "ineficiencias promedio identificadas" },
+      { "value": "3–8%", "label": "ahorro potencial del gasto operativo" },
+      { "value": "80%+", "label": "reducción en horas administrativas" }
+    ]
+  },
+  "tracks": [
+    {
+      "title": "Operaciones y Logística",
+      "subtitle": "El flujo de gastos desde quien opera la flota día a día",
+      "icon": "Truck",
+      "items": [
+        "Presupuestación por ruta/proyecto",
+        "Dispersión de fondos al operador",
+        "Manejo de emergencias y gastos en ruta",
+        "Comprobación de tickets y facturas",
+        "Control de rendimientos y combustible"
+      ]
+    },
+    {
+      "title": "Contabilidad y Fiscal",
+      "subtitle": "Desde que llega la información hasta el cierre contable",
+      "icon": "Calculator",
+      "items": [
+        "Tiempo y retrabajo en cierre contable",
+        "Deducibilidad fiscal y recuperación de IEPS",
+        "Armado de póliza contable (manual vs automática)",
+        "Segregación de categorías de gasto",
+        "Conciliación: personas y horas involucradas"
+      ]
+    },
+    {
+      "title": "Sistemas y Tecnología",
+      "subtitle": "Ecosistema actual y oportunidades de integración",
+      "icon": "Gauge",
+      "items": [
+        "Plataformas actuales de gastos y combustible",
+        "Integración con ERP (SAP, Epicor, otro)",
+        "Procesos manuales que deberían ser automáticos",
+        "Fuentes de datos y cómo se cruzan"
+      ]
+    }
+  ],
+  "deliverables": [
+    {
+      "number": "01",
+      "title": "Mapeo de procesos (As-Is)",
+      "description": "Diagrama visual de cómo fluyen los gastos hoy — cada etapa, cada handoff, cada punto de fricción."
+    },
+    {
+      "number": "02",
+      "title": "Identificación de ineficiencias",
+      "description": "Lista detallada de hallazgos: fugas de dinero, retrabajo, riesgo fiscal, procesos manuales que deberían ser automáticos."
+    },
+    {
+      "number": "03",
+      "title": "Análisis cuantitativo de ahorro",
+      "description": "Modelado financiero con sus datos reales: ahorro en combustible, recuperación fiscal, reducción de horas administrativas, liberación de capital."
+    },
+    {
+      "number": "04",
+      "title": "Comparativa vs mejores prácticas",
+      "description": "Cómo se comparan contra empresas de su mismo tamaño que ya optimizaron estos procesos. Benchmarks reales."
+    },
+    {
+      "number": "05",
+      "title": "Recomendaciones accionables",
+      "description": "Acciones concretas para mejorar — con o sin Uvicuo. Se quedan con un estudio que cualquier consultoría les cobraría."
+    }
+  ],
+  "sessions": [
+    {
+      "title": "Discovery operativo",
+      "who": "Dir. Operaciones/Logística + gestión de flota",
+      "duration": "60–90 min",
+      "covers": "Flujo de gastos de punta a punta: presupuestos, dispersión, uso en ruta, comprobación, control de combustible"
+    },
+    {
+      "title": "Discovery contable",
+      "who": "Contabilidad + Finanzas",
+      "duration": "45–60 min",
+      "covers": "Cierre contable, deducibilidad, segregación de gastos, integración ERP, póliza contable"
+    },
+    {
+      "title": "Discovery sistemas",
+      "who": "TI / Sistemas",
+      "duration": "30–45 min",
+      "covers": "Plataformas actuales, integraciones, gaps, fuentes de datos"
+    },
+    {
+      "title": "Presentación de hallazgos",
+      "who": "Dirección General + tomadores de decisión",
+      "duration": "45–60 min",
+      "covers": "Diagnóstico completo: mapeo, hallazgos, análisis financiero y recomendaciones"
+    }
+  ],
+  "timeline": [
+    { "week": "Semana 1", "description": "Sesiones de discovery con operaciones, contabilidad y sistemas" },
+    { "week": "Semana 2", "description": "Nuestro equipo analiza, modela financieramente y prepara hallazgos" },
+    { "week": "Semana 3", "description": "Presentación ejecutiva con diagnóstico completo y análisis de impacto" }
+  ],
+  "whyFree": "Porque estamos convencidos del impacto. En cada diagnóstico que hemos realizado, las empresas encuentran oportunidades que no sabían que tenían. Para nosotros es una inversión en la relación. Si los números hacen sentido, avanzamos juntos. Si no, se quedan con un mapeo valioso de sus procesos. No hay letra chica. No hay compromiso.",
+  "uvicuoCapabilities": [
+    "Tarjeta Mastercard con controles granulares por gasto, categoría, monto, ubicación y horario",
+    "Recuperación automática de facturas con IA desde WhatsApp",
+    "Motor contable: póliza lista para SAP, Epicor o cualquier ERP",
+    "Red abierta de combustible — 4.4% más económica que redes cerradas",
+    "Detección de fraude en tiempo real",
+    "Financiamiento operativo hasta 15 días"
+  ],
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" },
+    { "name": "SAC Transportes", "logoUrl": "/logos/sac-2.png" },
+    { "name": "Tractotermos del Sureste", "logoUrl": "/logos/tractotermos.png" },
+    { "name": "Dolphy Helados", "logoUrl": "/logos/dolphy.png" },
+    { "name": "Sanimex", "logoUrl": "/logos/sanimex.webp" },
+    { "name": "Fulem", "logoUrl": "/logos/fulem.png" },
+    { "name": "Maeda", "logoUrl": "/logos/maeda.png" }
+  ]
+}
