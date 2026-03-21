@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
-import { useDeal } from "@/context/DealContext";
 
-const TrustedBySection = () => {
-  const { trustedClients } = useDeal();
-  if (!trustedClients || trustedClients.length === 0) return null;
+interface TrustedBySectionProps {
+  clients?: { name: string; logoUrl: string }[];
+}
 
-  // Duplicate list for seamless infinite scroll
-  const doubled = [...trustedClients, ...trustedClients];
+const TrustedBySection = ({ clients }: TrustedBySectionProps) => {
+  // Support both prop-based and context-free usage
+  if (!clients || clients.length === 0) return null;
+
+  const doubled = [...clients, ...clients];
 
   return (
     <section className="py-12 md:py-16 overflow-hidden">
@@ -22,18 +24,13 @@ const TrustedBySection = () => {
         </AnimatedSection>
       </div>
 
-      {/* Infinite marquee */}
       <div className="relative mt-8">
-        {/* Fade edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
 
         <div className="flex animate-marquee">
           {doubled.map((client, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 px-8 md:px-12 flex items-center"
-            >
+            <div key={i} className="flex-shrink-0 px-8 md:px-12 flex items-center">
               <img
                 src={client.logoUrl}
                 alt={client.name}
