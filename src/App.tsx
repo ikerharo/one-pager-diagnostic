@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Index from "./pages/Index";
 import DealPage from "./pages/DealPage";
+import DiagnosticPitchPage from "./pages/DiagnosticPitchPage";
 import AccountingDeepDivePage from "./pages/AccountingDeepDivePage";
 import NotFound from "./pages/NotFound";
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<LandingPage />} />
           <Route path="/directorio" element={<Index />} />
           <Route path="/bodesa/contable" element={<AccountingDeepDivePage />} />
+          <Route path="/diagnostico/:slug" element={<DiagnosticPitchPage />} />
           <Route path="/:slug" element={<DealPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
