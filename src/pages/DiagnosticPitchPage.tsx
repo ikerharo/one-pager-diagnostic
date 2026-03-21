@@ -605,7 +605,7 @@ const DiagnosticPitchContent = () => {
       <TracksSection />
       <DeliverablesSection />
       <MethodologySection />
-      <UvicuoCapabilitiesSection />
+      <UvicuoPositioningSection />
       <TrustedBySection clients={trustedClients} />
       <CtaSection />
       <footer className="border-t border-border py-10 bg-background">
