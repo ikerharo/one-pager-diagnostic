@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import deliverableMapeo from "@/assets/deliverable-mapeo.png";
+import deliverableBusinessCase from "@/assets/deliverable-business-case.png";
 import {
   ChevronDown,
   Mail,
