@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import deliverableMapeo from "@/assets/deliverable-mapeo.png";
+import deliverableBusinessCase from "@/assets/deliverable-business-case.png";
 import {
   ChevronDown,
   Mail,
@@ -19,6 +21,7 @@ import {
   TrendingUp,
   AlertTriangle,
   Briefcase,
+  Eye,
 } from "lucide-react";
 import diagnosticRegistry from "@/data/diagnostics";
 import { processDiagnosticContent, type DiagnosticData } from "@/data/diagnosticData";
@@ -253,6 +256,96 @@ const DeliverablesSection = () => {
               );
             })}
           </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
+/* ── Deliverable Preview — "Peek behind the curtain" ── */
+const deliverablePreviews = [
+  {
+    title: "Mapeo de Procesos",
+    subtitle: "AS-IS → TO-BE",
+    description: "Cada proceso operativo documentado: pain points, ecosistema de plataformas, flujos de información y puntos de fricción. Todo mapeado visualmente.",
+    image: deliverableMapeo,
+  },
+  {
+    title: "Business Case",
+    subtitle: "Cuantificación financiera",
+    description: "Supuestos documentados, proyección de ahorros mes a mes, análisis de escenarios y ROI. Los números que necesitan para tomar una decisión informada.",
+    image: deliverableBusinessCase,
+  },
+];
+
+const DeliverablePreviewSection = () => {
+  return (
+    <section className="section-dark py-16 md:py-24 relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, hsl(var(--uvicuo-green)) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div className="container mx-auto max-w-5xl px-6 relative z-10">
+        <AnimatedSection>
+          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
+            <Eye className="h-5 w-5 text-primary" />
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Vista previa del entregable</span>
+          </motion.div>
+          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-white">
+            Este nivel de detalle, con <span className="text-primary">sus datos</span>
+          </motion.h2>
+          <motion.p variants={itemVariants} className="mt-3 text-sm leading-relaxed max-w-2xl" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
+            Estos son ejemplos reales de los entregables que recibirán — adaptados a la operación y estructura contable de su empresa.
+          </motion.p>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {deliverablePreviews.map((preview, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                className="group rounded-2xl border border-[hsl(var(--uvicuo-dark-border))] bg-[hsl(var(--uvicuo-dark-card))] overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10"
+              >
+                {/* Screenshot with perspective effect */}
+                <div className="relative overflow-hidden bg-gradient-to-br from-white/[0.02] to-transparent p-4 pb-0">
+                  <div
+                    className="rounded-t-lg overflow-hidden shadow-2xl shadow-black/40 transition-transform duration-700 group-hover:scale-[1.02]"
+                    style={{
+                      transform: "perspective(1200px) rotateX(2deg)",
+                      transformOrigin: "bottom center",
+                    }}
+                  >
+                    <img
+                      src={preview.image}
+                      alt={preview.title}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  {/* Fade overlay at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[hsl(var(--uvicuo-dark-card))] to-transparent" />
+                </div>
+
+                {/* Text content */}
+                <div className="p-6 pt-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
+                      {preview.subtitle}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-lg text-white">{preview.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
+                    {preview.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.p variants={itemVariants} className="mt-8 text-center text-xs" style={{ color: "hsl(var(--uvicuo-dark-muted) / 0.5)" }}>
+            Los ejemplos mostrados corresponden a diagnósticos anteriores. Su estudio será personalizado con datos de su operación.
+          </motion.p>
         </AnimatedSection>
       </div>
     </section>
@@ -549,6 +642,8 @@ const DiagnosticPitchContent = () => {
       <PatternsDeepDive />
       {/* 4. What they'll receive — before how */}
       <DeliverablesSection />
+      {/* 4b. Preview of actual deliverables */}
+      <DeliverablePreviewSection />
       {/* 5. The process — what is it + methodology + timeline merged */}
       <HowItWorksSection />
       {/* 6. Scope — what we map */}
