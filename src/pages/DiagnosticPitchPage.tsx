@@ -148,6 +148,41 @@ const DiagnosticHero = () => {
   );
 };
 
+/* ── Why They Qualify — Exclusive, editorial block ── */
+const WhyQualifySection = () => {
+  const { whyQualify } = useDiagnostic();
+  return (
+    <section className="border-t border-border bg-background py-16 md:py-20 relative overflow-hidden">
+      {/* Subtle decorative accent */}
+      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary via-primary/40 to-transparent" />
+      <div className="container mx-auto max-w-3xl px-6 md:px-12">
+        <AnimatedSection>
+          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-6">
+            <div className="h-[2px] w-8 bg-primary" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{whyQualify.headline}</span>
+          </motion.div>
+          <motion.p variants={itemVariants} className="text-lg md:text-xl leading-relaxed text-foreground/90 font-light">
+            {whyQualify.description}
+          </motion.p>
+          {whyQualify.reasons.length > 0 && (
+            <motion.ul variants={itemVariants} className="mt-8 space-y-3">
+              {whyQualify.reasons.map((r, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span>{r}</span>
+                </li>
+              ))}
+            </motion.ul>
+          )}
+          <motion.p variants={itemVariants} className="mt-8 text-sm italic text-muted-foreground/70 border-l-2 border-primary/30 pl-4">
+            {whyQualify.closingLine}
+          </motion.p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
 /* ── Track Record Bar — Social proof immediately ── */
 const OutcomeStatsBar = () => {
   const { outcomeStats } = useDiagnostic();
@@ -636,6 +671,8 @@ const DiagnosticPitchContent = () => {
       <ScrollProgress />
       {/* 1. Hero: thesis + hard numbers + prepared for */}
       <DiagnosticHero />
+      {/* 1b. Why they qualify — exclusive, personal */}
+      <WhyQualifySection />
       {/* 2. Track record — immediate social proof */}
       <OutcomeStatsBar />
       {/* 3. Deep-dive on the numbers */}
