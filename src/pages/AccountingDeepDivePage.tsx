@@ -770,7 +770,7 @@ const AccountingDeepDivePage = () => {
               </div>
 
               <Button asChild size="lg" className="gap-2 shrink-0">
-                <a href={`mailto:${contactInfo.email}?subject=${encodeURIComponent(contactInfo.ctaSubject)}`}>
+                <a href="https://wa.me/+525517001612" target="_blank" rel="noopener noreferrer">
                   <CalendarCheck className="h-4 w-4" />
                   {contactInfo.ctaText}
                 </a>
