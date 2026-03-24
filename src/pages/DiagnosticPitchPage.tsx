@@ -21,6 +21,7 @@ import {
   TrendingUp,
   AlertTriangle,
   Briefcase,
+  Eye,
 } from "lucide-react";
 import diagnosticRegistry from "@/data/diagnostics";
 import { processDiagnosticContent, type DiagnosticData } from "@/data/diagnosticData";
