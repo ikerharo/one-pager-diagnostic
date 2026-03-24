@@ -22,7 +22,7 @@
   },
   "guarantee": {
     "headline": "Garantía de valor",
-    "text": "Si al finalizar el diagnóstico no identificamos al menos un 3% de ahorro sobre su gasto operativo, no les pedimos nada más. Se quedan con el estudio completo, sin compromiso.",
+    "text": "Si al finalizar el diagnóstico no identificamos al menos un 3% de ahorro potencial sobre su gasto operativo, no les pedimos nada más. Se quedan con el estudio completo, sin compromiso.",
     "footnote": "No hay letra chica. No hay contrato. Es un estudio consultivo que cualquier firma les cobraría."
   },
   "whyQualify": {
@@ -65,9 +65,9 @@
   "outcomeStats": {
     "headline": "Track record",
     "items": [
-      { "value": "30+", "label": "diagnósticos completados" },
-      { "value": "93%", "label": "de empresas avanzaron a implementación" },
-      { "value": "$2.1M", "label": "ahorro mensual promedio identificado" },
+      { "value": "50+", "label": "flotillas operando con Uvicuo" },
+      { "value": "3–8%", "label": "ahorro identificado sobre gasto operativo" },
+      { "value": "$500M+", "label": "MXN procesados anualmente" },
       { "value": "3 sem", "label": "de inicio a entregable" }
     ]
   },
