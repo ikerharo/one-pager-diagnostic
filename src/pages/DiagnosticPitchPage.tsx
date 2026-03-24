@@ -31,9 +31,9 @@ import TrustedBySection from "@/components/discovery/TrustedBySection";
 import NotFound from "./NotFound";
 import heroVideo from "@/assets/hero-loop.mp4";
 
-/* ── Hero — Provocative question, not a label ──── */
+/* ── Hero — Thesis + hard numbers immediately ──── */
 const DiagnosticHero = () => {
-  const { config, contact } = useDiagnostic();
+  const { config, contact, patterns } = useDiagnostic();
   const [showHint, setShowHint] = useState(true);
 
   useEffect(() => {
@@ -58,39 +58,30 @@ const DiagnosticHero = () => {
         }}
       />
       <div className="relative z-10 py-20 md:py-28">
-        <div className="container mx-auto max-w-4xl px-6 text-center">
+        <div className="container mx-auto max-w-5xl px-6">
           <AnimatedSection>
-            <motion.div variants={itemVariants} className="mb-8">
-              <a href={config.websiteUrl} target="_blank" rel="noopener noreferrer">
-                <img src="/uvicuo-wordmark.png" alt="Uvicuo" className="mx-auto h-6 opacity-40 transition-opacity hover:opacity-80" />
-              </a>
-            </motion.div>
+            {/* Top bar: logo + badge */}
+            <div className="flex flex-col items-center mb-10">
+              <motion.div variants={itemVariants}>
+                <a href={config.websiteUrl} target="_blank" rel="noopener noreferrer">
+                  <img src="/uvicuo-wordmark.png" alt="Uvicuo" className="mx-auto h-6 opacity-40 transition-opacity hover:opacity-80" />
+                </a>
+              </motion.div>
+              <motion.div variants={itemVariants} className="mt-4">
+                <Badge className="bg-white/5 text-white/70 border-white/10 hover:bg-white/10 font-medium px-4 py-1.5 text-xs tracking-wider uppercase">
+                  {config.subtitle}
+                </Badge>
+              </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants}>
-              <Badge className="mb-8 bg-white/5 text-white/70 border-white/10 hover:bg-white/10 font-medium px-4 py-1.5 text-xs tracking-wider uppercase">
-                {config.subtitle}
-              </Badge>
-            </motion.div>
-
-            <motion.h1 variants={itemVariants} className="text-4xl font-bold tracking-tight md:text-6xl text-white leading-tight">
-              {config.heroQuestion.split(config.clientName).length > 1 ? (
-                <>
-                  {config.heroQuestion.split(config.clientName)[0]}
-                  <span className="text-primary">{config.clientName}</span>
-                  {config.heroQuestion.split(config.clientName)[1]}
-                </>
-              ) : (
-                config.heroQuestion
-              )}
+            {/* Provocative thesis */}
+            <motion.h1 variants={itemVariants} className="text-4xl font-bold tracking-tight md:text-6xl text-white leading-tight text-center max-w-4xl mx-auto">
+              {config.heroQuestion}
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="mt-6 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
-              Un diagnóstico sin costo, sin compromiso — diseñado para <span className="text-white font-medium">{config.clientName}</span>
-            </motion.p>
-
-            {/* Prepared For — exclusivity element */}
+            {/* Prepared for */}
             {config.preparedFor && config.preparedFor.recipients.length > 0 && (
-              <motion.div variants={itemVariants} className="mt-8 inline-flex flex-col items-center">
+              <motion.div variants={itemVariants} className="mt-8 flex justify-center">
                 <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm px-8 py-5">
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "hsl(var(--uvicuo-dark-muted) / 0.6)" }}>
                     {config.preparedFor.label}
@@ -110,7 +101,26 @@ const DiagnosticHero = () => {
               </motion.div>
             )}
 
-            <motion.div variants={itemVariants} className="mt-10">
+            {/* THE MONEY — Hard numbers right in the hero */}
+            <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {patterns.items.map((p, i) => (
+                <motion.div
+                  key={i}
+                  variants={itemVariants}
+                  className="rounded-xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm p-5 text-center transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.06]"
+                >
+                  <span className="text-2xl md:text-3xl font-bold text-primary font-mono block">{p.stat}</span>
+                  <p className="mt-2 text-xs leading-snug text-white/60">{p.label}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.p variants={itemVariants} className="mt-6 text-center text-xs max-w-2xl mx-auto" style={{ color: "hsl(var(--uvicuo-dark-muted) / 0.6)" }}>
+              {patterns.description}
+            </motion.p>
+
+            {/* CTA */}
+            <motion.div variants={itemVariants} className="mt-10 text-center">
               <Button asChild size="lg" className="gap-2 text-base px-8 py-6 rounded-xl shadow-lg shadow-primary/20">
                 <a href={`mailto:${contact.email}?subject=${encodeURIComponent(contact.ctaSubject)}`}>
                   <CalendarCheck className="h-5 w-5" />
@@ -135,41 +145,7 @@ const DiagnosticHero = () => {
   );
 };
 
-/* ── Guarantee Banner — Risk reversal up front ── */
-const GuaranteeBanner = () => {
-  const { guarantee } = useDiagnostic();
-  return (
-    <section className="section-dark py-10 md:py-12 relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: "repeating-linear-gradient(45deg, hsl(var(--uvicuo-green)) 0, hsl(var(--uvicuo-green)) 1px, transparent 0, transparent 50%)",
-          backgroundSize: "12px 12px",
-        }}
-      />
-      <div className="container mx-auto max-w-4xl px-6 relative z-10">
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-start md:items-center gap-5">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20 shrink-0">
-              <ShieldCheck className="h-7 w-7" />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-lg font-bold text-white">{guarantee.headline}</h2>
-              <p className="mt-1 text-sm leading-relaxed" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
-                {guarantee.text}
-              </p>
-              <p className="mt-2 text-xs italic" style={{ color: "hsl(var(--uvicuo-dark-muted) / 0.7)" }}>
-                {guarantee.footnote}
-              </p>
-            </div>
-          </motion.div>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-};
-
-/* ── Outcome Stats — Track record bar ─────────── */
+/* ── Track Record Bar — Social proof immediately ── */
 const OutcomeStatsBar = () => {
   const { outcomeStats } = useDiagnostic();
   return (
@@ -193,42 +169,8 @@ const OutcomeStatsBar = () => {
   );
 };
 
-/* ── Why They Qualify ─────────────────────────── */
-const WhyQualifySection = () => {
-  const { whyQualify } = useDiagnostic();
-  return (
-    <section className="border-t border-border py-16 md:py-20 bg-background">
-      <div className="container mx-auto max-w-4xl px-6">
-        <AnimatedSection>
-          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
-            {whyQualify.headline}
-          </motion.h2>
-          <motion.p variants={itemVariants} className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-2xl">
-            {whyQualify.description}
-          </motion.p>
-
-          <div className="mt-8 space-y-3">
-            {whyQualify.reasons.map((reason, i) => (
-              <motion.div key={i} variants={itemVariants} className="flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:shadow-md hover:shadow-primary/5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
-                  <CheckCircle2 className="h-4 w-4" />
-                </div>
-                <span className="text-sm text-foreground leading-relaxed">{reason}</span>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.blockquote variants={itemVariants} className="mt-10 border-l-4 border-primary/40 pl-5 py-3">
-            <p className="text-sm italic text-muted-foreground leading-relaxed">{whyQualify.closingLine}</p>
-          </motion.blockquote>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-};
-
-/* ── Patterns — "What we typically find" FOMO ── */
-const PatternsSection = () => {
+/* ── Pattern Deep-Dive — Expand on the numbers ── */
+const PatternsDeepDive = () => {
   const { patterns } = useDiagnostic();
   return (
     <section className="section-dark py-16 md:py-20 relative overflow-hidden">
@@ -243,117 +185,30 @@ const PatternsSection = () => {
         <AnimatedSection>
           <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
             <AlertTriangle className="h-5 w-5 text-primary" />
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Patrones frecuentes</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Detrás de los números</span>
           </motion.div>
           <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-white">
             {patterns.headline}
           </motion.h2>
-          <motion.p variants={itemVariants} className="mt-3 text-sm leading-relaxed max-w-2xl" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
-            {patterns.description}
-          </motion.p>
-
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-            {patterns.items.map((p, i) => (
-              <motion.div key={i} variants={itemVariants} className="rounded-xl border border-[hsl(var(--uvicuo-dark-border))] bg-[hsl(var(--uvicuo-dark-card))] p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-                <div className="flex items-baseline gap-3 mb-3">
-                  <span className="text-3xl font-bold text-primary font-mono">{p.stat}</span>
-                </div>
-                <h3 className="font-semibold text-sm text-white">{p.label}</h3>
-                <p className="mt-2 text-sm leading-relaxed" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
-                  {p.detail}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-};
-
-/* ── What Is It + Stats ──────────────────────── */
-const WhatIsItSection = () => {
-  const { whatIsIt } = useDiagnostic();
-  return (
-    <section className="border-t border-border bg-muted/30 py-16 md:py-20">
-      <div className="container mx-auto max-w-4xl px-6">
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
-            <Briefcase className="h-5 w-5 text-primary" />
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">El estudio</span>
-          </motion.div>
-          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
-            {whatIsIt.headline}
-          </motion.h2>
-          <motion.p variants={itemVariants} className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-2xl">
-            {whatIsIt.description}
-          </motion.p>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {whatIsIt.stats.map((stat, i) => (
-              <motion.div key={i} variants={itemVariants} className="rounded-xl border border-primary/20 bg-primary/[0.04] p-6 text-center transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                <span className="text-3xl md:text-4xl font-bold text-primary font-mono">{stat.value}</span>
-                <p className="mt-2 text-xs text-muted-foreground leading-snug">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-};
-
-/* ── Tracks (Methodology Scope) ──────────────── */
-const TracksSection = () => {
-  const { tracks } = useDiagnostic();
-  return (
-    <section className="border-t border-border py-16 md:py-20 bg-background">
-      <div className="container mx-auto max-w-4xl px-6">
-        <AnimatedSection>
-          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
-            <Target className="h-5 w-5 text-primary" />
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Alcance</span>
-          </motion.div>
-          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
-            Qué vamos a <span className="text-primary">mapear</span>
-          </motion.h2>
-          <motion.p variants={itemVariants} className="mt-2 text-muted-foreground max-w-2xl">
-            Tres tracks especializados que cubren el flujo completo de gastos operativos.
-          </motion.p>
 
           <div className="mt-10 space-y-4">
-            {tracks.map((track, i) => {
-              const Icon = track.icon;
-              return (
-                <motion.div key={i} variants={itemVariants} className="rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30">
-                  <div className="p-6 md:p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20 shrink-0">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs font-bold text-primary font-mono uppercase tracking-wider">Track {i + 1}</span>
-                        </div>
-                        <h3 className="text-lg font-bold text-foreground">{track.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-1">{track.subtitle}</p>
-                        <ul className="mt-4 space-y-2">
-                          {track.items.map((item, j) => (
-                            <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <ArrowRight className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <span className="text-4xl font-black font-mono text-muted-foreground/10 shrink-0 leading-none">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
+            {patterns.items.map((p, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                className="rounded-xl border border-[hsl(var(--uvicuo-dark-border))] bg-[hsl(var(--uvicuo-dark-card))] p-6 md:p-8 transition-all duration-300 hover:border-primary/30"
+              >
+                <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                  <span className="text-4xl md:text-5xl font-bold text-primary font-mono shrink-0">{p.stat}</span>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-white text-lg">{p.label}</h3>
+                    <p className="mt-2 text-sm leading-relaxed" style={{ color: "hsl(var(--uvicuo-dark-muted))" }}>
+                      {p.detail}
+                    </p>
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </AnimatedSection>
       </div>
@@ -361,13 +216,13 @@ const TracksSection = () => {
   );
 };
 
-/* ── Deliverables ────────────────────────────── */
+/* ── Deliverables — What they get ────────────── */
 const deliverableIcons = [FileSearch, AlertTriangle, BarChart3, GitCompare, Lightbulb];
 
 const DeliverablesSection = () => {
   const { deliverables } = useDiagnostic();
   return (
-    <section className="border-t border-border bg-muted/30 py-16 md:py-20">
+    <section className="border-t border-border bg-background py-16 md:py-20">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
@@ -404,26 +259,36 @@ const DeliverablesSection = () => {
   );
 };
 
-/* ── Methodology + Timeline ──────────────────── */
-const MethodologySection = () => {
-  const { methodology, timeline } = useDiagnostic();
+/* ── How It Works — Compact methodology + timeline ── */
+const HowItWorksSection = () => {
+  const { whatIsIt, methodology, timeline } = useDiagnostic();
   return (
-    <section className="border-t border-border py-16 md:py-20 bg-background">
+    <section className="border-t border-border bg-muted/30 py-16 md:py-20">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
-            <CalendarCheck className="h-5 w-5 text-primary" />
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Metodología</span>
+            <Briefcase className="h-5 w-5 text-primary" />
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">El proceso</span>
           </motion.div>
           <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
-            Cómo <span className="text-primary">funciona</span>
+            {whatIsIt.headline}
           </motion.h2>
-          <motion.p variants={itemVariants} className="mt-2 text-muted-foreground max-w-2xl">
-            Sesiones de escucha estructurada — nosotros preguntamos, ustedes nos cuentan cómo opera su negocio.
+          <motion.p variants={itemVariants} className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-2xl">
+            {whatIsIt.description}
           </motion.p>
 
-          {/* Methodology steps */}
-          <div className="mt-8 relative">
+          {/* Key stats inline */}
+          <div className="mt-8 grid grid-cols-3 gap-3">
+            {whatIsIt.stats.map((stat, i) => (
+              <motion.div key={i} variants={itemVariants} className="rounded-xl border border-primary/20 bg-primary/[0.04] p-4 text-center">
+                <span className="text-2xl md:text-3xl font-bold text-primary font-mono">{stat.value}</span>
+                <p className="mt-1 text-[11px] text-muted-foreground leading-snug">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Methodology steps — compact */}
+          <div className="mt-12 relative">
             <motion.div
               className="absolute left-[19px] top-0 bottom-0 w-[2px] hidden sm:block"
               style={{ background: "linear-gradient(to bottom, hsl(var(--primary) / 0.5), hsl(var(--primary) / 0.2), transparent)" }}
@@ -482,6 +347,61 @@ const MethodologySection = () => {
   );
 };
 
+/* ── Scope — What we map (tracks) ────────────── */
+const TracksSection = () => {
+  const { tracks } = useDiagnostic();
+  return (
+    <section className="border-t border-border py-16 md:py-20 bg-background">
+      <div className="container mx-auto max-w-4xl px-6">
+        <AnimatedSection>
+          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
+            <Target className="h-5 w-5 text-primary" />
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Alcance</span>
+          </motion.div>
+          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
+            Qué vamos a <span className="text-primary">mapear</span>
+          </motion.h2>
+
+          <div className="mt-10 space-y-4">
+            {tracks.map((track, i) => {
+              const Icon = track.icon;
+              return (
+                <motion.div key={i} variants={itemVariants} className="rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30">
+                  <div className="p-6 md:p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20 shrink-0">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-xs font-bold text-primary font-mono uppercase tracking-wider">Track {i + 1}</span>
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground">{track.title}</h3>
+                        <p className="text-sm text-muted-foreground mt-1">{track.subtitle}</p>
+                        <ul className="mt-4 space-y-2">
+                          {track.items.map((item, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <ArrowRight className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <span className="text-4xl font-black font-mono text-muted-foreground/10 shrink-0 leading-none">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
 /* ── Uvicuo Strategic Positioning ─────────────── */
 const UvicuoPositioningSection = () => {
   const { uvicuoPositioning } = useDiagnostic();
@@ -509,7 +429,6 @@ const UvicuoPositioningSection = () => {
             {uvicuoPositioning.description}
           </motion.p>
 
-          {/* Differentiators grid */}
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {uvicuoPositioning.differentiators.map((d, i) => (
               <motion.div key={i} variants={itemVariants} className="rounded-xl border border-[hsl(var(--uvicuo-dark-border))] bg-[hsl(var(--uvicuo-dark-card))] p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
@@ -524,7 +443,6 @@ const UvicuoPositioningSection = () => {
             ))}
           </div>
 
-          {/* Proof points */}
           <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
             {uvicuoPositioning.proofPoints.map((point, i) => (
               <div key={i} className="flex items-center gap-2">
@@ -532,6 +450,33 @@ const UvicuoPositioningSection = () => {
                 <span className="text-sm font-medium text-white/80">{point}</span>
               </div>
             ))}
+          </motion.div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
+/* ── Guarantee — Risk reversal as closer ──────── */
+const GuaranteeSection = () => {
+  const { guarantee } = useDiagnostic();
+  return (
+    <section className="border-t border-border bg-background py-14 md:py-16">
+      <div className="container mx-auto max-w-3xl px-6">
+        <AnimatedSection>
+          <motion.div variants={itemVariants} className="rounded-2xl border-2 border-primary/20 bg-primary/[0.03] p-8 md:p-10 text-center">
+            <div className="flex justify-center mb-5">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20">
+                <ShieldCheck className="h-7 w-7" />
+              </div>
+            </div>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">{guarantee.headline}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-xl mx-auto">
+              {guarantee.text}
+            </p>
+            <p className="mt-4 text-xs italic text-muted-foreground/60">
+              {guarantee.footnote}
+            </p>
           </motion.div>
         </AnimatedSection>
       </div>
@@ -590,23 +535,31 @@ const CtaSection = () => {
   );
 };
 
-/* ── Page Shell ──────────────────────────────── */
+/* ── Page Shell — New order ──────────────────── */
 const DiagnosticPitchContent = () => {
   const { trustedClients } = useDiagnostic();
   return (
     <div className="min-h-screen bg-background">
       <ScrollProgress />
+      {/* 1. Hero: thesis + hard numbers + prepared for */}
       <DiagnosticHero />
-      <GuaranteeBanner />
+      {/* 2. Track record — immediate social proof */}
       <OutcomeStatsBar />
-      <WhyQualifySection />
-      <PatternsSection />
-      <WhatIsItSection />
-      <TracksSection />
+      {/* 3. Deep-dive on the numbers */}
+      <PatternsDeepDive />
+      {/* 4. What they'll receive — before how */}
       <DeliverablesSection />
-      <MethodologySection />
+      {/* 5. The process — what is it + methodology + timeline merged */}
+      <HowItWorksSection />
+      {/* 6. Scope — what we map */}
+      <TracksSection />
+      {/* 7. Who's behind it */}
       <UvicuoPositioningSection />
+      {/* 8. Trust logos */}
       <TrustedBySection clients={trustedClients} />
+      {/* 9. Guarantee — confident closer, not anxious opener */}
+      <GuaranteeSection />
+      {/* 10. CTA */}
       <CtaSection />
       <footer className="border-t border-border py-10 bg-background">
         <div className="container mx-auto flex items-center justify-center gap-3 px-6">
