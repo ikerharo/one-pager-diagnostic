@@ -1,0 +1,246 @@
+{
+  "config": {
+    "clientName": "Esgari",
+    "heroQuestion": "¿Cuánto le cuesta a Esgari operar con herramientas que no se hablan entre sí?",
+    "subtitle": "Diagnóstico de Eficiencia Operativa",
+    "websiteUrl": "https://uvicuo.com",
+    "preparedFor": {
+      "label": "Preparado para",
+      "recipients": [
+        { "name": "Alfredo Castro", "role": "Director de Transformación Digital" },
+        { "name": "Directora de Finanzas", "role": "Dirección de Finanzas" },
+        { "name": "Director General", "role": "Dirección General" }
+      ]
+    }
+  },
+  "contact": {
+    "name": "Iker Haro Escandón",
+    "role": "CEO & Fundador — Uvicuo",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Coordinar primera sesión",
+    "ctaSubject": "Coordinar primera sesión de discovery — Esgari × Uvicuo"
+  },
+  "guarantee": {
+    "headline": "Garantía de valor",
+    "text": "Si al finalizar el diagnóstico no identificamos al menos un 3% de ahorro potencial sobre su gasto operativo, no les pedimos nada más. Se quedan con el estudio completo, sin compromiso.",
+    "footnote": "No hay letra chica. No hay contrato. Es un estudio consultivo que cualquier firma les cobraría."
+  },
+  "whyQualify": {
+    "headline": "Por qué Esgari",
+    "description": "Esgari no es una empresa de transporte convencional — está en proceso de convertirse en una empresa tecnológica que ofrece soluciones logísticas integradas. Con 600+ unidades y un modelo de franquicia que ya tiene demanda en México, Argentina y República Dominicana, la visión de Alfredo y su equipo es democratizar la infraestructura logística para terceros. Esa ambición, combinada con la complejidad de consolidar múltiples herramientas aisladas en una sola plataforma, es exactamente donde nuestro diagnóstico genera mayor impacto.",
+    "reasons": [
+      "Flota de 600+ unidades con modelo de franquicia en expansión internacional",
+      "Múltiples aplicaciones aisladas para gastos, flota y administración — sin integración entre ellas",
+      "Proceso de transformación digital liderado por Alfredo Castro, con 30 años de experiencia en IBM",
+      "Necesidad de consolidar herramientas en una plataforma única que soporte la escala del modelo de franquicia",
+      "Velocidad como prioridad: entre más rápido se identifiquen ineficiencias, más se ahorra"
+    ],
+    "closingLine": "No venimos a vender. Venimos a entender su operación a profundidad y demostrar con datos dónde están las oportunidades. Lo que hagan con esa información es decisión suya."
+  },
+  "patterns": {
+    "headline": "Lo que típicamente encontramos",
+    "description": "En operaciones de escala similar a Esgari, estos son los patrones más frecuentes. No son hipotéticos — vienen de diagnósticos reales con flotillas de transporte de carga.",
+    "items": [
+      {
+        "stat": "4–7%",
+        "label": "de sobreprecio oculto en combustible",
+        "detail": "La diferencia entre lo que pagan en red cerrada vs. precio de mercado. Con 600+ unidades, esto puede representar más de $1.2M al mes."
+      },
+      {
+        "stat": "15–30%",
+        "label": "de facturas sin deducibilidad fiscal completa",
+        "detail": "IEPS no segregado, UUIDs no validados, facturas que llegan tarde. Dinero que el SAT les devolvería si la información estuviera en orden."
+      },
+      {
+        "stat": "120+",
+        "label": "horas-hombre al mes en conciliación manual",
+        "detail": "Personal calificado cruzando información entre aplicaciones aisladas, persiguiendo comprobantes y reconciliando datos que deberían fluir automáticamente."
+      },
+      {
+        "stat": "2–5%",
+        "label": "de transacciones con anomalías no detectadas",
+        "detail": "Cargas dobles, montos incongruentes con capacidad de tanque, horarios atípicos. Sin controles en tiempo real, pasan desapercibidas."
+      }
+    ]
+  },
+  "outcomeStats": {
+    "headline": "Track record",
+    "items": [
+      { "value": "50+", "label": "flotillas operando con Uvicuo" },
+      { "value": "3–8%", "label": "ahorro identificado sobre gasto operativo" },
+      { "value": "$500M+", "label": "MXN procesados anualmente" },
+      { "value": "3 sem", "label": "de inicio a entregable" }
+    ]
+  },
+  "whatIsIt": {
+    "headline": "Un estudio consultivo, no una demo de producto",
+    "description": "Mapeamos cada etapa del flujo de gastos operativos — desde que se presupuesta un viaje hasta que se cierra la póliza contable. Identificamos ineficiencias, puntos de fuga, riesgo fiscal y oportunidades de ahorro. Lo cuantificamos todo con sus datos reales.",
+    "stats": [
+      { "value": "15–25", "label": "ineficiencias promedio identificadas por empresa" },
+      { "value": "3–8%", "label": "ahorro potencial del gasto operativo total" },
+      { "value": "80%+", "label": "reducción en horas administrativas de cierre" }
+    ]
+  },
+  "tracks": [
+    {
+      "title": "Operaciones y Logística",
+      "subtitle": "El flujo de gastos desde quien opera la flota día a día",
+      "icon": "Truck",
+      "items": [
+        "Presupuestación por ruta, proyecto o centro de costos",
+        "Mecanismo de dispersión de fondos al operador — evaluación de solución actual (Toca)",
+        "Modelo de operación con franquiciatarios y cómo estandarizar controles",
+        "Protocolo de emergencias y gastos fuera de presupuesto",
+        "Flujo de comprobación: desde el ticket hasta la póliza",
+        "Control de rendimientos, tipo de combustible y estaciones"
+      ]
+    },
+    {
+      "title": "Contabilidad y Fiscal",
+      "subtitle": "Desde que llega la información hasta el cierre contable",
+      "icon": "Calculator",
+      "items": [
+        "Días y recursos involucrados en el cierre mensual",
+        "Porcentaje real de deducibilidad y oportunidad de IEPS",
+        "Proceso de armado de póliza contable (manual vs. automático)",
+        "Segregación de categorías: diésel, casetas, viáticos, alimentos, hospedaje",
+        "Conciliación bancaria: personas, horas y herramientas"
+      ]
+    },
+    {
+      "title": "Sistemas y Tecnología",
+      "subtitle": "Ecosistema actual y oportunidades de consolidación",
+      "icon": "Gauge",
+      "items": [
+        "Evaluación de aplicaciones aisladas actuales y oportunidades de consolidación",
+        "Análisis de app de gastos actual (Rinde Gastos) y alternativas",
+        "Nivel de integración con ERP y sistemas administrativos",
+        "Procesos manuales que deberían estar automatizados",
+        "Arquitectura tecnológica para soportar el modelo de franquicia a escala"
+      ]
+    }
+  ],
+  "deliverables": [
+    {
+      "number": "01",
+      "title": "Mapeo de procesos (As-Is)",
+      "description": "Diagrama visual de cómo fluyen los gastos hoy — cada etapa, cada handoff, cada punto de fricción documentado."
+    },
+    {
+      "number": "02",
+      "title": "Identificación de ineficiencias",
+      "description": "Lista priorizada de hallazgos: fugas de dinero, retrabajo, riesgo fiscal, y procesos que destruyen valor silenciosamente."
+    },
+    {
+      "number": "03",
+      "title": "Modelado financiero con sus datos",
+      "description": "No estimaciones genéricas — análisis con los números reales de Esgari: ahorro en combustible, recuperación fiscal, liberación de capital de trabajo."
+    },
+    {
+      "number": "04",
+      "title": "Cuadro comparativo de plataformas",
+      "description": "Comparativa objetiva entre su ecosistema actual de herramientas aisladas vs. una solución integrada. Los datos que necesitan para tomar la decisión."
+    },
+    {
+      "number": "05",
+      "title": "Recomendaciones accionables",
+      "description": "Plan de acción concreto — con o sin Uvicuo. Si deciden no avanzar, se quedan con un estudio que cualquier consultoría cobraría."
+    }
+  ],
+  "methodology": [
+    {
+      "phase": "Sesión 1",
+      "title": "Discovery operativo",
+      "who": "Equipo operativo + administración / comprobaciones",
+      "duration": "60–90 min",
+      "covers": "Flujo de gastos end-to-end: presupuestos, dispersión, uso en ruta, comprobación, control de combustible, modelo de franquicia"
+    },
+    {
+      "phase": "Sesión 2",
+      "title": "Discovery contable y fiscal",
+      "who": "Directora de Finanzas + equipo de contabilidad",
+      "duration": "45–60 min",
+      "covers": "Cierre contable, deducibilidad, segregación de gastos, integración ERP, póliza contable"
+    },
+    {
+      "phase": "Sesión 3",
+      "title": "Discovery de sistemas",
+      "who": "Alfredo Castro + equipo de TI",
+      "duration": "45–60 min",
+      "covers": "Aplicaciones actuales, oportunidades de consolidación, gaps tecnológicos, arquitectura para escalar franquicia"
+    },
+    {
+      "phase": "Análisis",
+      "title": "Modelado y preparación de hallazgos",
+      "who": "Equipo Uvicuo (interno)",
+      "duration": "5–7 días",
+      "covers": "Cruzamos toda la información, modelamos financieramente y preparamos el diagnóstico"
+    },
+    {
+      "phase": "Entrega",
+      "title": "Presentación ejecutiva",
+      "who": "Director General + Directora de Finanzas + Alfredo Castro",
+      "duration": "45–60 min",
+      "covers": "Diagnóstico completo: mapeo, hallazgos cuantificados, cuadro comparativo y recomendaciones"
+    }
+  ],
+  "timeline": [
+    { "week": "Semana 1", "description": "Sesiones de discovery con los 3 tracks: operaciones, finanzas y sistemas" },
+    { "week": "Semana 2", "description": "Nuestro equipo analiza, modela financieramente y prepara hallazgos" },
+    { "week": "Semana 3", "description": "Presentación ejecutiva con diagnóstico completo y cuadro comparativo" }
+  ],
+  "uvicuoPositioning": {
+    "tagline": "La fintech de IA que opera las flotas más grandes de México",
+    "description": "No somos una tarjeta de gasolina. Somos el sistema operativo financiero de la flota — combinamos infraestructura de pagos, inteligencia artificial y automatización contable para eliminar todo lo que se interpone entre el gasto y la póliza.",
+    "differentiators": [
+      {
+        "title": "IA que trabaja por WhatsApp",
+        "description": "Operadores mandan foto del ticket. Nuestra IA extrae datos, valida UUID, segrega IEPS y genera la línea contable. Sin apps, sin capacitación.",
+        "category": "Inteligencia Artificial"
+      },
+      {
+        "title": "Motor contable listo para ERP",
+        "description": "Póliza automatizada con los campos que su sistema necesita. Cero captura manual, cero retrabajo.",
+        "category": "Automatización"
+      },
+      {
+        "title": "Red abierta de combustible",
+        "description": "4.4% más económica que redes cerradas como Edenred. Cualquier gasolinera, mismo control. Sin candados comerciales.",
+        "category": "Infraestructura"
+      },
+      {
+        "title": "Detección de fraude en tiempo real",
+        "description": "Cruzamos odómetro, capacidad de tanque, tipo de combustible y geolocalización. Las anomalías se detectan antes de que se conviertan en pérdida.",
+        "category": "Control"
+      },
+      {
+        "title": "Tarjeta Mastercard con reglas granulares",
+        "description": "Controles por categoría, monto, ubicación, horario y tipo de comercio. Cada peso tiene una regla antes de que se gaste.",
+        "category": "Pagos"
+      },
+      {
+        "title": "Plataforma escalable para franquicias",
+        "description": "Infraestructura que soporta el modelo de franquicia: cada franquiciatario con su panel, sus controles y su contabilidad — todo centralizado para la dirección.",
+        "category": "Escalabilidad"
+      }
+    ],
+    "proofPoints": [
+      "50+ flotillas operando en México",
+      "Grupo Bimbo, Paquetexpress, Sanimex entre nuestros clientes",
+      "Procesamos +$500M MXN en gasto operativo anualmente"
+    ]
+  },
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" },
+    { "name": "SAC Transportes", "logoUrl": "/logos/sac-2.png" },
+    { "name": "Tractotermos del Sureste", "logoUrl": "/logos/tractotermos.png" },
+    { "name": "Dolphy Helados", "logoUrl": "/logos/dolphy.png" },
+    { "name": "Sanimex", "logoUrl": "/logos/sanimex.webp" },
+    { "name": "Fulem", "logoUrl": "/logos/fulem.png" },
+    { "name": "Maeda", "logoUrl": "/logos/maeda.png" }
+  ]
+}
