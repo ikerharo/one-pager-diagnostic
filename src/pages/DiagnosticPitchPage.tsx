@@ -125,8 +125,8 @@ const DiagnosticHero = () => {
             {/* CTA */}
             <motion.div variants={itemVariants} className="mt-10 text-center">
               <Button asChild size="lg" className="gap-2 text-base px-8 py-6 rounded-xl shadow-lg shadow-primary/20">
-                <a href={`mailto:${contact.email}?subject=${encodeURIComponent(contact.ctaSubject)}`}>
-                  <CalendarCheck className="h-5 w-5" />
+                <a href="https://wa.me/+525517001612" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
                   {contact.ctaText}
                 </a>
               </Button>
@@ -650,8 +650,8 @@ const CtaSection = () => {
                 </div>
               </div>
               <Button asChild size="lg" className="gap-2 shrink-0 text-base px-8 py-6 rounded-xl shadow-lg shadow-primary/20">
-                <a href={`mailto:${contact.email}?subject=${encodeURIComponent(contact.ctaSubject)}`}>
-                  <CalendarCheck className="h-5 w-5" />
+                <a href="https://wa.me/+525517001612" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
                   {contact.ctaText}
                 </a>
               </Button>
