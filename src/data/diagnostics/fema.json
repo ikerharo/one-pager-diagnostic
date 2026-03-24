@@ -1,0 +1,245 @@
+{
+  "config": {
+    "clientName": "FEMA",
+    "heroQuestion": "¿Cuánto le cuesta a FEMA lo que su operación no puede medir?",
+    "subtitle": "Diagnóstico de Eficiencia Operativa",
+    "websiteUrl": "https://uvicuo.com",
+    "preparedFor": {
+      "label": "Preparado para",
+      "recipients": [
+        { "name": "Eduardo Cervantes", "role": "Director de Finanzas" },
+        { "name": "Alberto", "role": "Dir. Operaciones" }
+      ]
+    }
+  },
+  "contact": {
+    "name": "Iker Haro Escandón",
+    "role": "CEO & Fundador — Uvicuo",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Coordinar primera sesión",
+    "ctaSubject": "Coordinar primera sesión de discovery — FEMA × Uvicuo"
+  },
+  "guarantee": {
+    "headline": "Garantía de valor",
+    "text": "Si al finalizar el diagnóstico no identificamos al menos un 3% de ahorro sobre su gasto operativo, no les pedimos nada más. Se quedan con el estudio completo, sin compromiso.",
+    "footnote": "No hay letra chica. No hay contrato. Es un estudio consultivo que cualquier firma les cobraría."
+  },
+  "whyQualify": {
+    "headline": "Por qué Transportes FEMA",
+    "description": "FEMA opera una de las flotas de transporte más grandes del noreste de México, con más de 500 unidades. Lo que nos llamó la atención fue la visión de Eduardo y su equipo: no buscan proveedores, buscan socios tecnológicos que entiendan su operación a profundidad. Esa mentalidad de mejora continua, combinada con la escala de su operación, es exactamente donde nuestro diagnóstico genera mayor impacto.",
+    "reasons": [
+      "Flota de 500+ unidades con gasto operativo mensual de alta escala",
+      "Gestión de gastos de viaje fragmentada — operadores con muchos gastos pequeños en ruta y ejecutivos con pocos viajes de montos grandes",
+      "Desarrollo propio para compulsa de casetas que podría unificarse con el resto de la gestión",
+      "Contexto macroeconómico que presiona costos: volatilidad de mercados y alza del diésel",
+      "Dirección con visión de socio tecnológico, no de proveedor"
+    ],
+    "closingLine": "No venimos a vender. Venimos a demostrar con datos dónde están las oportunidades. Lo que hagan con esa información es decisión suya."
+  },
+  "patterns": {
+    "headline": "Lo que típicamente encontramos",
+    "description": "En operaciones de escala similar a FEMA, estos son los patrones más frecuentes. No son hipotéticos — vienen de diagnósticos reales con flotillas de transporte de carga.",
+    "items": [
+      {
+        "stat": "4–7%",
+        "label": "de sobreprecio oculto en combustible",
+        "detail": "La diferencia entre lo que pagan en red cerrada vs. precio de mercado. Con 500+ unidades de diésel, esto puede representar más de $1M al mes."
+      },
+      {
+        "stat": "15–30%",
+        "label": "de facturas sin deducibilidad fiscal completa",
+        "detail": "IEPS no segregado, UUIDs no validados, facturas que llegan tarde. Dinero que el SAT les devolvería si la información estuviera en orden."
+      },
+      {
+        "stat": "120+",
+        "label": "horas-hombre al mes en conciliación manual",
+        "detail": "Personal calificado dedicado a cruzar Excel con estados de cuenta, perseguir comprobantes de operadores y compulsar casetas manualmente."
+      },
+      {
+        "stat": "2–5%",
+        "label": "de transacciones con anomalías no detectadas",
+        "detail": "Cargas dobles, montos incongruentes con capacidad de tanque, horarios atípicos. Sin controles en tiempo real, pasan desapercibidas."
+      }
+    ]
+  },
+  "outcomeStats": {
+    "headline": "Track record",
+    "items": [
+      { "value": "30+", "label": "diagnósticos completados" },
+      { "value": "93%", "label": "de empresas avanzaron a implementación" },
+      { "value": "$2.1M", "label": "ahorro mensual promedio identificado" },
+      { "value": "3 sem", "label": "de inicio a entregable" }
+    ]
+  },
+  "whatIsIt": {
+    "headline": "Un estudio consultivo, no una demo de producto",
+    "description": "Mapeamos cada etapa del flujo de gastos operativos — desde que se presupuesta un viaje hasta que se cierra la póliza contable. Identificamos ineficiencias, puntos de fuga, riesgo fiscal y oportunidades de ahorro. Lo cuantificamos todo con sus datos reales.",
+    "stats": [
+      { "value": "15–25", "label": "ineficiencias promedio identificadas por empresa" },
+      { "value": "3–8%", "label": "ahorro potencial del gasto operativo total" },
+      { "value": "80%+", "label": "reducción en horas administrativas de cierre" }
+    ]
+  },
+  "tracks": [
+    {
+      "title": "Operaciones y Logística",
+      "subtitle": "El flujo de gastos desde quien opera la flota día a día",
+      "icon": "Truck",
+      "items": [
+        "Presupuestación por ruta, proyecto o centro de costos",
+        "Mecanismo de dispersión de fondos al operador y ejecutivos",
+        "Protocolo de emergencias y gastos fuera de presupuesto",
+        "Flujo de comprobación: desde el ticket hasta la póliza — operadores vs. ejecutivos",
+        "Compulsa de casetas y cómo integrar el desarrollo interno con una solución unificada",
+        "Control de rendimientos, tipo de combustible y estaciones"
+      ]
+    },
+    {
+      "title": "Contabilidad y Fiscal",
+      "subtitle": "Desde que llega la información hasta el cierre contable",
+      "icon": "Calculator",
+      "items": [
+        "Días y recursos involucrados en el cierre mensual",
+        "Porcentaje real de deducibilidad y oportunidad de IEPS",
+        "Proceso de armado de póliza contable (manual vs. automático)",
+        "Segregación de categorías: diésel, casetas, viáticos, alimentos, hospedaje",
+        "Conciliación bancaria: personas, horas y herramientas"
+      ]
+    },
+    {
+      "title": "Sistemas y Tecnología",
+      "subtitle": "Ecosistema actual y oportunidades de integración",
+      "icon": "Gauge",
+      "items": [
+        "Plataformas en uso para gastos, combustible y casetas",
+        "Evaluación de integraciones con desarrollos propios existentes",
+        "Nivel de integración con ERP",
+        "Procesos manuales que deberían estar automatizados",
+        "Fuentes de datos dispersas y cómo se cruzan hoy"
+      ]
+    }
+  ],
+  "deliverables": [
+    {
+      "number": "01",
+      "title": "Mapeo de procesos (As-Is)",
+      "description": "Diagrama visual de cómo fluyen los gastos hoy — cada etapa, cada handoff, cada punto de fricción documentado."
+    },
+    {
+      "number": "02",
+      "title": "Identificación de ineficiencias",
+      "description": "Lista priorizada de hallazgos: fugas de dinero, retrabajo, riesgo fiscal, y procesos que destruyen valor silenciosamente."
+    },
+    {
+      "number": "03",
+      "title": "Modelado financiero con sus datos",
+      "description": "No estimaciones genéricas — análisis con los números reales de FEMA: ahorro en combustible, recuperación fiscal, liberación de capital de trabajo."
+    },
+    {
+      "number": "04",
+      "title": "Benchmarking contra mejores prácticas",
+      "description": "Comparativa objetiva contra empresas de escala similar que ya optimizaron estos procesos. Datos reales, no teóricos."
+    },
+    {
+      "number": "05",
+      "title": "Recomendaciones accionables",
+      "description": "Plan de acción concreto — con o sin Uvicuo. Si deciden no avanzar, se quedan con un estudio que cualquier consultoría cobraría."
+    }
+  ],
+  "methodology": [
+    {
+      "phase": "Sesión 1",
+      "title": "Discovery operativo",
+      "who": "Alberto + equipo de operaciones",
+      "duration": "60–90 min",
+      "covers": "Flujo de gastos end-to-end: presupuestos, dispersión, uso en ruta, comprobación, control de combustible, compulsa de casetas"
+    },
+    {
+      "phase": "Sesión 2",
+      "title": "Discovery contable y fiscal",
+      "who": "Eduardo Cervantes + equipo de finanzas",
+      "duration": "45–60 min",
+      "covers": "Cierre contable, deducibilidad, segregación de gastos, integración ERP, póliza contable"
+    },
+    {
+      "phase": "Sesión 3",
+      "title": "Discovery de sistemas",
+      "who": "Equipo de TI / Sistemas",
+      "duration": "30–45 min",
+      "covers": "Plataformas actuales, desarrollos propios, integraciones, gaps tecnológicos, fuentes de datos"
+    },
+    {
+      "phase": "Análisis",
+      "title": "Modelado y preparación de hallazgos",
+      "who": "Equipo Uvicuo (interno)",
+      "duration": "5–7 días",
+      "covers": "Cruzamos toda la información, modelamos financieramente y preparamos el diagnóstico"
+    },
+    {
+      "phase": "Entrega",
+      "title": "Presentación ejecutiva",
+      "who": "Dirección General + Eduardo + Alberto",
+      "duration": "45–60 min",
+      "covers": "Diagnóstico completo: mapeo, hallazgos cuantificados, análisis de impacto y recomendaciones"
+    }
+  ],
+  "timeline": [
+    { "week": "Semana 1", "description": "Sesiones de discovery con los 3 tracks: operaciones, finanzas y sistemas" },
+    { "week": "Semana 2", "description": "Nuestro equipo analiza, modela financieramente y prepara hallazgos" },
+    { "week": "Semana 3", "description": "Presentación ejecutiva con diagnóstico completo y análisis de impacto" }
+  ],
+  "uvicuoPositioning": {
+    "tagline": "La fintech de IA que opera las flotas más grandes de México",
+    "description": "No somos una tarjeta de gasolina. Somos el sistema operativo financiero de la flota — combinamos infraestructura de pagos, inteligencia artificial y automatización contable para eliminar todo lo que se interpone entre el gasto y la póliza.",
+    "differentiators": [
+      {
+        "title": "IA que trabaja por WhatsApp",
+        "description": "Operadores mandan foto del ticket. Nuestra IA extrae datos, valida UUID, segrega IEPS y genera la línea contable. Sin apps, sin capacitación.",
+        "category": "Inteligencia Artificial"
+      },
+      {
+        "title": "Motor contable listo para ERP",
+        "description": "Póliza automatizada con los campos que su sistema necesita. Cero captura manual, cero retrabajo.",
+        "category": "Automatización"
+      },
+      {
+        "title": "Red abierta de combustible",
+        "description": "4.4% más económica que redes cerradas como Edenred. Cualquier gasolinera, mismo control. Sin candados comerciales.",
+        "category": "Infraestructura"
+      },
+      {
+        "title": "Detección de fraude en tiempo real",
+        "description": "Cruzamos odómetro, capacidad de tanque, tipo de combustible y geolocalización. Las anomalías se detectan antes de que se conviertan en pérdida.",
+        "category": "Control"
+      },
+      {
+        "title": "Tarjeta Mastercard con reglas granulares",
+        "description": "Controles por categoría, monto, ubicación, horario y tipo de comercio. Cada peso tiene una regla antes de que se gaste.",
+        "category": "Pagos"
+      },
+      {
+        "title": "Financiamiento operativo",
+        "description": "Hasta 15 días de crédito sobre el gasto de flota. Liberen capital de trabajo sin comprometer el control.",
+        "category": "Fintech"
+      }
+    ],
+    "proofPoints": [
+      "50+ flotillas operando en México",
+      "Grupo Bimbo, Paquetexpress, Sanimex entre nuestros clientes",
+      "Procesamos +$500M MXN en gasto operativo anualmente"
+    ]
+  },
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" },
+    { "name": "SAC Transportes", "logoUrl": "/logos/sac-2.png" },
+    { "name": "Tractotermos del Sureste", "logoUrl": "/logos/tractotermos.png" },
+    { "name": "Dolphy Helados", "logoUrl": "/logos/dolphy.png" },
+    { "name": "Sanimex", "logoUrl": "/logos/sanimex.webp" },
+    { "name": "Fulem", "logoUrl": "/logos/fulem.png" },
+    { "name": "Maeda", "logoUrl": "/logos/maeda.png" }
+  ]
+}
