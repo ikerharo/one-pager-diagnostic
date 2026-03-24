@@ -642,6 +642,8 @@ const DiagnosticPitchContent = () => {
       <PatternsDeepDive />
       {/* 4. What they'll receive — before how */}
       <DeliverablesSection />
+      {/* 4b. Preview of actual deliverables */}
+      <DeliverablePreviewSection />
       {/* 5. The process — what is it + methodology + timeline merged */}
       <HowItWorksSection />
       {/* 6. Scope — what we map */}
