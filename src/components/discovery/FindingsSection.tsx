@@ -4,117 +4,121 @@ import { FileText } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { useDeal } from "@/context/DealContext";
 
-const impactBorderColors = {
-  alto: "border-l-destructive",
-  medio: "border-l-amber-500",
-  bajo: "border-l-primary",
+const impactLabel = {
+  alto: "Alto",
+  medio: "Medio",
+  bajo: "Bajo",
 } as const;
 
-const impactBgColors = {
-  alto: "bg-destructive/10",
-  medio: "bg-amber-500/10",
-  bajo: "bg-primary/10",
-} as const;
-
-const impactTextColors = {
-  alto: "text-destructive",
-  medio: "text-amber-600",
-  bajo: "text-primary",
+const impactDot = {
+  alto: "bg-destructive",
+  medio: "bg-amber-500",
+  bajo: "bg-primary",
 } as const;
 
 const FindingsSection = () => {
   const { findings } = useDeal();
   const { slug } = useParams<{ slug: string }>();
-  const [hero, ...rest] = findings;
-  const HeroIcon = hero.icon;
   const showDeepDiveLink = slug === "bodesa";
 
   return (
-    <section className="py-16 md:py-20 overflow-hidden bg-background">
+    <section className="py-16 md:py-24 overflow-hidden bg-background">
       <div className="container mx-auto max-w-5xl px-6">
         <AnimatedSection>
+          <motion.p
+            variants={itemVariants}
+            className="text-xs font-semibold uppercase tracking-wider text-primary mb-2"
+          >
+            Diagnóstico
+          </motion.p>
           <motion.h2
             variants={itemVariants}
             className="text-2xl font-bold tracking-tight md:text-3xl text-foreground"
           >
-            Lo que <span className="text-primary">encontramos</span>
+            Lo que encontramos
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="mt-2 text-muted-foreground max-w-2xl"
+            className="mt-2 text-muted-foreground max-w-2xl text-sm"
           >
-            Oportunidades concretas identificadas durante nuestro análisis.
+            Cada hallazgo conecta directamente con un impacto financiero u operativo medible.
           </motion.p>
 
-          {/* Hero finding */}
+          {/* Strategic table */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 rounded-xl border border-border bg-card border-l-4 border-l-destructive overflow-hidden relative group transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30"
+            className="mt-10 rounded-xl border border-border overflow-hidden"
           >
-            <div className="p-6 md:p-8 flex items-start gap-5">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-destructive/15 text-destructive ring-1 ring-destructive/20 shrink-0">
-                <HeroIcon className="h-6 w-6" />
+            {/* Header row — desktop only */}
+            <div className="hidden md:grid md:grid-cols-[1fr_100px_1fr] bg-muted/50 border-b border-border">
+              <div className="px-6 py-3">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  Hallazgo
+                </span>
               </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-xl font-bold text-foreground">{hero.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {hero.description}
-                </p>
-                {hero.quote && (
-                  <blockquote className="mt-3 border-l-2 border-primary/30 pl-3 text-sm italic text-muted-foreground/80">
-                    "{hero.quote}"
-                    {hero.quoteAuthor && <span className="block mt-1 text-xs not-italic text-muted-foreground/60">— {hero.quoteAuthor}</span>}
-                  </blockquote>
-                )}
+              <div className="px-4 py-3 text-center">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  Impacto
+                </span>
               </div>
-              <span className="text-4xl font-black font-mono text-muted-foreground/10 shrink-0 leading-none">
-                01
-              </span>
+              <div className="px-6 py-3">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  Evidencia
+                </span>
+              </div>
             </div>
-          </motion.div>
 
-          {/* Connecting dotted line */}
-          <div className="flex justify-center my-1">
-            <div className="h-6 w-[2px] border-l-2 border-dashed border-primary/20" />
-          </div>
+            {/* Data rows */}
+            {findings.map((finding, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                className={`md:grid md:grid-cols-[1fr_100px_1fr] ${
+                  i < findings.length - 1 ? "border-b border-border" : ""
+                } bg-card transition-colors hover:bg-muted/30`}
+              >
+                {/* Hallazgo */}
+                <div className="px-6 py-5">
+                  <h3 className="font-semibold text-sm text-foreground leading-snug">
+                    {finding.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                    {finding.description}
+                  </p>
+                </div>
 
-          {/* Grid 2x2 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {rest.map((finding, i) => {
-              const Icon = finding.icon;
-              const borderColor = impactBorderColors[finding.impact];
-              const bgColor = impactBgColors[finding.impact];
-              const textColor = impactTextColors[finding.impact];
-              return (
-                <motion.div
-                  key={i}
-                  variants={itemVariants}
-                  className={`group relative rounded-xl border border-border bg-card border-l-4 ${borderColor} p-5 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-primary/30`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${bgColor} ${textColor} ring-1 ring-current/10 shrink-0`}>
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-sm text-foreground">{finding.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                        {finding.description}
-                      </p>
-                      {finding.quote && (
-                        <blockquote className="mt-2 border-l-2 border-primary/30 pl-3 text-xs italic text-muted-foreground/80">
-                          "{finding.quote}"
-                          {finding.quoteAuthor && <span className="block mt-0.5 not-italic text-muted-foreground/60">— {finding.quoteAuthor}</span>}
-                        </blockquote>
-                      )}
-                    </div>
-                    <span className="text-3xl font-black font-mono text-muted-foreground/10 shrink-0 leading-none">
-                      {String(i + 2).padStart(2, "0")}
+                {/* Impacto */}
+                <div className="px-6 md:px-4 py-2 md:py-5 flex md:justify-center md:items-start">
+                  <div className="flex items-center gap-1.5">
+                    <span className={`inline-block h-2 w-2 rounded-full ${impactDot[finding.impact]}`} />
+                    <span className="text-xs font-medium text-muted-foreground">
+                      {impactLabel[finding.impact]}
                     </span>
                   </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                </div>
+
+                {/* Evidencia */}
+                <div className="px-6 py-2 md:py-5 pb-5 md:pb-5">
+                  {finding.quote ? (
+                    <div>
+                      <p className="text-sm italic text-muted-foreground/80 leading-relaxed">
+                        "{finding.quote}"
+                      </p>
+                      {finding.quoteAuthor && (
+                        <p className="mt-1.5 text-xs text-muted-foreground/60">
+                          — {finding.quoteAuthor}
+                        </p>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="text-xs text-muted-foreground/50 italic">
+                      Observación directa durante el análisis
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
 
           {showDeepDiveLink && (
             <motion.div variants={itemVariants} className="mt-8 flex justify-center">
