@@ -7,7 +7,7 @@ import heroVideo from "@/assets/hero-loop.mp4";
 import { ChevronDown } from "lucide-react";
 
 const DiscoveryHeader = () => {
-  const { discoveryConfig } = useDeal();
+  const { discoveryConfig, preparedFor } = useDeal();
   const [showHint, setShowHint] = useState(true);
 
   useEffect(() => {
@@ -77,6 +77,25 @@ const DiscoveryHeader = () => {
             >
               {discoveryConfig.subtitle}
             </motion.p>
+
+            {preparedFor && (
+              <motion.div variants={itemVariants} className="mt-8">
+                <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
+                  {preparedFor.label}
+                </p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {preparedFor.recipients.map((r, i) => (
+                    <div
+                      key={i}
+                      className="rounded-lg border border-[hsl(var(--uvicuo-dark-border))] bg-[hsl(var(--uvicuo-dark-card))] px-4 py-2 text-center"
+                    >
+                      <span className="block text-sm font-medium text-white">{r.name}</span>
+                      <span className="block text-[10px] text-muted-foreground">{r.role}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </AnimatedSection>
         </div>
       </div>

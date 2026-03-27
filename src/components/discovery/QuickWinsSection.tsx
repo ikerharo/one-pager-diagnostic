@@ -13,13 +13,13 @@ const QuickWinsSection = () => {
             variants={itemVariants}
             className="text-2xl font-bold tracking-tight md:text-3xl text-foreground"
           >
-            Quick Wins con <span className="text-primary">Uvicuo</span>
+            Situación actual vs <span className="text-primary">propuesta</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="mt-2 text-muted-foreground max-w-2xl"
           >
-            Mejoras inmediatas que podemos implementar en las primeras semanas.
+            Comparativa directa entre cómo opera hoy y cómo podría operar.
           </motion.p>
 
           <div className="mt-10 space-y-4">

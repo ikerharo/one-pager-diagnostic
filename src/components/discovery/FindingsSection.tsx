@@ -37,13 +37,13 @@ const FindingsSection = () => {
             variants={itemVariants}
             className="text-2xl font-bold tracking-tight md:text-3xl text-foreground"
           >
-            Hallazgos <span className="text-primary">Clave</span>
+            Lo que <span className="text-primary">encontramos</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="mt-2 text-muted-foreground max-w-2xl"
           >
-            Principales oportunidades identificadas durante la sesión de discovery.
+            Oportunidades concretas identificadas durante nuestro análisis.
           </motion.p>
 
           {/* Hero finding */}
