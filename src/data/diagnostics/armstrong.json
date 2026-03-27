@@ -26,9 +26,9 @@
   },
   "whyQualify": {
     "headline": "Por qué Grupo Armstrong",
-    "description": "Grupo Armstrong opera una flota de 300+ unidades de traslado de valores — una operación donde el control del gasto no es un nice-to-have, es un requisito de seguridad y rentabilidad. Con un modelo de combustible y viáticos que genera sobrecostos estructurales de 5-7%, y un equipo financiero que necesita datos para analizar, el diagnóstico puede revelar oportunidades inmediatas sin cambiar la operación.",
+    "description": "Grupo Armstrong opera una flota de 600-700 unidades de traslado de valores — una operación donde el control del gasto no es un nice-to-have, es un requisito de seguridad y rentabilidad. Con un modelo de combustible y viáticos que genera sobrecostos estructurales, y un equipo financiero que necesita datos para analizar, el diagnóstico puede revelar oportunidades inmediatas sin cambiar la operación.",
     "reasons": [
-      "300+ unidades en operación de traslado de valores con rutas en Jalisco y estados cercanos",
+      "600-700 unidades en operación de traslado de valores con rutas en Jalisco y estados cercanos",
       "Combustible en red cerrada Edenred con sobrecostos de 3.5-4.5% por estación",
       "Viáticos en Ticket Empresarial con comisión de ~3.5% sobre cada peso",
       "Conciliación manual diaria sin visibilidad de costo por km ni rendimiento por unidad",
@@ -43,7 +43,7 @@
       {
         "stat": "3.5–4.5%",
         "label": "de sobreprecio en combustible por red cerrada",
-        "detail": "La diferencia entre lo que se paga en estaciones de red cerrada vs. precio CRE de mercado. Con 300,000 litros al mes, esto representa $175K–270K MXN mensuales."
+        "detail": "Estimación conservadora: la diferencia entre lo que se paga en estaciones de red cerrada vs. precio CRE de mercado. Con 300,000 litros al mes, esto representa $175K–$270K MXN mensuales."
       },
       {
         "stat": "~3.5%",
@@ -53,7 +53,7 @@
       {
         "stat": "7–9%",
         "label": "tasa de error en cobros de peajes",
-        "detail": "Cargos dobles, ejes mal clasificados, cruces fantasma. Con 600-700 unidades, la conciliación automática recupera $40K–80K/mes."
+        "detail": "Cargos dobles, ejes mal clasificados, cruces fantasma. Estimación conservadora: ~325 unidades operativas, ~14,300 cruces/mes, ~$80K–$103K/mes recuperable vía conciliación automática."
       },
       {
         "stat": "0%",

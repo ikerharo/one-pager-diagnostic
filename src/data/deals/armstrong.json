@@ -20,11 +20,12 @@
     ]
   },
   "executiveSummary": {
-    "thesis": "Grupo Armstrong opera 300+ unidades de traslado de valores con un modelo de combustible y viáticos que genera sobrecostos estructurales de 5-7% sobre el gasto — sin que aparezcan como comisión directa. Con red abierta, datos en tiempo real e integración con Samsara, el ahorro puede ser inmediato y sin cambiar la operación.",
+    "thesis": "Grupo Armstrong opera 600-700 unidades de traslado de valores con un modelo de combustible y viáticos que genera sobrecostos estructurales — sin que aparezcan como comisión directa. Con red abierta, datos en tiempo real e integración con Samsara, el ahorro puede ser inmediato y sin cambiar la operación.",
     "impactItems": [
-      { "value": "300+", "label": "unidades en operación" },
-      { "value": "5-7%", "label": "ahorro estimado en combustible" },
-      { "value": "~3.5%", "label": "comisión actual en viáticos" },
+      { "value": "600-700", "label": "unidades en operación" },
+      { "value": "3.5–4.5%", "label": "sobreprecio estimado en combustible" },
+      { "value": "~3.5%", "label": "comisión actual viáticos (Ticket)" },
+      { "value": "~1.5%", "label": "comisión actual combustible (Edenred)" },
       { "value": "0%", "label": "comisión con Uvicuo" }
     ]
   },
@@ -32,7 +33,7 @@
     {
       "icon": "DollarSign",
       "title": "Combustible caro por red cerrada",
-      "description": "El 80% del gasto corre por Edenred — un monedero que solo tiene acceso al 20-30% de las estaciones. Los operadores cargan donde haya una estación Edenred, no donde sea más barato. Las estaciones de la red cobran una comisión para aceptarlo que se traslada al precio final. Con 300,000 litros al mes, un sobreprecio de 3.5-4.5% representa entre $175K y $270K MXN al mes que se pierden solo por estar en la red equivocada.",
+      "description": "El gasto de combustible corre por Edenred — un monedero con acceso limitado de estaciones. Los operadores cargan donde haya una estación Edenred, no donde sea más barato. Las estaciones de la red cobran una comisión que se traslada al precio final. Estimación conservadora: con 300,000 litros/mes y un sobreprecio de 3.5–4.5%, se pierden entre $175K y $270K MXN al mes solo por estar en la red equivocada.",
       "impact": "alto",
       "quote": "Siento que ahorita estamos operando muy manual — cargamos donde haya y no necesariamente es la mejor opción.",
       "quoteAuthor": "Isaac Moreno, Finanzas"
@@ -40,7 +41,7 @@
     {
       "icon": "CreditCard",
       "title": "Comisiones que crecen con el gasto",
-      "description": "Edenred Combustible cobra ~1.5% sobre el gasto. Ticket Empresarial (viáticos) cobra ~3.5%. Estas comisiones se calculan sobre el volumen total — entre más gasta Armstrong, más paga. No son cuotas fijas a cambio de ahorro: son un porcentaje permanente sobre el gasto operativo que no genera ningún valor adicional.",
+      "description": "Edenred Combustible cobra ~1.5% sobre el gasto. Ticket Empresarial cobra ~3.5% sobre viáticos. Estas comisiones se calculan sobre el volumen total — entre más gasta Armstrong, más paga. No son cuotas fijas a cambio de ahorro: son un porcentaje permanente sobre el gasto operativo.",
       "impact": "alto",
       "quote": null,
       "quoteAuthor": null
@@ -56,7 +57,7 @@
     {
       "icon": "AlertTriangle",
       "title": "Peajes con sobrecosto no detectado",
-      "description": "Las antenas de telepeaje tienen una tasa de error documentada del 7-9% — cargos dobles, ejes de más. Sin conciliación activa del estado de cuenta contra los cruces reales, ese sobrecosto se queda. En una flota de 600-700 unidades con operaciones en Jalisco y estados cercanos, el volumen de cruces hace que este rubro sea significativo.",
+      "description": "Las antenas de telepeaje tienen una tasa de error documentada del 7–9% — cargos dobles, ejes de más. Estimación conservadora: ~325 unidades operativas, ~14,300 cruces/mes, caseta promedio $80 MXN. Eso significa ~$80K–$103K MXN/mes recuperable vía conciliación automática.",
       "impact": "medio",
       "quote": null,
       "quoteAuthor": null
@@ -81,20 +82,20 @@
       {
         "category": "Combustible",
         "icon": "Fuel",
-        "estimatedSaving": "$175K–270K/mes",
-        "calculation": "300,000 litros/mes × 3.5–4.5% de sobreprecio por red cerrada Edenred. Al pasar a red abierta Mastercard, se accede al precio CRE más competitivo en cualquier estación."
+        "estimatedSaving": "$175K–$270K/mes",
+        "calculation": "Estimación conservadora: 300,000 litros/mes × 3.5–4.5% de sobreprecio por red cerrada Edenred. Al pasar a red abierta Mastercard, se accede al precio CRE más competitivo en cualquier estación."
       },
       {
         "category": "Peajes",
         "icon": "Route",
-        "estimatedSaving": "$40K–80K/mes",
-        "calculation": "~650 unidades × ~15 cruces/mes × costo promedio $120/cruce × 7–9% tasa de error en antenas = $80K–105K en cobros erróneos. Estimación conservadora recuperable: $40K–80K/mes vía conciliación automática."
+        "estimatedSaving": "~$80K–$103K/mes",
+        "calculation": "Estimación conservadora: ~325 unidades operativas × ~44 cruces/mes × caseta promedio $80 MXN × 7–9% tasa de error en antenas. Recuperable vía conciliación automática."
       },
       {
         "category": "Viáticos",
         "icon": "Utensils",
         "estimatedSaving": "~3.5% del gasto",
-        "calculation": "Eliminación de la comisión de Ticket Empresarial (~3.5% sobre cada peso). Uvicuo cobra por usuario, no por volumen — entre más gasta Armstrong, más conviene."
+        "calculation": "Eliminación de la comisión de Ticket Empresarial (~3.5% sobre cada peso). Armstrong no compartió el monto exacto pero se estima en varios millones MXN/mes. Uvicuo cobra por usuario, no por volumen."
       }
     ],
     "qualitativeBenefits": [
@@ -119,7 +120,7 @@
         "description": "De prefondeo a línea de crédito. El capital que hoy está parado en monederos se libera para la operación."
       }
     ],
-    "note": "Estimaciones conservadoras basadas en datos compartidos por Armstrong y benchmarks de la industria de traslado de valores."
+    "note": "Todas las cifras son estimaciones conservadoras basadas en datos compartidos por Armstrong y benchmarks de la industria de traslado de valores — no son cifras exactas."
   },
   "additionalCapabilities": [
     { "icon": "Route", "title": "Peajes y casetas", "description": "Conciliación automática de cruces vs cobros. Detección y disputa de errores en tiempo real." },
