@@ -151,33 +151,29 @@
   },
   "timeline": [
     {
-      "week": "Paso 1",
-      "title": "Armstrong comparte rutas y datos",
-      "description": "2-3 rutas principales con estaciones habituales + consumo mensual + gasto en Ticket Empresarial.",
-      "owner": "client"
+      "week": "Paso 1 ✓",
+      "title": "Demo y presentación inicial",
+      "description": "Sesión realizada con Isaac Moreno. Se presentó la plataforma Uvicuo y se identificaron oportunidades clave en combustible, viáticos y peajes.",
+      "owner": "both"
     },
     {
       "week": "Paso 2",
-      "title": "Uvicuo genera mapa de ahorros",
-      "description": "Mapa de estaciones más baratas por ruta con datos CRE. Comparativa de comisiones Edenred/Ticket Empresarial vs Uvicuo. Entrega en 24 horas.",
-      "owner": "uvicuo"
+      "title": "Diagnóstico sin costo",
+      "description": "Sesiones con equipo operativo, financiero y de peajes. Mapeo de procesos, identificación de ineficiencias y modelado financiero con datos reales de Armstrong.",
+      "owner": "both",
+      "ctaLabel": "Ver diagnóstico completo",
+      "ctaLink": "/diagnostico/armstrong"
     },
     {
       "week": "Paso 3",
-      "title": "Isaac presenta a Dirección General",
-      "description": "Business case con ahorros cuantificados en pesos. Si los números son buenos, prioridad alta.",
+      "title": "Decisión con datos",
+      "description": "Isaac presenta a Dirección General el business case con ahorros cuantificados en pesos. Los números hablan solos.",
       "owner": "client"
     },
     {
       "week": "Paso 4",
-      "title": "Diagnóstico sin costo",
-      "description": "Sesión con equipo administrativo y operativo. Mapeo de procesos, identificación de ineficiencias adicionales y análisis de ROI detallado.",
-      "owner": "both"
-    },
-    {
-      "week": "Paso 5",
       "title": "Arranque de implementación",
-      "description": "Onboarding, configuración de rutas y presupuestos, integración con Samsara, capacitación.",
+      "description": "Onboarding, configuración de rutas y presupuestos, integración con Samsara, capacitación al equipo.",
       "owner": "both"
     }
   ],

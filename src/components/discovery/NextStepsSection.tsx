@@ -170,6 +170,14 @@ const NextStepsSection = () => {
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                         {step.description}
                       </p>
+                      {step.ctaLabel && step.ctaLink && (
+                        <Button asChild variant="outline" size="sm" className="mt-3 gap-2 border-primary/30 hover:bg-primary/10">
+                          <Link to={step.ctaLink}>
+                            <FileSearch className="h-3.5 w-3.5" />
+                            {step.ctaLabel}
+                          </Link>
+                        </Button>
+                      )}
                     </div>
                   </motion.div>
                 );
@@ -194,29 +202,7 @@ const NextStepsSection = () => {
             </motion.blockquote>
           )}
 
-          {/* Diagnostic CTA */}
-          {slug && (
-            <motion.div
-              variants={itemVariants}
-              className="mt-10 rounded-xl border border-primary/30 bg-primary/5 p-6 md:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-            >
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <FileSearch className="h-4 w-4 text-primary" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary">Diagnóstico sin costo</span>
-                </div>
-                <p className="text-sm text-muted-foreground max-w-md">
-                  Análisis detallado de ineficiencias operativas con entregables concretos y garantía de valor.
-                </p>
-              </div>
-              <Button asChild variant="outline" className="gap-2 shrink-0 border-primary/30 hover:bg-primary/10">
-                <Link to={`/diagnostico/${slug}`}>
-                  <FileSearch className="h-4 w-4" />
-                  Ver diagnóstico
-                </Link>
-              </Button>
-            </motion.div>
-          )}
+
 
           {/* Contact CTA */}
           <motion.div
