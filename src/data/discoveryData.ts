@@ -231,6 +231,9 @@ export function processDealContent(content: any): DealData {
     financialImpact,
     benefitsDashboard: content.benefitsDashboard
       ? {
+          spendBreakdown: content.benefitsDashboard.spendBreakdown ?? undefined,
+          spendTotal: content.benefitsDashboard.spendTotal ?? undefined,
+          totalSavings: content.benefitsDashboard.totalSavings ?? undefined,
           savingsCategories: (content.benefitsDashboard.savingsCategories ?? []).map((s: any) => ({
             ...s,
             icon: iconMap[s.icon] || defaultIcon,
