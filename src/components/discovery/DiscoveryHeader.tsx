@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useParams } from "react-router-dom";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useDeal } from "@/context/DealContext";
 import heroVideo from "@/assets/hero-loop.mp4";
-import { ChevronDown, ShieldCheck } from "lucide-react";
+import { ChevronDown, ShieldCheck, FileSearch } from "lucide-react";
 
 const DiscoveryHeader = () => {
   const { discoveryConfig, preparedFor } = useDeal();
+  const { slug } = useParams<{ slug: string }>();
   const [showHint, setShowHint] = useState(true);
 
   useEffect(() => {
@@ -98,19 +100,34 @@ const DiscoveryHeader = () => {
               </motion.div>
             )}
 
-            {discoveryConfig.ndaUrl && (
-              <motion.div variants={itemVariants} className="mt-8">
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
-                >
-                  <a href={discoveryConfig.ndaUrl} target="_blank" rel="noopener noreferrer">
-                    <ShieldCheck className="mr-2 h-4 w-4" />
-                    Firmar NDA
-                  </a>
-                </Button>
+            {(discoveryConfig.ndaUrl || slug) && (
+              <motion.div variants={itemVariants} className="mt-8 flex flex-wrap justify-center gap-3">
+                {discoveryConfig.ndaUrl && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
+                  >
+                    <a href={discoveryConfig.ndaUrl} target="_blank" rel="noopener noreferrer">
+                      <ShieldCheck className="mr-2 h-4 w-4" />
+                      Firmar NDA
+                    </a>
+                  </Button>
+                )}
+                {slug && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
+                  >
+                    <a href={`/diagnostico/${slug}`}>
+                      <FileSearch className="mr-2 h-4 w-4" />
+                      Ver diagnóstico
+                    </a>
+                  </Button>
+                )}
               </motion.div>
             )}
           </AnimatedSection>
