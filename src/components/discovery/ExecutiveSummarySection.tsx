@@ -26,7 +26,7 @@ const ExecutiveSummarySection = () => {
           </motion.p>
 
           {executiveSummary.impactItems.length > 0 && (
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-5 gap-4">
               {executiveSummary.impactItems.map((item, i) => (
                 <motion.div
                   key={i}
