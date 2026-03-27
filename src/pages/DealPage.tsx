@@ -7,7 +7,7 @@ import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import ExecutiveSummarySection from "@/components/discovery/ExecutiveSummarySection";
 import FindingsSection from "@/components/discovery/FindingsSection";
 import FinancialImpactSection from "@/components/discovery/FinancialImpactSection";
-import QuickWinsSection from "@/components/discovery/QuickWinsSection";
+
 import UvicuoSection from "@/components/discovery/UvicuoSection";
 import BeyondFuelSection from "@/components/discovery/BeyondFuelSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
@@ -41,7 +41,7 @@ const DealPage = () => {
         <ExecutiveSummarySection />
         <FindingsSection />
         <FinancialImpactSection />
-        <QuickWinsSection />
+        
         <UvicuoSection />
         {deal.additionalCapabilities.length > 0 && <BeyondFuelSection />}
         <NextStepsSection />
