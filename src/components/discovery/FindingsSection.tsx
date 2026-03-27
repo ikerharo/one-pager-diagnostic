@@ -147,6 +147,7 @@ const FindingsSection = () => {
                         </div>
                       )}
                     </div>
+                  </div>
                 </motion.div>
               );
             })}
