@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useDeal } from "@/context/DealContext";
 import heroVideo from "@/assets/hero-loop.mp4";
-import { ChevronDown, ShieldCheck, FileSearch } from "lucide-react";
+import { ChevronDown, ShieldCheck, FileSearch, Play } from "lucide-react";
 
 const DiscoveryHeader = () => {
   const { discoveryConfig, preparedFor } = useDeal();
