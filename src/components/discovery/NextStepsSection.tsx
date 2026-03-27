@@ -170,6 +170,14 @@ const NextStepsSection = () => {
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                         {step.description}
                       </p>
+                      {step.ctaLabel && step.ctaLink && (
+                        <Button asChild variant="outline" size="sm" className="mt-3 gap-2 border-primary/30 hover:bg-primary/10">
+                          <Link to={step.ctaLink}>
+                            <FileSearch className="h-3.5 w-3.5" />
+                            {step.ctaLabel}
+                          </Link>
+                        </Button>
+                      )}
                     </div>
                   </motion.div>
                 );

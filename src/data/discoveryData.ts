@@ -75,6 +75,8 @@ export interface TimelineStep {
   title: string;
   description: string;
   owner: TimelineOwner;
+  ctaLabel?: string;
+  ctaLink?: string;
 }
 
 export interface Finding {
