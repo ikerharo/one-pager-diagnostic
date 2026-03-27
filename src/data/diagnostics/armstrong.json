@@ -82,40 +82,29 @@
   },
   "tracks": [
     {
-      "title": "Operaciones y Combustible",
-      "subtitle": "El flujo de gastos desde quien opera la flota día a día",
+      "title": "Operativo",
+      "subtitle": "Combustible, peajes, viáticos y el día a día de la flota",
       "icon": "Truck",
       "items": [
         "Modelo actual de carga: red Edenred, estaciones habituales, criterio de selección",
-        "Protocolo de carga por ruta y control de litros vs. capacidad de tanque",
+        "Control de litros vs. capacidad de tanque y rendimiento por unidad",
         "Integración Samsara: odómetros, rendimientos, telemetría disponible",
         "Proceso de conciliación diaria del área de combustible",
-        "Protocolo de emergencias y cargas fuera de presupuesto",
+        "Proveedor de telepeaje, conciliación de cruces y errores detectados",
         "Control de viáticos: Ticket Empresarial, comprobación, categorías"
       ]
     },
     {
-      "title": "Finanzas y Administración",
-      "subtitle": "Desde que se genera el gasto hasta el cierre contable",
+      "title": "Administrativo",
+      "subtitle": "Finanzas, contabilidad y visibilidad del gasto",
       "icon": "Calculator",
       "items": [
         "Días y recursos involucrados en conciliación y cierre mensual",
         "Visibilidad actual: reportes disponibles, gaps de información",
         "Proceso de armado de póliza contable (manual vs. automático)",
         "Segregación de categorías: diésel, casetas, viáticos, alimentos",
-        "Conciliación bancaria: personas, horas y herramientas"
-      ]
-    },
-    {
-      "title": "Peajes y Casetas",
-      "subtitle": "Conciliación y control de cruces en la operación",
-      "icon": "Route",
-      "items": [
-        "Proveedor actual de telepeaje y modelo de cobro",
-        "Proceso de conciliación de cruces vs. cobros en estado de cuenta",
-        "Frecuencia de errores detectados: dobles cobros, ejes de más",
-        "Rutas principales y volumen de cruces por plaza",
-        "Mecanismo de disputa y recuperación de cobros erróneos"
+        "Conciliación bancaria: personas, horas y herramientas",
+        "Mecanismo de disputa y recuperación de cobros erróneos en peajes"
       ]
     }
   ],
@@ -151,22 +140,15 @@
       "phase": "Sesión 1",
       "title": "Discovery operativo",
       "who": "Área de combustible + operaciones",
-      "duration": "60–90 min",
-      "covers": "Flujo de carga, red Edenred, integración Samsara, conciliación diaria, viáticos Ticket Empresarial"
+      "duration": "45–60 min",
+      "covers": "Flujo de carga, red Edenred, integración Samsara, conciliación diaria, protocolo de emergencias, control de viáticos y peajes"
     },
     {
       "phase": "Sesión 2",
-      "title": "Discovery financiero",
+      "title": "Discovery administrativo",
       "who": "Isaac Moreno + equipo de finanzas",
       "duration": "45–60 min",
-      "covers": "Cierre contable, visibilidad de datos, segregación de gastos, reportes necesarios"
-    },
-    {
-      "phase": "Sesión 3",
-      "title": "Discovery de peajes",
-      "who": "Área administrativa + operaciones",
-      "duration": "30–45 min",
-      "covers": "Proveedor de telepeaje, conciliación de cruces, errores detectados, rutas principales"
+      "covers": "Cierre contable, visibilidad de datos, segregación de gastos, conciliación bancaria, reportes necesarios, proceso de comprobación"
     },
     {
       "phase": "Análisis",
@@ -184,7 +166,7 @@
     }
   ],
   "timeline": [
-    { "week": "Semana 1", "description": "Sesiones de discovery con los 3 tracks: operaciones, finanzas y peajes" },
+    { "week": "Semana 1", "description": "Sesiones de discovery: operativo y administrativo (45-60 min cada una)" },
     { "week": "Semana 2", "description": "Nuestro equipo analiza, modela financieramente y prepara hallazgos" },
     { "week": "Semana 3", "description": "Presentación ejecutiva con diagnóstico completo y mapa de ahorros" }
   ],
