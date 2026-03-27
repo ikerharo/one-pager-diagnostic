@@ -13,6 +13,21 @@
     "ctaText": "Agendar diagnóstico",
     "ctaSubject": "Diagnóstico Uvicuo — Grupo Armstrong"
   },
+  "preparedFor": {
+    "label": "Preparado para",
+    "recipients": [
+      { "name": "Isaac Moreno", "role": "Finanzas" }
+    ]
+  },
+  "executiveSummary": {
+    "thesis": "Grupo Armstrong opera 300+ unidades de traslado de valores con un modelo de combustible y viáticos que genera sobrecostos estructurales de 5-7% sobre el gasto — sin que aparezcan como comisión directa. Con red abierta, datos en tiempo real e integración con Samsara, el ahorro puede ser inmediato y sin cambiar la operación.",
+    "impactItems": [
+      { "value": "300+", "label": "unidades en operación" },
+      { "value": "5-7%", "label": "ahorro estimado en combustible" },
+      { "value": "~3.5%", "label": "comisión actual en viáticos" },
+      { "value": "0%", "label": "comisión con Uvicuo" }
+    ]
+  },
   "findings": [
     {
       "icon": "DollarSign",
@@ -62,6 +77,12 @@
     }
   ],
   "exclusionNote": null,
+  "additionalCapabilities": [
+    { "icon": "Route", "title": "Peajes y casetas", "description": "Conciliación automática de cruces vs cobros. Detección y disputa de errores en tiempo real." },
+    { "icon": "Utensils", "title": "Viáticos", "description": "Tarjeta con controles por categoría, monto y horario. Comprobación vía WhatsApp con IA." },
+    { "icon": "Wrench", "title": "Mantenimiento", "description": "Registro de inspecciones con fotos validadas por IA. Vinculación automática de cada foto a la unidad." },
+    { "icon": "Banknote", "title": "Efectivo de emergencia", "description": "Fondo digital con autorización en tiempo real. Sin anticipos, sin reembolsos." }
+  ],
   "uvicuoPositioning": {
     "headline": "Visibilidad y control del gasto operativo — sin cambiar cómo opera tu flota",
     "description": "Uvicuo reemplaza los monederos cerrados por una solución de crédito Mastercard con control granular. Para Armstrong significa acceso a todas las estaciones, cero comisiones de red, y toda la data de combustible, viáticos y peajes en un solo lugar. Con integración directa a Samsara para no añadir fricción operativa a los custodios.",

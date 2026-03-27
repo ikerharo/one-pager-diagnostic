@@ -5,6 +5,14 @@
     "subtitle": "Resumen de hallazgos y plan de accion tras la reunion exploratoria",
     "websiteUrl": "https://uvicuo.com"
   },
+  "executiveSummary": {
+    "thesis": "Tras analizar la operación de [Empresa], encontramos oportunidades concretas de ahorro y eficiencia que pueden implementarse en semanas — sin cambiar la operación del día a día.",
+    "impactItems": [
+      { "value": "X%", "label": "ahorro estimado" },
+      { "value": "$XM", "label": "gasto mensual analizado" },
+      { "value": "N", "label": "unidades en operación" }
+    ]
+  },
   "contact": {
     "name": "Iker Haro Escandon",
     "role": "CEO Fundador",
