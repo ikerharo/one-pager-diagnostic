@@ -87,8 +87,8 @@
       {
         "category": "Peajes",
         "icon": "Route",
-        "estimatedSaving": "Por cuantificar",
-        "calculation": "Tasa de error documentada de 7–9% en antenas. Con 600–700 unidades en operación, la conciliación automática detecta y disputa cobros dobles y ejes mal clasificados."
+        "estimatedSaving": "$40K–80K/mes",
+        "calculation": "~650 unidades × ~15 cruces/mes × costo promedio $120/cruce × 7–9% tasa de error en antenas = $80K–105K en cobros erróneos. Estimación conservadora recuperable: $40K–80K/mes vía conciliación automática."
       },
       {
         "category": "Viáticos",

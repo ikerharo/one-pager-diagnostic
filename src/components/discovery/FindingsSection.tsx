@@ -22,7 +22,7 @@ const FindingsSection = () => {
   const showDeepDiveLink = slug === "bodesa";
 
   return (
-    <section className="py-16 md:py-24 overflow-hidden bg-background">
+    <section className="py-12 md:py-16 overflow-hidden bg-background">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.p

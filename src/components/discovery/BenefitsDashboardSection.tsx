@@ -10,7 +10,7 @@ const BenefitsDashboardSection = () => {
     benefitsDashboard;
 
   return (
-    <section className="section-dark py-16 md:py-24 overflow-hidden">
+    <section className="section-dark py-12 md:py-16 overflow-hidden">
       <div className="container mx-auto max-w-5xl px-6">
         <AnimatedSection>
           <motion.p
