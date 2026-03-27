@@ -4,11 +4,20 @@ import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSec
 import { useDeal } from "@/context/DealContext";
 
 const UvicuoSection = () => {
-  const { uvicuoPositioning } = useDeal();
+  const { uvicuoPositioning, additionalCapabilities } = useDeal();
   if (!uvicuoPositioning) return null;
 
+  // Merge core capabilities with additional capabilities
+  const allCapabilities = [
+    ...uvicuoPositioning.capabilities,
+    ...(additionalCapabilities || []).map((cap) => ({
+      title: cap.title,
+      description: cap.description,
+    })),
+  ];
+
   return (
-    <section className="border-t border-border bg-muted/30 py-16 md:py-20">
+    <section className="section-dark py-12 md:py-16">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <div className="flex items-center gap-3 mb-1">
@@ -35,9 +44,9 @@ const UvicuoSection = () => {
             {uvicuoPositioning.description}
           </motion.p>
 
-          {uvicuoPositioning.capabilities.length > 0 && (
+          {allCapabilities.length > 0 && (
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {uvicuoPositioning.capabilities.map((cap, i) => (
+              {allCapabilities.map((cap, i) => (
                 <motion.div
                   key={i}
                   variants={itemVariants}
@@ -54,6 +63,13 @@ const UvicuoSection = () => {
               ))}
             </div>
           )}
+
+          <motion.p
+            variants={itemVariants}
+            className="mt-6 text-xs text-muted-foreground/70 text-center"
+          >
+            Todas las categorías están incluidas en la misma suscripción. Sin costo adicional por módulo.
+          </motion.p>
         </AnimatedSection>
       </div>
     </section>
