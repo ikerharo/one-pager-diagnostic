@@ -21,6 +21,8 @@ const FindingsSection = () => {
   const { findings, quickWins, exclusionNote } = useDeal();
   const { slug } = useParams<{ slug: string }>();
   const showDeepDiveLink = slug === "bodesa";
+  const isArmstrong = slug === "armstrong";
+  const [exampleOpen, setExampleOpen] = useState(false);
 
   return (
     <section className="py-12 md:py-16 overflow-hidden bg-background">
