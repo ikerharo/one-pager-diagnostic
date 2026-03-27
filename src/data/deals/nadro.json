@@ -137,6 +137,23 @@
     }
   ],
   "exclusionNote": null,
+  "benefitsDashboard": {
+    "savingsCategories": [
+      { "category": "Combustible", "icon": "Fuel", "estimatedSaving": "$420K/mes", "calculation": "$14M MXN/mes × 3–5% sobreprecio por red cerrada Edenred. Solo ~30% de estaciones aceptan el medio de pago actual." },
+      { "category": "Fraude en cargas", "icon": "AlertTriangle", "estimatedSaving": "$140K/mes", "calculation": "1% conservador sobre $14M MXN/mes. Sin validación en tiempo real, el operador puede cobrar más de lo cargado." },
+      { "category": "Casetas", "icon": "Route", "estimatedSaving": "$150K/mes", "calculation": "$3M MXN/mes en IAVE × 3–6% tasa de error en radares. Conciliación manual una vez al mes no alcanza." },
+      { "category": "Capital parado", "icon": "Wallet", "estimatedSaving": "$148K/mes", "calculation": "$14M prefondeo + $750K fondos fijos + $28K por sucursal. A 1% mensual de costo de oportunidad." }
+    ],
+    "qualitativeBenefits": [
+      { "icon": "Clock", "title": "Eficiencia administrativa", "description": "14 especialistas recuperan 1–1.5 horas/día dedicadas a comprobaciones manuales. Equivalente a casi 3 FTEs." },
+      { "icon": "Camera", "title": "Inspecciones validadas por IA", "description": "Cada foto se vincula a la unidad correcta. La IA detecta si no corresponde (botella de agua, foto repetida, asiento dañado)." },
+      { "icon": "ShieldCheck", "title": "Detección de fraude en tiempo real", "description": "Alertas automáticas por retroceso de odómetro, monto distinto a factura y anomalías de rendimiento entre operadores." },
+      { "icon": "UserCheck", "title": "Comprobación sin fricción", "description": "Foto del ticket en WhatsApp → IA valida → factura automática. Sin apps nuevas, sin logins para el operador." }
+    ],
+    "totalMonthly": "$858K MXN",
+    "totalAnnual": "$10.3M MXN",
+    "note": "Estimados conservadores basados en datos de la industria y los volúmenes compartidos por Nadro."
+  },
   "uvicuoPositioning": {
     "headline": "La primera fintech especializada en control de gastos de flotas de transporte",
     "description": "Centraliza combustible, casetas, viáticos y efectivo en una sola plataforma. Con medio de pago propio (tarjeta de crédito de red abierta), controles por ruta, inteligencia artificial para detección de fraude y comprobación automática vía WhatsApp.",

@@ -138,6 +138,22 @@
         }
     ],
     "exclusionNote": "Este diagnóstico se enfoca en combustible. Uvicuo también centraliza peajes, viáticos y gestión de efectivo en la misma plataforma, sin costo adicional por categoría.",
+    "benefitsDashboard": {
+        "savingsCategories": [
+            { "category": "Combustible", "icon": "Fuel", "estimatedSaving": "$204K–272K/mes", "calculation": "600 unidades × $6.8M MXN/mes × 3–4% sobreprecio de red cerrada. Red abierta Mastercard accede al mejor precio CRE disponible." },
+            { "category": "Comisiones", "icon": "CreditCard", "estimatedSaving": "$102K/mes", "calculation": "Eliminación de comisión del proveedor (~1.5% sobre $6.8M MXN/mes). Uvicuo cobra suscripción por usuario, no porcentaje." },
+            { "category": "IEPS", "icon": "Receipt", "estimatedSaving": "Significativo", "calculation": "Hoy gasolina y diésel mezclados impiden acceder al estímulo fiscal. Uvicuo segrega automáticamente por tipo de combustible." },
+            { "category": "Capital parado", "icon": "Wallet", "estimatedSaving": "$68K/mes", "calculation": "De prefondeo a línea de crédito. $6.8M que hoy están en monedero se liberan para la operación." }
+        ],
+        "qualitativeBenefits": [
+            { "icon": "BarChart3", "title": "Automatización contable", "description": "Póliza contable generada automáticamente con centro de costo, departamento y retenciones. Lista para SAP." },
+            { "icon": "ShieldCheck", "title": "Detección de fraude con IA", "description": "Foto del odómetro validada por IA. Alertas automáticas por retroceso, incremento anormal o monto distinto a factura." },
+            { "icon": "UserCheck", "title": "Sin fricción para operadores", "description": "Comprobación vía WhatsApp: el operador sube foto del ticket, la IA lo lee y recupera la factura automáticamente." }
+        ],
+        "totalMonthly": "$394K–462K MXN + IEPS",
+        "totalAnnual": "$4.7–5.5M MXN + IEPS",
+        "note": "Cifras conservadoras basadas en gasto de $6.8M MXN/mes. El estímulo IEPS se cuantificará con el desglose gasolina/diésel."
+    },
     "uvicuoPositioning": {
         "headline": "La primera fintech especializada en control de gastos de flotas",
         "description": "Centraliza combustible, casetas, viáticos y efectivo en una sola plataforma. Con medio de pago propio (tarjeta de crédito de red abierta), controles por categoría y monto, inteligencia artificial para detección de fraude y comprobación automática vía WhatsApp.",
