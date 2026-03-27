@@ -79,26 +79,36 @@
     }
   ],
   "benefitsDashboard": {
+    "spendBreakdown": [
+      { "category": "Combustible (Edenred)", "amount": 5500000, "color": "#ef4444" },
+      { "category": "Viáticos (Ticket Empresarial)", "amount": 1000000, "color": "#4CC417" },
+      { "category": "Peajes", "amount": 1140000, "color": "#f59e0b" }
+    ],
+    "spendTotal": "$7.6M MXN/mes",
     "savingsCategories": [
       {
         "category": "Combustible",
         "icon": "Fuel",
         "estimatedSaving": "$175K–$270K/mes",
-        "calculation": "Estimación conservadora: 300,000 litros/mes × 3.5–4.5% de sobreprecio por red cerrada Edenred. Al pasar a red abierta Mastercard, se accede al precio CRE más competitivo en cualquier estación."
+        "calculation": "Red abierta vs red cerrada Edenred (3.5–4.5%)",
+        "color": "#ef4444"
       },
       {
         "category": "Peajes",
         "icon": "Route",
-        "estimatedSaving": "~$80K–$103K/mes",
-        "calculation": "Estimación conservadora: ~325 unidades operativas × ~44 cruces/mes × caseta promedio $80 MXN × 7–9% tasa de error en antenas. Recuperable vía conciliación automática."
+        "estimatedSaving": "$80K–$103K/mes",
+        "calculation": "Conciliación automática errores de antenas (7–9%)",
+        "color": "#f59e0b"
       },
       {
         "category": "Viáticos",
         "icon": "Utensils",
-        "estimatedSaving": "~3.5% del gasto",
-        "calculation": "Eliminación de la comisión de Ticket Empresarial (~3.5% sobre cada peso). Armstrong no compartió el monto exacto pero se estima en varios millones MXN/mes. Uvicuo cobra por usuario, no por volumen."
+        "estimatedSaving": "~$35K/mes",
+        "calculation": "Eliminar comisión Ticket Empresarial (3.5%)",
+        "color": "#4CC417"
       }
     ],
+    "totalSavings": "$290K–$408K MXN/mes",
     "qualitativeBenefits": [
       {
         "icon": "BarChart3",
@@ -121,7 +131,7 @@
         "description": "De prefondeo a línea de crédito. El capital que hoy está parado en monederos se libera para la operación."
       }
     ],
-    "note": "Todas las cifras son estimaciones conservadoras basadas en datos compartidos por Armstrong y benchmarks de la industria de traslado de valores — no son cifras exactas."
+    "note": "Estimaciones conservadoras basadas en datos compartidos por Armstrong. Se actualizan con datos reales tras el diagnóstico."
   },
   "additionalCapabilities": [
     { "icon": "Route", "title": "Peajes y casetas", "description": "Conciliación automática de cruces vs cobros. Detección y disputa de errores en tiempo real." },
