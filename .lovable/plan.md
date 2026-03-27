@@ -1,34 +1,111 @@
 
 
-## Indicadores de navegación: barra de progreso + scroll hint + botón "siguiente"
+## Discovery Template Redesign — MBB-Grade Structure
 
-### Problema
-Un usuario no técnico puede no saber que debe hacer scroll, especialmente en mobile donde el efecto de card-stack es menos intuitivo.
+### Problem
 
-### Solución: 3 elementos ligeros
+The current Discovery template reads like a feature/product pitch rather than a strategic consulting deliverable. Compared to the Diagnostic Pitch (which already follows an MBB-style flow), the Discovery page has:
 
-**1. Scroll hint animado en el Header**
-- Una flecha/chevron animada (bounce) en la parte inferior del hero que indica "desliza hacia abajo"
-- Desaparece después del primer scroll (con `IntersectionObserver` o escuchando `scroll`)
+- **No executive framing** — jumps straight from hero into findings without context
+- **Hardcoded sections** — FuelImpactSection and BeyondFuelSection are static, not data-driven
+- **Generic titles** — "Quick Wins", "Hallazgos Clave" feel product-y, not consultive
+- **No financial quantification** — no "money on the table" summary
+- **No personalization** — missing "prepared for" block and "why this client" narrative
+- **Weak narrative arc** — sections feel disconnected, not building toward a recommendation
 
-**2. Barra de progreso fija (top)**
-- Una barra delgada (3-4px) fija en la parte superior de la pantalla (`fixed top-0 z-[60]`)
-- Se llena proporcionalmente al scroll de la página (0% arriba, 100% al final)
-- Color `primary` (verde Uvicuo), con fondo semi-transparente
-- Sutil, no distrae, pero da contexto de "dónde estoy"
+### Proposed New Flow
 
-**3. Botón flotante "Siguiente sección" (mobile)**
-- Un botón pequeño fijo en la esquina inferior derecha (`fixed bottom-6 right-6`)
-- Icono de chevron-down con texto opcional "Siguiente"
-- Al hacer click, hace `scrollBy` suave una pantalla completa (o usa IDs de sección)
-- Se oculta en la última sección
-- Solo visible en mobile (`md:hidden`) para no ensuciar desktop
+```text
+┌─────────────────────────────────────────────┐
+│  1. HERO (enhanced)                         │
+│     - Provocative subtitle (not generic)    │
+│     - "Prepared for" recipients block       │
+│     - Meeting date badge                    │
+├─────────────────────────────────────────────┤
+│  2. EXECUTIVE SUMMARY (NEW)                 │
+│     - 2-3 sentence thesis: what we found    │
+│     - Financial impact bar: key $ numbers   │
+│     - Editorial tone, large type            │
+├─────────────────────────────────────────────┤
+│  3. FINDINGS (restructured)                 │
+│     - Retitled: "Lo que encontramos"        │
+│     - Keep hero card + grid layout          │
+│     - Add strategic context/framing per card│
+├─────────────────────────────────────────────┤
+│  4. FINANCIAL IMPACT (data-driven, NEW)     │
+│     - Replaces hardcoded FuelImpactSection  │
+│     - Pulls from JSON: savings breakdown    │
+│     - Monthly/annual totals with breakdown  │
+│     - Dark section for visual contrast      │
+├─────────────────────────────────────────────┤
+│  5. CURRENT vs PROPOSED (renamed QuickWins) │
+│     - Retitled: "Situación actual vs        │
+│       propuesta"                            │
+│     - Same before/after mechanic, better    │
+│       framing                               │
+├─────────────────────────────────────────────┤
+│  6. SOLUTION POSITIONING (keep UvicuoSection│
+│     but enhance)                            │
+│     - Better headline: "Nuestra propuesta"  │
+│     - Capabilities as a clean grid          │
+├─────────────────────────────────────────────┤
+│  7. ADDITIONAL CAPABILITIES (conditional)   │
+│     - BeyondFuelSection only if data exists │
+│     - Data-driven from JSON                 │
+├─────────────────────────────────────────────┤
+│  8. NEXT STEPS (keep, minor refinements)    │
+│     - Past interactions + roadmap           │
+├─────────────────────────────────────────────┤
+│  9. TRUSTED BY + FOOTER (keep)              │
+└─────────────────────────────────────────────┘
+```
 
-### Archivos
+### Technical Changes
 
-| Archivo | Cambio |
-|---|---|
-| `src/components/discovery/ScrollProgress.tsx` | **Nuevo**: barra de progreso fija + botón flotante "siguiente" |
-| `src/components/discovery/DiscoveryHeader.tsx` | Añadir chevron animado al fondo del hero |
-| `src/pages/Index.tsx` | Importar `ScrollProgress`, añadir `id` a cada sección sticky para navegación por anclas |
+#### 1. Data Model Updates (`discoveryData.ts` + JSON files)
+
+Add new fields to the deal JSON schema:
+- `executiveSummary`: `{ thesis: string, impactItems: { value: string, label: string }[] }`
+- `preparedFor`: `{ label: string, recipients: { name: string, role: string }[] }`
+- `financialImpact`: `{ headline: string, items: { concept: string, monthlySaving: string, detail: string }[], totalMonthly: string, totalAnnual: string }` (optional — some deals like Armstrong don't have this yet, Bodesa does)
+- `additionalCapabilities`: array (replaces hardcoded BeyondFuelSection categories)
+
+Update `processDealContent()` to map these new fields with safe fallbacks.
+
+#### 2. New Component: `ExecutiveSummarySection.tsx`
+
+- Editorial block with large typography
+- 2-3 sentence thesis about what was found
+- Grid of 2-4 key financial metrics (similar to diagnostic hero stats)
+- Positioned right after hero for immediate impact
+
+#### 3. New Component: `FinancialImpactSection.tsx`
+
+- Replaces hardcoded `FuelImpactSection`
+- Dark section (`section-dark`) for visual weight
+- Pulls savings breakdown from `financialImpact` in JSON
+- Shows monthly/annual totals prominently
+- Only renders if data exists
+
+#### 4. Refactor Existing Components
+
+- **FindingsSection**: Rename heading to "Lo que encontramos". Minor copy tweaks.
+- **QuickWinsSection**: Rename to "Situación Actual vs Propuesta". Update heading/subtitle.
+- **BeyondFuelSection**: Make data-driven — pull categories from JSON instead of hardcoded array. Only render if data exists.
+- **DiscoveryHeader**: Add "Prepared for" block (same pattern as DiagnosticHero).
+
+#### 5. Update `DealPage.tsx` Section Order
+
+Replace `FuelImpactSection` with new `FinancialImpactSection`. Add `ExecutiveSummarySection` after header. Conditionally render `BeyondFuelSection`.
+
+#### 6. Update All Existing Deal JSONs
+
+Add the new fields to `armstrong.json`, `bodesa.json`, `demo.json`, `modelo.json`, `nadro.json`, `elola.json`. Bodesa already has `impactSummary` data in its JSON — restructure it into the new `financialImpact` format.
+
+### What Stays the Same
+- Overall look & feel (dark hero, card-based layout, animations)
+- NextStepsSection (already well structured)
+- TrustedBySection
+- ScrollProgress
+- Color system and typography
 
