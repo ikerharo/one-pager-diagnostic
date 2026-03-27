@@ -103,7 +103,49 @@ const FindingsSection = () => {
                           </p>
                         </div>
                       )}
-                    </div>
+
+                      {/* Example map dropdown for Armstrong finding #1 */}
+                      {isArmstrong && i === 0 && (
+                        <div className="mt-3">
+                          <button
+                            onClick={() => setExampleOpen(!exampleOpen)}
+                            className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                          >
+                            <MapPin className="h-3.5 w-3.5" />
+                            Ver ejemplo: Guadalajara → Querétaro
+                            <ChevronDown
+                              className={`h-3.5 w-3.5 transition-transform duration-200 ${exampleOpen ? "rotate-180" : ""}`}
+                            />
+                          </button>
+                          <AnimatePresence>
+                            {exampleOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="mt-3 rounded-xl border border-border bg-card overflow-hidden">
+                                  <img
+                                    src="/images/ruta-ejemplo-armstrong.png"
+                                    alt="Ejemplo de ruta optimizada Guadalajara a Querétaro mostrando ahorro de 8.34% en combustible"
+                                    className="w-full"
+                                  />
+                                  <div className="px-4 py-3 border-t border-border">
+                                    <p className="text-xs text-muted-foreground leading-relaxed">
+                                      <span className="font-semibold text-foreground">Ejemplo real:</span>{" "}
+                                      En la ruta Guadalajara → Querétaro, la estación base (Kopla/Mobil) cobra $29.99/L.
+                                      Con red abierta, hay 12 opciones sin desvío — la mejor a $27.49/L,{" "}
+                                      <span className="font-semibold text-primary">un ahorro del 8.34%</span>.
+                                    </p>
+                                  </div>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      )}
                   </div>
                 </motion.div>
               );
