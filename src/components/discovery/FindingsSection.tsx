@@ -146,7 +146,7 @@ const FindingsSection = () => {
                           </AnimatePresence>
                         </div>
                       )}
-                  </div>
+                    </div>
                 </motion.div>
               );
             })}
