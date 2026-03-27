@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import DealPage from "./pages/DealPage";
 import DiagnosticPitchPage from "./pages/DiagnosticPitchPage";
 import AccountingDeepDivePage from "./pages/AccountingDeepDivePage";
+import RouteExamplePage from "./pages/RouteExamplePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<LandingPage />} />
           <Route path="/directorio" element={<Index />} />
           <Route path="/bodesa/contable" element={<AccountingDeepDivePage />} />
+          <Route path="/ejemplo/ruta-optimizada" element={<RouteExamplePage />} />
           <Route path="/diagnostico/:slug" element={<DiagnosticPitchPage />} />
           <Route path="/:slug" element={<DealPage />} />
           <Route path="*" element={<NotFound />} />
