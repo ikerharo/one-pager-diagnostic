@@ -151,6 +151,7 @@ export interface DealData {
     meetingDate: string;
     subtitle: string;
     websiteUrl: string;
+    ndaUrl?: string;
   };
   contactInfo: {
     name: string;
@@ -204,6 +205,7 @@ export function processDealContent(content: any): DealData {
       meetingDate: content.config.meetingDate,
       subtitle: content.config.subtitle,
       websiteUrl: content.config.websiteUrl,
+      ndaUrl: content.config.ndaUrl,
     },
     contactInfo: content.contact,
     executiveSummary: content.executiveSummary ?? null,

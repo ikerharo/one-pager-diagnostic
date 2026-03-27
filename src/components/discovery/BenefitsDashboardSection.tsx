@@ -54,7 +54,7 @@ const BenefitsDashboardSection = () => {
                     <span className="block text-2xl font-extrabold text-primary">
                       {cat.estimatedSaving}
                     </span>
-                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground/70">
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                       {cat.calculation}
                     </p>
                   </motion.div>
