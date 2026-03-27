@@ -151,22 +151,15 @@
       "phase": "Sesión 1",
       "title": "Discovery operativo",
       "who": "Área de combustible + operaciones",
-      "duration": "60–90 min",
-      "covers": "Flujo de carga, red Edenred, integración Samsara, conciliación diaria, viáticos Ticket Empresarial"
+      "duration": "45–60 min",
+      "covers": "Flujo de carga, red Edenred, integración Samsara, conciliación diaria, protocolo de emergencias, control de viáticos y peajes"
     },
     {
       "phase": "Sesión 2",
-      "title": "Discovery financiero",
+      "title": "Discovery administrativo",
       "who": "Isaac Moreno + equipo de finanzas",
       "duration": "45–60 min",
-      "covers": "Cierre contable, visibilidad de datos, segregación de gastos, reportes necesarios"
-    },
-    {
-      "phase": "Sesión 3",
-      "title": "Discovery de peajes",
-      "who": "Área administrativa + operaciones",
-      "duration": "30–45 min",
-      "covers": "Proveedor de telepeaje, conciliación de cruces, errores detectados, rutas principales"
+      "covers": "Cierre contable, visibilidad de datos, segregación de gastos, conciliación bancaria, reportes necesarios, proceso de comprobación"
     },
     {
       "phase": "Análisis",
@@ -184,7 +177,7 @@
     }
   ],
   "timeline": [
-    { "week": "Semana 1", "description": "Sesiones de discovery con los 3 tracks: operaciones, finanzas y peajes" },
+    { "week": "Semana 1", "description": "Sesiones de discovery: operativo y administrativo (45-60 min cada una)" },
     { "week": "Semana 2", "description": "Nuestro equipo analiza, modela financieramente y prepara hallazgos" },
     { "week": "Semana 3", "description": "Presentación ejecutiva con diagnóstico completo y mapa de ahorros" }
   ],
