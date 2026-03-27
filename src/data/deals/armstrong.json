@@ -76,7 +76,51 @@
       "after": "Dashboard en tiempo real con costo por km, rendimiento por unidad y anomalías detectadas al momento. Datos crudos exportables, filtrables por plaza o tipo de unidad. Integración directa con Samsara — sin pedirle nada extra al operador."
     }
   ],
-  "exclusionNote": null,
+  "benefitsDashboard": {
+    "savingsCategories": [
+      {
+        "category": "Combustible",
+        "icon": "Fuel",
+        "estimatedSaving": "$175K–270K/mes",
+        "calculation": "300,000 litros/mes × 3.5–4.5% de sobreprecio por red cerrada Edenred. Al pasar a red abierta Mastercard, se accede al precio CRE más competitivo en cualquier estación."
+      },
+      {
+        "category": "Peajes",
+        "icon": "Route",
+        "estimatedSaving": "Por cuantificar",
+        "calculation": "Tasa de error documentada de 7–9% en antenas. Con 600–700 unidades en operación, la conciliación automática detecta y disputa cobros dobles y ejes mal clasificados."
+      },
+      {
+        "category": "Viáticos",
+        "icon": "Utensils",
+        "estimatedSaving": "~3.5% del gasto",
+        "calculation": "Eliminación de la comisión de Ticket Empresarial (~3.5% sobre cada peso). Uvicuo cobra por usuario, no por volumen — entre más gasta Armstrong, más conviene."
+      }
+    ],
+    "qualitativeBenefits": [
+      {
+        "icon": "BarChart3",
+        "title": "Eficiencia administrativa",
+        "description": "Eliminación de conciliación manual diaria. Reportes automáticos con integración directa a Samsara. Finanzas recibe datos crudos exportables sin pedírselo al operador."
+      },
+      {
+        "icon": "UserCheck",
+        "title": "Retención del equipo",
+        "description": "Menos fricción para el operador: sin apps nuevas, sin procesos adicionales. La tarjeta funciona como cualquier medio de pago — sin cambiar la rutina diaria."
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Control y visibilidad en tiempo real",
+        "description": "Costo por kilómetro, rendimiento por unidad y anomalías detectadas al momento. Datos filtrables por plaza, tipo de unidad o ruta."
+      },
+      {
+        "icon": "DollarSign",
+        "title": "Liberación de capital",
+        "description": "De prefondeo a línea de crédito. El capital que hoy está parado en monederos se libera para la operación."
+      }
+    ],
+    "note": "Estimaciones conservadoras basadas en datos compartidos por Armstrong y benchmarks de la industria de traslado de valores."
+  },
   "additionalCapabilities": [
     { "icon": "Route", "title": "Peajes y casetas", "description": "Conciliación automática de cruces vs cobros. Detección y disputa de errores en tiempo real." },
     { "icon": "Utensils", "title": "Viáticos", "description": "Tarjeta con controles por categoría, monto y horario. Comprobación vía WhatsApp con IA." },

@@ -6,8 +6,7 @@ import { DealProvider } from "@/context/DealContext";
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import ExecutiveSummarySection from "@/components/discovery/ExecutiveSummarySection";
 import FindingsSection from "@/components/discovery/FindingsSection";
-import FinancialImpactSection from "@/components/discovery/FinancialImpactSection";
-
+import BenefitsDashboardSection from "@/components/discovery/BenefitsDashboardSection";
 import UvicuoSection from "@/components/discovery/UvicuoSection";
 import BeyondFuelSection from "@/components/discovery/BeyondFuelSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
@@ -40,8 +39,7 @@ const DealPage = () => {
         <DiscoveryHeader />
         <ExecutiveSummarySection />
         <FindingsSection />
-        <FinancialImpactSection />
-        
+        <BenefitsDashboardSection />
         <UvicuoSection />
         {deal.additionalCapabilities.length > 0 && <BeyondFuelSection />}
         <NextStepsSection />
