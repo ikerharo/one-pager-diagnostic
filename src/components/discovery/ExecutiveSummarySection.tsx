@@ -7,7 +7,7 @@ const ExecutiveSummarySection = () => {
   if (!executiveSummary) return null;
 
   return (
-    <section className="py-16 md:py-24 overflow-hidden bg-background">
+    <section className="pt-16 md:pt-24 pb-6 md:pb-8 overflow-hidden bg-background">
       <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.p
