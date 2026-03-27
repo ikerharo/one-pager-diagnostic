@@ -90,6 +90,10 @@
     color: hsl(0 0% 95%);
   }
 
+  .section-dark .text-foreground {
+    color: hsl(0 0% 95%);
+  }
+
   .section-dark .text-muted-foreground {
     color: hsl(var(--uvicuo-dark-muted));
   }
