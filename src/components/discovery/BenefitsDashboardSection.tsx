@@ -1,13 +1,28 @@
 import { motion } from "framer-motion";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { useDeal } from "@/context/DealContext";
+
+const formatMXN = (value: number) => {
+  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`;
+  if (value >= 1_000) return `$${(value / 1_000).toFixed(0)}K`;
+  return `$${value}`;
+};
 
 const BenefitsDashboardSection = () => {
   const { benefitsDashboard } = useDeal();
   if (!benefitsDashboard) return null;
 
-  const { savingsCategories, qualitativeBenefits, totalMonthly, totalAnnual, note } =
-    benefitsDashboard;
+  const {
+    spendBreakdown,
+    spendTotal,
+    savingsCategories,
+    qualitativeBenefits,
+    totalSavings,
+    totalMonthly,
+    totalAnnual,
+    note,
+  } = benefitsDashboard;
 
   return (
     <section className="section-dark py-12 md:py-16 overflow-hidden">
@@ -21,7 +36,7 @@ const BenefitsDashboardSection = () => {
           </motion.p>
           <motion.h2
             variants={itemVariants}
-            className="text-2xl font-bold tracking-tight md:text-3xl"
+            className="text-2xl font-bold tracking-tight md:text-3xl text-white"
           >
             Beneficios cuantificados y operativos
           </motion.h2>
@@ -32,9 +47,73 @@ const BenefitsDashboardSection = () => {
             Estimaciones conservadoras basadas en los datos compartidos y benchmarks de la industria.
           </motion.p>
 
+          {/* Donut chart — only rendered when spendBreakdown exists */}
+          {spendBreakdown && spendBreakdown.length > 0 && (
+            <motion.div
+              variants={itemVariants}
+              className="mt-10 rounded-xl border border-border bg-card p-6"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
+                Gasto mensual actual estimado
+              </p>
+              {spendTotal && (
+                <p className="text-2xl font-extrabold text-white mb-6">{spendTotal}</p>
+              )}
+
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="w-[200px] h-[200px] shrink-0">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={spendBreakdown}
+                        dataKey="amount"
+                        nameKey="category"
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={55}
+                        outerRadius={90}
+                        paddingAngle={3}
+                        strokeWidth={0}
+                      >
+                        {spendBreakdown.map((entry, i) => (
+                          <Cell key={i} fill={entry.color} />
+                        ))}
+                      </Pie>
+                      <Tooltip
+                        formatter={(value: number) => [`${formatMXN(value)} MXN`, ""]}
+                        contentStyle={{
+                          backgroundColor: "hsl(220 18% 18%)",
+                          border: "1px solid hsl(220 12% 32%)",
+                          borderRadius: "8px",
+                          color: "#fff",
+                          fontSize: "12px",
+                        }}
+                      />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+
+                <div className="flex-1 space-y-3">
+                  {spendBreakdown.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <span
+                        className="h-3 w-3 rounded-full shrink-0"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <span className="text-sm text-[hsl(0,0%,85%)] flex-1">{item.category}</span>
+                      <span className="text-sm font-semibold text-white">
+                        {formatMXN(item.amount)} MXN
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* Savings categories */}
           {savingsCategories.length > 0 && (
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
               {savingsCategories.map((cat, i) => {
                 const Icon = cat.icon;
                 return (
@@ -44,8 +123,11 @@ const BenefitsDashboardSection = () => {
                     className="rounded-xl border border-border bg-card p-5"
                   >
                     <div className="flex items-center gap-2.5 mb-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <Icon className="h-4 w-4" />
+                      <div
+                        className="flex h-8 w-8 items-center justify-center rounded-lg"
+                        style={{ backgroundColor: `${cat.color || "hsl(101,82%,43%)"}20` }}
+                      >
+                        <Icon className="h-4 w-4" style={{ color: cat.color || "hsl(101,82%,43%)" }} />
                       </div>
                       <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         {cat.category}
@@ -63,32 +145,35 @@ const BenefitsDashboardSection = () => {
             </div>
           )}
 
-          {/* Totals bar */}
-          {(totalMonthly || totalAnnual) && (
+          {/* Total savings highlight */}
+          {totalSavings && (
+            <motion.div
+              variants={itemVariants}
+              className="mt-5 rounded-xl border-2 border-primary/30 bg-primary/[0.08] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+            >
+              <span className="text-sm font-semibold text-white">Ahorro total estimado</span>
+              <span className="text-xl font-extrabold text-primary">{totalSavings}</span>
+            </motion.div>
+          )}
+
+          {/* Legacy totals (for other deals) */}
+          {!totalSavings && (totalMonthly || totalAnnual) && (
             <motion.div
               variants={itemVariants}
               className="mt-5 rounded-xl border-2 border-primary/30 bg-primary/[0.08] p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
             >
-              <span className="text-sm font-semibold">Ahorro estimado total</span>
+              <span className="text-sm font-semibold text-white">Ahorro estimado total</span>
               <div className="flex gap-6">
                 {totalMonthly && (
                   <div className="text-center">
-                    <span className="block text-xl font-extrabold text-primary">
-                      {totalMonthly}
-                    </span>
-                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                      mensual
-                    </span>
+                    <span className="block text-xl font-extrabold text-primary">{totalMonthly}</span>
+                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground">mensual</span>
                   </div>
                 )}
                 {totalAnnual && (
                   <div className="text-center">
-                    <span className="block text-xl font-extrabold text-primary">
-                      {totalAnnual}
-                    </span>
-                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                      anual
-                    </span>
+                    <span className="block text-xl font-extrabold text-primary">{totalAnnual}</span>
+                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground">anual</span>
                   </div>
                 )}
               </div>
@@ -98,7 +183,7 @@ const BenefitsDashboardSection = () => {
           {note && (
             <motion.p
               variants={itemVariants}
-              className="mt-3 text-xs text-muted-foreground/60 italic"
+              className="mt-3 text-xs text-muted-foreground italic"
             >
               {note}
             </motion.p>
@@ -126,7 +211,7 @@ const BenefitsDashboardSection = () => {
                         <Icon className="h-4 w-4" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-semibold">{benefit.title}</h4>
+                        <h4 className="text-sm font-semibold text-white">{benefit.title}</h4>
                         <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
                           {benefit.description}
                         </p>
