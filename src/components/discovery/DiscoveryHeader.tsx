@@ -128,6 +128,19 @@ const DiscoveryHeader = () => {
                     </a>
                   </Button>
                 )}
+                {slug === "armstrong" && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
+                  >
+                    <a href="https://app.fireflies.ai/view/Armstrong-Uvicuo-Demo::01KMNS27TW0PMKE97C60Y951GW" target="_blank" rel="noopener noreferrer">
+                      <Play className="mr-2 h-4 w-4" />
+                      Ver demo
+                    </a>
+                  </Button>
+                )}
               </motion.div>
             )}
           </AnimatedSection>
