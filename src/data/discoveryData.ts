@@ -129,6 +129,13 @@ export interface SavingsCategory {
   icon: LucideIcon;
   estimatedSaving: string;
   calculation: string;
+  color?: string;
+}
+
+export interface SpendBreakdownItem {
+  category: string;
+  amount: number;
+  color: string;
 }
 
 export interface QualitativeBenefit {
@@ -138,8 +145,11 @@ export interface QualitativeBenefit {
 }
 
 export interface BenefitsDashboard {
+  spendBreakdown?: SpendBreakdownItem[];
+  spendTotal?: string;
   savingsCategories: SavingsCategory[];
   qualitativeBenefits: QualitativeBenefit[];
+  totalSavings?: string;
   totalMonthly?: string;
   totalAnnual?: string;
   note?: string;
