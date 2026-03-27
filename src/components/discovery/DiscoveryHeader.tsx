@@ -112,6 +112,7 @@ const DiscoveryHeader = () => {
                   </a>
                 </Button>
               </motion.div>
+            )}
           </AnimatedSection>
         </div>
       </div>
