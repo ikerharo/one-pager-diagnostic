@@ -20,6 +20,10 @@ import {
   Utensils,
   Wrench,
   Banknote,
+  Fuel,
+  BarChart3,
+  UserCheck,
+  ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -46,6 +50,10 @@ const iconMap: Record<string, LucideIcon> = {
   Utensils,
   Wrench,
   Banknote,
+  Fuel,
+  BarChart3,
+  UserCheck,
+  ShieldCheck,
 };
 
 const defaultIcon = Eye;
@@ -114,6 +122,27 @@ export interface AdditionalCapability {
   description: string;
 }
 
+export interface SavingsCategory {
+  category: string;
+  icon: LucideIcon;
+  estimatedSaving: string;
+  calculation: string;
+}
+
+export interface QualitativeBenefit {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface BenefitsDashboard {
+  savingsCategories: SavingsCategory[];
+  qualitativeBenefits: QualitativeBenefit[];
+  totalMonthly?: string;
+  totalAnnual?: string;
+  note?: string;
+}
+
 export interface DealData {
   discoveryConfig: {
     clientName: string;
@@ -133,6 +162,7 @@ export interface DealData {
   preparedFor: PreparedFor | null;
   findings: Finding[];
   financialImpact: FinancialImpact | null;
+  benefitsDashboard: BenefitsDashboard | null;
   quickWins: { before: string; after: string }[];
   exclusionNote: string | null;
   uvicuoPositioning: UvicuoPositioning | null;
