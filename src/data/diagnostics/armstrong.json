@@ -1,0 +1,238 @@
+{
+  "config": {
+    "clientName": "Grupo Armstrong",
+    "heroQuestion": "¿Cuánto le cuesta a Grupo Armstrong operar con monederos cerrados y sin visibilidad del gasto real?",
+    "subtitle": "Diagnóstico de Eficiencia Operativa",
+    "websiteUrl": "https://uvicuo.com",
+    "preparedFor": {
+      "label": "Preparado para",
+      "recipients": [
+        { "name": "Isaac Moreno", "role": "Finanzas" }
+      ]
+    }
+  },
+  "contact": {
+    "name": "Iker Haro Escandón",
+    "role": "CEO & Fundador — Uvicuo",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Coordinar primera sesión",
+    "ctaSubject": "Coordinar primera sesión de discovery — Grupo Armstrong × Uvicuo"
+  },
+  "guarantee": {
+    "headline": "Garantía de valor",
+    "text": "Si al finalizar el diagnóstico no identificamos al menos un 3% de ahorro potencial sobre su gasto operativo, no les pedimos nada más. Se quedan con el estudio completo, sin compromiso.",
+    "footnote": "No hay letra chica. No hay contrato. Es un estudio consultivo que cualquier firma les cobraría."
+  },
+  "whyQualify": {
+    "headline": "Por qué Grupo Armstrong",
+    "description": "Grupo Armstrong opera una flota de 300+ unidades de traslado de valores — una operación donde el control del gasto no es un nice-to-have, es un requisito de seguridad y rentabilidad. Con un modelo de combustible y viáticos que genera sobrecostos estructurales de 5-7%, y un equipo financiero que necesita datos para analizar, el diagnóstico puede revelar oportunidades inmediatas sin cambiar la operación.",
+    "reasons": [
+      "300+ unidades en operación de traslado de valores con rutas en Jalisco y estados cercanos",
+      "Combustible en red cerrada Edenred con sobrecostos de 3.5-4.5% por estación",
+      "Viáticos en Ticket Empresarial con comisión de ~3.5% sobre cada peso",
+      "Conciliación manual diaria sin visibilidad de costo por km ni rendimiento por unidad",
+      "Integración con Samsara ya en operación — oportunidad de jalar datos sin fricción adicional"
+    ],
+    "closingLine": "No venimos a vender. Venimos a entender su operación a profundidad y demostrar con datos dónde están las oportunidades. Lo que hagan con esa información es decisión suya."
+  },
+  "patterns": {
+    "headline": "Lo que típicamente encontramos",
+    "description": "En operaciones de escala similar a Grupo Armstrong, estos son los patrones más frecuentes. No son hipotéticos — vienen de diagnósticos reales con flotillas de transporte y traslado de valores.",
+    "items": [
+      {
+        "stat": "3.5–4.5%",
+        "label": "de sobreprecio en combustible por red cerrada",
+        "detail": "La diferencia entre lo que se paga en estaciones de red cerrada vs. precio CRE de mercado. Con 300,000 litros al mes, esto representa $175K–270K MXN mensuales."
+      },
+      {
+        "stat": "~3.5%",
+        "label": "de comisión en viáticos que crece con el gasto",
+        "detail": "Ticket Empresarial cobra un porcentaje sobre cada peso gastado en viáticos. No es una cuota fija — entre más gasta Armstrong, más paga."
+      },
+      {
+        "stat": "7–9%",
+        "label": "tasa de error en cobros de peajes",
+        "detail": "Cargos dobles, ejes mal clasificados, cruces fantasma. Con 600-700 unidades, la conciliación automática recupera $40K–80K/mes."
+      },
+      {
+        "stat": "0%",
+        "label": "de visibilidad automatizada de rendimiento por unidad",
+        "detail": "Hoy no existe el costo por kilómetro ni el rendimiento por unidad de forma automática. El área de combustible concilia manual a diario."
+      }
+    ]
+  },
+  "outcomeStats": {
+    "headline": "Track record",
+    "items": [
+      { "value": "50+", "label": "flotillas operando con Uvicuo" },
+      { "value": "3–8%", "label": "ahorro identificado sobre gasto operativo" },
+      { "value": "$500M+", "label": "MXN procesados anualmente" },
+      { "value": "3 sem", "label": "de inicio a entregable" }
+    ]
+  },
+  "whatIsIt": {
+    "headline": "Un estudio consultivo, no una demo de producto",
+    "description": "Mapeamos cada etapa del flujo de gastos operativos — desde que se presupuesta una ruta de traslado hasta que se cierra la póliza contable. Identificamos ineficiencias, puntos de fuga y oportunidades de ahorro. Lo cuantificamos todo con sus datos reales.",
+    "stats": [
+      { "value": "15–25", "label": "ineficiencias promedio identificadas por empresa" },
+      { "value": "3–8%", "label": "ahorro potencial del gasto operativo total" },
+      { "value": "80%+", "label": "reducción en horas administrativas de cierre" }
+    ]
+  },
+  "tracks": [
+    {
+      "title": "Operaciones y Combustible",
+      "subtitle": "El flujo de gastos desde quien opera la flota día a día",
+      "icon": "Truck",
+      "items": [
+        "Modelo actual de carga: red Edenred, estaciones habituales, criterio de selección",
+        "Protocolo de carga por ruta y control de litros vs. capacidad de tanque",
+        "Integración Samsara: odómetros, rendimientos, telemetría disponible",
+        "Proceso de conciliación diaria del área de combustible",
+        "Protocolo de emergencias y cargas fuera de presupuesto",
+        "Control de viáticos: Ticket Empresarial, comprobación, categorías"
+      ]
+    },
+    {
+      "title": "Finanzas y Administración",
+      "subtitle": "Desde que se genera el gasto hasta el cierre contable",
+      "icon": "Calculator",
+      "items": [
+        "Días y recursos involucrados en conciliación y cierre mensual",
+        "Visibilidad actual: reportes disponibles, gaps de información",
+        "Proceso de armado de póliza contable (manual vs. automático)",
+        "Segregación de categorías: diésel, casetas, viáticos, alimentos",
+        "Conciliación bancaria: personas, horas y herramientas"
+      ]
+    },
+    {
+      "title": "Peajes y Casetas",
+      "subtitle": "Conciliación y control de cruces en la operación",
+      "icon": "Route",
+      "items": [
+        "Proveedor actual de telepeaje y modelo de cobro",
+        "Proceso de conciliación de cruces vs. cobros en estado de cuenta",
+        "Frecuencia de errores detectados: dobles cobros, ejes de más",
+        "Rutas principales y volumen de cruces por plaza",
+        "Mecanismo de disputa y recuperación de cobros erróneos"
+      ]
+    }
+  ],
+  "deliverables": [
+    {
+      "number": "01",
+      "title": "Mapeo de procesos (As-Is)",
+      "description": "Diagrama visual de cómo fluyen los gastos hoy — cada etapa, cada handoff, cada punto de fricción documentado."
+    },
+    {
+      "number": "02",
+      "title": "Identificación de ineficiencias",
+      "description": "Lista priorizada de hallazgos: fugas de dinero, retrabajo, comisiones ocultas y procesos que destruyen valor silenciosamente."
+    },
+    {
+      "number": "03",
+      "title": "Modelado financiero con sus datos",
+      "description": "No estimaciones genéricas — análisis con los números reales de Armstrong: ahorro en combustible, recuperación en peajes, eliminación de comisiones."
+    },
+    {
+      "number": "04",
+      "title": "Mapa de estaciones óptimas por ruta",
+      "description": "Comparativa de estaciones actuales vs. alternativas más baratas en cada ruta, con datos CRE en tiempo real."
+    },
+    {
+      "number": "05",
+      "title": "Recomendaciones accionables",
+      "description": "Plan de acción concreto — con o sin Uvicuo. Si deciden no avanzar, se quedan con un estudio que cualquier consultoría cobraría."
+    }
+  ],
+  "methodology": [
+    {
+      "phase": "Sesión 1",
+      "title": "Discovery operativo",
+      "who": "Área de combustible + operaciones",
+      "duration": "60–90 min",
+      "covers": "Flujo de carga, red Edenred, integración Samsara, conciliación diaria, viáticos Ticket Empresarial"
+    },
+    {
+      "phase": "Sesión 2",
+      "title": "Discovery financiero",
+      "who": "Isaac Moreno + equipo de finanzas",
+      "duration": "45–60 min",
+      "covers": "Cierre contable, visibilidad de datos, segregación de gastos, reportes necesarios"
+    },
+    {
+      "phase": "Sesión 3",
+      "title": "Discovery de peajes",
+      "who": "Área administrativa + operaciones",
+      "duration": "30–45 min",
+      "covers": "Proveedor de telepeaje, conciliación de cruces, errores detectados, rutas principales"
+    },
+    {
+      "phase": "Análisis",
+      "title": "Modelado y preparación de hallazgos",
+      "who": "Equipo Uvicuo (interno)",
+      "duration": "5–7 días",
+      "covers": "Cruzamos toda la información, modelamos financieramente y preparamos el diagnóstico"
+    },
+    {
+      "phase": "Entrega",
+      "title": "Presentación ejecutiva",
+      "who": "Isaac Moreno + Dirección General",
+      "duration": "45–60 min",
+      "covers": "Diagnóstico completo: mapeo, hallazgos cuantificados, mapa de estaciones y recomendaciones"
+    }
+  ],
+  "timeline": [
+    { "week": "Semana 1", "description": "Sesiones de discovery con los 3 tracks: operaciones, finanzas y peajes" },
+    { "week": "Semana 2", "description": "Nuestro equipo analiza, modela financieramente y prepara hallazgos" },
+    { "week": "Semana 3", "description": "Presentación ejecutiva con diagnóstico completo y mapa de ahorros" }
+  ],
+  "uvicuoPositioning": {
+    "tagline": "La fintech de IA que opera las flotas más grandes de México",
+    "description": "No somos una tarjeta de gasolina. Somos el sistema operativo financiero de la flota — combinamos infraestructura de pagos, inteligencia artificial y automatización contable para eliminar todo lo que se interpone entre el gasto y la póliza.",
+    "differentiators": [
+      {
+        "title": "Red abierta Mastercard",
+        "description": "Cualquier estación del país, precio CRE en tiempo real. 4.4% más económica que redes cerradas como Edenred. Sin candados comerciales.",
+        "category": "Infraestructura"
+      },
+      {
+        "title": "Integración directa con Samsara",
+        "description": "Odómetro directo de la computadora del vehículo. Sin fotos, sin fricción para el custodio. Rendimiento real por unidad desde el arranque.",
+        "category": "Telemetría"
+      },
+      {
+        "title": "Sin comisión sobre el gasto",
+        "description": "Suscripción por usuario, no porcentaje del volumen. Entre más gasta Armstrong, más le conviene el cambio vs. Edenred y Ticket Empresarial.",
+        "category": "Modelo de negocio"
+      },
+      {
+        "title": "Conciliación automática de peajes",
+        "description": "Cruzamos cada cruce contra el estado de cuenta. Dobles cobros, ejes de más — se detectan y disputan automáticamente.",
+        "category": "Control"
+      },
+      {
+        "title": "Tarjeta Mastercard con reglas granulares",
+        "description": "Controles por categoría, monto, ubicación, horario y tipo de comercio. Cada peso tiene una regla antes de que se gaste.",
+        "category": "Pagos"
+      },
+      {
+        "title": "Data cruda exportable",
+        "description": "Costo por km, rendimiento por unidad, anomalías en tiempo real. Filtrable por plaza, tipo de unidad o ruta. Los datos son de Armstrong.",
+        "category": "Visibilidad"
+      }
+    ],
+    "proofPoints": [
+      "50+ flotillas operando en México",
+      "Grupo Bimbo, Paquetexpress, Sanimex entre nuestros clientes",
+      "Procesamos +$500M MXN en gasto operativo anualmente"
+    ]
+  },
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" }
+  ]
+}
