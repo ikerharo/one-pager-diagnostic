@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, CalendarCheck, Users, Building2, Handshake, CheckCircle2, MessageSquare } from "lucide-react";
+import { Mail, Phone, CalendarCheck, Users, Building2, Handshake, CheckCircle2, MessageSquare, FileSearch } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { useDeal } from "@/context/DealContext";
@@ -12,6 +13,7 @@ const ownerConfig: Record<TimelineOwner, { label: string; icon: typeof Users; co
 };
 
 const NextStepsSection = () => {
+  const { slug } = useParams<{ slug: string }>();
   const { timelineSteps, pastInteractions, contactInfo, closingQuote, closingQuoteAuthor } = useDeal();
   return (
     <section className="border-t border-border bg-muted/30 py-16 md:py-20 overflow-hidden">
@@ -192,10 +194,34 @@ const NextStepsSection = () => {
             </motion.blockquote>
           )}
 
+          {/* Diagnostic CTA */}
+          {slug && (
+            <motion.div
+              variants={itemVariants}
+              className="mt-10 rounded-xl border border-primary/30 bg-primary/5 p-6 md:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+            >
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <FileSearch className="h-4 w-4 text-primary" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">Diagnóstico sin costo</span>
+                </div>
+                <p className="text-sm text-muted-foreground max-w-md">
+                  Análisis detallado de ineficiencias operativas con entregables concretos y garantía de valor.
+                </p>
+              </div>
+              <Button asChild variant="outline" className="gap-2 shrink-0 border-primary/30 hover:bg-primary/10">
+                <Link to={`/diagnostico/${slug}`}>
+                  <FileSearch className="h-4 w-4" />
+                  Ver diagnóstico
+                </Link>
+              </Button>
+            </motion.div>
+          )}
+
           {/* Contact CTA */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 rounded-xl border border-primary/20 bg-card p-6 md:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+            className="mt-4 rounded-xl border border-primary/20 bg-card p-6 md:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
           >
             <div>
               <p className="text-sm font-semibold text-foreground">{contactInfo.name}</p>
