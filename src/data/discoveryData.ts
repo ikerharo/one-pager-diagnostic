@@ -215,6 +215,21 @@ export function processDealContent(content: any): DealData {
       quoteAuthor: f.quoteAuthor,
     })),
     financialImpact,
+    benefitsDashboard: content.benefitsDashboard
+      ? {
+          savingsCategories: (content.benefitsDashboard.savingsCategories ?? []).map((s: any) => ({
+            ...s,
+            icon: iconMap[s.icon] || defaultIcon,
+          })),
+          qualitativeBenefits: (content.benefitsDashboard.qualitativeBenefits ?? []).map((b: any) => ({
+            ...b,
+            icon: iconMap[b.icon] || defaultIcon,
+          })),
+          totalMonthly: content.benefitsDashboard.totalMonthly,
+          totalAnnual: content.benefitsDashboard.totalAnnual,
+          note: content.benefitsDashboard.note,
+        }
+      : null,
     quickWins: content.quickWins ?? content.beforeAfter ?? [],
     exclusionNote: content.exclusionNote ?? null,
     uvicuoPositioning: content.uvicuoPositioning ?? null,
