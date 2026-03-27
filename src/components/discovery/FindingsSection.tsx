@@ -5,15 +5,15 @@ import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSec
 import { useDeal } from "@/context/DealContext";
 
 const impactLabel = {
-  alto: "Alto",
-  medio: "Medio",
-  bajo: "Bajo",
+  alto: "Impacto alto",
+  medio: "Impacto medio",
+  bajo: "Impacto bajo",
 } as const;
 
-const impactDot = {
-  alto: "bg-destructive",
-  medio: "bg-amber-500",
-  bajo: "bg-primary",
+const impactColor = {
+  alto: "text-destructive",
+  medio: "text-amber-600",
+  bajo: "text-primary",
 } as const;
 
 const FindingsSection = () => {
@@ -23,111 +23,112 @@ const FindingsSection = () => {
 
   return (
     <section className="py-16 md:py-24 overflow-hidden bg-background">
-      <div className="container mx-auto max-w-5xl px-6">
+      <div className="container mx-auto max-w-4xl px-6">
         <AnimatedSection>
           <motion.p
             variants={itemVariants}
             className="text-xs font-semibold uppercase tracking-wider text-primary mb-2"
           >
-            Diagnóstico
+            Lo que encontramos
           </motion.p>
           <motion.h2
             variants={itemVariants}
-            className="text-2xl font-bold tracking-tight md:text-3xl text-foreground"
+            className="text-2xl font-bold tracking-tight md:text-3xl text-foreground max-w-2xl"
           >
-            Lo que encontramos
+            Oportunidades identificadas en la operación
           </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            className="mt-2 text-muted-foreground max-w-2xl text-sm"
-          >
-            Cada hallazgo conecta con un impacto medible y una propuesta concreta.
-          </motion.p>
 
-          {/* Integrated findings */}
-          <div className="mt-10 space-y-4">
+          <div className="mt-12 space-y-0">
             {findings.map((finding, i) => {
               const recommendation = quickWins[i]?.after;
+              const isLast = i === findings.length - 1;
+
               return (
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className="rounded-xl border border-border bg-card overflow-hidden transition-colors hover:bg-muted/20"
+                  className={`relative ${!isLast ? "pb-10 mb-0" : ""}`}
                 >
-                  {/* Top row: finding + impact */}
-                  <div className="px-6 pt-5 pb-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="font-semibold text-sm text-foreground leading-snug flex-1">
-                        {finding.title}
-                      </h3>
-                      <div className="flex items-center gap-1.5 shrink-0 mt-0.5">
-                        <span className={`inline-block h-2 w-2 rounded-full ${impactDot[finding.impact]}`} />
-                        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                  {/* Vertical connector line */}
+                  {!isLast && (
+                    <div className="absolute left-[15px] top-[36px] bottom-0 w-px bg-border" />
+                  )}
+
+                  <div className="flex gap-5">
+                    {/* Number circle */}
+                    <div className="relative z-10 flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full border border-border bg-card">
+                      <span className="text-xs font-semibold text-muted-foreground">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0 -mt-0.5">
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        <h3 className="text-base font-bold text-foreground leading-snug">
+                          {finding.title}
+                        </h3>
+                        <span className={`text-[10px] font-semibold uppercase tracking-wider ${impactColor[finding.impact]}`}>
                           {impactLabel[finding.impact]}
                         </span>
                       </div>
-                    </div>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {finding.description}
-                    </p>
 
-                    {/* Quote as evidence */}
-                    {finding.quote && (
-                      <blockquote className="mt-3 border-l-2 border-primary/20 pl-3">
-                        <p className="text-xs italic text-muted-foreground/70 leading-relaxed">
-                          "{finding.quote}"
-                        </p>
-                        {finding.quoteAuthor && (
-                          <p className="mt-1 text-[10px] text-muted-foreground/50">
-                            — {finding.quoteAuthor}
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {finding.description}
+                      </p>
+
+                      {finding.quote && (
+                        <blockquote className="mt-3 border-l-2 border-primary/20 pl-4">
+                          <p className="text-sm italic text-muted-foreground/70 leading-relaxed">
+                            "{finding.quote}"
                           </p>
-                        )}
-                      </blockquote>
-                    )}
-                  </div>
+                          {finding.quoteAuthor && (
+                            <p className="mt-1 text-xs text-muted-foreground/50">
+                              — {finding.quoteAuthor}
+                            </p>
+                          )}
+                        </blockquote>
+                      )}
 
-                  {/* Recommendation strip */}
-                  {recommendation && (
-                    <div className="border-t border-border bg-primary/[0.04] px-6 py-3.5">
-                      <div className="flex items-start gap-2">
-                        <span className="text-[10px] font-semibold uppercase tracking-wider text-primary shrink-0 mt-0.5">
-                          Propuesta →
-                        </span>
-                        <p className="text-sm leading-relaxed text-foreground/80">
-                          {recommendation}
-                        </p>
-                      </div>
+                      {recommendation && (
+                        <div className="mt-3 rounded-lg bg-primary/[0.05] border border-primary/10 px-4 py-3">
+                          <p className="text-sm leading-relaxed text-foreground/80">
+                            <span className="font-semibold text-primary text-xs uppercase tracking-wider mr-2">
+                              Propuesta:
+                            </span>
+                            {recommendation}
+                          </p>
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </motion.div>
               );
             })}
           </div>
 
-          {/* Extra quickWins that don't map to a finding */}
+          {/* Extra quickWins beyond findings count */}
           {quickWins.length > findings.length && (
-            <div className="mt-4 space-y-4">
+            <div className="mt-8 space-y-3">
+              <motion.p
+                variants={itemVariants}
+                className="text-xs font-semibold uppercase tracking-wider text-primary mb-4"
+              >
+                Oportunidades adicionales
+              </motion.p>
               {quickWins.slice(findings.length).map((win, i) => (
                 <motion.div
                   key={`extra-${i}`}
                   variants={itemVariants}
-                  className="rounded-xl border border-border bg-card overflow-hidden"
+                  className="rounded-lg bg-primary/[0.05] border border-primary/10 px-4 py-3"
                 >
-                  <div className="px-6 py-4">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {win.before}
-                    </p>
-                  </div>
-                  <div className="border-t border-border bg-primary/[0.04] px-6 py-3.5">
-                    <div className="flex items-start gap-2">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary shrink-0 mt-0.5">
-                        Propuesta →
-                      </span>
-                      <p className="text-sm leading-relaxed text-foreground/80">
-                        {win.after}
-                      </p>
-                    </div>
-                  </div>
+                  <p className="text-sm text-muted-foreground mb-1">{win.before}</p>
+                  <p className="text-sm text-foreground/80">
+                    <span className="font-semibold text-primary text-xs uppercase tracking-wider mr-2">
+                      Propuesta:
+                    </span>
+                    {win.after}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -136,7 +137,7 @@ const FindingsSection = () => {
           {exclusionNote && (
             <motion.p
               variants={itemVariants}
-              className="mt-6 text-xs text-muted-foreground/70 italic max-w-2xl"
+              className="mt-8 text-xs text-muted-foreground/70 italic max-w-2xl"
             >
               {exclusionNote}
             </motion.p>
