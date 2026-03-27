@@ -6,6 +6,7 @@ const dealRegistry: Record<string, () => Promise<{ default: unknown }>> = {
   modelo: () => import("./modelo.json"),
   nadro: () => import("./nadro.json"),
   bodesa: () => import("./bodesa.json"),
+  armstrong: () => import("./armstrong.json"),
 };
 
 export default dealRegistry;

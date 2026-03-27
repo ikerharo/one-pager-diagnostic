@@ -1,0 +1,127 @@
+{
+  "config": {
+    "clientName": "Grupo Armstrong",
+    "meetingDate": "Marzo 2026",
+    "subtitle": "Control de gastos operativos para flota de traslado de valores",
+    "websiteUrl": "https://uvicuo.com"
+  },
+  "contact": {
+    "name": "Iker Haro Escandon",
+    "role": "CEO Fundador",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Agendar diagnóstico",
+    "ctaSubject": "Diagnóstico Uvicuo — Grupo Armstrong"
+  },
+  "findings": [
+    {
+      "icon": "DollarSign",
+      "title": "Combustible caro por red cerrada",
+      "description": "El 80% del gasto corre por Edenred — un monedero que solo tiene acceso al 20-30% de las estaciones. Los operadores cargan donde haya una estación Edenred, no donde sea más barato. Las estaciones de la red cobran una comisión para aceptarlo que se traslada al precio final. Con 300,000 litros al mes, un sobreprecio de 3.5-4.5% representa entre $175K y $270K MXN al mes que se pierden solo por estar en la red equivocada.",
+      "impact": "alto",
+      "quote": "Siento que ahorita estamos operando muy manual — cargamos donde haya y no necesariamente es la mejor opción.",
+      "quoteAuthor": "Isaac Moreno, Finanzas"
+    },
+    {
+      "icon": "CreditCard",
+      "title": "Comisiones que crecen con el gasto",
+      "description": "Edenred Combustible cobra ~1.5% sobre el gasto. Ticket Empresarial (viáticos) cobra ~3.5%. Estas comisiones se calculan sobre el volumen total — entre más gasta Armstrong, más paga. No son cuotas fijas a cambio de ahorro: son un porcentaje permanente sobre el gasto operativo que no genera ningún valor adicional.",
+      "impact": "alto",
+      "quote": null,
+      "quoteAuthor": null
+    },
+    {
+      "icon": "Eye",
+      "title": "Sin visibilidad del costo real por operación",
+      "description": "Hoy no existe el costo por kilómetro ni el rendimiento por unidad de forma automatizada. El área de combustible hace conciliación manual a diario y la factura de Edenred llega consolidada con días de retraso. Cuando se detecta una anomalía, ya pasó tiempo. Finanzas no tiene la data que necesita para analizar ni optimizar.",
+      "impact": "alto",
+      "quote": "Yo estoy en la parte de finanzas y necesito más datos para analizar.",
+      "quoteAuthor": "Isaac Moreno, Finanzas"
+    },
+    {
+      "icon": "AlertTriangle",
+      "title": "Peajes con sobrecosto no detectado",
+      "description": "Las antenas de telepeaje tienen una tasa de error documentada del 7-9% — cargos dobles, ejes de más. Sin conciliación activa del estado de cuenta contra los cruces reales, ese sobrecosto se queda. En una flota de 600-700 unidades con operaciones en Jalisco y estados cercanos, el volumen de cruces hace que este rubro sea significativo.",
+      "impact": "medio",
+      "quote": null,
+      "quoteAuthor": null
+    }
+  ],
+  "quickWins": [
+    {
+      "before": "Red cerrada Edenred: el operador carga donde haya una estación disponible. Las estaciones de la red son en promedio 3.5-4.5% más caras. $175K-$270K MXN al mes que se pierden por no poder elegir.",
+      "after": "Red abierta Mastercard: cualquier estación del país. El sistema recomienda la más barata en ruta con precios CRE en tiempo real. El ahorro aparece desde el primer mes, sin cambiar la operación."
+    },
+    {
+      "before": "Ticket Empresarial cobra ~3.5% sobre cada peso de viáticos. Edenred Combustible cobra ~1.5% sobre combustible. Comisiones que crecen mes a mes conforme crece el gasto.",
+      "after": "Una sola tarjeta Mastercard para combustible y viáticos. Sin comisión sobre el gasto. Uvicuo cobra por usuario, no por volumen — entre más gasta Armstrong, más conviene el cambio."
+    },
+    {
+      "before": "Conciliación manual diaria. Factura consolidada con retraso. Rendimiento por unidad sin medir. Finanzas sin los datos que necesita para analizar.",
+      "after": "Dashboard en tiempo real con costo por km, rendimiento por unidad y anomalías detectadas al momento. Datos crudos exportables, filtrables por plaza o tipo de unidad. Integración directa con Samsara — sin pedirle nada extra al operador."
+    }
+  ],
+  "exclusionNote": null,
+  "uvicuoPositioning": {
+    "headline": "Visibilidad y control del gasto operativo — sin cambiar cómo opera tu flota",
+    "description": "Uvicuo reemplaza los monederos cerrados por una solución de crédito Mastercard con control granular. Para Armstrong significa acceso a todas las estaciones, cero comisiones de red, y toda la data de combustible, viáticos y peajes en un solo lugar. Con integración directa a Samsara para no añadir fricción operativa a los custodios.",
+    "capabilities": [
+      {
+        "title": "Red abierta Mastercard",
+        "description": "Cualquier estación del país. El sistema recomienda la más barata en ruta con datos CRE en tiempo real. Sin red cautiva, sin sobreprecio."
+      },
+      {
+        "title": "Integración con Samsara",
+        "description": "El odómetro se jala directo de la computadora del vehículo. Sin fotos, sin fricción para el operador. Rendimiento real por unidad desde el arranque."
+      },
+      {
+        "title": "Sin comisión sobre el gasto",
+        "description": "Uvicuo cobra una suscripción por usuario, no un porcentaje del volumen. Entre más gasta Armstrong, más le conviene el cambio."
+      },
+      {
+        "title": "Data cruda exportable",
+        "description": "Costo por km, rendimiento por unidad, anomalías en tiempo real. Filtrable por plaza, tipo de unidad o ruta. Los datos son de Armstrong — disponibles cuando los necesiten."
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "week": "Paso 1",
+      "title": "Armstrong comparte rutas y datos",
+      "description": "2-3 rutas principales con estaciones habituales + consumo mensual + gasto en Ticket Empresarial.",
+      "owner": "client"
+    },
+    {
+      "week": "Paso 2",
+      "title": "Uvicuo genera mapa de ahorros",
+      "description": "Mapa de estaciones más baratas por ruta con datos CRE. Comparativa de comisiones Edenred/Ticket Empresarial vs Uvicuo. Entrega en 24 horas.",
+      "owner": "uvicuo"
+    },
+    {
+      "week": "Paso 3",
+      "title": "Isaac presenta a Dirección General",
+      "description": "Business case con ahorros cuantificados en pesos. Si los números son buenos, prioridad alta.",
+      "owner": "client"
+    },
+    {
+      "week": "Paso 4",
+      "title": "Diagnóstico sin costo",
+      "description": "Sesión con equipo administrativo y operativo. Mapeo de procesos, identificación de ineficiencias adicionales y análisis de ROI detallado.",
+      "owner": "both"
+    },
+    {
+      "week": "Paso 5",
+      "title": "Arranque de implementación",
+      "description": "Onboarding, configuración de rutas y presupuestos, integración con Samsara, capacitación.",
+      "owner": "both"
+    }
+  ],
+  "closingQuote": "Si los ahorros son tal cual, le damos prioridad alta.",
+  "closingQuoteAuthor": "Isaac Moreno, Finanzas — Grupo Armstrong",
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" }
+  ]
+}
