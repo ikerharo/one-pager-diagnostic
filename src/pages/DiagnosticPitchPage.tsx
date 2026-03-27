@@ -666,35 +666,24 @@ const CtaSection = () => {
 
 /* ── Page Shell — New order ──────────────────── */
 const DiagnosticPitchContent = () => {
-  const { trustedClients } = useDiagnostic();
   return (
     <div className="min-h-screen bg-background">
       <ScrollProgress />
-      {/* 1. Hero: thesis + hard numbers + prepared for */}
+      {/* 1. Hero: thesis + what is it */}
       <DiagnosticHero />
-      {/* 1b. Why they qualify — exclusive, personal */}
-      <WhyQualifySection />
-      {/* 2. Track record — immediate social proof */}
-      <OutcomeStatsBar />
-      {/* 3. Deep-dive on the numbers */}
-      <PatternsDeepDive />
-      {/* 4. What they'll receive — before how */}
+      {/* 2. What they'll receive */}
       <DeliverablesSection />
-      {/* 4b. Preview of actual deliverables */}
+      {/* 2b. Preview of actual deliverables */}
       <DeliverablePreviewSection />
-      {/* 5. The process — what is it + methodology + timeline merged */}
+      {/* 3. The process — methodology + timeline */}
       <HowItWorksSection />
-      {/* 6. Scope — what we map */}
+      {/* 4. Scope — what we map */}
       <TracksSection />
-      {/* 7. Who's behind it */}
-      <UvicuoPositioningSection />
-      {/* 8. Trust logos */}
-      <TrustedBySection clients={trustedClients} />
-      {/* 9. Guarantee — confident closer, not anxious opener */}
+      {/* 5. Guarantee */}
       <GuaranteeSection />
-      {/* 10. CTA */}
+      {/* 6. CTA */}
       <CtaSection />
-      <footer className="border-t border-border py-10 bg-background">
+      <footer className="section-dark py-10">
         <div className="container mx-auto flex items-center justify-center gap-3 px-6">
           <img src="/uvicuo-icon.png" alt="Uvicuo" className="h-5 opacity-60" />
           <span className="inline-block h-1 w-1 rounded-full bg-primary/50" />
