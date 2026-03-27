@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import DealPage from "./pages/DealPage";
 import DiagnosticPitchPage from "./pages/DiagnosticPitchPage";
 import AccountingDeepDivePage from "./pages/AccountingDeepDivePage";
+import RouteExamplePage from "./pages/RouteExamplePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

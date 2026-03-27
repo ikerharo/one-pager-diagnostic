@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
-import { FileText, ChevronDown, MapPin } from "lucide-react";
+import { FileText, MapPin } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { useDeal } from "@/context/DealContext";
 
