@@ -5,6 +5,14 @@
     "subtitle": "Control inteligente de efectivo y gastos en ruta",
     "websiteUrl": "https://uvicuo.com"
   },
+  "executiveSummary": {
+    "thesis": "Transportes Elola entrega anticipos a nómina que generan contingencia fiscal y laboral acumulada, mientras pierde visibilidad de cada peso que sale en ruta. Con 270 operadores y 2 personas procesando liquidaciones, los camiones se paran esperando — cada hora de liquidación es una hora sin generar ingreso.",
+    "impactItems": [
+      { "value": "270", "label": "operadores" },
+      { "value": "2", "label": "personas dedicadas a liquidación" },
+      { "value": "100%", "label": "del efectivo hoy sin rastrear" }
+    ]
+  },
   "contact": {
     "name": "Iker Haro Escandon",
     "role": "CEO Fundador",

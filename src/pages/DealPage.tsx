@@ -4,9 +4,10 @@ import dealRegistry from "@/data/deals";
 import { processDealContent, type DealData } from "@/data/discoveryData";
 import { DealProvider } from "@/context/DealContext";
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
+import ExecutiveSummarySection from "@/components/discovery/ExecutiveSummarySection";
 import FindingsSection from "@/components/discovery/FindingsSection";
+import FinancialImpactSection from "@/components/discovery/FinancialImpactSection";
 import QuickWinsSection from "@/components/discovery/QuickWinsSection";
-import FuelImpactSection from "@/components/discovery/FuelImpactSection";
 import UvicuoSection from "@/components/discovery/UvicuoSection";
 import BeyondFuelSection from "@/components/discovery/BeyondFuelSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
@@ -37,11 +38,12 @@ const DealPage = () => {
       <div className="min-h-screen bg-background">
         <ScrollProgress />
         <DiscoveryHeader />
+        <ExecutiveSummarySection />
         <FindingsSection />
+        <FinancialImpactSection />
         <QuickWinsSection />
-        <FuelImpactSection />
         <UvicuoSection />
-        <BeyondFuelSection />
+        {deal.additionalCapabilities.length > 0 && <BeyondFuelSection />}
         <NextStepsSection />
         <TrustedBySection clients={deal.trustedClients} />
 

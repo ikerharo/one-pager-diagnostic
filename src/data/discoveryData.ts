@@ -16,6 +16,10 @@ import {
   Camera,
   Gauge,
   Package,
+  Route,
+  Utensils,
+  Wrench,
+  Banknote,
   type LucideIcon,
 } from "lucide-react";
 
@@ -38,6 +42,10 @@ const iconMap: Record<string, LucideIcon> = {
   Camera,
   Gauge,
   Package,
+  Route,
+  Utensils,
+  Wrench,
+  Banknote,
 };
 
 const defaultIcon = Eye;
@@ -76,6 +84,36 @@ export interface UvicuoPositioning {
   capabilities: { title: string; description: string }[];
 }
 
+export interface ExecutiveSummary {
+  thesis: string;
+  impactItems: { value: string; label: string }[];
+}
+
+export interface PreparedFor {
+  label: string;
+  recipients: { name: string; role: string }[];
+}
+
+export interface FinancialImpactItem {
+  concept: string;
+  monthlySaving: string;
+  detail: string;
+}
+
+export interface FinancialImpact {
+  headline: string;
+  items: FinancialImpactItem[];
+  totalMonthly: string;
+  totalAnnual: string;
+  note?: string;
+}
+
+export interface AdditionalCapability {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
 export interface DealData {
   discoveryConfig: {
     clientName: string;
@@ -91,10 +129,14 @@ export interface DealData {
     ctaText: string;
     ctaSubject: string;
   };
+  executiveSummary: ExecutiveSummary | null;
+  preparedFor: PreparedFor | null;
   findings: Finding[];
+  financialImpact: FinancialImpact | null;
   quickWins: { before: string; after: string }[];
   exclusionNote: string | null;
   uvicuoPositioning: UvicuoPositioning | null;
+  additionalCapabilities: AdditionalCapability[];
   pastInteractions: PastInteraction[];
   timelineSteps: TimelineStep[];
   closingQuote: string | null;
@@ -106,6 +148,24 @@ export interface DealData {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function processDealContent(content: any): DealData {
+  // Map financialImpact from either new format or legacy impactSummary
+  let financialImpact: FinancialImpact | null = null;
+  if (content.financialImpact) {
+    financialImpact = content.financialImpact;
+  } else if (content.impactSummary) {
+    financialImpact = {
+      headline: "Impacto financiero estimado",
+      items: content.impactSummary.items.map((i: any) => ({
+        concept: i.concept,
+        monthlySaving: i.monthly,
+        detail: "",
+      })),
+      totalMonthly: content.impactSummary.totalMonthly,
+      totalAnnual: content.impactSummary.totalAnnual,
+      note: content.impactSummary.note,
+    };
+  }
+
   return {
     discoveryConfig: {
       clientName: content.config.clientName,
@@ -114,6 +174,8 @@ export function processDealContent(content: any): DealData {
       websiteUrl: content.config.websiteUrl,
     },
     contactInfo: content.contact,
+    executiveSummary: content.executiveSummary ?? null,
+    preparedFor: content.preparedFor ?? null,
     findings: content.findings.map((f: any) => ({
       icon: iconMap[f.icon] || defaultIcon,
       title: f.title,
@@ -122,9 +184,15 @@ export function processDealContent(content: any): DealData {
       quote: f.quote,
       quoteAuthor: f.quoteAuthor,
     })),
+    financialImpact,
     quickWins: content.quickWins ?? content.beforeAfter ?? [],
     exclusionNote: content.exclusionNote ?? null,
     uvicuoPositioning: content.uvicuoPositioning ?? null,
+    additionalCapabilities: (content.additionalCapabilities ?? []).map((c: any) => ({
+      icon: iconMap[c.icon] || defaultIcon,
+      title: c.title,
+      description: c.description,
+    })),
     pastInteractions: (content.pastInteractions ?? []).map((i: any) => ({
       ...i,
       owner: i.owner as TimelineOwner,

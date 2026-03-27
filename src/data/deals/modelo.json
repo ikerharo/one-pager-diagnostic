@@ -5,6 +5,14 @@
     "subtitle": "Control inteligente de gastos operativos de flota",
     "websiteUrl": "https://uvicuo.com"
   },
+  "executiveSummary": {
+    "thesis": "Grupo Modelo enfrenta puntos ciegos en el control de gasto operativo de flota: odómetros manuales que corrompen datos de rendimiento, red cerrada que impone precios, y errores en TAGs que nadie concilia. La oportunidad está en visibilidad y detección en tiempo real.",
+    "impactItems": [
+      { "value": "3-5%", "label": "sobreprecio estimado en combustible" },
+      { "value": "7-9%", "label": "tasa de error en cobros TAG" },
+      { "value": "0", "label": "alertas de fraude en tiempo real hoy" }
+    ]
+  },
   "contact": {
     "name": "Iker Haro Escandon",
     "role": "CEO Fundador",

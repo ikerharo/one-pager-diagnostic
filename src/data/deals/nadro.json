@@ -5,6 +5,22 @@
     "subtitle": "Diagnóstico de oportunidades en gestión de gastos de flota",
     "websiteUrl": "https://uvicuo.com"
   },
+  "preparedFor": {
+    "label": "Preparado para",
+    "recipients": [
+      { "name": "Carlos Jiménez", "role": "Director de Logística" },
+      { "name": "Joaquín Oviedo", "role": "Operaciones" }
+    ]
+  },
+  "executiveSummary": {
+    "thesis": "Nadro opera 1,500 operadores con $14M MXN/mes en combustible y $3M MXN/mes en casetas. Encontramos $858K MXN/mes en costos evitables — entre sobreprecio de red cerrada, fugas no detectadas, errores en casetas y capital parado. Todo corregible sin cambiar la operación.",
+    "impactItems": [
+      { "value": "1,500", "label": "operadores" },
+      { "value": "$14M", "label": "gasto mensual combustible" },
+      { "value": "$858K", "label": "ahorro mensual estimado" },
+      { "value": "$10.3M", "label": "ahorro anual estimado" }
+    ]
+  },
   "contact": {
     "name": "Iker Haro Escandon",
     "role": "CEO Fundador",

@@ -5,6 +5,22 @@
         "subtitle": "Diagnóstico de oportunidades en gestión de combustible y gastos de flota",
         "websiteUrl": "https://uvicuo.com"
     },
+    "preparedFor": {
+        "label": "Preparado para",
+        "recipients": [
+            { "name": "Luis China", "role": "Director de Operaciones" },
+            { "name": "José Martínez", "role": "Controller Financiero" }
+        ]
+    },
+    "executiveSummary": {
+        "thesis": "Bodesa opera 600 unidades con un modelo de combustible que genera $394K-462K MXN/mes en costos evitables — entre sobreprecio de red cerrada, comisiones, capital parado en prefondeo y estímulo fiscal IEPS no aprovechado. Todos son corregibles sin cambiar la operación.",
+        "impactItems": [
+            { "value": "600", "label": "unidades en operación" },
+            { "value": "$6.8M", "label": "gasto mensual en combustible" },
+            { "value": "$462K+", "label": "ahorro mensual estimado" },
+            { "value": "$5.5M+", "label": "ahorro anual estimado" }
+        ]
+    },
     "contact": {
         "name": "Iker Haro Escandon",
         "role": "CEO Fundador",
