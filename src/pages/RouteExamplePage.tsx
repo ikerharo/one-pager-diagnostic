@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, MapPin, Fuel, TrendingDown, Navigation } from "lucide-react";
 
 const stats = [
-  { icon: Fuel, value: "$29.99/L", label: "Precio base (Kopla/Mobil)" },
+  { icon: Fuel, value: "$29.99/L", label: "Precio base (red cerrada)" },
   { icon: Navigation, value: "12", label: "Opciones sin desvío" },
   { icon: TrendingDown, value: "8.34%", label: "Mejor ahorro disponible" },
 ];
