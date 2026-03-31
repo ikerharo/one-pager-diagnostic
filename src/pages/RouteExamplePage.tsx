@@ -75,7 +75,7 @@ const RouteExamplePage = () => (
       {/* Highlight box */}
       <div className="mt-6 rounded-xl border-2 border-primary/30 bg-primary/[0.08] p-5">
         <p className="text-sm md:text-base leading-relaxed text-foreground">
-          <span className="font-bold text-primary">Mejor opción: Gasolinera Servicio El Trébol</span>
+          <span className="font-bold text-primary">Mejor opción: Estación Ruta Verde</span>
           {" "}— $27.49/L con un ahorro del 8.34% y solo 0.1 km de desvío.
           En esta ruta hay 12 estaciones más baratas que la base sin salirse del camino.
         </p>
