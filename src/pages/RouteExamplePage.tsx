@@ -21,7 +21,7 @@ const RouteExamplePage = () => (
         </Link>
         <span className="text-border">|</span>
         <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-          Ejemplo en vivo
+          Análisis de ruta
         </span>
       </div>
     </header>
@@ -33,15 +33,15 @@ const RouteExamplePage = () => (
           <MapPin className="h-5 w-5" />
         </div>
         <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-          Red abierta vs red cerrada
+          Estudio de campo
         </p>
       </div>
 
       <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-foreground">
-        Guadalajara → Querétaro
+        Análisis de ruta: GDL → QRO
       </h1>
       <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed">
-        Este es un estudio en campo de la optimización de precio de combustible de Uvicuo a través de la red abierta encuentra opciones más baratas en ruta, sin desvío, comparado con el precio de una estación de red cerrada.
+        Comparativa de precios de combustible en ruta usando red abierta vs red cerrada.
       </p>
 
       {/* Stats */}
