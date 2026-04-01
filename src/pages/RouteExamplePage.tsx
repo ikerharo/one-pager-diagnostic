@@ -21,7 +21,7 @@ const RouteExamplePage = () => (
         </Link>
         <span className="text-border">|</span>
         <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-          Ejemplo en vivo
+          Análisis de ruta
         </span>
       </div>
     </header>
