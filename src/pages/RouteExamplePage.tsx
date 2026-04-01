@@ -41,8 +41,7 @@ const RouteExamplePage = () => (
         Guadalajara → Querétaro
       </h1>
       <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed">
-        Este es un ejemplo real de cómo la red abierta encuentra opciones más baratas
-        en ruta, sin desvío, comparado con el precio de una estación de red cerrada.
+        Este es un estudio en campo de la optimización de precio de combustible de Uvicuo a través de la red abierta encuentra opciones más baratas en ruta, sin desvío, comparado con el precio de una estación de red cerrada.
       </p>
 
       {/* Stats */}
