@@ -82,12 +82,15 @@ const BenefitsDashboardSection = () => {
                       <Tooltip
                         formatter={(value: number) => [`${formatMXN(value)} MXN`, ""]}
                         contentStyle={{
-                          backgroundColor: "hsl(220 18% 18%)",
+                          backgroundColor: "hsl(220 18% 12%)",
                           border: "1px solid hsl(220 12% 32%)",
                           borderRadius: "8px",
                           color: "#fff",
-                          fontSize: "12px",
+                          fontSize: "13px",
+                          fontWeight: 600,
                         }}
+                        labelStyle={{ color: "#fff" }}
+                        itemStyle={{ color: "#fff" }}
                       />
                     </PieChart>
                   </ResponsiveContainer>
