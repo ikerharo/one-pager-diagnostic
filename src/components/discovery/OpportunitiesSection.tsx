@@ -79,9 +79,9 @@ const OpportunitiesSection = () => {
                 )}
 
                 {opp.status && (
-                  <div className="flex items-start gap-2 rounded-lg bg-amber-500/[0.08] border border-amber-500/20 px-4 py-2.5">
-                    <Info className="h-3.5 w-3.5 text-amber-500 mt-0.5 shrink-0" />
-                    <p className="text-xs text-amber-200/80 leading-relaxed">{opp.status}</p>
+                  <div className="flex items-start gap-2 rounded-lg bg-muted/50 border border-border px-4 py-2.5">
+                    <Info className="h-3.5 w-3.5 text-muted-foreground mt-0.5 shrink-0" />
+                    <p className="text-xs text-muted-foreground leading-relaxed">{opp.status}</p>
                   </div>
                 )}
               </motion.div>
