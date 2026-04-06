@@ -147,8 +147,9 @@
           "value": "~3.5–4.5%",
           "label": "sobreprecio por red cerrada",
           "impact": "alto",
-          "detail": "El gasto de combustible corre por Edenred — un monedero con acceso limitado de estaciones. Los operadores cargan donde haya una estación Edenred, no donde sea más barato. Las estaciones de la red cobran una comisión que se traslada al precio final. Estimación conservadora: con 300,000 litros/mes y un sobreprecio de 3.5–4.5%, se pierden entre $175K y $270K MXN al mes solo por estar en la red equivocada.",
-          "proposal": "Red abierta Mastercard: cualquier estación del país. El sistema recomienda la más barata en ruta con precios CRE en tiempo real. El ahorro aparece desde el primer mes, sin cambiar la operación."
+           "detail": "El gasto de combustible corre por Edenred — un monedero con acceso limitado de estaciones. Los operadores cargan donde haya una estación Edenred, no donde sea más barato. Las estaciones de la red cobran una comisión que se traslada al precio final. Estimación conservadora: con 300,000 litros/mes y un sobreprecio de 3.5–4.5%, se pierden entre $175K y $270K MXN al mes solo por estar en la red equivocada.",
+           "proposal": "Red abierta Mastercard: cualquier estación del país. El sistema recomienda la más barata en ruta con precios CRE en tiempo real. El ahorro aparece desde el primer mes, sin cambiar la operación.",
+           "analysisLink": "https://ai.uvicuo.com/ejemplo/ruta-optimizada"
         },
         {
           "value": "~1.5–3.5%",
