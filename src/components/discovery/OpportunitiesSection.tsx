@@ -1,12 +1,24 @@
-import { motion } from "framer-motion";
-import { TrendingUp, Info } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { TrendingUp, Info, ChevronDown, Lightbulb } from "lucide-react";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { useDeal } from "@/context/DealContext";
+import { cn } from "@/lib/utils";
+
+const impactColor: Record<string, string> = {
+  alto: "text-red-400",
+  medio: "text-yellow-400",
+  bajo: "text-emerald-400",
+};
 
 const OpportunitiesSection = () => {
   const { opportunities } = useDeal();
+  const [expandedStats, setExpandedStats] = useState<Record<string, boolean>>({});
 
   if (!opportunities || opportunities.length === 0) return null;
+
+  const toggleStat = (key: string) =>
+    setExpandedStats((prev) => ({ ...prev, [key]: !prev[key] }));
 
   return (
     <section className="section-dark py-12 md:py-16 overflow-hidden">
@@ -52,16 +64,86 @@ const OpportunitiesSection = () => {
                 </p>
 
                 {opp.stats.length > 0 && (
-                  <div className={`grid gap-3 mb-5 ${opp.stats.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
-                    {opp.stats.map((stat, j) => (
-                      <div
-                        key={j}
-                        className="rounded-lg border border-primary/10 bg-primary/[0.04] px-4 py-3 text-center"
-                      >
-                        <span className="block text-xl font-bold text-primary">{stat.value}</span>
-                        <span className="block text-[11px] text-muted-foreground mt-0.5">{stat.label}</span>
-                      </div>
-                    ))}
+                  <div className="space-y-3 mb-5">
+                    {opp.stats.map((stat, j) => {
+                      const key = `${i}-${j}`;
+                      const isExpanded = expandedStats[key];
+                      const hasDetail = !!(stat as any).detail;
+
+                      return (
+                        <div key={j}>
+                          <button
+                            type="button"
+                            onClick={() => hasDetail && toggleStat(key)}
+                            className={cn(
+                              "w-full rounded-lg border px-4 py-3 text-left transition-colors",
+                              hasDetail
+                                ? "cursor-pointer hover:border-primary/30 hover:bg-primary/[0.06]"
+                                : "cursor-default",
+                              isExpanded
+                                ? "border-primary/30 bg-primary/[0.06]"
+                                : "border-primary/10 bg-primary/[0.04]"
+                            )}
+                          >
+                            <div className="flex items-center justify-between gap-3">
+                              <div className="flex items-center gap-3 min-w-0">
+                                <span className="text-xl font-bold text-primary shrink-0">
+                                  {stat.value}
+                                </span>
+                                <span className="text-sm text-foreground/80">
+                                  {stat.label}
+                                </span>
+                                {(stat as any).impact && (
+                                  <span
+                                    className={cn(
+                                      "text-[10px] font-semibold uppercase tracking-wider shrink-0",
+                                      impactColor[(stat as any).impact] || "text-muted-foreground"
+                                    )}
+                                  >
+                                    {(stat as any).impact}
+                                  </span>
+                                )}
+                              </div>
+                              {hasDetail && (
+                                <ChevronDown
+                                  className={cn(
+                                    "h-4 w-4 text-muted-foreground shrink-0 transition-transform duration-200",
+                                    isExpanded && "rotate-180"
+                                  )}
+                                />
+                              )}
+                            </div>
+                          </button>
+
+                          <AnimatePresence>
+                            {isExpanded && hasDetail && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="px-4 pt-3 pb-1 space-y-3">
+                                  <p className="text-sm leading-relaxed text-foreground/70">
+                                    {(stat as any).detail}
+                                  </p>
+                                  {(stat as any).proposal && (
+                                    <div className="flex items-start gap-2 rounded-lg bg-primary/[0.06] border border-primary/15 px-4 py-3">
+                                      <Lightbulb className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                                      <p className="text-sm text-foreground/80 leading-relaxed">
+                                        <span className="font-semibold text-primary">Propuesta: </span>
+                                        {(stat as any).proposal}
+                                      </p>
+                                    </div>
+                                  )}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
 
@@ -80,8 +162,8 @@ const OpportunitiesSection = () => {
 
                 {opp.status && (
                   <div className="flex items-start gap-2 rounded-lg bg-muted/50 border border-border px-4 py-2.5">
-                    <Info className="h-3.5 w-3.5 text-muted-foreground mt-0.5 shrink-0" />
-                    <p className="text-xs text-muted-foreground leading-relaxed">{opp.status}</p>
+                    <Info className="h-3.5 w-3.5 text-foreground/60 mt-0.5 shrink-0" />
+                    <p className="text-xs text-foreground/70 leading-relaxed">{opp.status}</p>
                   </div>
                 )}
 
