@@ -80,8 +80,8 @@ const OpportunitiesSection = () => {
 
                 {opp.status && (
                   <div className="flex items-start gap-2 rounded-lg bg-muted/50 border border-border px-4 py-2.5">
-                    <Info className="h-3.5 w-3.5 text-muted-foreground mt-0.5 shrink-0" />
-                    <p className="text-xs text-muted-foreground leading-relaxed">{opp.status}</p>
+                    <Info className="h-3.5 w-3.5 text-foreground/60 mt-0.5 shrink-0" />
+                    <p className="text-xs text-foreground/70 leading-relaxed">{opp.status}</p>
                   </div>
                 )}
 
