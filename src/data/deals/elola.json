@@ -140,20 +140,20 @@
   },
   "opportunities": [
     {
-      "title": "Combustible caro por red cerrada",
+      "title": "Combustible foráneo (Efectivale / Ultragas)",
       "description": "Elola maneja combustible foráneo con Efectivale/Ultragas — un monedero prepago con comisiones, sobreprecio por litro y capital inmovilizado. Estimamos un consumo de ~1,000 litros/mes por operador en foráneo.",
       "stats": [
         {
-          "value": "~3.5–4.5%",
-          "label": "sobreprecio por red cerrada",
+          "value": "~4%",
+          "label": "sobreprecio vs precio de mercado",
           "impact": "alto",
-           "detail": "El gasto de combustible corre por Edenred — un monedero con acceso limitado de estaciones. Los operadores cargan donde haya una estación Edenred, no donde sea más barato. Las estaciones de la red cobran una comisión que se traslada al precio final. Estimación conservadora: con 300,000 litros/mes y un sobreprecio de 3.5–4.5%, se pierden entre $175K y $270K MXN al mes solo por estar en la red equivocada.",
+           "detail": "El gasto de combustible corre por Edenred — un monedero con acceso limitado de estaciones. Los operadores cargan donde haya una estación Edenred, no donde sea más barato. Las estaciones de la red cobran una comisión que se traslada al precio final. Estimación conservadora: con 300,000 litros/mes y un sobreprecio de ~4%, se pierden ~$200K MXN al mes solo por estar en la red equivocada.",
            "proposal": "Red abierta Mastercard: cualquier estación del país. El sistema recomienda la más barata en ruta con precios CRE en tiempo real. El ahorro aparece desde el primer mes, sin cambiar la operación.",
            "analysisLink": "https://ai.uvicuo.com/ejemplo/ruta-optimizada"
         },
         {
-          "value": "~1.5–3.5%",
-          "label": "comisiones que crecen con el gasto",
+          "value": "~1.5%",
+          "label": "comisiones Efectivale/Ultragas",
           "impact": "alto",
           "detail": "Edenred Combustible cobra ~1.5% sobre el gasto. Ticket Empresarial cobra ~3.5% sobre viáticos. Estas comisiones se calculan sobre el volumen total — entre más gasta Elola, más paga. No son cuotas fijas a cambio de ahorro: son un porcentaje permanente sobre el gasto operativo.",
           "proposal": "Una sola tarjeta Mastercard para combustible y viáticos. Sin comisión sobre el gasto. Uvicuo cobra por usuario, no por volumen — entre más gasta Elola, más conviene el cambio."
@@ -309,5 +309,129 @@
     { "name": "Sanimex", "logoUrl": "/logos/sanimex.webp" },
     { "name": "Fulem", "logoUrl": "/logos/fulem.png" },
     { "name": "Maeda", "logoUrl": "/logos/maeda.png" }
-  ]
+  ],
+  "consolidatedAnalysis": {
+    "tag": "ANÁLISIS CONSOLIDADO",
+    "title": "Beneficios cuantificados en gastos de efectivo",
+    "subtitle": "Basado en 6,077 registros de Lis Zam. Supuestos marcados \"por confirmar\" se validan en esta sesión.",
+    "rows": [
+      { "label": "Control y detección de merma", "value": "$318K", "type": "Directo", "confidence": "Media" },
+      { "label": "Deducibilidad fiscal recuperada", "value": "$242K", "type": "Directo", "confidence": "Media — por confirmar" },
+      { "label": "Capacidad operativa redirigida", "value": "$252K", "type": "Directo", "confidence": "Media" },
+      { "label": "Retención de operadores", "value": "$280K", "type": "Indirecto", "confidence": "Media-baja" },
+      { "label": "Capital de trabajo liberado", "value": "$39K", "type": "Indirecto", "confidence": "Alta" },
+      { "label": "Total beneficios", "value": "$1.13M", "type": "", "confidence": "", "highlight": true },
+      { "label": "Menos: comisiones de cajero", "value": "-$36K", "type": "Costo nuevo", "confidence": "Por confirmar" },
+      { "label": "Beneficio neto", "value": "$1.10M/año", "type": "", "confidence": "", "highlight": true }
+    ],
+    "levers": [
+      {
+        "title": "Control y detección de merma",
+        "value": "$318K/año",
+        "bullets": [
+          "Base: $15.9M/año en anticipos × 2% merma estimada",
+          "Hoy el 59% del gasto es opaco. Sin categorización no se pueden detectar gastos inflados, duplicados o desvíos",
+          "El 2% es conservador — la industria de transporte reporta 3-5%",
+          "Con categorización automática, las anomalías se detectan por operador, ruta y concepto"
+        ]
+      },
+      {
+        "title": "Deducibilidad fiscal recuperada",
+        "value": "$242K/año",
+        "bullets": [
+          "Casetas en efectivo: $880K × delta 25pp (60% → 85%) = $66K ahorro fiscal",
+          "Bandas/contenedor: $1.9M × 20% facturable = $114K ahorro fiscal",
+          "Urea + báscula: $170K × 75% facturable = $38K ahorro fiscal",
+          "Pensiones formales: $395K × 20% facturable = $24K ahorro fiscal",
+          "No incluye talachas, gatas ni gratificaciones (economía informal)",
+          "POR CONFIRMAR: ¿cuánto deducen hoy realmente en casetas? Asumimos 60%"
+        ]
+      },
+      {
+        "title": "Capacidad operativa redirigida",
+        "value": "$252K/año",
+        "bullets": [
+          "2 personas (Karla + Margarita) procesan 3,039 anticipos/mes de manera manual",
+          "Costo estimado: $21K/mes por persona = $504K/año de capacidad total",
+          "Con liquidación digital, ~50% del tiempo se libera para análisis y control",
+          "No se eliminan puestos — se transforma el rol de captura manual a análisis",
+          "POR CONFIRMAR: ¿cuántas horas/semana dedican a liquidaciones?"
+        ]
+      },
+      {
+        "title": "Retención de operadores",
+        "value": "$280K/año",
+        "bullets": [
+          "284 operadores × 35% rotación estimada = ~99 bajas/año",
+          "Mejora de 5pp con mejor experiencia operativa = 14 operadores retenidos",
+          "Costo de reemplazo: $20K por operador (reclutamiento + capacitación)",
+          "Respaldado por estudios de la industria (ANPACT, CANACAR)",
+          "POR CONFIRMAR: ¿cuál es la rotación real anual?"
+        ]
+      },
+      {
+        "title": "Capital de trabajo liberado",
+        "value": "$39K/año",
+        "bullets": [
+          "Capital flotante en anticipos: ~$325K promedio",
+          "Costo de oportunidad: 12% anual",
+          "Con tarjeta de crédito (emergencias en Fase 1) no hay fondeo anticipado",
+          "El impacto crece en Fase 2 si más gasto migra a tarjeta"
+        ]
+      },
+      {
+        "title": "Nota sobre comisiones de cajero",
+        "value": "-$36K/año",
+        "bullets": [
+          "En Fase 1, la tarjeta se usa solo para emergencias en ruta",
+          "Estimamos ~100 retiros/mes × $30 de comisión promedio",
+          "El grueso del efectivo (entrega en mano) no genera comisión",
+          "Oxxo/SPIN en camino reduciría la comisión a ~$12-$15",
+          "POR CONFIRMAR: ¿cuántas emergencias reales tienen al mes?"
+        ]
+      }
+    ]
+  },
+  "additionalValue": {
+    "tag": "VALOR ADICIONAL",
+    "title": "No incluido en el cálculo — pero importante",
+    "subtitle": "Beneficios que no cuantificamos pero que pesan en la decisión.",
+    "cards": [
+      {
+        "icon": "ShieldAlert",
+        "title": "Riesgo fiscal eliminado",
+        "magnitude": "$15.9M/año en exposición contingente",
+        "description": "Los anticipos van a la misma cuenta de nómina. Ante el SAT y el IMSS, acumulan como percepción salarial. En auditoría o demanda laboral: ISR + IMSS + INFONAVIT sobre esos montos. Con tarjeta separada, el riesgo desaparece.",
+        "badge": "Contingente — no es ahorro recurrente sino exposición que se elimina"
+      },
+      {
+        "icon": "Database",
+        "title": "Módulo de liquidaciones de Lis Zam",
+        "magnitude": "Costo anual por determinar",
+        "description": "Con liquidación digital en Uvicuo, el módulo de liquidaciones de Lis Zam se vuelve redundante. No se deja de inmediato, pero eventualmente se puede prescindir de él.",
+        "badge": "Preguntamos en esta sesión cuánto pagan"
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Fase 2 — migrar gastos a comercios con factura",
+        "magnitude": "$420K/año potencial adicional",
+        "description": "Si se logra que el 20% de los $7.2M en anticipos genéricos se gaste en comercios formales, genera $1.4M en facturas nuevas × 30% = $420K/año en ahorro fiscal. Es upside real pero no de día 1.",
+        "badge": "Fase 2 — requiere cambio cultural"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "Estandarización de datos para analytics",
+        "magnitude": "Cualitativo — alto valor estratégico",
+        "description": "Hoy no pueden hacer analytics porque las observaciones son texto libre. Con datos limpios: optimizar rutas, benchmarkear patios, negociar con proveedores, detectar tendencias por operador y unidad.",
+        "badge": "Desde Fase 1"
+      },
+      {
+        "icon": "XCircle",
+        "title": "Eliminación de cancelados",
+        "magnitude": "$853K/año en carga administrativa sin valor",
+        "description": "259 anticipos cancelados en 2 meses sin motivo. Con aprobación digital previa se reducen errores, duplicados y re-trabajo. No es ahorro directo pero sí eficiencia.",
+        "badge": "Desde Fase 1"
+      }
+    ]
+  }
 }

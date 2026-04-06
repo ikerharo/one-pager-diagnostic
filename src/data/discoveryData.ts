@@ -223,6 +223,8 @@ export interface DealData {
   closingQuote: string | null;
   closingQuoteAuthor: string | null;
   trustedClients: { name: string; logoUrl: string }[];
+  consolidatedAnalysis?: any;
+  additionalValue?: any;
 }
 
 // --- Process raw JSON into typed DealData ---
@@ -321,5 +323,7 @@ export function processDealContent(content: any): DealData {
     closingQuote: content.closingQuote ?? null,
     closingQuoteAuthor: content.closingQuoteAuthor ?? null,
     trustedClients: content.trustedClients ?? [],
+    consolidatedAnalysis: content.consolidatedAnalysis ?? null,
+    additionalValue: content.additionalValue ?? null,
   };
 }
