@@ -321,5 +321,7 @@ export function processDealContent(content: any): DealData {
     closingQuote: content.closingQuote ?? null,
     closingQuoteAuthor: content.closingQuoteAuthor ?? null,
     trustedClients: content.trustedClients ?? [],
+    consolidatedAnalysis: content.consolidatedAnalysis ?? null,
+    additionalValue: content.additionalValue ?? null,
   };
 }
