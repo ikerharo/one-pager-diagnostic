@@ -36,12 +36,28 @@
       "description": "De los 6,077 anticipos analizados, el 45% tiene como único concepto \"anticipo\" — sin desglose de en qué se gastó. Otro 14% tiene texto libre sin catálogo estandarizado. En total, $9.4M al año se dispersan sin que nadie pueda saber si fue para talacha, pensión, comida o si se desvió.\n\nLas observaciones se capturan a mano: \"ANTICIPOOP\", \"ANTICPO\", \"ANTCIPO\" — el mismo concepto aparece escrito de múltiples formas. Cualquier análisis automático es imposible.",
       "impact": "alto",
       "quote": "Yo quiero el control de los recursos.",
-      "quoteAuthor": "Dulce Ruiz"
+      "quoteAuthor": "Dulce Ruiz",
+      "tableData": {
+        "headers": ["Categoría", "% del gasto", "Gasto anual"],
+        "rows": [
+          ["Anticipo genérico (sin concepto)", "45.1%", "$7.2M"],
+          ["Bandas / contenedor / sellos", "11.8%", "$1.9M"],
+          ["Gratificaciones / mordidas", "5.6%", "$884K"],
+          ["Casetas en efectivo", "5.5%", "$880K"],
+          ["Talachas / mecánico", "4.8%", "$767K"],
+          ["Reparación de unidad", "4.1%", "$656K"],
+          ["Pensión / estacionamiento", "2.5%", "$395K"],
+          ["Otros (gatas, llantas, estancias, urea, básculas)", "6.8%", "$1.1M"],
+          ["Otro texto libre sin clasificar", "13.8%", "$2.2M"]
+        ],
+        "highlightRows": [0, 8],
+        "tableFooter": "En total, el 59% del gasto ($9.4M/año) no tiene categoría útil — es opaco."
+      }
     },
     {
       "icon": "BarChart3",
       "title": "Cada patio opera diferente",
-      "description": "Patio Monterrey dispersa 89% de los anticipos en efectivo. Patio Veracruz solo el 4%. Patio México — el de mayor volumen con 40% del gasto — dispersa 61% en efectivo.\n\nNo hay una política uniforme de cómo se entrega el dinero al operador. Las mismas categorías de gasto se manejan con efectivo en un patio y con transferencia en otro.",
+      "description": "Patio Monterrey dispersa 89% de los anticipos en efectivo. Patio Veracruz solo el 4%. Patio México — el de mayor volumen con 40% del gasto — dispersa 61% en efectivo.\n\nNo hay una política uniforme de cómo se entrega el dinero al operador. Las mismas categorías de gasto se manejan con efectivo en un patio y con transferencia en otro.\n\nPatio México concentra el 40% del gasto total y es donde hay mayor oportunidad de impacto inmediato.",
       "impact": "alto",
       "quote": null,
       "quoteAuthor": null,
@@ -62,9 +78,18 @@
       "icon": "AlertTriangle",
       "title": "$142K en anticipos cancelados sin motivo",
       "description": "En 2 meses se cancelaron 259 anticipos por $142,350 MXN — el equivalente a $853K al año. El 53% se concentra en Patio México. No hay campo de motivo de cancelación: no se sabe si se duplicaron, si el viaje se canceló, o si fue un error. Se procesaron (carga administrativa) sin generar valor.",
-      "impact": "alto",
+      "impact": "medio",
       "quote": null,
-      "quoteAuthor": null
+      "quoteAuthor": null,
+      "tableData": {
+        "headers": ["Patio", "Cancelados", "Monto", "% del total"],
+        "rows": [
+          ["México", "138", "$67K", "53%"],
+          ["Nuevo Laredo", "57", "$28K", "20%"],
+          ["Veracruz", "17", "$21K", "15%"],
+          ["Otros", "47", "$26K", "12%"]
+        ]
+      }
     },
     {
       "icon": "Clock",
@@ -77,14 +102,42 @@
     {
       "icon": "Receipt",
       "title": "Gastos en efectivo que no generan factura",
-      "description": "Casetas pagadas en efectivo ($880K/año), talachas en talleres de carretera, pensiones informales — todo se pierde fiscalmente. Con comprobación digital, una parte de estos gastos podría generar CFDI y aumentar la deducibilidad.",
-      "impact": "medio",
+      "description": "Casetas pagadas en efectivo ($880K/año), talachas en talleres de carretera, pensiones informales — todo se pierde fiscalmente. Con comprobación digital, los conceptos con proveedores formales pueden generar CFDI:",
+      "impact": "alto",
       "quote": "No lo tenemos porque es efectivo.",
-      "quoteAuthor": "Guillermo Calderón"
+      "quoteAuthor": "Guillermo Calderón",
+      "tableData": {
+        "headers": ["Concepto", "Gasto anual", "Deducen hoy", "Potencial con factura", "Ahorro fiscal (30%)"],
+        "rows": [
+          ["Casetas en efectivo", "$880K", "~60%", "85%", "$66K"],
+          ["Bandas / contenedor", "$1.9M", "~0%", "20%", "$114K"],
+          ["Urea + báscula", "$170K", "~30%", "75%", "$38K"],
+          ["Pensiones formales", "$395K", "~5%", "20%", "$24K"],
+          ["Total", "", "", "", "$242K/año"]
+        ],
+        "highlightRows": [4],
+        "tableFooter": "No incluye talachas, gatas ni gratificaciones — esos gastos son de economía informal donde la factura no es realista."
+      }
     }
   ],
   "quickWins": [],
   "exclusionNote": null,
+  "dataBackup": {
+    "title": "Datos de respaldo",
+    "subtitle": "Todo lo que presentamos sale de la información compartida por el equipo de Elola.",
+    "links": [
+      {
+        "label": "Ver análisis completo",
+        "url": "https://docs.google.com/spreadsheets/d/1wQA-jXLzf0bJSIBevUnkkPZZpcarLIuN/edit?gid=1132651357#gid=1132651357",
+        "icon": "FileText"
+      },
+      {
+        "label": "Descargar datos originales",
+        "url": "https://docs.google.com/spreadsheets/d/1wQA-jXLzf0bJSIBevUnkkPZZpcarLIuN/edit?gid=0#gid=0",
+        "icon": "FileText"
+      }
+    ]
+  },
   "opportunities": [
     {
       "title": "Combustible foráneo (Efectivale / Ultragas)",
@@ -96,7 +149,8 @@
       ],
       "quote": "En el caso de Efectivale, el dinero se ponía en la tarjeta... jamás regresa.",
       "quoteAuthor": "Carlos Arellano + Karla González",
-      "status": "Estimación — necesitamos confirmar litros reales, gasto mensual en Ultragas y comisiones que pagan."
+      "status": "Estimación — necesitamos confirmar litros reales, gasto mensual en Ultragas y comisiones que pagan.",
+      "detailLink": "https://docs.google.com/spreadsheets/d/1wQA-jXLzf0bJSIBevUnkkPZZpcarLIuN/edit?gid=1132651357#gid=1132651357"
     },
     {
       "title": "Peajes (IAVE / Amex)",
@@ -107,9 +161,68 @@
       ],
       "quote": null,
       "quoteAuthor": null,
-      "status": "Estimación — necesitamos confirmar gasto total mensual en IAVE/Amex."
+      "status": "Estimación — necesitamos confirmar gasto total mensual en IAVE/Amex.",
+      "detailLink": "https://docs.google.com/spreadsheets/d/1wQA-jXLzf0bJSIBevUnkkPZZpcarLIuN/edit?gid=1132651357#gid=1132651357"
     }
   ],
+  "benefitsDashboard": {
+    "spendBreakdown": [
+      { "category": "Efectivo (gastos en ruta)", "amount": 15900000, "color": "hsl(101, 82%, 43%)", "badge": "Datos reales" },
+      { "category": "Combustible foráneo", "amount": 81800000, "color": "hsl(45, 93%, 47%)", "badge": "Estimado" },
+      { "category": "Peajes", "amount": 61000000, "color": "hsl(25, 95%, 53%)", "badge": "Estimado" }
+    ],
+    "spendTotal": "$158.7M MXN/año",
+    "savingsCategories": [
+      {
+        "category": "Efectivo",
+        "icon": "Wallet",
+        "estimatedSaving": "$1.1M MXN/año",
+        "calculation": "Control de merma, deducibilidad fiscal, eficiencia operativa, retención de operadores",
+        "color": "hsl(101, 82%, 43%)",
+        "badge": "Basado en datos reales"
+      },
+      {
+        "category": "Combustible",
+        "icon": "Fuel",
+        "estimatedSaving": "$5.3M MXN/año",
+        "calculation": "Eliminación de comisiones Efectivale (1.5%), sobreprecio (4%), prefondeo (1%)",
+        "color": "hsl(45, 93%, 47%)",
+        "badge": "Estimación — requiere datos"
+      },
+      {
+        "category": "Peajes",
+        "icon": "Route",
+        "estimatedSaving": "$4.0M MXN/año",
+        "calculation": "Conciliación automática de cobros erróneos y duplicados (6-7%)",
+        "color": "hsl(25, 95%, 53%)",
+        "badge": "Estimación — requiere datos"
+      }
+    ],
+    "qualitativeBenefits": [
+      {
+        "icon": "Eye",
+        "title": "Visibilidad en tiempo real",
+        "description": "Cada gasto categorizado automáticamente con concepto, monto, ubicación y horario. De 59% opaco a 100% visible. Sin captura manual del operador."
+      },
+      {
+        "icon": "Clock",
+        "title": "Eficiencia en liquidaciones",
+        "description": "Liquidación en ruta vía WhatsApp. El operador comprueba en tiempo real. Sin filas en el patio, sin tickets físicos, sin esperar al siguiente corte."
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Eliminación de riesgo fiscal",
+        "description": "Separación de cuenta de nómina y gastos operativos. El anticipo deja de ser percepción salarial. La exposición de $15.9M/año desaparece."
+      },
+      {
+        "icon": "Banknote",
+        "title": "Liberación de capital",
+        "description": "De prefondeo (Efectivale, anticipos) a línea de crédito. El capital que hoy está en monederos y en cuentas de operadores se libera para la operación."
+      }
+    ],
+    "totalSavings": "$10.3M MXN/año",
+    "note": "Se ajusta con datos confirmados de Elola. El piso conservador (solo Efectivo con datos reales) es $1.1M/año."
+  },
   "validationQuestions": [
     "¿Qué porcentaje de casetas deducen hoy?",
     "¿Cuánto gastan al mes en Efectivale/Ultragas?",
@@ -146,7 +259,7 @@
     },
     {
       "week": "Paso 2",
-      "title": "Revisión de hallazgos",
+      "title": "Revisión de hallazgos (hoy)",
       "description": "Presentación del análisis de datos. Validación de supuestos con el equipo de Elola. Recopilación de datos faltantes (combustible, peajes, Lis Zam).",
       "owner": "both",
       "current": true

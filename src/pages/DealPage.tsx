@@ -6,10 +6,11 @@ import { DealProvider } from "@/context/DealContext";
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import ExecutiveSummarySection from "@/components/discovery/ExecutiveSummarySection";
 import FindingsSection from "@/components/discovery/FindingsSection";
+import DataBackupSection from "@/components/discovery/DataBackupSection";
 import BenefitsDashboardSection from "@/components/discovery/BenefitsDashboardSection";
-import UvicuoSection from "@/components/discovery/UvicuoSection";
 import OpportunitiesSection from "@/components/discovery/OpportunitiesSection";
 import ValidationSection from "@/components/discovery/ValidationSection";
+import UvicuoSection from "@/components/discovery/UvicuoSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
 import ScrollProgress from "@/components/discovery/ScrollProgress";
@@ -40,8 +41,9 @@ const DealPage = () => {
         <DiscoveryHeader />
         <ExecutiveSummarySection />
         <FindingsSection />
-        <BenefitsDashboardSection />
+        <DataBackupSection />
         <OpportunitiesSection />
+        <BenefitsDashboardSection />
         <ValidationSection />
         <UvicuoSection />
         <NextStepsSection />

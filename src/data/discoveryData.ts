@@ -82,6 +82,8 @@ export interface TimelineStep {
 export interface FindingTableData {
   headers: string[];
   rows: string[][];
+  highlightRows?: number[];
+  tableFooter?: string;
 }
 
 export interface Finding {
@@ -106,6 +108,19 @@ export interface Opportunity {
   quote: string | null;
   quoteAuthor: string | null;
   status: string;
+  detailLink?: string;
+}
+
+export interface DataBackupLink {
+  label: string;
+  url: string;
+  icon: string;
+}
+
+export interface DataBackup {
+  title: string;
+  subtitle: string;
+  links: DataBackupLink[];
 }
 
 export interface UvicuoPositioning {
@@ -202,6 +217,7 @@ export interface DealData {
   additionalCapabilities: AdditionalCapability[];
   opportunities: Opportunity[];
   validationQuestions: string[];
+  dataBackup: DataBackup | null;
   pastInteractions: PastInteraction[];
   timelineSteps: TimelineStep[];
   closingQuote: string | null;
@@ -249,7 +265,12 @@ export function processDealContent(content: any): DealData {
       impact: f.impact as "alto" | "medio" | "bajo",
       quote: f.quote,
       quoteAuthor: f.quoteAuthor,
-      tableData: f.tableData ?? undefined,
+      tableData: f.tableData ? {
+        headers: f.tableData.headers,
+        rows: f.tableData.rows,
+        highlightRows: f.tableData.highlightRows ?? undefined,
+        tableFooter: f.tableData.tableFooter ?? undefined,
+      } : undefined,
     })),
     financialImpact,
     benefitsDashboard: content.benefitsDashboard
@@ -285,7 +306,9 @@ export function processDealContent(content: any): DealData {
       quote: o.quote ?? null,
       quoteAuthor: o.quoteAuthor ?? null,
       status: o.status ?? "",
+      detailLink: o.detailLink ?? undefined,
     })),
+    dataBackup: content.dataBackup ?? null,
     validationQuestions: content.validationQuestions ?? [],
     pastInteractions: (content.pastInteractions ?? []).map((i: any) => ({
       ...i,
