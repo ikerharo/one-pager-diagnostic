@@ -223,6 +223,8 @@ export interface DealData {
   closingQuote: string | null;
   closingQuoteAuthor: string | null;
   trustedClients: { name: string; logoUrl: string }[];
+  consolidatedAnalysis?: any;
+  additionalValue?: any;
 }
 
 // --- Process raw JSON into typed DealData ---
