@@ -115,19 +115,6 @@ const DiscoveryHeader = () => {
                     </a>
                   </Button>
                 )}
-                {slug && (
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
-                  >
-                    <a href={`/diagnostico/${slug}`}>
-                      <FileSearch className="mr-2 h-4 w-4" />
-                      Ver diagnóstico
-                    </a>
-                  </Button>
-                )}
                 {slug === "armstrong" && (
                   <Button
                     asChild
