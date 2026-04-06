@@ -54,7 +54,7 @@ const BenefitsDashboardSection = () => {
               className="mt-10 rounded-xl border border-border bg-card p-6"
             >
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">
-                Gasto mensual actual estimado
+                Gasto operativo analizado
               </p>
               {spendTotal && (
                 <p className="text-2xl font-extrabold text-white mb-6">{spendTotal}</p>
