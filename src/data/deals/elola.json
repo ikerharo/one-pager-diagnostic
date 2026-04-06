@@ -1,16 +1,14 @@
 {
   "config": {
     "clientName": "Transportes Elola",
-    "meetingDate": "Marzo 2026",
-    "subtitle": "Control inteligente de efectivo y gastos en ruta",
+    "meetingDate": "Estudio de Gastos Operativos · Abril 2026",
+    "subtitle": "Control inteligente de gastos operativos en ruta",
     "websiteUrl": "https://uvicuo.com"
   },
-  "executiveSummary": {
-    "thesis": "Transportes Elola entrega anticipos a nómina que generan contingencia fiscal y laboral acumulada, mientras pierde visibilidad de cada peso que sale en ruta. Con 270 operadores y 2 personas procesando liquidaciones, los camiones se paran esperando — cada hora de liquidación es una hora sin generar ingreso.",
-    "impactItems": [
-      { "value": "270", "label": "operadores" },
-      { "value": "2", "label": "personas dedicadas a liquidación" },
-      { "value": "100%", "label": "del efectivo hoy sin rastrear" }
+  "preparedFor": {
+    "label": "Preparado para",
+    "recipients": [
+      { "name": "Carlos Arellano", "role": "Dir. Finanzas" }
     ]
   },
   "contact": {
@@ -18,126 +16,156 @@
     "role": "CEO Fundador",
     "email": "iker@uvicuo.com",
     "phone": "+52 55 1700 1612",
-    "ctaText": "Agendar sesion",
-    "ctaSubject": "Agendar revision de hallazgos"
+    "ctaText": "Agendar sesión",
+    "ctaSubject": "Agendar revisión de hallazgos"
+  },
+  "executiveSummary": {
+    "thesis": "Analizamos 6,077 anticipos de enero y febrero de su sistema Lis Zam. Elola dispersa $1.33M MXN al mes a 284 operadores en 7 patios — y el 59% de ese gasto no tiene categoría útil. No es un problema de operación: es un problema de visibilidad.",
+    "impactItems": [
+      { "value": "$15.9M", "label": "gasto anual estimado en anticipos" },
+      { "value": "59%", "label": "del gasto sin categoría útil" },
+      { "value": "284", "label": "operadores analizados" },
+      { "value": "7", "label": "patios con políticas diferentes" },
+      { "value": "6,077", "label": "registros de Lis Zam procesados" }
+    ]
   },
   "findings": [
     {
-      "icon": "AlertTriangle",
-      "title": "Cada anticipo a nomina es una contingencia fiscal y laboral acumulandose",
-      "description": "El SAT y el IMSS registran esos depositos como percepcion salarial. La base gravable crece artificialmente, y en demanda laboral, esos montos se vuelven liquidacion.",
+      "icon": "Eye",
+      "title": "El 59% del gasto es invisible",
+      "description": "De los 6,077 anticipos analizados, el 45% tiene como único concepto \"anticipo\" — sin desglose de en qué se gastó. Otro 14% tiene texto libre sin catálogo estandarizado. En total, $9.4M al año se dispersan sin que nadie pueda saber si fue para talacha, pensión, comida o si se desvió.\n\nLas observaciones se capturan a mano: \"ANTICIPOOP\", \"ANTICPO\", \"ANTCIPO\" — el mismo concepto aparece escrito de múltiples formas. Cualquier análisis automático es imposible.",
       "impact": "alto",
-      "quote": "Seria muy buena oportunidad de que su tarjeta de sueldo sea para su sueldo y la tarjeta de gastos sea de la empresa.",
-      "quoteAuthor": "Carlos Arellano"
+      "quote": "Yo quiero el control de los recursos.",
+      "quoteAuthor": "Dulce Ruiz"
     },
     {
-      "icon": "DollarSign",
-      "title": "Sin visibilidad de cuanto se gasta realmente por viaje",
-      "description": "El anticipo llega a la cuenta personal del operador y deja de ser rastreable. No hay forma de saber cuanto se uso en lo operativo, cuanto se desvio, ni cuanto se quedo sin comprobar. Hoy nadie tiene ese numero.",
+      "icon": "BarChart3",
+      "title": "Cada patio opera diferente",
+      "description": "Patio Monterrey dispersa 89% de los anticipos en efectivo. Patio Veracruz solo el 4%. Patio México — el de mayor volumen con 40% del gasto — dispersa 61% en efectivo.\n\nNo hay una política uniforme de cómo se entrega el dinero al operador. Las mismas categorías de gasto se manejan con efectivo en un patio y con transferencia en otro.",
+      "impact": "alto",
+      "quote": null,
+      "quoteAuthor": null,
+      "tableData": {
+        "headers": ["Patio", "% Efectivo", "% del gasto total"],
+        "rows": [
+          ["Monterrey", "89%", "2.3%"],
+          ["Toluca", "73%", "2.4%"],
+          ["Nuevo Laredo", "64%", "18.2%"],
+          ["México", "61%", "40.0%"],
+          ["Guadalajara", "21%", "4.8%"],
+          ["Manzanillo", "11%", "20.7%"],
+          ["Veracruz", "4%", "11.4%"]
+        ]
+      }
+    },
+    {
+      "icon": "AlertTriangle",
+      "title": "$142K en anticipos cancelados sin motivo",
+      "description": "En 2 meses se cancelaron 259 anticipos por $142,350 MXN — el equivalente a $853K al año. El 53% se concentra en Patio México. No hay campo de motivo de cancelación: no se sabe si se duplicaron, si el viaje se canceló, o si fue un error. Se procesaron (carga administrativa) sin generar valor.",
       "impact": "alto",
       "quote": null,
       "quoteAuthor": null
     },
     {
       "icon": "Clock",
-      "title": "Cada hora de liquidacion manual es una hora que el camion no genera ingreso",
-      "description": "El operador regresa, hace fila, entrega tickets. 2 personas procesan 270 operadores. Mientras, el tracto esta parado esperando asignacion.",
-      "impact": "alto",
-      "quote": "El liquida en ruta, ya esta libre para otra ruta... porque hoy tambien me toma tiempo llegar con la companera, entregar, hacer cuentas.",
+      "title": "El ciclo de liquidación no cierra",
+      "description": "Encontramos $25K en 2 meses en \"anticipos a cuenta de liquidación\" — el operador pide otro anticipo antes de liquidar el anterior. Es una señal de que el proceso de liquidación no está cerrando a tiempo.\n\nHoy 2 personas procesan 3,039 anticipos al mes de manera manual. El operador regresa al patio, hace fila, entrega tickets físicos. Hasta que no liquida, no sale a siguiente ruta.",
+      "impact": "medio",
+      "quote": "Él liquida en ruta, ya está libre para otra ruta... porque hoy también me toma tiempo llegar con la compañera, entregar, hacer cuentas.",
       "quoteAuthor": "Equipo Elola"
     },
     {
       "icon": "Receipt",
-      "title": "Gastos en efectivo que hoy no se pueden comprobar — y podrian deducirse mas",
-      "description": "Talachas, refacciones, comidas en ruta — hoy son efectivo sin CFDI. Donde si hay comercio formal, Uvicuo puede capturar el comprobante. No sera el 100%, pero cada peso que se logre deducir es dinero que hoy se pierde.",
+      "title": "Gastos en efectivo que no generan factura",
+      "description": "Casetas pagadas en efectivo ($880K/año), talachas en talleres de carretera, pensiones informales — todo se pierde fiscalmente. Con comprobación digital, una parte de estos gastos podría generar CFDI y aumentar la deducibilidad.",
       "impact": "medio",
       "quote": "No lo tenemos porque es efectivo.",
-      "quoteAuthor": "Memo"
+      "quoteAuthor": "Guillermo Calderón"
+    }
+  ],
+  "quickWins": [],
+  "exclusionNote": null,
+  "opportunities": [
+    {
+      "title": "Combustible foráneo (Efectivale / Ultragas)",
+      "description": "Elola maneja combustible foráneo con Efectivale/Ultragas — un monedero prepago con comisiones, sobreprecio por litro y capital inmovilizado. Estimamos un consumo de ~1,000 litros/mes por operador en foráneo.",
+      "stats": [
+        { "value": "~1.5%", "label": "comisión estimada Efectivale" },
+        { "value": "~4%", "label": "sobreprecio vs precio de mercado" },
+        { "value": "~1%", "label": "costo de capital por prefondeo" }
+      ],
+      "quote": "En el caso de Efectivale, el dinero se ponía en la tarjeta... jamás regresa.",
+      "quoteAuthor": "Carlos Arellano + Karla González",
+      "status": "Estimación — necesitamos confirmar litros reales, gasto mensual en Ultragas y comisiones que pagan."
     },
     {
-      "icon": "Zap",
-      "title": "Emergencias en ruta que paran operacion por falta de un proceso agil",
-      "description": "Fuera de horario, un gerente abre su banca personal para transferir. Mientras, el camion esta parado con carga y cliente esperando.",
-      "impact": "medio",
+      "title": "Peajes (IAVE / Amex)",
+      "description": "Las antenas de telepeaje tienen una tasa de error documentada del 6-7% — cobros duplicados, ejes mal clasificados, casetas incorrectas. Carlos ya recupera ~$120K en cobros erróneos. Con conciliación automática, el monto recuperable es significativamente mayor.",
+      "stats": [
+        { "value": "6-7%", "label": "tasa de error en cobros de caseta" },
+        { "value": "$120K", "label": "ya recuperados por Carlos (dato de Elola)" }
+      ],
       "quote": null,
-      "quoteAuthor": null
+      "quoteAuthor": null,
+      "status": "Estimación — necesitamos confirmar gasto total mensual en IAVE/Amex."
     }
   ],
-  "quickWins": [
-    {
-      "before": "Anticipos a nomina que acumulan contingencia fiscal",
-      "after": "Tarjeta corporativa separada — dinero operativo nunca toca la nomina"
-    },
-    {
-      "before": "Camiones parados mientras el operador hace fila para liquidar",
-      "after": "Comprobacion en ruta — el operador se libera para el siguiente viaje"
-    },
-    {
-      "before": "Gastos en efectivo sin CFDI que no se deducen",
-      "after": "Donde hay comercio formal, captura automatica del comprobante"
-    },
-    {
-      "before": "Emergencias que paran camiones fuera de horario",
-      "after": "Fondeo inmediato desde la app, sin depender de banca personal"
-    }
+  "validationQuestions": [
+    "¿Qué porcentaje de casetas deducen hoy?",
+    "¿Cuánto gastan al mes en Efectivale/Ultragas?",
+    "¿Cuánto gastan al mes en IAVE/Amex?",
+    "¿Cuánto pagan al año por el módulo de liquidaciones de Lis Zam?",
+    "¿Cuántas horas/semana dedican Karla y Margarita a liquidaciones?",
+    "¿Cuál es la rotación anual real de operadores?",
+    "¿Cuántas emergencias en ruta tienen al mes que requieren dispersión inmediata?"
   ],
-  "exclusionNote": "No incluimos combustible ni casetas porque Elola ya tiene esos rubros bajo control con autoconsumo, Ultragas e IAVE/Amex. Nos enfocamos donde el impacto es real.",
-  "uvicuoPositioning": {
-    "headline": "Plataforma de control de efectivo y gastos operativos para flotas",
-    "description": "Tarjeta corporativa por operador con reglas, comprobacion en ruta, y visibilidad en tiempo real de cada peso gastado.",
-    "capabilities": [
-      {
-        "title": "Tarjeta corporativa por operador",
-        "description": "Con limites y reglas por rubro. El dinero es de la empresa, no del operador."
-      },
-      {
-        "title": "Comprobacion en ruta",
-        "description": "Foto del gasto desde ruta. IA valida y registra sin esperar al patio."
-      },
-      {
-        "title": "Visibilidad en tiempo real",
-        "description": "Cada viaje, cada gasto, cada operador. Sin esperar a que regresen."
-      }
-    ]
-  },
+  "uvicuoPositioning": null,
   "pastInteractions": [
     {
       "date": "17 Feb 2026",
       "title": "Primera visita presencial",
-      "participants": ["Iker Haro (Uvicuo)", "Guillermo Calderon", "Karla Gonzalez", "Carlos Arellano", "Dulce Ruiz", "Paola Garcia"],
-      "topics": ["Tarjeta corporativa", "Control de combustible", "Peajes", "Integracion con LIS ZAM"],
+      "participants": ["Iker Haro (Uvicuo)", "Guillermo Calderón", "Karla González", "Carlos Arellano", "Dulce Ruiz", "Paola García"],
+      "topics": ["Tarjeta corporativa", "Control de combustible", "Peajes", "Integración con Lis Zam"],
       "owner": "both"
     },
     {
       "date": "19 Feb 2026",
-      "title": "Segunda visita — profundizacion en gastos en ruta",
-      "participants": ["Iker Haro (Uvicuo)", "Guillermo Calderon", "Carlos Arellano", "Equipo administrativo"],
-      "topics": ["Presupuestos y anticipos", "Tarjetas vs efectivo", "Validacion de comprobantes con IA", "Riesgo fiscal"],
+      "title": "Segunda visita — profundización en gastos en ruta",
+      "participants": ["Iker Haro (Uvicuo)", "Guillermo Calderón", "Carlos Arellano", "Equipo administrativo"],
+      "topics": ["Presupuestos y anticipos", "Tarjetas vs efectivo", "Validación de comprobantes con IA", "Riesgo fiscal"],
       "owner": "both"
     }
   ],
   "timeline": [
     {
       "week": "Paso 1",
-      "title": "Elola entrega datos historicos",
-      "description": "De LIS ZAM: reporte de anticipos por operador (monto y frecuencia) y gastos liquidados de los ultimos 2 meses. Ademas: volumen de emergencias en ruta y comisiones de cajero por retiro.",
-      "owner": "client"
+      "title": "Visitas y recopilación de datos",
+      "description": "2 visitas presenciales (Feb 2026). Karla compartió datos de Lis Zam. Se identificaron hallazgos clave en gastos operativos.",
+      "owner": "both",
+      "completed": true
     },
     {
       "week": "Paso 2",
-      "title": "Analisis costo-beneficio",
-      "description": "Con esos datos, Uvicuo cuantifica: contingencia fiscal acumulada, fuga estimada por falta de control, y costo de horas muertas en liquidacion.",
-      "owner": "uvicuo"
+      "title": "Revisión de hallazgos",
+      "description": "Presentación del análisis de datos. Validación de supuestos con el equipo de Elola. Recopilación de datos faltantes (combustible, peajes, Lis Zam).",
+      "owner": "both",
+      "current": true
     },
     {
       "week": "Paso 3",
-      "title": "Reunion de revision",
-      "description": "Revisar los numeros juntos y decidir si avanzar. ~1 semana despues de recibir datos.",
+      "title": "Análisis completo con datos validados",
+      "description": "Carlos presenta a la dirección el business case con ahorros cuantificados en las 3 líneas: efectivo, combustible y peajes. Los números hablan solos.",
+      "owner": "client"
+    },
+    {
+      "week": "Paso 4",
+      "title": "Definición de alcance",
+      "description": "Si los números se sostienen, definimos juntos el alcance y el plan de implementación.",
       "owner": "both"
     }
   ],
-  "closingQuote": null,
-  "closingQuoteAuthor": null,
+  "closingQuote": "Vale la pena seguirlo explorando porque creo que esto nos ayudaría muchísimo a la administración... tenemos gastos ocultos aquí que si les ponemos control vamos a tener quick wins inmediatos.",
+  "closingQuoteAuthor": "Carlos Arellano, Dir. Finanzas — Transportes Elola",
   "trustedClients": [
     { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
     { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
