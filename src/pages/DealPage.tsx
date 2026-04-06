@@ -6,9 +6,11 @@ import { DealProvider } from "@/context/DealContext";
 import DiscoveryHeader from "@/components/discovery/DiscoveryHeader";
 import ExecutiveSummarySection from "@/components/discovery/ExecutiveSummarySection";
 import FindingsSection from "@/components/discovery/FindingsSection";
+import ConsolidatedAnalysisSection from "@/components/discovery/ConsolidatedAnalysisSection";
 import DataBackupSection from "@/components/discovery/DataBackupSection";
-import BenefitsDashboardSection from "@/components/discovery/BenefitsDashboardSection";
 import OpportunitiesSection from "@/components/discovery/OpportunitiesSection";
+import BenefitsDashboardSection from "@/components/discovery/BenefitsDashboardSection";
+import AdditionalValueSection from "@/components/discovery/AdditionalValueSection";
 import ValidationSection from "@/components/discovery/ValidationSection";
 import UvicuoSection from "@/components/discovery/UvicuoSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
@@ -38,15 +40,27 @@ const DealPage = () => {
     <DealProvider data={deal}>
       <div className="min-h-screen bg-background">
         <ScrollProgress />
+        {/* 1. Hero */}
         <DiscoveryHeader />
+        {/* 2. Resumen ejecutivo */}
         <ExecutiveSummarySection />
+        {/* 3. Hallazgos */}
         <FindingsSection />
+        {/* 4. Análisis consolidado — Efectivo */}
+        <ConsolidatedAnalysisSection />
+        {/* 5. Datos de respaldo */}
         <DataBackupSection />
+        {/* 6. Oportunidades (Combustible + Peajes) */}
         <OpportunitiesSection />
+        {/* 7. Impacto estimado (donut + savings + total) + 8. Valor adicional + 9. Beneficios adicionales */}
         <BenefitsDashboardSection />
+        <AdditionalValueSection />
+        {/* 10. Siguiente paso */}
         <ValidationSection />
+        {/* 11-12. Interacciones + Plan */}
         <UvicuoSection />
         <NextStepsSection />
+        {/* 13. Logos + footer */}
         <TrustedBySection clients={deal.trustedClients} />
 
         <footer className="section-dark border-t border-border py-10">
