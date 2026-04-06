@@ -3,6 +3,7 @@ const diagnosticRegistry: Record<string, () => Promise<{ default: unknown }>> = 
   fema: () => import("./fema.json"),
   esgari: () => import("./esgari.json"),
   armstrong: () => import("./armstrong.json"),
+  elola: () => import("./elola.json"),
 };
 
 export default diagnosticRegistry;

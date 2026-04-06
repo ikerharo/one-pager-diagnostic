@@ -1,0 +1,180 @@
+{
+  "config": {
+    "clientName": "Transportes Elola",
+    "heroQuestion": "¿Cuánto representa el 3-5% de su gasto operativo?",
+    "subtitle": "Diagnóstico de Eficiencia Operativa",
+    "websiteUrl": "https://uvicuo.com",
+    "preparedFor": {
+      "label": "Preparado para",
+      "recipients": [
+        { "name": "Guillermo Calderón", "role": "Dirección" },
+        { "name": "Carlos Arellano", "role": "Operaciones" }
+      ]
+    }
+  },
+  "contact": {
+    "name": "Iker Haro Escandón",
+    "role": "CEO & Fundador — Uvicuo",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Agendar primera sesión",
+    "ctaSubject": "Diagnóstico Uvicuo — Transportes Elola"
+  },
+  "guarantee": {
+    "headline": "Garantía de valor",
+    "text": "Si al finalizar el diagnóstico no identificamos al menos un 3% de ahorro potencial sobre su gasto operativo, no les pedimos nada más. Se quedan con el estudio completo, sin compromiso.",
+    "footnote": "No hay letra chica. No hay contrato. Es un estudio consultivo que cualquier firma les cobraría."
+  },
+  "whyQualify": {
+    "headline": "Por qué Elola califica para este diagnóstico",
+    "description": "Lo reservamos para operaciones donde la escala justifica un análisis profundo y donde sabemos, por experiencia, que el impacto será significativo.",
+    "reasons": [
+      "Flota de 270 operadores con operaciones en múltiples rutas",
+      "Anticipos a nómina que generan contingencia fiscal y laboral acumulada",
+      "Conciliación manual de liquidaciones con solo 2 personas dedicadas",
+      "Dirección con apertura a modernizar la gestión financiera de la operación"
+    ],
+    "closingLine": "No venimos a vender. Venimos a entender su operación a profundidad y demostrar con datos dónde están las oportunidades. Lo que hagan con esa información es decisión suya."
+  },
+  "patterns": {
+    "headline": "Lo que típicamente encontramos en flotas de transporte de carga",
+    "description": "En operaciones de escala similar, estos son los patrones más frecuentes. No son hipotéticos — vienen de diagnósticos reales.",
+    "items": [
+      {
+        "stat": "100%",
+        "label": "del efectivo en ruta sin rastrear",
+        "detail": "El anticipo llega a la cuenta personal del operador y deja de ser rastreable. No hay forma de saber cuánto se usó en lo operativo, cuánto se desvió, ni cuánto se quedó sin comprobar."
+      },
+      {
+        "stat": "2",
+        "label": "personas procesando 270 operadores",
+        "detail": "Cada hora de liquidación manual es una hora que el camión no genera ingreso. El operador regresa, hace fila, entrega tickets — mientras el tracto está parado."
+      },
+      {
+        "stat": "100%",
+        "label": "de anticipos a nómina con riesgo fiscal",
+        "detail": "El SAT y el IMSS registran esos depósitos como percepción salarial. La base gravable crece artificialmente, y en demanda laboral, esos montos se vuelven liquidación."
+      },
+      {
+        "stat": "0",
+        "label": "gastos en efectivo con CFDI deducible",
+        "detail": "Talachas, refacciones, comidas en ruta — hoy son efectivo sin comprobante fiscal. Cada peso que se logre deducir es dinero que hoy se pierde."
+      }
+    ]
+  },
+  "outcomeStats": {
+    "headline": "Track record",
+    "items": [
+      { "value": "50+", "label": "flotillas operando con Uvicuo" },
+      { "value": "3–8%", "label": "ahorro identificado sobre gasto operativo" },
+      { "value": "$500M+", "label": "MXN procesados anualmente" },
+      { "value": "3 sem", "label": "de inicio a entregable" }
+    ]
+  },
+  "whatIsIt": {
+    "headline": "Un estudio consultivo, no una demo de producto",
+    "description": "Mapeamos cada etapa del flujo de gastos operativos de Elola — desde que se presupuesta un viaje hasta que se cierra la liquidación. Identificamos ineficiencias, puntos de fuga y oportunidades de ahorro. Lo cuantificamos todo con sus datos reales.",
+    "stats": [
+      { "value": "15–25", "label": "ineficiencias promedio identificadas por empresa" },
+      { "value": "3–8%", "label": "ahorro potencial del gasto operativo total" },
+      { "value": "80%+", "label": "reducción en horas administrativas de cierre" }
+    ]
+  },
+  "tracks": [
+    {
+      "icon": "Truck",
+      "title": "Control de efectivo y gastos en ruta",
+      "items": [
+        "Tarjeta corporativa por operador con límites y reglas por rubro",
+        "Comprobación en ruta — foto del gasto, IA valida y registra",
+        "Eliminación de anticipos a nómina y contingencia fiscal asociada",
+        "Visibilidad en tiempo real de cada peso gastado por viaje"
+      ]
+    },
+    {
+      "icon": "Calculator",
+      "title": "Liquidación y cierre administrativo",
+      "items": [
+        "Liquidación en ruta — el operador se libera para el siguiente viaje",
+        "Reducción de carga administrativa de 2 personas dedicadas",
+        "Captura automática de CFDI donde hay comercio formal",
+        "Conciliación automática de gastos por operador y viaje"
+      ]
+    },
+    {
+      "icon": "Gauge",
+      "title": "Visibilidad y analytics",
+      "items": [
+        "Dashboard de gasto por operador, viaje y categoría",
+        "Detección de anomalías y desviaciones en tiempo real",
+        "Fondeo inmediato desde la app para emergencias en ruta",
+        "Integración con LIS ZAM para flujo continuo de datos"
+      ]
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Análisis de contingencia fiscal",
+      "description": "Cuantificación del riesgo acumulado por anticipos a nómina. Impacto en ISR, IMSS y demanda laboral con datos reales de Elola."
+    },
+    {
+      "title": "Mapa de fuga y ahorro por categoría",
+      "description": "Desglose de gastos en ruta por rubro: talachas, refacciones, comidas. Identificación de lo que se puede deducir y lo que hoy se pierde."
+    },
+    {
+      "title": "Business case para Dirección",
+      "description": "ROI cuantificado con datos de Elola. Payback estimado, ahorro mensual y anual por palanca. Listo para presentar a la dirección."
+    },
+    {
+      "title": "Propuesta de implementación",
+      "description": "Plan de onboarding con timelines adaptados a la prioridad de Elola. Sin presión — arrancamos cuando sea el momento correcto para ustedes."
+    }
+  ],
+  "methodology": {
+    "headline": "Cómo lo hacemos",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Elola comparte datos históricos de LIS ZAM",
+        "description": "Reporte de anticipos por operador (monto y frecuencia) y gastos liquidados de los últimos 2 meses. Con eso arrancamos."
+      },
+      {
+        "number": "02",
+        "title": "Uvicuo entrega análisis costo-beneficio",
+        "description": "Contingencia fiscal acumulada, fuga estimada por falta de control, y costo de horas muertas en liquidación. Todo cuantificado."
+      },
+      {
+        "number": "03",
+        "title": "Sesiones de diagnóstico con equipo Elola",
+        "description": "2-3 sesiones con equipo administrativo y operativo. Mapeamos procesos, identificamos fricción y cuantificamos cada palanca de ahorro."
+      },
+      {
+        "number": "04",
+        "title": "Entrega del business case completo",
+        "description": "Documento ejecutivo con ROI, ahorro por categoría y propuesta de implementación. Listo para presentar a Dirección."
+      }
+    ]
+  },
+  "timeline": [
+    { "week": "Paso 1", "title": "Elola comparte datos de LIS ZAM", "owner": "client" },
+    { "week": "1 semana después", "title": "Uvicuo entrega análisis costo-beneficio", "owner": "uvicuo" },
+    { "week": "Cuando sea el momento correcto", "title": "Sesiones de diagnóstico (2-3 sesiones)", "owner": "both" },
+    { "week": "Una semana después", "title": "Entrega de business case para Dirección", "owner": "uvicuo" }
+  ],
+  "uvicuoPositioning": {
+    "headline": "Control inteligente de efectivo y gastos en ruta — sin cambiar cómo opera tu flota",
+    "description": "Uvicuo reemplaza los anticipos a nómina por una tarjeta corporativa Mastercard con control granular por operador. Para Elola significa separar el dinero operativo de la nómina, eliminar contingencia fiscal, y tener visibilidad en tiempo real de cada peso gastado en ruta.",
+    "capabilities": [
+      { "title": "Tarjeta corporativa por operador", "description": "Con límites y reglas por rubro. El dinero es de la empresa, no del operador." },
+      { "title": "Comprobación en ruta", "description": "Foto del gasto desde ruta. IA valida y registra sin esperar al patio." },
+      { "title": "Sin anticipos a nómina", "description": "Elimina la contingencia fiscal y laboral. El sueldo es sueldo, el gasto es gasto." },
+      { "title": "Fondeo inmediato", "description": "Emergencias en ruta resueltas desde la app. Sin depender de banca personal ni horarios." }
+    ]
+  },
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" }
+  ]
+}
