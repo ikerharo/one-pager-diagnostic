@@ -43,8 +43,20 @@ export interface DiagnosticData {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function processDiagnosticContent(raw: any): DiagnosticData {
+  // Normalize methodology: accept either an array or { headline, steps }
+  const methodology = Array.isArray(raw.methodology)
+    ? raw.methodology
+    : (raw.methodology?.steps ?? []).map((s: any) => ({
+        phase: s.number ?? s.phase ?? "",
+        title: s.title ?? "",
+        who: s.who ?? s.description ?? "",
+        duration: s.duration ?? "",
+        covers: s.covers ?? s.description ?? "",
+      }));
+
   return {
     ...raw,
+    methodology,
     tracks: raw.tracks.map((t: any) => ({
       ...t,
       icon: iconMap[t.icon] || Gauge,
