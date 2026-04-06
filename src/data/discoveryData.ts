@@ -79,6 +79,11 @@ export interface TimelineStep {
   ctaLink?: string;
 }
 
+export interface FindingTableData {
+  headers: string[];
+  rows: string[][];
+}
+
 export interface Finding {
   icon: LucideIcon;
   title: string;
@@ -86,6 +91,21 @@ export interface Finding {
   impact: "alto" | "medio" | "bajo";
   quote: string | null;
   quoteAuthor: string | null;
+  tableData?: FindingTableData;
+}
+
+export interface OpportunityStat {
+  value: string;
+  label: string;
+}
+
+export interface Opportunity {
+  title: string;
+  description: string;
+  stats: OpportunityStat[];
+  quote: string | null;
+  quoteAuthor: string | null;
+  status: string;
 }
 
 export interface UvicuoPositioning {
