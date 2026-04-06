@@ -140,12 +140,30 @@
   },
   "opportunities": [
     {
-      "title": "Combustible foráneo (Efectivale / Ultragas)",
+      "title": "Combustible caro por red cerrada",
       "description": "Elola maneja combustible foráneo con Efectivale/Ultragas — un monedero prepago con comisiones, sobreprecio por litro y capital inmovilizado. Estimamos un consumo de ~1,000 litros/mes por operador en foráneo.",
       "stats": [
-        { "value": "~1.5%", "label": "comisión estimada Efectivale" },
-        { "value": "~4%", "label": "sobreprecio vs precio de mercado" },
-        { "value": "~1%", "label": "costo de capital por prefondeo" }
+        {
+          "value": "~3.5–4.5%",
+          "label": "sobreprecio por red cerrada",
+          "impact": "alto",
+          "detail": "El gasto de combustible corre por Edenred — un monedero con acceso limitado de estaciones. Los operadores cargan donde haya una estación Edenred, no donde sea más barato. Las estaciones de la red cobran una comisión que se traslada al precio final. Estimación conservadora: con 300,000 litros/mes y un sobreprecio de 3.5–4.5%, se pierden entre $175K y $270K MXN al mes solo por estar en la red equivocada.",
+          "proposal": "Red abierta Mastercard: cualquier estación del país. El sistema recomienda la más barata en ruta con precios CRE en tiempo real. El ahorro aparece desde el primer mes, sin cambiar la operación."
+        },
+        {
+          "value": "~1.5–3.5%",
+          "label": "comisiones que crecen con el gasto",
+          "impact": "alto",
+          "detail": "Edenred Combustible cobra ~1.5% sobre el gasto. Ticket Empresarial cobra ~3.5% sobre viáticos. Estas comisiones se calculan sobre el volumen total — entre más gasta Elola, más paga. No son cuotas fijas a cambio de ahorro: son un porcentaje permanente sobre el gasto operativo.",
+          "proposal": "Una sola tarjeta Mastercard para combustible y viáticos. Sin comisión sobre el gasto. Uvicuo cobra por usuario, no por volumen — entre más gasta Elola, más conviene el cambio."
+        },
+        {
+          "value": "~1%",
+          "label": "capital parado por prefondeo",
+          "impact": "medio",
+          "detail": "El modelo Edenred requiere prefondear el monedero antes de que el operador pueda cargar. Ese capital queda inmovilizado a un costo estimado de ~1% mensual. Además, el control de odómetros hoy se hace de manera manual, con errores frecuentes y a destiempo — lo que dificulta detectar anomalías en consumo.",
+          "proposal": "Línea de crédito que elimina el prefondeo. Control automático de odómetros integrado a la tarjeta: cada carga registra kilometraje y valida rendimiento esperado en tiempo real."
+        }
       ],
       "quote": "En el caso de Efectivale, el dinero se ponía en la tarjeta... jamás regresa.",
       "quoteAuthor": "Carlos Arellano + Karla González",
