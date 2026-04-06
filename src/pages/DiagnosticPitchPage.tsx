@@ -125,13 +125,21 @@ const DiagnosticHero = () => {
             </motion.p>
 
             {/* CTA */}
-            <motion.div variants={itemVariants} className="mt-10 text-center">
+            <motion.div variants={itemVariants} className="mt-10 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg" className="gap-2 text-base px-8 py-6 rounded-xl shadow-lg shadow-primary/20">
                 <a href="https://wa.me/+525517001612" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="h-5 w-5" />
                   {contact.ctaText}
                 </a>
               </Button>
+              {slug && (
+                <Button asChild variant="outline" size="lg" className="gap-2 text-base px-8 py-6 rounded-xl border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary">
+                  <a href={`/${slug}`}>
+                    <FileSearch className="h-5 w-5" />
+                    Ver diagnóstico
+                  </a>
+                </Button>
+              )}
             </motion.div>
           </AnimatedSection>
         </div>
