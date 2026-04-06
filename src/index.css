@@ -88,6 +88,11 @@
   .section-dark {
     background-color: hsl(var(--uvicuo-dark));
     color: hsl(0 0% 95%);
+    --foreground: 0 0% 95%;
+    --card-foreground: 0 0% 95%;
+    --muted-foreground: 220 8% 65%;
+    --border: 220 12% 32%;
+    --card: 220 18% 18%;
   }
 
   .section-dark .text-foreground {
