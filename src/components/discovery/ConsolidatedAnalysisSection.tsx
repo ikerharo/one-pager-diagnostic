@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 const ConsolidatedAnalysisSection = () => {
   const deal = useDeal();
   const analysis = (deal as any).consolidatedAnalysis;
-  if (!analysis) return null;
-
   const [expandedLever, setExpandedLever] = useState<number | null>(null);
+
+  if (!analysis) return null;
 
   const confidenceColor: Record<string, string> = {
     Alta: "text-primary",
