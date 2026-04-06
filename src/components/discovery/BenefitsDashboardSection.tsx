@@ -36,15 +36,15 @@ const BenefitsDashboardSection = () => {
           </motion.p>
           <motion.h2
             variants={itemVariants}
-            className="text-2xl font-bold tracking-tight md:text-3xl text-white"
+            className="text-2xl font-bold tracking-tight md:text-3xl text-white max-w-2xl"
           >
-            Beneficios cuantificados y operativos
+            Beneficios identificados en 3 líneas de servicio
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="mt-2 text-sm text-muted-foreground max-w-2xl"
           >
-            Estimaciones conservadoras basadas en los datos compartidos y benchmarks de la industria.
+            Estimaciones conservadoras. Se ajustan con datos confirmados de Elola.
           </motion.p>
 
           {/* Donut chart — only rendered when spendBreakdown exists */}
@@ -94,13 +94,22 @@ const BenefitsDashboardSection = () => {
                 </div>
 
                 <div className="flex-1 space-y-3">
-                  {spendBreakdown.map((item, i) => (
+                  {spendBreakdown.map((item: any, i: number) => (
                     <div key={i} className="flex items-center gap-3">
                       <span
                         className="h-3 w-3 rounded-full shrink-0"
                         style={{ backgroundColor: item.color }}
                       />
                       <span className="text-sm text-[hsl(0,0%,85%)] flex-1">{item.category}</span>
+                      {item.badge && (
+                        <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${
+                          item.badge === "Datos reales"
+                            ? "border-primary/30 bg-primary/15 text-primary"
+                            : "border-amber-500/30 bg-amber-500/15 text-amber-400"
+                        }`}>
+                          {item.badge}
+                        </span>
+                      )}
                       <span className="text-sm font-semibold text-white">
                         {formatMXN(item.amount)} MXN
                       </span>
@@ -114,8 +123,9 @@ const BenefitsDashboardSection = () => {
           {/* Savings categories */}
           {savingsCategories.length > 0 && (
             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-              {savingsCategories.map((cat, i) => {
+              {savingsCategories.map((cat: any, i: number) => {
                 const Icon = cat.icon;
+                const badgeText = cat.badge;
                 return (
                   <motion.div
                     key={i}
@@ -139,6 +149,15 @@ const BenefitsDashboardSection = () => {
                     <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                       {cat.calculation}
                     </p>
+                    {badgeText && (
+                      <span className={`mt-3 inline-flex text-[10px] font-medium px-2 py-0.5 rounded-full border ${
+                        badgeText.includes("datos reales") || badgeText.includes("Basado")
+                          ? "border-primary/30 bg-primary/15 text-primary"
+                          : "border-amber-500/30 bg-amber-500/15 text-amber-400"
+                      }`}>
+                        {badgeText}
+                      </span>
+                    )}
                   </motion.div>
                 );
               })}
