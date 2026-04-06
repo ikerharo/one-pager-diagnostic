@@ -167,16 +167,6 @@ const OpportunitiesSection = () => {
                   </div>
                 )}
 
-                {opp.detailLink && (
-                  <a
-                    href={opp.detailLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
-                  >
-                    Ver detalle en análisis completo →
-                  </a>
-                )}
               </motion.div>
             ))}
           </div>
