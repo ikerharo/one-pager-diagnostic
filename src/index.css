@@ -102,26 +102,6 @@
   .section-dark .text-muted-foreground {
     color: hsl(var(--uvicuo-dark-muted));
   }
-
-  .section-dark .border-border {
-    border-color: hsl(var(--uvicuo-dark-border));
-  }
-
-  .section-dark .bg-card {
-    background-color: hsl(var(--uvicuo-dark-card));
-  }
-
-  .section-dark .bg-secondary {
-    background-color: hsl(var(--uvicuo-dark-elevated));
-  }
-
-  .section-dark .bg-secondary\/50 {
-    background-color: hsl(var(--uvicuo-dark-elevated) / 0.5);
-  }
-
-  .section-dark .bg-secondary\/30 {
-    background-color: hsl(var(--uvicuo-dark-elevated) / 0.3);
-  }
 }
 
 /* Smooth scroll */
