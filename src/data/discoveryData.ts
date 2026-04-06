@@ -200,6 +200,8 @@ export interface DealData {
   exclusionNote: string | null;
   uvicuoPositioning: UvicuoPositioning | null;
   additionalCapabilities: AdditionalCapability[];
+  opportunities: Opportunity[];
+  validationQuestions: string[];
   pastInteractions: PastInteraction[];
   timelineSteps: TimelineStep[];
   closingQuote: string | null;
@@ -247,6 +249,7 @@ export function processDealContent(content: any): DealData {
       impact: f.impact as "alto" | "medio" | "bajo",
       quote: f.quote,
       quoteAuthor: f.quoteAuthor,
+      tableData: f.tableData ?? undefined,
     })),
     financialImpact,
     benefitsDashboard: content.benefitsDashboard
@@ -275,6 +278,15 @@ export function processDealContent(content: any): DealData {
       title: c.title,
       description: c.description,
     })),
+    opportunities: (content.opportunities ?? []).map((o: any) => ({
+      title: o.title,
+      description: o.description,
+      stats: o.stats ?? [],
+      quote: o.quote ?? null,
+      quoteAuthor: o.quoteAuthor ?? null,
+      status: o.status ?? "",
+    })),
+    validationQuestions: content.validationQuestions ?? [],
     pastInteractions: (content.pastInteractions ?? []).map((i: any) => ({
       ...i,
       owner: i.owner as TimelineOwner,
