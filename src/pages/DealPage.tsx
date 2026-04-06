@@ -8,6 +8,8 @@ import ExecutiveSummarySection from "@/components/discovery/ExecutiveSummarySect
 import FindingsSection from "@/components/discovery/FindingsSection";
 import BenefitsDashboardSection from "@/components/discovery/BenefitsDashboardSection";
 import UvicuoSection from "@/components/discovery/UvicuoSection";
+import OpportunitiesSection from "@/components/discovery/OpportunitiesSection";
+import ValidationSection from "@/components/discovery/ValidationSection";
 import NextStepsSection from "@/components/discovery/NextStepsSection";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
 import ScrollProgress from "@/components/discovery/ScrollProgress";
@@ -39,6 +41,8 @@ const DealPage = () => {
         <ExecutiveSummarySection />
         <FindingsSection />
         <BenefitsDashboardSection />
+        <OpportunitiesSection />
+        <ValidationSection />
         <UvicuoSection />
         <NextStepsSection />
         <TrustedBySection clients={deal.trustedClients} />

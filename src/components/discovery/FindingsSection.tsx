@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import { FileText, MapPin } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import AnimatedSection, { itemVariants } from "@/components/proposal/AnimatedSection";
 import { useDeal } from "@/context/DealContext";
 
@@ -89,6 +97,29 @@ const FindingsSection = () => {
                             </p>
                           )}
                         </blockquote>
+                      )}
+
+                      {finding.tableData && (
+                        <div className="mt-4 overflow-x-auto rounded-lg border border-border">
+                          <Table>
+                            <TableHeader>
+                              <TableRow>
+                                {finding.tableData.headers.map((h, hi) => (
+                                  <TableHead key={hi} className="text-xs font-semibold">{h}</TableHead>
+                                ))}
+                              </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                              {finding.tableData.rows.map((row, ri) => (
+                                <TableRow key={ri}>
+                                  {row.map((cell, ci) => (
+                                    <TableCell key={ci} className="text-xs">{cell}</TableCell>
+                                  ))}
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </div>
                       )}
 
                       {recommendation && (
