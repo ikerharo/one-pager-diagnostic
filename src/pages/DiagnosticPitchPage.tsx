@@ -38,6 +38,7 @@ import heroVideo from "@/assets/hero-loop.mp4";
 /* ── Hero — Thesis + hard numbers immediately ──── */
 const DiagnosticHero = () => {
   const { config, contact, patterns } = useDiagnostic();
+  const { slug } = useParams<{ slug: string }>();
   const [showHint, setShowHint] = useState(true);
 
   useEffect(() => {
