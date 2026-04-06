@@ -131,10 +131,22 @@ const OpportunitiesSection = () => {
                                   {(stat as any).proposal && (
                                     <div className="flex items-start gap-2 rounded-lg bg-primary/[0.06] border border-primary/15 px-4 py-3">
                                       <Lightbulb className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                                      <p className="text-sm text-foreground/80 leading-relaxed">
-                                        <span className="font-semibold text-primary">Propuesta: </span>
-                                        {(stat as any).proposal}
-                                      </p>
+                                      <div className="text-sm text-foreground/80 leading-relaxed">
+                                        <p>
+                                          <span className="font-semibold text-primary">Propuesta: </span>
+                                          {(stat as any).proposal}
+                                        </p>
+                                        {(stat as any).analysisLink && (
+                                          <a
+                                            href={(stat as any).analysisLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                                          >
+                                            Ver análisis de ruta →
+                                          </a>
+                                        )}
+                                      </div>
                                     </div>
                                   )}
                                 </div>
