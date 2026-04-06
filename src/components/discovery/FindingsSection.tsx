@@ -110,15 +110,25 @@ const FindingsSection = () => {
                               </TableRow>
                             </TableHeader>
                             <TableBody>
-                              {finding.tableData.rows.map((row, ri) => (
-                                <TableRow key={ri}>
-                                  {row.map((cell, ci) => (
-                                    <TableCell key={ci} className="text-xs">{cell}</TableCell>
-                                  ))}
-                                </TableRow>
-                              ))}
+                              {finding.tableData.rows.map((row, ri) => {
+                                const isHighlighted = finding.tableData!.highlightRows?.includes(ri);
+                                return (
+                                  <TableRow key={ri} className={isHighlighted ? "bg-destructive/10" : ""}>
+                                    {row.map((cell, ci) => (
+                                      <TableCell key={ci} className={`text-xs ${isHighlighted ? "text-destructive font-semibold" : ""}`}>{cell}</TableCell>
+                                    ))}
+                                  </TableRow>
+                                );
+                              })}
                             </TableBody>
                           </Table>
+                          {finding.tableData.tableFooter && (
+                            <div className="px-4 py-2.5 border-t border-border bg-destructive/5">
+                              <p className="text-xs font-medium text-destructive">
+                                {finding.tableData.tableFooter}
+                              </p>
+                            </div>
+                          )}
                         </div>
                       )}
 

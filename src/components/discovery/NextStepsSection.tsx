@@ -143,6 +143,9 @@ const NextStepsSection = () => {
               {timelineSteps.map((step, i) => {
                 const config = ownerConfig[step.owner];
                 const OwnerIcon = config.icon;
+                const stepAny = step as any;
+                const isCompleted = stepAny.completed;
+                const isCurrent = stepAny.current;
                 return (
                   <motion.div
                     key={i}
@@ -151,12 +154,17 @@ const NextStepsSection = () => {
                   >
                     <div className="hidden sm:flex flex-col items-center pt-1">
                       <div className="relative h-[10px] w-[10px] flex-shrink-0">
-                        <div className="absolute inset-0 rounded-full bg-primary/40 animate-ping-slow" />
-                        <div className="absolute inset-0 rounded-full bg-primary ring-4 ring-primary/10" />
+                        {!isCompleted && (
+                          <div className="absolute inset-0 rounded-full bg-primary/40 animate-ping-slow" />
+                        )}
+                        <div className={`absolute inset-0 rounded-full ring-4 ring-primary/10 ${isCompleted ? "bg-primary/50" : "bg-primary"}`} />
+                        {isCompleted && (
+                          <CheckCircle2 className="absolute -left-[3px] -top-[3px] h-4 w-4 text-primary" />
+                        )}
                       </div>
                     </div>
 
-                    <div className="flex-1 rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:shadow-md hover:shadow-primary/5">
+                    <div className={`flex-1 rounded-xl border bg-card p-5 transition-all duration-300 hover:shadow-md hover:shadow-primary/5 ${isCurrent ? "border-primary/40 ring-1 ring-primary/20" : "border-border"}`}>
                       <div className="flex flex-wrap items-center gap-2 mb-2">
                         <span className="text-xs font-bold text-primary font-mono uppercase tracking-wider">
                           {step.week}
@@ -165,6 +173,17 @@ const NextStepsSection = () => {
                           <OwnerIcon className="h-3 w-3" />
                           {config.label}
                         </span>
+                        {isCompleted && (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/15 px-2 py-0.5 text-[11px] font-medium text-primary">
+                            <CheckCircle2 className="h-3 w-3" />
+                            Completado
+                          </span>
+                        )}
+                        {isCurrent && (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-primary/40 bg-primary/20 px-2 py-0.5 text-[11px] font-bold text-primary animate-pulse">
+                            En curso
+                          </span>
+                        )}
                       </div>
                       <h3 className="font-semibold text-sm text-foreground">{step.title}</h3>
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
