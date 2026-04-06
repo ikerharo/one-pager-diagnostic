@@ -90,7 +90,7 @@ const OpportunitiesSection = () => {
                                 <span className="text-xl font-bold text-primary shrink-0">
                                   {stat.value}
                                 </span>
-                                <span className="text-sm text-foreground/80">
+                                <span className="text-sm text-foreground">
                                   {stat.label}
                                 </span>
                                 {(stat as any).impact && (
