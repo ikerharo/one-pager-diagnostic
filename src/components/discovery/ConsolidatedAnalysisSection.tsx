@@ -126,7 +126,7 @@ const ConsolidatedAnalysisSection = () => {
                                 {lever.bullets.map((bullet: string, j: number) => {
                                   const isConfirm = bullet.startsWith("POR CONFIRMAR");
                                   return (
-                                    <li key={j} className={cn("text-sm leading-relaxed flex items-start gap-2", isConfirm ? "text-amber-400" : "text-foreground/80")}>
+                                    <li key={j} className={cn("text-sm leading-relaxed flex items-start gap-2", isConfirm ? "text-amber-400" : "text-foreground/90")}>
                                       <span className={cn("mt-1.5 h-1.5 w-1.5 rounded-full shrink-0", isConfirm ? "bg-amber-400" : "bg-primary/60")} />
                                       {bullet}
                                     </li>

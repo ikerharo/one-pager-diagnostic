@@ -125,13 +125,13 @@ const OpportunitiesSection = () => {
                                 className="overflow-hidden"
                               >
                                 <div className="px-4 pt-3 pb-1 space-y-3">
-                                  <p className="text-sm leading-relaxed text-foreground/70">
+                                  <p className="text-sm leading-relaxed text-foreground/90">
                                     {(stat as any).detail}
                                   </p>
                                   {(stat as any).proposal && (
                                     <div className="flex items-start gap-2 rounded-lg bg-primary/[0.06] border border-primary/15 px-4 py-3">
                                       <Lightbulb className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                                      <div className="text-sm text-foreground/80 leading-relaxed">
+                                      <div className="text-sm text-foreground leading-relaxed">
                                         <p>
                                           <span className="font-semibold text-primary">Propuesta: </span>
                                           {(stat as any).proposal}
@@ -174,8 +174,8 @@ const OpportunitiesSection = () => {
 
                 {opp.status && (
                   <div className="flex items-start gap-2 rounded-lg bg-muted/50 border border-border px-4 py-2.5">
-                    <Info className="h-3.5 w-3.5 text-foreground/60 mt-0.5 shrink-0" />
-                    <p className="text-xs text-foreground/70 leading-relaxed">{opp.status}</p>
+                    <Info className="h-3.5 w-3.5 text-muted-foreground mt-0.5 shrink-0" />
+                    <p className="text-xs text-foreground/90 leading-relaxed">{opp.status}</p>
                   </div>
                 )}
 
