@@ -67,11 +67,11 @@ const OpportunitiesSection = () => {
 
                 {opp.quote && (
                   <blockquote className="mb-4 border-l-2 border-primary/20 pl-4">
-                    <p className="text-sm italic text-muted-foreground/70 leading-relaxed">
+                    <p className="text-sm italic text-foreground/80 leading-relaxed">
                       "{opp.quote}"
                     </p>
                     {opp.quoteAuthor && (
-                      <p className="mt-1 text-xs text-muted-foreground/50">
+                      <p className="mt-1 text-xs text-muted-foreground">
                         — {opp.quoteAuthor}
                       </p>
                     )}
