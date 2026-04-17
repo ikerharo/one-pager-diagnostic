@@ -29,7 +29,7 @@
     "headline": "Por qué GEPP califica para este diagnóstico",
     "description": "Reservamos este formato para operaciones donde la escala justifica un análisis profundo y donde, por experiencia, sabemos que el impacto será material. La flota primaria de GEPP encaja por kilometraje, concentración de gasto y oportunidad de whitespace identificado.",
     "reasons": [
-      "Flota primaria de 300+ tractocamiones — el business case se paga más fácil que en secundaria por kilómetros recorridos por unidad",
+      "Flota primaria de 800 tractocamiones — el business case se paga más fácil que en secundaria por kilómetros recorridos por unidad",
       "Peajes sin conciliación activa — confirmado en sesión del 14-abr como territorio sin dueño",
       "Información de combustible con rezago de ~2 días — limitación estructural del modelo actual de monedero",
       "Apertura de Tomás Rodríguez como sponsor de exploración para sentarnos con los dueños operativos en Tlalnepantla"
@@ -43,7 +43,7 @@
       {
         "stat": "7–9%",
         "label": "tasa de error documentada en antenas de telepeaje",
-        "detail": "Cargos dobles, ejes de más, casetas no recorridas. Sin conciliación activa, ese sobrecosto se queda. En 300 tractos con miles de cruces al mes, la cifra absoluta es material."
+        "detail": "Cargos dobles, ejes de más, casetas no recorridas. Sin conciliación activa, ese sobrecosto se queda. En 800 tractos con miles de cruces al mes, la cifra absoluta es material."
       },
       {
         "stat": "2–4%",
@@ -58,7 +58,7 @@
       {
         "stat": "0",
         "label": "trazabilidad por unidad de mantenimiento + costo acumulado",
-        "detail": "Sin un repositorio que cruce mantenimiento in-house y de talleres terceros por unidad, las decisiones de baja se toman por intuición. En flotas de 300+ tractos, una decisión equivocada cuesta cientos de miles."
+        "detail": "Sin un repositorio que cruce mantenimiento in-house y de talleres terceros por unidad, las decisiones de baja se toman por intuición. En flotas de 800 tractos, una decisión equivocada cuesta cientos de miles."
       }
     ]
   },
