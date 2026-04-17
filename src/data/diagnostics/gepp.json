@@ -72,6 +72,82 @@
     }
   ],
   "exclusionNote": "Este diagnóstico no propone cambiar el monedero de combustible ni interfiere con el proceso de licitación que GEPP tiene en curso con Edenred. El alcance está deliberadamente acotado a procesos sin dueño activo hoy.",
+  "benefitsDashboard": {
+    "headline": "Ahorros esperados por categoría",
+    "subtitle": "Proyección anual sobre los 800 tractocamiones de transporte primario. Basada en benchmarks de operaciones similares — por validar contra data real de GEPP.",
+    "spendBreakdown": [
+      { "category": "Combustible", "amount": 720000000, "color": "#ef4444" },
+      { "category": "Peajes", "amount": 180000000, "color": "#f59e0b" },
+      { "category": "Efectivo", "amount": 72000000, "color": "#3b82f6" }
+    ],
+    "spendTotal": "$972M MXN/año",
+    "savingsCategories": [
+      {
+        "category": "Combustible",
+        "icon": "Fuel",
+        "estimatedSaving": "$39.6M MXN/año",
+        "calculation": "5.5% sobre $720M anuales: comisiones Edenred (0.5%), sobreprecio de red cerrada (3.5%), controles manuales y desfasados (1.5%).",
+        "color": "#ef4444",
+        "breakdown": [
+          { "label": "Sobreprecio de red cerrada", "amount": "$25.2M", "pct": "3.5%" },
+          { "label": "Controles manuales y desfasados", "amount": "$10.8M", "pct": "1.5%" },
+          { "label": "Comisiones Edenred", "amount": "$3.6M", "pct": "0.5%" }
+        ]
+      },
+      {
+        "category": "Peajes",
+        "icon": "Route",
+        "estimatedSaving": "$8.1M MXN/año",
+        "calculation": "4.5% sobre $180M anuales: cobros erróneos de ejes (3%) y cobros dobles (1.5%) sin conciliación activa.",
+        "color": "#f59e0b",
+        "breakdown": [
+          { "label": "Cobro erróneo de ejes", "amount": "$5.4M", "pct": "3.0%" },
+          { "label": "Cobros dobles", "amount": "$2.7M", "pct": "1.5%" }
+        ]
+      },
+      {
+        "category": "Efectivo",
+        "icon": "Banknote",
+        "estimatedSaving": "$0.7M MXN/año",
+        "calculation": "1% sobre $72M anuales: pérdida estructural por falta de control sobre el uso de efectivo en ruta.",
+        "color": "#3b82f6",
+        "breakdown": [
+          { "label": "Falta de control sobre uso en ruta", "amount": "$0.7M", "pct": "1.0%" }
+        ]
+      }
+    ],
+    "totalSavings": "$48.4M MXN anuales",
+    "totalMonthly": "$4.0M MXN",
+    "totalAnnual": "$48.4M MXN",
+    "totalPercent": "~5%",
+    "qualitativeBenefits": [
+      {
+        "icon": "BarChart3",
+        "title": "Reducción de trabajo manual de conciliación",
+        "description": "Eliminación de la conciliación diaria entre cobros del TAG, telemetría y monedero. Finanzas deja de cazar facturas para tener tiempo de analizar."
+      },
+      {
+        "icon": "FileText",
+        "title": "Recuperación automática de facturas (CFDI)",
+        "description": "Captura y vinculación automática de CFDI por cruce y por carga. Sin pedir comprobantes al operador, sin XML perdidos al cierre."
+      },
+      {
+        "icon": "Zap",
+        "title": "Menor tiempo de respuesta ante anomalías",
+        "description": "Alertas en tiempo real sobre carga doble, ruta fuera de plan o cobros atípicos. La acción correctiva ocurre en horas, no en semanas."
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Automatización del flujo de validación y autorización",
+        "description": "Reglas configurables por ruta, unidad y monto. Lo que cumple política se autoriza solo; lo que no, escala con contexto al responsable."
+      }
+    ],
+    "note": "Proyección basada en benchmarks de clientes Uvicuo con operaciones similares; cifras por validar en el diagnóstico con data real de GEPP.",
+    "footnotes": [
+      "Base de cálculo: 800 tractocamiones de transporte primario, 8,000 km/mes por unidad, rendimiento 3.2 km/L, diésel $30/L.",
+      "Peajes ≈ 25% del gasto de combustible. Efectivo ≈ 10% del gasto de combustible (por validar)."
+    ]
+  },
   "whyQualify": {
     "headline": "Por qué GEPP califica para este diagnóstico",
     "description": "Reservamos este formato para operaciones donde la escala justifica un análisis profundo y donde, por experiencia, sabemos que el impacto será material. La flota primaria de GEPP encaja por kilometraje, concentración de gasto y oportunidad clara de optimización en peajes y visibilidad operativa.",
