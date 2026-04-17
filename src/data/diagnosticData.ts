@@ -47,6 +47,7 @@ export interface DiagnosticData {
     heroQuestion: string;
     subtitle: string;
     websiteUrl: string;
+    ndaUrl?: string;
     preparedFor?: {
       label: string;
       recipients: { name: string; role: string }[];
