@@ -11,6 +11,12 @@ import {
   Banknote,
   Wrench,
   AlertTriangle,
+  BarChart3,
+  UserCheck,
+  DollarSign,
+  Receipt,
+  Zap,
+  FileText,
   type LucideIcon,
 } from "lucide-react";
 
@@ -27,6 +33,12 @@ const iconMap: Record<string, LucideIcon> = {
   Banknote,
   Wrench,
   AlertTriangle,
+  BarChart3,
+  UserCheck,
+  DollarSign,
+  Receipt,
+  Zap,
+  FileText,
 };
 
 export interface DiagnosticData {
@@ -69,6 +81,31 @@ export interface DiagnosticData {
   }[];
   quickWins?: { before: string; after: string }[];
   exclusionNote?: string;
+  benefitsDashboard?: {
+    headline?: string;
+    subtitle?: string;
+    spendBreakdown?: { category: string; amount: number; color: string }[];
+    spendTotal?: string;
+    savingsCategories: {
+      category: string;
+      icon: LucideIcon;
+      estimatedSaving: string;
+      calculation: string;
+      breakdown?: { label: string; amount: string; pct?: string }[];
+      color?: string;
+    }[];
+    qualitativeBenefits: {
+      icon: LucideIcon;
+      title: string;
+      description: string;
+    }[];
+    totalSavings?: string;
+    totalMonthly?: string;
+    totalAnnual?: string;
+    totalPercent?: string;
+    note?: string;
+    footnotes?: string[];
+  };
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -101,5 +138,18 @@ export function processDiagnosticContent(raw: any): DiagnosticData {
       : undefined,
     quickWins: raw.quickWins ?? undefined,
     exclusionNote: raw.exclusionNote ?? undefined,
+    benefitsDashboard: raw.benefitsDashboard
+      ? {
+          ...raw.benefitsDashboard,
+          savingsCategories: (raw.benefitsDashboard.savingsCategories ?? []).map((s: any) => ({
+            ...s,
+            icon: iconMap[s.icon] || Gauge,
+          })),
+          qualitativeBenefits: (raw.benefitsDashboard.qualitativeBenefits ?? []).map((b: any) => ({
+            ...b,
+            icon: iconMap[b.icon] || Gauge,
+          })),
+        }
+      : undefined,
   };
 }
