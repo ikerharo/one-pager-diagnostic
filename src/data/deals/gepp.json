@@ -20,9 +20,9 @@
     ]
   },
   "executiveSummary": {
-    "thesis": "GEPP opera una flota mixta de gran escala con un patrón recurrente: la información operativa de combustible y peajes existe, pero llega tarde, fragmentada y sin auditoría. El primer foco natural es la flota primaria de 300+ tractocamiones — donde el business case se paga con menos unidades y más kilómetros — y el whitespace inmediato son los peajes, donde hoy nadie está conciliando.",
+    "thesis": "GEPP opera una flota mixta de gran escala con un patrón recurrente: la información operativa de combustible y peajes existe, pero llega tarde, fragmentada y sin auditoría. El primer foco natural es la flota primaria de 800 tractocamiones — donde el business case se paga con menos unidades y más kilómetros — y el whitespace inmediato son los peajes, donde hoy nadie está conciliando.",
     "impactItems": [
-      { "value": "300+", "label": "tractocamiones primarios" },
+      { "value": "800", "label": "tractocamiones primarios" },
       { "value": "6,500+", "label": "camiones secundarios" },
       { "value": "~2 días", "label": "rezago de información de combustible" },
       { "value": "0", "label": "conciliación activa de peajes" },
