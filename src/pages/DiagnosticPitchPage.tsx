@@ -793,6 +793,10 @@ const DiagnosticPitchContent = () => {
       <ScrollProgress />
       {/* 1. Hero: thesis + what is it */}
       <DiagnosticHero />
+      {/* 1b. Account-specific findings (opt-in via JSON) */}
+      <FindingsSection />
+      {/* 1c. Hoy → Con Uvicuo (opt-in via JSON) */}
+      <QuickWinsSection />
       {/* 2. What they'll receive */}
       <DeliverablesSection />
       {/* 2b. Preview of actual deliverables */}
