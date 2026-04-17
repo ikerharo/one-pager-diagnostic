@@ -32,6 +32,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ScrollProgress from "@/components/discovery/ScrollProgress";
 import TrustedBySection from "@/components/discovery/TrustedBySection";
+import DiagnosticBenefitsSection from "@/components/discovery/DiagnosticBenefitsSection";
 import NotFound from "./NotFound";
 import heroVideo from "@/assets/hero-loop.mp4";
 
@@ -797,6 +798,8 @@ const DiagnosticPitchContent = () => {
       <FindingsSection />
       {/* 1c. Hoy → Con Uvicuo (opt-in via JSON) */}
       <QuickWinsSection />
+      {/* 1d. Cuantificación de ahorros (opt-in via JSON) */}
+      <DiagnosticBenefitsSection />
       {/* 2. What they'll receive */}
       <DeliverablesSection />
       {/* 2b. Preview of actual deliverables */}
