@@ -23,8 +23,55 @@
   "guarantee": {
     "headline": "Garantía de valor",
     "text": "Si al cierre del diagnóstico no identificamos al menos un 3% de ahorro potencial sobre el gasto operativo de la flota primaria, no les pedimos nada más. Se quedan con el estudio completo, sin compromiso ni fee.",
-    "footnote": "El diagnóstico no propone cambiar el monedero de combustible ni interfiere con la licitación en curso de Edenred. Es un estudio consultivo enfocado en los procesos que hoy no tienen un dueño activo."
+    "footnote": "Este análisis no propone cambiar el monedero de combustible ni interfiere con el proceso de licitación que GEPP tiene en curso con Edenred. El foco del primer ejercicio es atacar lo que hoy no tiene un dueño activo (peajes, visibilidad operativa, decisión de carga) y entregar insumos cuantitativos que sean útiles también para esa renegociación."
   },
+  "findings": [
+    {
+      "icon": "Route",
+      "title": "Peajes sin conciliación ni auditoría",
+      "description": "Los tractocamiones tienen TAG contratado, los cobros se registran y el gasto se contabiliza — pero hoy nadie audita cruces, ejes cobrados, ni aclaraciones con el operador del TAG. Es un proceso que opera por inercia administrativa, sin un dueño que esté optimizándolo.",
+      "impact": "alto"
+    },
+    {
+      "icon": "Clock",
+      "title": "Información de combustible con rezago de ~2 días",
+      "description": "Los reportes de Edenred se actualizan cada par de días. Para una operación de esta escala, dos días de rezago significa que cualquier anomalía — ordeña, sobrecarga, fraude — se detecta cuando ya pasó. La limitación es estructural del modelo de monedero, no del proveedor.",
+      "impact": "alto"
+    },
+    {
+      "icon": "Eye",
+      "title": "Sin visibilidad de dónde conviene cargar dentro de la red",
+      "description": "Aun dentro de la red Edenred, no hay análisis de qué estación conviene por CEDIS o por zona. Los camiones cargan en la más cercana o la que queda de paso. Sin un comparativo sistemático contra precios CRE y sin recomendación por ruta, se deja sobre la mesa el ahorro intra-red.",
+      "impact": "medio"
+    },
+    {
+      "icon": "Users",
+      "title": "Múltiples dueños de la flota dentro de GEPP",
+      "description": "La flota no depende de un solo responsable: Servicio y Atención a Clientes maneja una parte y desarrolla sus propias herramientas. Cualquier iniciativa transversal tiene que considerar múltiples dueños — por eso acotamos el primer ejercicio a transporte primario (planta → CEDIS), donde el business case es más limpio.",
+      "impact": "medio"
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "IEPS como pegamento fiscal con el monedero actual",
+      "description": "La factura fiscal de Edenred es la base del flujo de acreditación de IEPS para GEPP. No es un problema a resolver: es una restricción que enmarca el alcance. El foco inmediato no es cambiar el monedero, sino atacar lo que hoy nadie está atacando.",
+      "impact": "medio"
+    }
+  ],
+  "quickWins": [
+    {
+      "before": "Peajes: el TAG cobra, se registra el gasto, nadie audita. Sin dueño del proceso, sin tablero de cruces vs. cobros, sin disputas activas.",
+      "after": "Conciliación automática de cruces vs. cobros con datos de telemetría (Webfleet) y del TAG. Disputas en tiempo real. Tablero por ruta y por tracto."
+    },
+    {
+      "before": "Combustible: información con ~2 días de rezago. Sin recomendación de estación por ruta. Decisión de carga delegada al operador, sin análisis.",
+      "after": "Tablero con datos de carga consolidados por CEDIS, ruta y unidad. Recomendación de mejor estación intra-red contra precios CRE. Alertas de anomalía sin esperar al cierre semanal."
+    },
+    {
+      "before": "Validación de efectivo en transporte primario pendiente — por confirmar si los ~800 operadores manejan efectivo para casetas sin TAG o contingencias.",
+      "after": "Si existe manejo de efectivo, lo sustituimos por fondo digital con autorización en tiempo real. Si no existe, lo confirmamos y lo descartamos del modelo. En cualquier caso, sin sorpresas en el business case."
+    }
+  ],
+  "exclusionNote": "Este diagnóstico no propone cambiar el monedero de combustible ni interfiere con el proceso de licitación que GEPP tiene en curso con Edenred. El alcance está deliberadamente acotado a procesos sin dueño activo hoy.",
   "whyQualify": {
     "headline": "Por qué GEPP califica para este diagnóstico",
     "description": "Reservamos este formato para operaciones donde la escala justifica un análisis profundo y donde, por experiencia, sabemos que el impacto será material. La flota primaria de GEPP encaja por kilometraje, concentración de gasto y oportunidad clara de optimización en peajes y visibilidad operativa.",
