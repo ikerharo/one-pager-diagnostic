@@ -108,7 +108,15 @@ const DiagnosticHero = () => {
             )}
 
             {/* THE MONEY — Hard numbers right in the hero */}
-            <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div
+              className={`mt-14 grid grid-cols-2 gap-3 md:gap-4 mx-auto ${
+                patterns.items.length === 3
+                  ? "md:grid-cols-3 max-w-3xl"
+                  : patterns.items.length === 2
+                  ? "md:grid-cols-2 max-w-xl"
+                  : "md:grid-cols-4 max-w-5xl"
+              }`}
+            >
               {patterns.items.map((p, i) => (
                 <motion.div
                   key={i}
