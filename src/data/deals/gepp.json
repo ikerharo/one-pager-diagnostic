@@ -20,7 +20,7 @@
     ]
   },
   "executiveSummary": {
-    "thesis": "GEPP opera una flota mixta de gran escala con un patrón recurrente: la información operativa de combustible y peajes existe, pero llega tarde, fragmentada y sin auditoría. El primer foco natural es la flota primaria de 800 tractocamiones — donde el business case se paga con menos unidades y más kilómetros — y el whitespace inmediato son los peajes, donde hoy nadie está conciliando.",
+    "thesis": "GEPP opera una flota mixta de gran escala con un patrón recurrente: la información operativa de combustible y peajes existe, pero llega tarde, fragmentada y sin auditoría. El primer foco natural es la flota primaria de 800 tractocamiones — donde el business case se paga con menos unidades y más kilómetros — y el punto más claro para arrancar son los peajes, donde hoy no hay un proceso activo de conciliación.",
     "impactItems": [
       { "value": "800", "label": "tractocamiones primarios" },
       { "value": "6,500+", "label": "camiones secundarios" },
@@ -33,7 +33,7 @@
     {
       "icon": "Route",
       "title": "Peajes sin conciliación ni auditoría",
-      "description": "Los tractocamiones tienen TAG contratado, los cobros se registran y el gasto se contabiliza — pero hoy nadie audita cruces, ejes cobrados, ni aclaraciones con el operador del TAG. Es whitespace puro: un proceso que opera por inercia administrativa, sin un dueño que esté optimizándolo. En operaciones similares la tasa de error documentada de antenas (cargos dobles, ejes de más) está entre 7–9%.",
+      "description": "Los tractocamiones tienen TAG contratado, los cobros se registran y el gasto se contabiliza — pero hoy nadie audita cruces, ejes cobrados, ni aclaraciones con el operador del TAG. Es un proceso que opera por inercia administrativa, sin un dueño que esté optimizándolo. En operaciones similares la tasa de error documentada de antenas (cargos dobles, ejes de más) está entre 7–9%.",
       "impact": "alto",
       "quote": "Hoy nadie está revisando, conciliando ni auditando peajes.",
       "quoteAuthor": "Tomás Rodríguez (paráfrasis)"
@@ -85,7 +85,7 @@
       "after": "Si existe manejo de efectivo, lo sustituimos por fondo digital con autorización en tiempo real. Si no existe, lo confirmamos y lo descartamos del modelo. En cualquier caso, sin sorpresas en el business case."
     }
   ],
-  "exclusionNote": "Este análisis no propone cambiar el monedero de combustible ni interferir con el proceso de licitación que GEPP tiene en curso con Edenred. El foco del primer ejercicio es atacar el whitespace que hoy no tiene dueño (peajes, visibilidad operativa, decisión de carga) y entregar insumos cuantitativos que sean útiles también para esa renegociación.",
+  "exclusionNote": "Este análisis no propone cambiar el monedero de combustible ni interferir con el proceso de licitación que GEPP tiene en curso con Edenred. El foco del primer ejercicio es atacar lo que hoy no tiene un dueño activo (peajes, visibilidad operativa, decisión de carga) y entregar insumos cuantitativos que sean útiles también para esa renegociación.",
   "additionalCapabilities": [
     { "icon": "Route", "title": "Peajes y casetas", "description": "Conciliación automática de cruces vs. cobros usando telemetría (Webfleet) + datos del TAG. Disputas en tiempo real." },
     { "icon": "Fuel", "title": "Combustible — capa analítica", "description": "Sobre la información que ya existe en Edenred: tablero por CEDIS, ruta y unidad; recomendación intra-red contra precios CRE; detección de anomalías." },

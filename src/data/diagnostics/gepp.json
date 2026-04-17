@@ -23,11 +23,11 @@
   "guarantee": {
     "headline": "Garantía de valor",
     "text": "Si al cierre del diagnóstico no identificamos al menos un 3% de ahorro potencial sobre el gasto operativo de la flota primaria, no les pedimos nada más. Se quedan con el estudio completo, sin compromiso ni fee.",
-    "footnote": "El diagnóstico no propone cambiar el monedero de combustible ni interfiere con la licitación en curso de Edenred. Es un estudio consultivo enfocado al whitespace que hoy no tiene dueño."
+    "footnote": "El diagnóstico no propone cambiar el monedero de combustible ni interfiere con la licitación en curso de Edenred. Es un estudio consultivo enfocado en los procesos que hoy no tienen un dueño activo."
   },
   "whyQualify": {
     "headline": "Por qué GEPP califica para este diagnóstico",
-    "description": "Reservamos este formato para operaciones donde la escala justifica un análisis profundo y donde, por experiencia, sabemos que el impacto será material. La flota primaria de GEPP encaja por kilometraje, concentración de gasto y oportunidad de whitespace identificado.",
+    "description": "Reservamos este formato para operaciones donde la escala justifica un análisis profundo y donde, por experiencia, sabemos que el impacto será material. La flota primaria de GEPP encaja por kilometraje, concentración de gasto y oportunidad clara de optimización en peajes y visibilidad operativa.",
     "reasons": [
       "Flota primaria de 800 tractocamiones — el business case se paga más fácil que en secundaria por kilómetros recorridos por unidad",
       "Peajes sin conciliación activa — confirmado en sesión del 14-abr como territorio sin dueño",
@@ -172,9 +172,9 @@
   ],
   "uvicuoPositioning": {
     "tagline": "Capa de control y visibilidad — no reemplazo de proveedores",
-    "description": "Uvicuo se posiciona para GEPP como la capa de auditoría, conciliación y analítica que hoy no existe sobre peajes, combustible y efectivo. Con API abierta, integración nativa con Webfleet y respeto absoluto al flujo IEPS actual. El alcance se acota para no interferir con la licitación de Edenred y para concentrarse donde sí hay whitespace operativo.",
+    "description": "Uvicuo se posiciona para GEPP como la capa de auditoría, conciliación y analítica que hoy no existe sobre peajes, combustible y efectivo. Con API abierta, integración nativa con Webfleet y respeto absoluto al flujo IEPS actual. El alcance se acota para no interferir con la licitación de Edenred y para concentrarse en los procesos que hoy no tienen un dueño activo.",
     "differentiators": [
-      { "title": "Foco en whitespace, no en sustitución", "description": "Atacamos lo que hoy nadie está atacando (peajes, visibilidad) sin pedirle a GEPP que cambie de monedero.", "category": "Estrategia" },
+      { "title": "Sumar capacidades, no sustituir proveedores", "description": "Atacamos lo que hoy nadie está atacando (peajes, visibilidad) sin pedirle a GEPP que cambie de monedero.", "category": "Estrategia" },
       { "title": "API abierta y data exportable", "description": "Toda la data es de GEPP. Integración con SAP, Oracle, Webfleet y cualquier sistema interno. No hay caja negra.", "category": "Tecnología" },
       { "title": "Modelo por usuario, no por volumen", "description": "Suscripción por unidad/usuario. Sin comisión sobre el gasto: nuestro incentivo es que el gasto baje.", "category": "Modelo comercial" },
       { "title": "Profundidad de industria", "description": "50+ flotillas operando con Uvicuo. Lenguaje y procesos de transporte primario, no demos genéricas.", "category": "Vertical" }
