@@ -33,7 +33,7 @@
     {
       "icon": "Route",
       "title": "Peajes sin conciliación ni auditoría",
-      "description": "Los tractocamiones tienen TAG contratado, los cobros se registran y el gasto se contabiliza — pero hoy nadie audita cruces, ejes cobrados, ni aclaraciones con el operador del TAG. Es un proceso que opera por inercia administrativa, sin un dueño que esté optimizándolo. En operaciones similares la tasa de error documentada de antenas (cargos dobles, ejes de más) está entre 7–9%.",
+      "description": "Los tractocamiones tienen TAG contratado, los cobros se registran y el gasto se contabiliza — pero hoy nadie audita cruces, ejes cobrados, ni aclaraciones con el operador del TAG. Es un proceso que opera por inercia administrativa, sin un dueño que esté optimizándolo. En operaciones similares la tasa de error documentada de antenas (cargos dobles, ejes de más) está alrededor de 5–6%.",
       "impact": "alto",
       "quote": "Hoy nadie está revisando, conciliando ni auditando peajes.",
       "quoteAuthor": "Tomás Rodríguez (paráfrasis)"
