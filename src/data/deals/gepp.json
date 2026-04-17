@@ -65,8 +65,8 @@
     {
       "icon": "ShieldCheck",
       "title": "IEPS como pegamento fiscal con el monedero actual",
-      "description": "La factura de Edenred soporta el flujo de acreditación de IEPS — es mucho dinero en juego y cualquier movimiento debe preservarlo. Esto no es un problema a resolver hoy: es una restricción que cualquier alternativa tiene que respetar. Lo señalamos para enmarcar el alcance del diagnóstico: el foco inmediato no es cambiar el monedero, sino atacar lo que hoy nadie está atacando (peajes, visibilidad, decisión de carga).",
-      "impact": "bajo",
+      "description": "La factura fiscal de Edenred es la base del flujo de acreditación de IEPS para GEPP. Es mucho dinero en juego y cualquier movimiento sobre el modelo de combustible tiene que preservar ese flujo. No es un problema a resolver hoy: es una restricción que enmarca el alcance del diagnóstico. El foco inmediato no es cambiar el monedero, sino atacar lo que hoy nadie está atacando (peajes, visibilidad, decisión de carga).",
+      "impact": "medio",
       "quote": null,
       "quoteAuthor": null
     }
