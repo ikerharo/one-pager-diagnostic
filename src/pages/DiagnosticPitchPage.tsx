@@ -595,9 +595,114 @@ const UvicuoPositioningSection = () => {
   );
 };
 
+/* ── Findings — Account-specific evidence ───── */
+const FindingsSection = () => {
+  const { findings, config } = useDiagnostic();
+  if (!findings || findings.length === 0) return null;
+
+  const impactLabel = { alto: "Impacto alto", medio: "Impacto medio", bajo: "Impacto bajo" } as const;
+  const impactColor = { alto: "text-destructive", medio: "text-amber-600", bajo: "text-primary" } as const;
+
+  return (
+    <section className="border-t border-border bg-background py-16 md:py-20">
+      <div className="container mx-auto max-w-4xl px-6">
+        <AnimatedSection>
+          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
+            <FileSearch className="h-5 w-5 text-primary" />
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">Lo que ya sabemos</span>
+          </motion.div>
+          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
+            Lo que escuchamos en {config.clientName}
+          </motion.h2>
+          <motion.p variants={itemVariants} className="mt-2 text-sm text-muted-foreground max-w-2xl">
+            Cinco puntos concretos detectados en sesión. Son el punto de partida del diagnóstico — no la conclusión.
+          </motion.p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {findings.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <motion.div
+                  key={i}
+                  variants={itemVariants}
+                  className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20 shrink-0">
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-baseline gap-2 flex-wrap">
+                        <h3 className="font-semibold text-sm text-foreground leading-snug">{f.title}</h3>
+                        <span className={`text-[10px] font-bold uppercase tracking-wider ${impactColor[f.impact]}`}>
+                          {impactLabel[f.impact]}
+                        </span>
+                      </div>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
+/* ── Quick Wins — Hoy vs Con Uvicuo ──────────── */
+const QuickWinsSection = () => {
+  const { quickWins } = useDiagnostic();
+  if (!quickWins || quickWins.length === 0) return null;
+
+  return (
+    <section className="border-t border-border bg-muted/30 py-16 md:py-20">
+      <div className="container mx-auto max-w-5xl px-6">
+        <AnimatedSection>
+          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-1">
+            <GitCompare className="h-5 w-5 text-primary" />
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">El cambio</span>
+          </motion.div>
+          <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight md:text-3xl text-foreground">
+            Hoy <span className="text-muted-foreground">→</span> Con <span className="text-primary">Uvicuo</span>
+          </motion.h2>
+          <motion.p variants={itemVariants} className="mt-2 text-sm text-muted-foreground max-w-2xl">
+            Sin prometer cifras todavía. Así se ven los procesos antes y después del diagnóstico.
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="mt-10 rounded-xl border border-border overflow-hidden bg-card">
+            <div className="grid grid-cols-2 bg-muted/60 border-b border-border">
+              <div className="px-6 py-3">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Hoy</span>
+              </div>
+              <div className="px-6 py-3">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">Con Uvicuo</span>
+              </div>
+            </div>
+            {quickWins.map((win, i) => (
+              <div
+                key={i}
+                className={`grid grid-cols-2 ${i < quickWins.length - 1 ? "border-b border-border" : ""}`}
+              >
+                <div className="px-6 py-5 border-r border-border">
+                  <p className="text-sm leading-relaxed text-muted-foreground">{win.before}</p>
+                </div>
+                <div className="px-6 py-5">
+                  <p className="text-sm leading-relaxed text-foreground">{win.after}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
 /* ── Guarantee — Risk reversal as closer ──────── */
 const GuaranteeSection = () => {
-  const { guarantee } = useDiagnostic();
+  const { guarantee, exclusionNote } = useDiagnostic();
   return (
     <section className="border-t border-border bg-background py-14 md:py-16">
       <div className="container mx-auto max-w-3xl px-6">
@@ -616,6 +721,14 @@ const GuaranteeSection = () => {
               {guarantee.footnote}
             </p>
           </motion.div>
+          {exclusionNote && (
+            <motion.div
+              variants={itemVariants}
+              className="mt-4 rounded-xl border border-border bg-muted/40 px-5 py-3 text-center"
+            >
+              <p className="text-xs text-muted-foreground/80 italic">{exclusionNote}</p>
+            </motion.div>
+          )}
         </AnimatedSection>
       </div>
     </section>
