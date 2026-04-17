@@ -37,28 +37,28 @@
     "closingLine": "No venimos a venderles un monedero. Venimos a entender la operación primaria a profundidad, cuantificar el ahorro de las palancas que hoy no tienen dueño y entregarles el business case. Lo que hagan con esa información — incluyendo usarla en su renegociación de Edenred — es decisión suya."
   },
   "patterns": {
-    "headline": "Lo que típicamente encontramos en flotas primarias de bebidas",
-    "description": "Patrones recurrentes en operaciones de escala similar. No son hipotéticos — vienen de diagnósticos reales con flotas primarias de distribución.",
+    "headline": "Benchmarks típicos en flotas primarias de bebidas",
+    "description": "Rangos observados en diagnósticos de Uvicuo con flotas de escala y operación comparable. Son referencia, no proyecciones específicas para GEPP — los números reales se calibran con datos de la operación durante el diagnóstico.",
     "items": [
       {
         "stat": "7–9%",
-        "label": "tasa de error documentada en antenas de telepeaje",
-        "detail": "Cargos dobles, ejes de más, casetas no recorridas. Sin conciliación activa, ese sobrecosto se queda. En 800 tractos con miles de cruces al mes, la cifra absoluta es material."
-      },
-      {
-        "stat": "2–4%",
-        "label": "de sobrecosto en combustible por decisión de carga subóptima dentro de red",
-        "detail": "Aún sin abrir la red, elegir la estación correcta dentro del catálogo del monedero por ruta y por CEDIS deja ahorros sobre la mesa. Hoy la decisión la toma el operador sin análisis."
+        "label": "rango de error típico en antenas de telepeaje",
+        "detail": "Cargos dobles, ejes de más, casetas no recorridas. Sin conciliación activa, ese sobrecosto se queda. Benchmark Uvicuo, por validar contra cruces reales de GEPP."
       },
       {
         "stat": "~2 días",
-        "label": "de rezago promedio para detectar una anomalía de carga",
+        "label": "rezago habitual para detectar una anomalía de carga con monedero",
         "detail": "Cuando el reporte llega, la ordeña, la sobrecarga o el fraude ya pasó. La pérdida real no es la anomalía individual: es la imposibilidad de actuar a tiempo."
       },
       {
         "stat": "0",
         "label": "trazabilidad por unidad de mantenimiento + costo acumulado",
-        "detail": "Sin un repositorio que cruce mantenimiento in-house y de talleres terceros por unidad, las decisiones de baja se toman por intuición. En flotas de 800 tractos, una decisión equivocada cuesta cientos de miles."
+        "detail": "Cuando in-house y talleres terceros operan sin un repositorio único por unidad, las decisiones de baja se toman por intuición. En flotas de 800 tractos, una decisión equivocada cuesta cientos de miles."
+      },
+      {
+        "stat": "3–8%",
+        "label": "ahorro potencial sobre gasto operativo total",
+        "detail": "Rango identificado en diagnósticos similares de Uvicuo. El número específico para GEPP se construye durante el ejercicio, con datos reales y supuestos auditables."
       }
     ]
   },
@@ -73,7 +73,7 @@
   },
   "whatIsIt": {
     "headline": "Un estudio consultivo, no una demo de producto",
-    "description": "Mapeamos cada etapa del flujo de gasto operativo de la flota primaria de GEPP — desde que se asigna una ruta planta → CEDIS hasta que el peaje se contabiliza. Identificamos ineficiencias, puntos de fuga y oportunidades de ahorro. Lo cuantificamos con sus datos reales y entregamos un business case que sobrevive a Procurement.",
+    "description": "Mapeamos cada etapa del flujo de gasto operativo de la flota primaria de GEPP — desde que se asigna una ruta planta → CEDIS hasta que el peaje se contabiliza. Cruzamos bitácoras de telemetría (Webfleet) con datos de TAG y de Edenred, identificamos puntos de fuga y cuantificamos el ahorro con datos reales. Entregamos un business case diseñado para sobrevivir a Procurement.",
     "stats": [
       { "value": "15–25", "label": "ineficiencias promedio identificadas por empresa" },
       { "value": "3–8%", "label": "ahorro potencial del gasto operativo" },
