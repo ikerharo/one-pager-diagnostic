@@ -2,10 +2,32 @@ import {
   Truck,
   Calculator,
   Gauge,
+  Route,
+  Clock,
+  Eye,
+  Users,
+  ShieldCheck,
+  Fuel,
+  Banknote,
+  Wrench,
+  AlertTriangle,
   type LucideIcon,
 } from "lucide-react";
 
-const iconMap: Record<string, LucideIcon> = { Truck, Calculator, Gauge };
+const iconMap: Record<string, LucideIcon> = {
+  Truck,
+  Calculator,
+  Gauge,
+  Route,
+  Clock,
+  Eye,
+  Users,
+  ShieldCheck,
+  Fuel,
+  Banknote,
+  Wrench,
+  AlertTriangle,
+};
 
 export interface DiagnosticData {
   config: {
@@ -39,6 +61,14 @@ export interface DiagnosticData {
     proofPoints: string[];
   };
   trustedClients: { name: string; logoUrl: string }[];
+  findings?: {
+    icon: LucideIcon;
+    title: string;
+    description: string;
+    impact: "alto" | "medio" | "bajo";
+  }[];
+  quickWins?: { before: string; after: string }[];
+  exclusionNote?: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -61,5 +91,15 @@ export function processDiagnosticContent(raw: any): DiagnosticData {
       ...t,
       icon: iconMap[t.icon] || Gauge,
     })),
+    findings: raw.findings
+      ? raw.findings.map((f: any) => ({
+          icon: iconMap[f.icon] || AlertTriangle,
+          title: f.title,
+          description: f.description,
+          impact: f.impact,
+        }))
+      : undefined,
+    quickWins: raw.quickWins ?? undefined,
+    exclusionNote: raw.exclusionNote ?? undefined,
   };
 }
