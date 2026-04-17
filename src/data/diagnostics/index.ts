@@ -4,6 +4,7 @@ const diagnosticRegistry: Record<string, () => Promise<{ default: unknown }>> = 
   esgari: () => import("./esgari.json"),
   armstrong: () => import("./armstrong.json"),
   elola: () => import("./elola.json"),
+  gepp: () => import("./gepp.json"),
 };
 
 export default diagnosticRegistry;
