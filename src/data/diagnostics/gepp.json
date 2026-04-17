@@ -58,7 +58,7 @@
       {
         "stat": "0",
         "label": "trazabilidad por unidad de mantenimiento + costo acumulado",
-        "detail": "Sin un repositorio que cruce mantenimiento in-house y de talleres terceros por unidad, las decisiones de baja se toman por intuición. En flotas de 300+ tractos, una decisión equivocada cuesta cientos de miles."
+        "detail": "Sin un repositorio que cruce mantenimiento in-house y de talleres terceros por unidad, las decisiones de baja se toman por intuición. En flotas de 800 tractos, una decisión equivocada cuesta cientos de miles."
       }
     ]
   },
