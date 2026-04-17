@@ -50,12 +50,6 @@
       "title": "Múltiples dueños de la flota dentro de GEPP",
       "description": "La flota no depende de un solo responsable: Servicio y Atención a Clientes maneja una parte y desarrolla sus propias herramientas. Cualquier iniciativa transversal tiene que considerar múltiples dueños — por eso acotamos el primer ejercicio a transporte primario (planta → CEDIS), donde el business case es más limpio.",
       "impact": "medio"
-    },
-    {
-      "icon": "ShieldCheck",
-      "title": "IEPS como pegamento fiscal con el monedero actual",
-      "description": "La factura fiscal de Edenred es la base del flujo de acreditación de IEPS para GEPP. No es un problema a resolver: es una restricción que enmarca el alcance. El foco inmediato no es cambiar el monedero, sino atacar lo que hoy nadie está atacando.",
-      "impact": "medio"
     }
   ],
   "quickWins": [
