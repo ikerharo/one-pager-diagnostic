@@ -1,0 +1,163 @@
+{
+  "config": {
+    "clientName": "GEPP",
+    "meetingDate": "Abril 2026",
+    "subtitle": "Control de gastos operativos para flota primaria de transporte (planta → CEDIS)",
+    "websiteUrl": "https://uvicuo.com"
+  },
+  "contact": {
+    "name": "Iker Haro Escandón",
+    "role": "CEO Fundador",
+    "email": "iker@uvicuo.com",
+    "phone": "+52 55 1700 1612",
+    "ctaText": "Agendar siguiente sesión",
+    "ctaSubject": "Diagnóstico Uvicuo — GEPP"
+  },
+  "preparedFor": {
+    "label": "Preparado para",
+    "recipients": [
+      { "name": "Tomás Rodríguez", "role": "Logística y Distribución, GEPP" }
+    ]
+  },
+  "executiveSummary": {
+    "thesis": "GEPP opera una flota mixta de gran escala con un patrón recurrente: la información operativa de combustible y peajes existe, pero llega tarde, fragmentada y sin auditoría. El primer foco natural es la flota primaria de 300+ tractocamiones — donde el business case se paga con menos unidades y más kilómetros — y el whitespace inmediato son los peajes, donde hoy nadie está conciliando.",
+    "impactItems": [
+      { "value": "300+", "label": "tractocamiones primarios" },
+      { "value": "6,500+", "label": "camiones secundarios" },
+      { "value": "~2 días", "label": "rezago de información de combustible" },
+      { "value": "0", "label": "conciliación activa de peajes" },
+      { "value": "Mayo 2026", "label": "arranque tentativo del diagnóstico" }
+    ]
+  },
+  "findings": [
+    {
+      "icon": "Route",
+      "title": "Peajes sin conciliación ni auditoría",
+      "description": "Los tractocamiones tienen TAG contratado, los cobros se registran y el gasto se contabiliza — pero hoy nadie audita cruces, ejes cobrados, ni aclaraciones con el operador del TAG. Es whitespace puro: un proceso que opera por inercia administrativa, sin un dueño que esté optimizándolo. En operaciones similares la tasa de error documentada de antenas (cargos dobles, ejes de más) está entre 7–9%.",
+      "impact": "alto",
+      "quote": "Hoy nadie está revisando, conciliando ni auditando peajes.",
+      "quoteAuthor": "Tomás Rodríguez (paráfrasis)"
+    },
+    {
+      "icon": "Clock",
+      "title": "Información de combustible con rezago de ~2 días",
+      "description": "Los reportes de Edenred se actualizan cada par de días. Para una operación que consume del orden de 165,000 litros/día solo en flota secundaria, dos días de rezago significa que cualquier anomalía — ordeña, sobrecarga, fraude — se detecta cuando ya pasó. GEPP ya está trabajando con Edenred para reducirlo, pero la limitación es estructural del modelo de monedero, no del proveedor.",
+      "impact": "alto",
+      "quote": "Estamos viendo cómo reducir el rezago, pero hoy la información llega cada par de días.",
+      "quoteAuthor": "Tomás Rodríguez (paráfrasis)"
+    },
+    {
+      "icon": "Eye",
+      "title": "Sin visibilidad de dónde conviene cargar dentro de la red",
+      "description": "Aun dentro de la red Edenred, no hay análisis de qué estación conviene por CEDIS o por zona. Los camiones cargan en la más cercana o la que queda de paso. Sin un comparativo sistemático contra precios CRE y sin recomendación por ruta, se deja sobre la mesa el ahorro intra-red — además del que vendría de abrir la red.",
+      "impact": "medio",
+      "quote": null,
+      "quoteAuthor": null
+    },
+    {
+      "icon": "Users",
+      "title": "Múltiples dueños de la flota dentro de GEPP",
+      "description": "La flota no depende de un solo responsable: el área de Servicio y Atención a Clientes maneja una parte y desarrolla sus propias herramientas. Cualquier iniciativa transversal tiene que considerar múltiples dueños, lo que justifica acotar el primer ejercicio a un perímetro claro: transporte primario (planta → CEDIS), donde el business case es más limpio y los stakeholders están más concentrados.",
+      "impact": "medio",
+      "quote": null,
+      "quoteAuthor": null
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "IEPS como pegamento fiscal con el monedero actual",
+      "description": "La factura de Edenred soporta el flujo de acreditación de IEPS — es mucho dinero en juego y cualquier movimiento debe preservarlo. Esto no es un problema a resolver hoy: es una restricción que cualquier alternativa tiene que respetar. Lo señalamos para enmarcar el alcance del diagnóstico: el foco inmediato no es cambiar el monedero, sino atacar lo que hoy nadie está atacando (peajes, visibilidad, decisión de carga).",
+      "impact": "bajo",
+      "quote": null,
+      "quoteAuthor": null
+    }
+  ],
+  "quickWins": [
+    {
+      "before": "Peajes: el TAG cobra, se registra el gasto, nadie audita. Sin dueño del proceso, sin tablero de cruces vs. cobros, sin disputas activas.",
+      "after": "Conciliación automática de cruces vs. cobros con datos de telemetría (Webfleet) y del TAG. Disputas en tiempo real. Tablero por ruta y por tracto."
+    },
+    {
+      "before": "Combustible: información con ~2 días de rezago. Sin recomendación de estación por ruta. Decisión de carga delegada al operador, sin análisis.",
+      "after": "Tablero con datos de carga consolidados por CEDIS, ruta y unidad. Recomendación de mejor estación intra-red contra precios CRE. Alertas de anomalía sin esperar al cierre semanal."
+    },
+    {
+      "before": "Validación de efectivo en transporte primario pendiente — Tomás se comprometió a investigar si los ~800 operadores manejan efectivo para casetas sin TAG o contingencias.",
+      "after": "Si existe manejo de efectivo, lo sustituimos por fondo digital con autorización en tiempo real. Si no existe, lo confirmamos y lo descartamos del modelo. En cualquier caso, sin sorpresas en el business case."
+    }
+  ],
+  "exclusionNote": "Este análisis no propone cambiar el monedero de combustible ni interferir con el proceso de licitación que GEPP tiene en curso con Edenred. El foco del primer ejercicio es atacar el whitespace que hoy no tiene dueño (peajes, visibilidad operativa, decisión de carga) y entregar insumos cuantitativos que sean útiles también para esa renegociación.",
+  "additionalCapabilities": [
+    { "icon": "Route", "title": "Peajes y casetas", "description": "Conciliación automática de cruces vs. cobros usando telemetría (Webfleet) + datos del TAG. Disputas en tiempo real." },
+    { "icon": "Fuel", "title": "Combustible — capa analítica", "description": "Sobre la información que ya existe en Edenred: tablero por CEDIS, ruta y unidad; recomendación intra-red contra precios CRE; detección de anomalías." },
+    { "icon": "Wrench", "title": "Mantenimiento", "description": "Trazabilidad por unidad — costo acumulado, eventos, talleres — para decisiones de baja con datos. Validación con IA en talleres terceros." },
+    { "icon": "Banknote", "title": "Efectivo de contingencia", "description": "Solo si aplica en primario: fondo digital con autorización en tiempo real, sin anticipos ni reembolsos manuales." }
+  ],
+  "uvicuoPositioning": {
+    "headline": "Capa de control y visibilidad sobre la operación que ya existe — sin cambiar a sus proveedores actuales",
+    "description": "Para GEPP, Uvicuo no se posiciona hoy como reemplazo de Edenred. Se posiciona como la capa de auditoría, conciliación y analítica que hoy no existe sobre peajes, combustible y — si aplica — efectivo. Con API abierta, integración con Webfleet y respeto absoluto al flujo IEPS actual. Si más adelante el escenario fiscal y comercial lo permite, las palancas adicionales se discuten con datos en la mesa.",
+    "capabilities": [
+      {
+        "title": "Conciliación de peajes con telemetría",
+        "description": "Cruzar Webfleet con cobros del TAG para identificar cargos dobles, ejes de más y casetas no recorridas. Disputas activas en lugar de inercia administrativa."
+      },
+      {
+        "title": "Capa analítica sobre Edenred",
+        "description": "Sin sustituir el monedero: ingestamos la información de Edenred y le ponemos encima un tablero que recomienda dónde cargar y detecta anomalías sin esperar al cierre."
+      },
+      {
+        "title": "API abierta — no caja negra",
+        "description": "Toda la data es de GEPP, exportable y consultable vía API. Integración con SAP/Oracle, con Webfleet y con cualquier sistema interno que GEPP necesite alimentar."
+      },
+      {
+        "title": "Modelo por usuario, no por volumen",
+        "description": "Uvicuo cobra suscripción por unidad/usuario. No hay comisión sobre el gasto operativo: el modelo se alinea con que el gasto baje, no con que crezca."
+      }
+    ]
+  },
+  "validationQuestions": [
+    "¿Cuál es el monto absoluto de gasto mensual de combustible (en MXN), separado entre flota primaria y secundaria?",
+    "¿Cuáles son las condiciones reales del contrato actual con Edenred — plazo de crédito, comisión a estación, estructura de precios?",
+    "¿Cuántos cruces de peaje al mes realiza la flota primaria y cuál es el operador del TAG contratado?",
+    "¿Existe manejo de efectivo en los ~800 operadores de transporte primario para casetas sin TAG, talachas o contingencias?",
+    "¿Quién es el dueño operativo de transporte primario en Tlalnepantla — nombre, rol y nivel — para sumarlo a las próximas sesiones?",
+    "¿Existe algún contrato marco a nivel corporativo PepsiCo / GEPP que restrinja la elección de proveedores en gasto operativo?",
+    "¿Hay un plan de electrificación específico para GEPP Bebidas que deba reflejarse en el business case?",
+    "¿Cuáles son las 2–3 rutas representativas (origen-destino) que se usarán como muestra para el diagnóstico?"
+  ],
+  "timeline": [
+    {
+      "week": "Paso 1 ✓",
+      "title": "Reactivación y checkpoint",
+      "description": "Sesión del 14-abr-2026 con Tomás Rodríguez. Acordado: scope inicial enfocado a flota primaria, diagnóstico sin costo, NDA Uvicuo + posible NDA GEPP.",
+      "owner": "both"
+    },
+    {
+      "week": "Paso 2",
+      "title": "Brief de diagnóstico + NDA",
+      "description": "Uvicuo entrega brief ejecutivo del diagnóstico y NDA firmado. Tomás lo comparte internamente con los dueños de transporte primario.",
+      "owner": "uvicuo"
+    },
+    {
+      "week": "Paso 3",
+      "title": "Validación interna en GEPP",
+      "description": "Tomás levanta los datos pendientes: cómo opera combustible en primario, detalle de TAGs, manejo de efectivo, NDA propio de GEPP. Confirma asistentes a la primera sesión presencial.",
+      "owner": "client"
+    },
+    {
+      "week": "Paso 4 (mayo tentativo)",
+      "title": "Diagnóstico — 2 a 3 sesiones",
+      "description": "Primera sesión presencial en planta Tlalnepantla con dueños de transporte primario. Sesiones 2 y 3 digitales. Entregables: business case cuantificado, propuesta de implementación, insumos para licitación Edenred.",
+      "owner": "both",
+      "ctaLabel": "Ver propuesta de diagnóstico",
+      "ctaLink": "/diagnostico/gepp"
+    }
+  ],
+  "closingQuote": "El producto evolucionó desde la última conversación. Tiene sentido sentarnos con los dueños de la operación primaria.",
+  "closingQuoteAuthor": "Tomás Rodríguez, Logística y Distribución — GEPP (paráfrasis)",
+  "trustedClients": [
+    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
+    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
+    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
+    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" }
+  ]
+}
