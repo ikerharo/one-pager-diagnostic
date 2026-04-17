@@ -1,91 +1,58 @@
 
+Sí, perfectamente puedo ayudarte. Necesito el transcript + un poco de contexto estructurado. La idea es replicar para **Gap (PepsiCo)** los dos artefactos que ya existen para Armstrong:
 
-## Plan: Rebuild `/elola` Page with Detailed Content
+1. **Diagnóstico (pitch consultivo)** → `/diagnostico/gap` (basado en `src/data/diagnostics/armstrong.json`)
+2. **Deal one-pager (análisis preliminar)** → `/gap` (basado en `src/data/deals/armstrong.json`)
 
-This is a significant content and structural upgrade to the Elola deal page. The page keeps the same visual design language as `/armstrong` but introduces new section types and removes sections that don't apply to Elola's stage in the sales cycle.
+## Lo que necesito de ti
 
-### What Changes
+Idealmente lo mandas todo en un solo mensaje. Mientras más tengas, mejor el output — pero con lo mínimo ya puedo arrancar.
 
-**Current `/elola`** renders: Hero → Executive Summary → Findings (with proposals) → Benefits Dashboard → Uvicuo Section → Next Steps → Logos → Footer
+### A) El transcript completo
+Pégalo crudo, no necesitas limpiarlo. Yo extraigo los quotes textuales, los dolores y el lenguaje específico que usaron ellos (eso es lo que hace que el documento se sienta hecho a la medida y no genérico).
 
-**New `/elola`** renders: Hero → Executive Summary → Findings (no proposals, with data tables) → Opportunities Section (NEW) → Validation Questions (NEW) → Next Steps → Footer with closing quote → Logos
+### B) Datos de la cuenta (lo más importante)
+Lo mínimo para que el modelo financiero tenga sustento:
 
-Key differences from Armstrong:
-- No "Propuesta" boxes inside findings
-- No BenefitsDashboard section
-- No Uvicuo/About section
-- Finding #2 includes a data table (patio breakdown by % cash)
-- New "Oportunidades por explorar" section with stat cards, quotes, and status badges
-- New "Lo que necesitamos validar" section with a checklist of questions
+- **Nombre legal exacto** y a quién va dirigido (nombre + rol de los asistentes)
+- **Tamaño de flota** (unidades) y **tipo de operación** (last mile, primario, distribución, etc.)
+- **Gasto mensual aproximado** por categoría — aunque sea rango: combustible, viáticos, peajes, mantenimiento
+- **Proveedores actuales** (Edenred, Efectivale, Ticket Empresarial, IAVE, Samsara, etc.)
+- **Telemetría** — ¿usan Samsara, Geotab, otro, o nada?
 
----
+### C) Contexto cualitativo (si lo tienes)
+- 2-3 dolores que mencionaron explícitamente
+- Quién toma la decisión y quién es el sponsor interno
+- Qué tan urgente es para ellos / qué los movió a tomar la llamada
+- Si hay competencia en la mesa o un proceso formal
 
-### Implementation Steps
+### D) Lo que NO necesitas mandar
+- Cifras exactas si no las tienes — yo uso rangos conservadores y los marco como "por confirmar en diagnóstico" (igual que en Armstrong)
+- Logos, copy de marketing, branding — eso ya está en el sistema
+- Quick wins / próximos pasos — eso lo armo yo a partir del transcript
 
-#### 1. Update `elola.json` with all new content
+## Cómo lo voy a procesar
 
-Rewrite the entire JSON file with the 7 sections of content provided. Key structural additions:
-- `config.meetingDate` → "Abril 2026", badge text → "Estudio de Gastos Operativos"
-- `preparedFor` with Carlos Arellano
-- New `executiveSummary` with 5 impact items ($15.9M, 59%, 284, 7, 6,077)
-- 5 detailed findings with embedded `tableData` for finding #2 (patio breakdown)
-- Empty `quickWins` array (no proposals)
-- New `opportunities` array with fuel and tolls data
-- New `validationQuestions` array with 7 questions
-- Updated `timeline` with 4 steps including completion status
-- `closingQuote` from Carlos Arellano
-- Remove `exclusionNote`, `uvicuoPositioning`
+1. Leo el transcript y extraigo: quotes textuales, dolores priorizados por intensidad, lenguaje específico del cliente
+2. Adapto los rangos de Armstrong a la escala de Gap (combustible, peajes, viáticos)
+3. Genero los 2 JSON: `src/data/diagnostics/gap.json` y `src/data/deals/gap.json`
+4. Los registro en `src/data/diagnostics/index.ts` y `src/data/deals/index.ts`
+5. Marco con honestidad lo que es supuesto vs. lo que viene del transcript (PepsiCo es cuenta sensible — mejor pecar de conservador)
 
-#### 2. Extend the data model (`discoveryData.ts`)
+## Una nota importante
 
-Add new types and processing:
-- `Finding` gets optional `tableData: { headers: string[]; rows: string[][] }` for embedded tables
-- New `Opportunity` type with title, description, stats, quote, status
-- New `validationQuestions: string[]` field on `DealData`
-- New `opportunities` array on `DealData`
-- Update `processDealContent()` to map these new fields
+Gap es operación PepsiCo. Eso tiene implicaciones:
+- El proceso de compras puede ser largo y formal (no es decisión solo del contacto)
+- Probablemente ya tienen contratos marco con Edenred / Ticket / IAVE a nivel corporativo
+- El sponsor interno necesita un business case que sobreviva a Procurement
 
-#### 3. Update `FindingsSection.tsx`
+Si tienes contexto sobre **gobernanza de compras** y **autonomía de Gap vs. corporativo PepsiCo**, mándalo. Eso cambia mucho el tono del pitch (consultivo vs. transaccional) y el timeline propuesto.
 
-- Render `finding.tableData` as a responsive table inside the finding card when present (using existing Table components)
-- Skip rendering "Propuesta" when `quickWins` is empty or has no matching entry
+## Mi recomendación
 
-#### 4. Create `OpportunitiesSection.tsx`
+Mándame en un mensaje:
+1. El transcript
+2. Los datos básicos de la sección B (aunque sea con rangos)
+3. Cualquier contexto de C que tengas en la cabeza
 
-New component following the existing visual patterns (AnimatedSection, motion variants, section-dark background). Renders:
-- Section header ("Oportunidades por explorar")
-- For each opportunity: title, description, stat cards (grid of 2-3), quote block, status badge
-- Uses the same card/border/typography patterns as FindingsSection
-
-#### 5. Create `ValidationSection.tsx`
-
-New component with light background. Renders:
-- Header ("Siguiente paso" / "Completar el análisis con datos de Elola")
-- Intro text
-- Numbered checklist of questions with checkbox-style icons
-
-#### 6. Update `DealPage.tsx`
-
-Conditionally render sections:
-- Import and render `OpportunitiesSection` (only shows when data exists)
-- Import and render `ValidationSection` (only shows when data exists)
-- `BenefitsDashboardSection` and `UvicuoSection` already return `null` when data is absent, so no changes needed there
-
-#### 7. Update `DiscoveryHeader.tsx`
-
-- For Elola, the badge should say "Estudio de Gastos Operativos · Abril 2026" — this is already handled by `config.meetingDate`, just need to add a `badgePrefix` field to config or use the meetingDate field creatively
-
----
-
-### Technical Details
-
-**Files modified:**
-- `src/data/deals/elola.json` — full rewrite with new content
-- `src/data/discoveryData.ts` — add `Opportunity`, `tableData` on Finding, `validationQuestions`
-- `src/components/discovery/FindingsSection.tsx` — render optional table data
-- `src/pages/DealPage.tsx` — import 2 new sections
-
-**Files created:**
-- `src/components/discovery/OpportunitiesSection.tsx`
-- `src/components/discovery/ValidationSection.tsx`
-
+Con eso arranco. Si después de leer el transcript tengo dudas puntuales, te las hago antes de generar los archivos — no quiero inventarme nada que después se caiga en la siguiente llamada.
