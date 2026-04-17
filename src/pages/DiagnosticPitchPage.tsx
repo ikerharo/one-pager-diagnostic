@@ -133,11 +133,19 @@ const DiagnosticHero = () => {
                   {contact.ctaText}
                 </a>
               </Button>
-              {slug && (
+              {config.ndaUrl && (
                 <Button asChild variant="outline" size="lg" className="gap-2 text-base px-8 py-6 rounded-xl border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary">
+                  <a href={config.ndaUrl} target="_blank" rel="noopener noreferrer">
+                    <ShieldCheck className="h-5 w-5" />
+                    Firmar NDA
+                  </a>
+                </Button>
+              )}
+              {slug && (
+                <Button asChild variant="outline" size="lg" className="gap-2 text-base px-8 py-6 rounded-xl border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white">
                   <a href={`/${slug}`}>
                     <FileSearch className="h-5 w-5" />
-                    Ver diagnóstico
+                    Ver one-pager
                   </a>
                 </Button>
               )}
