@@ -36,7 +36,7 @@
     {
       "icon": "Clock",
       "title": "Información de combustible con rezago de ~2 días",
-      "description": "Los reportes de Edenred se actualizan cada par de días. Para una operación de esta escala, dos días de rezago significa que cualquier anomalía — ordeña, sobrecarga, fraude — se detecta cuando ya pasó. La limitación es estructural del modelo de monedero, no del proveedor.",
+      "description": "Los reportes de Edenred se actualizan cada par de días. Para una operación de esta escala, dos días de rezago significa que cualquier anomalía — ordeña, sobrecarga, fraude — se detecta cuando ya pasó. La limitación es estructural del modelo de monedero.",
       "impact": "alto"
     },
     {
@@ -48,14 +48,14 @@
     {
       "icon": "Users",
       "title": "Múltiples dueños de la flota dentro de GEPP",
-      "description": "La flota no depende de un solo responsable: Servicio y Atención a Clientes maneja una parte y desarrolla sus propias herramientas. Cualquier iniciativa transversal tiene que considerar múltiples dueños — por eso acotamos el primer ejercicio a transporte primario (planta → CEDIS), donde el business case es más limpio.",
+      "description": "La flota no depende de un solo responsable. Cualquier iniciativa transversal tiene que considerar múltiples dueños — por eso acotamos el primer ejercicio a transporte primario (planta → CEDIS), donde el business case es más limpio.",
       "impact": "medio"
     }
   ],
   "quickWins": [
     {
       "before": "Peajes: el TAG cobra, se registra el gasto, nadie audita. Sin dueño del proceso, sin tablero de cruces vs. cobros, sin disputas activas.",
-      "after": "Conciliación automática de cruces vs. cobros con datos de telemetría (Webfleet) y del TAG. Disputas en tiempo real. Tablero por ruta y por tracto."
+      "after": "Conciliación automática de cruces vs. cobros cruzando datos de telemetría con los del TAG. Disputas en tiempo real. Tablero por ruta y por tracto."
     },
     {
       "before": "Combustible: información con ~2 días de rezago. Sin recomendación de estación por ruta. Decisión de carga delegada al operador, sin análisis.",
@@ -119,22 +119,22 @@
       {
         "icon": "BarChart3",
         "title": "Reducción de trabajo manual de conciliación",
-        "description": "Eliminación de la conciliación diaria entre cobros del TAG, telemetría y monedero. Finanzas deja de cazar facturas para tener tiempo de analizar."
+        "description": "Eliminación de la conciliación manual entre cobros del TAG, telemetría y monedero."
       },
       {
         "icon": "FileText",
         "title": "Recuperación automática de facturas (CFDI)",
-        "description": "Captura y vinculación automática de CFDI por cruce y por carga. Sin pedir comprobantes al operador, sin XML perdidos al cierre."
+        "description": "Captura y vinculación automática de CFDI por cruce y por carga."
       },
       {
         "icon": "Zap",
         "title": "Menor tiempo de respuesta ante anomalías",
-        "description": "Alertas en tiempo real sobre carga doble, ruta fuera de plan o cobros atípicos. La acción correctiva ocurre en horas, no en semanas."
+        "description": "Alertas en tiempo real sobre carga doble, ruta fuera de plan o cobros atípicos."
       },
       {
         "icon": "ShieldCheck",
         "title": "Automatización del flujo de validación y autorización",
-        "description": "Reglas configurables por ruta, unidad y monto. Lo que cumple política se autoriza solo; lo que no, escala con contexto al responsable."
+        "description": "Reglas configurables por ruta, unidad y monto para validar y autorizar sin intervención manual."
       }
     ],
     "note": "Proyección basada en benchmarks de clientes Uvicuo con operaciones similares; cifras por validar en el diagnóstico con data real de GEPP.",
@@ -145,33 +145,28 @@
   },
   "whyQualify": {
     "headline": "Por qué GEPP califica para este diagnóstico",
-    "description": "Reservamos este formato para operaciones donde la escala justifica un análisis profundo y donde, por experiencia, sabemos que el impacto será material. La flota primaria de GEPP encaja por kilometraje, concentración de gasto y oportunidad clara de optimización en peajes y visibilidad operativa.",
+    "description": "Reservamos este formato para operaciones donde la escala justifica un análisis profundo. La flota primaria de GEPP encaja por kilometraje, concentración de gasto y oportunidad clara de optimización en peajes y visibilidad operativa.",
     "reasons": [
-      "Flota primaria de 800 tractocamiones — el business case se paga más fácil que en secundaria por kilómetros recorridos por unidad",
-      "Peajes sin conciliación activa — confirmado en sesión del 14-abr como territorio sin dueño",
+      "Flota primaria de 800 tractocamiones — el business case se paga más fácil por kilómetros recorridos por unidad",
+      "Peajes sin conciliación activa — territorio sin dueño",
       "Información de combustible con rezago de ~2 días — limitación estructural del modelo actual de monedero",
-      "Apertura de Tomás Rodríguez como sponsor de exploración para sentarnos con los dueños operativos en Tlalnepantla"
+      "Sponsor interno para sentarnos con los dueños operativos en Tlalnepantla"
     ],
     "closingLine": "No venimos a venderles un monedero. Venimos a entender la operación primaria a profundidad, cuantificar el ahorro de las palancas que hoy no tienen dueño y entregarles el business case. Lo que hagan con esa información — incluyendo usarla en su renegociación de Edenred — es decisión suya."
   },
   "patterns": {
-    "headline": "Benchmarks típicos en flotas primarias de bebidas",
+    "headline": "Benchmarks típicos en flotas primarias",
     "description": "Rangos observados en diagnósticos de Uvicuo con flotas de escala y operación comparable. Son referencia, no proyecciones específicas para GEPP — los números reales se calibran con datos de la operación durante el diagnóstico.",
     "items": [
       {
         "stat": "5–6%",
         "label": "rango de error típico en antenas de telepeaje",
-        "detail": "Cargos dobles, ejes de más, casetas no recorridas. Sin conciliación activa, ese sobrecosto se queda. Benchmark Uvicuo, por validar contra cruces reales de GEPP."
+        "detail": "Cargos dobles, ejes de más, casetas no recorridas. Sin conciliación activa, ese sobrecosto se queda."
       },
       {
         "stat": "~2 días",
         "label": "rezago habitual para detectar una anomalía de carga con monedero",
         "detail": "Cuando el reporte llega, la ordeña, la sobrecarga o el fraude ya pasó. La pérdida real no es la anomalía individual: es la imposibilidad de actuar a tiempo."
-      },
-      {
-        "stat": "0",
-        "label": "trazabilidad por unidad de mantenimiento + costo acumulado",
-        "detail": "Cuando in-house y talleres terceros operan sin un repositorio único por unidad, las decisiones de baja se toman por intuición. En flotas de 800 tractos, una decisión equivocada cuesta cientos de miles."
       },
       {
         "stat": "3–8%",
@@ -181,21 +176,20 @@
     ]
   },
   "outcomeStats": {
-    "headline": "Track record",
+    "headline": "Lo que entregamos",
     "items": [
-      { "value": "50+", "label": "flotillas operando con Uvicuo" },
       { "value": "3–8%", "label": "ahorro identificado sobre gasto operativo" },
-      { "value": "$500M+", "label": "MXN procesados anualmente" },
-      { "value": "3 sem", "label": "de inicio a entregable" }
+      { "value": "800", "label": "tractocamiones primarios en alcance" },
+      { "value": "$972M", "label": "MXN/año de gasto operativo a auditar" }
     ]
   },
   "whatIsIt": {
     "headline": "Un estudio consultivo, no una demo de producto",
-    "description": "Mapeamos cada etapa del flujo de gasto operativo de la flota primaria de GEPP — desde que se asigna una ruta planta → CEDIS hasta que el peaje se contabiliza. Cruzamos bitácoras de telemetría (Webfleet) con datos de TAG y de Edenred, identificamos puntos de fuga y cuantificamos el ahorro con datos reales. Entregamos un business case diseñado para sobrevivir a Procurement.",
+    "description": "Mapeamos cada etapa del flujo de gasto operativo de la flota primaria de GEPP — desde que se asigna una ruta planta → CEDIS hasta que el peaje se contabiliza. Cruzamos bitácoras de telemetría con datos de TAG y de Edenred, identificamos puntos de fuga y cuantificamos el ahorro con datos reales. Entregamos un business case diseñado para sobrevivir a Procurement.",
     "stats": [
-      { "value": "15–25", "label": "ineficiencias promedio identificadas por empresa" },
       { "value": "3–8%", "label": "ahorro potencial del gasto operativo" },
-      { "value": "80%+", "label": "reducción en horas administrativas de conciliación" }
+      { "value": "$48M+", "label": "MXN/año de ahorro proyectado en GEPP" },
+      { "value": "800", "label": "tractocamiones primarios en alcance" }
     ]
   },
   "tracks": [
@@ -203,7 +197,7 @@
       "icon": "Route",
       "title": "Peajes y casetas",
       "items": [
-        "Cruce de bitácoras de telemetría (Webfleet) vs. cobros del TAG actual",
+        "Cruce de bitácoras de telemetría vs. cobros del TAG actual",
         "Estimación cuantitativa del error de antenas no detectado",
         "Propuesta de proceso de conciliación y disputa activa",
         "Modelo de tablero por ruta, tracto y operador"
@@ -226,15 +220,6 @@
         "Validación con el equipo operativo del uso real de efectivo en los ~800 operadores",
         "Si existe: dimensionar gasto, fricción y oportunidad de digitalización",
         "Si no existe: confirmarlo y descartarlo del modelo financiero"
-      ]
-    },
-    {
-      "icon": "BarChart3",
-      "title": "Visibilidad y analytics",
-      "items": [
-        "Inventario de datos disponibles en Webfleet vs. datos faltantes",
-        "Propuesta de tablero unificado: costo/km, rendimiento/unidad, anomalías",
-        "Diseño de integración API abierta con sistemas internos de GEPP"
       ]
     }
   ],
@@ -290,24 +275,17 @@
   ],
   "uvicuoPositioning": {
     "tagline": "Capa de control y visibilidad — no reemplazo de proveedores",
-    "description": "Uvicuo se posiciona para GEPP como la capa de auditoría, conciliación y analítica que hoy no existe sobre peajes, combustible y efectivo. Con API abierta, integración nativa con Webfleet y respeto absoluto al flujo IEPS actual. El alcance se acota para no interferir con la licitación de Edenred y para concentrarse en los procesos que hoy no tienen un dueño activo.",
+    "description": "Uvicuo se posiciona para GEPP como la capa de auditoría, conciliación y analítica que hoy no existe sobre peajes, combustible y efectivo. Con API abierta y respeto absoluto al flujo IEPS actual. El alcance se acota para no interferir con la licitación de Edenred y para concentrarse en los procesos que hoy no tienen un dueño activo.",
     "differentiators": [
       { "title": "Sumar capacidades, no sustituir proveedores", "description": "Atacamos lo que hoy nadie está atacando (peajes, visibilidad) sin pedirle a GEPP que cambie de monedero.", "category": "Estrategia" },
-      { "title": "API abierta y data exportable", "description": "Toda la data es de GEPP. Integración con SAP, Oracle, Webfleet y cualquier sistema interno. No hay caja negra.", "category": "Tecnología" },
-      { "title": "Modelo por usuario, no por volumen", "description": "Suscripción por unidad/usuario. Sin comisión sobre el gasto: nuestro incentivo es que el gasto baje.", "category": "Modelo comercial" },
-      { "title": "Profundidad de industria", "description": "50+ flotillas operando con Uvicuo. Lenguaje y procesos de transporte primario, no demos genéricas.", "category": "Vertical" }
+      { "title": "API abierta y data exportable", "description": "Toda la data es de GEPP. Integración con sistemas internos sin caja negra.", "category": "Tecnología" },
+      { "title": "Modelo por usuario, no por volumen", "description": "Suscripción por unidad/usuario. Sin comisión sobre el gasto: nuestro incentivo es que el gasto baje.", "category": "Modelo comercial" }
     ],
     "proofPoints": [
-      "Integración nativa con Webfleet, Samsara, Geotab y otros sistemas de telemetría",
-      "Conciliación automática de peajes en producción con flotas similares en escala",
+      "Conciliación automática de peajes diseñada para flotas de escala",
       "Procesos diseñados para sobrevivir a Procurement corporativo",
       "Cero conflicto con la licitación en curso de Edenred"
     ]
   },
-  "trustedClients": [
-    { "name": "Paquetexpress", "logoUrl": "/logos/paquetexpress.png" },
-    { "name": "99 Minutos", "logoUrl": "/logos/99minutos.png" },
-    { "name": "Bimbo", "logoUrl": "/logos/bimbo.png" },
-    { "name": "Express Sinaloa 8W", "logoUrl": "/logos/express8w.png" }
-  ]
+  "trustedClients": []
 }
