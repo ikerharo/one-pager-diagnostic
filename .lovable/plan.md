@@ -1,58 +1,46 @@
 
-Sí, perfectamente puedo ayudarte. Necesito el transcript + un poco de contexto estructurado. La idea es replicar para **Gap (PepsiCo)** los dos artefactos que ya existen para Armstrong:
 
-1. **Diagnóstico (pitch consultivo)** → `/diagnostico/gap` (basado en `src/data/diagnostics/armstrong.json`)
-2. **Deal one-pager (análisis preliminar)** → `/gap` (basado en `src/data/deals/armstrong.json`)
+## Recomendación: qué llevar de /gepp a /diagnostico/gepp
 
-## Lo que necesito de ti
+El diagnóstico ya tiene la estructura correcta (Hero → Entregables → Preview → Metodología → Tracks → Garantía → CTA). El one-pager `/gepp` tiene contenido específico de cuenta que **el diagnóstico hoy no muestra** y que sería decisivo para Tomás cuando lo comparta internamente con dueños operativos que **no estuvieron en la call**.
 
-Idealmente lo mandas todo en un solo mensaje. Mientras más tengas, mejor el output — pero con lo mínimo ya puedo arrancar.
+### Qué SÍ vale la pena migrar (3 piezas)
 
-### A) El transcript completo
-Pégalo crudo, no necesitas limpiarlo. Yo extraigo los quotes textuales, los dolores y el lenguaje específico que usaron ellos (eso es lo que hace que el documento se sienta hecho a la medida y no genérico).
+**1. Los 5 hallazgos específicos de GEPP — lo más importante**
+Los `findings` del one-pager son la única evidencia en todo el material de que Uvicuo escuchó a Tomás. Sin esto, el diagnóstico se lee como una propuesta plantilla. Los dueños de transporte primario en Tlalnepantla, que no estuvieron en la call, necesitan ver: peajes sin conciliación, rezago Edenred ~2 días, sin visibilidad intra-red, múltiples dueños, IEPS como restricción.
 
-### B) Datos de la cuenta (lo más importante)
-Lo mínimo para que el modelo financiero tenga sustento:
+→ **Nueva sección "Lo que ya sabemos de GEPP"** entre Hero y Entregables. Formato compacto: 5 cards, cada una con título + 1 párrafo + chip de impacto. Sin quotes textuales (paráfrasis, como ya están).
 
-- **Nombre legal exacto** y a quién va dirigido (nombre + rol de los asistentes)
-- **Tamaño de flota** (unidades) y **tipo de operación** (last mile, primario, distribución, etc.)
-- **Gasto mensual aproximado** por categoría — aunque sea rango: combustible, viáticos, peajes, mantenimiento
-- **Proveedores actuales** (Edenred, Efectivale, Ticket Empresarial, IAVE, Samsara, etc.)
-- **Telemetría** — ¿usan Samsara, Geotab, otro, o nada?
+**2. Tabla "Hoy → Con Uvicuo" (quickWins)**
+Es la pieza más visual del one-pager. Hace tangible el cambio sin prometer cifras. Los 3 quick wins (peajes, combustible, efectivo por validar) aterrizan exactamente lo que el diagnóstico va a entregar.
 
-### C) Contexto cualitativo (si lo tienes)
-- 2-3 dolores que mencionaron explícitamente
-- Quién toma la decisión y quién es el sponsor interno
-- Qué tan urgente es para ellos / qué los movió a tomar la llamada
-- Si hay competencia en la mesa o un proceso formal
+→ **Insertar después de la nueva sección de hallazgos**, antes de Entregables. Refuerza el "por qué este diagnóstico" antes del "qué reciben".
 
-### D) Lo que NO necesitas mandar
-- Cifras exactas si no las tienes — yo uso rangos conservadores y los marco como "por confirmar en diagnóstico" (igual que en Armstrong)
-- Logos, copy de marketing, branding — eso ya está en el sistema
-- Quick wins / próximos pasos — eso lo armo yo a partir del transcript
+**3. La nota de exclusión sobre Edenred**
+Hoy vive solo en `/gepp`. Es el seguro político más importante para Tomás: "no venimos a tocar tu licitación de Edenred". Sin esto, alguien en Procurement puede leer el diagnóstico como una amenaza al proceso en curso.
 
-## Cómo lo voy a procesar
+→ **Banner discreto** dentro de la sección de garantía (ya existe `guarantee.footnote`, podemos enriquecerlo con el texto de `exclusionNote` del one-pager, que es más explícito sobre la licitación).
 
-1. Leo el transcript y extraigo: quotes textuales, dolores priorizados por intensidad, lenguaje específico del cliente
-2. Adapto los rangos de Armstrong a la escala de Gap (combustible, peajes, viáticos)
-3. Genero los 2 JSON: `src/data/diagnostics/gap.json` y `src/data/deals/gap.json`
-4. Los registro en `src/data/diagnostics/index.ts` y `src/data/deals/index.ts`
-5. Marco con honestidad lo que es supuesto vs. lo que viene del transcript (PepsiCo es cuenta sensible — mejor pecar de conservador)
+### Qué NO llevar (y por qué)
 
-## Una nota importante
+- **Executive summary / thesis**: ya está cubierto por el hero del diagnóstico.
+- **Validation questions (8 preguntas)**: contradice directamente el feedback anterior — "que parezca más light". Pedir 8 datos asusta. Mantenerlas solo en el one-pager interno o sacarlas en sesión 1.
+- **Timeline detallado paso 1–4**: el diagnóstico ya tiene su propia metodología y timeline. Duplicar confunde.
+- **uvicuoPositioning extendido**: el diagnóstico ya tiene su propia sección equivalente.
+- **closingQuote de Tomás**: aunque sea paráfrasis, ponerla en un documento que Tomás va a circular puede sentirse incómodo. Mejor omitirla.
+- **additionalCapabilities**: el diagnóstico ya tiene `tracks` que cubren lo mismo.
 
-Gap es operación PepsiCo. Eso tiene implicaciones:
-- El proceso de compras puede ser largo y formal (no es decisión solo del contacto)
-- Probablemente ya tienen contratos marco con Edenred / Ticket / IAVE a nivel corporativo
-- El sponsor interno necesita un business case que sobreviva a Procurement
+### Implementación técnica (cuando apruebes)
 
-Si tienes contexto sobre **gobernanza de compras** y **autonomía de Gap vs. corporativo PepsiCo**, mándalo. Eso cambia mucho el tono del pitch (consultivo vs. transaccional) y el timeline propuesto.
+1. **Extender `DiagnosticData`** en `src/data/diagnosticData.ts`: agregar campos opcionales `findings?`, `quickWins?`, `exclusionNote?` (todos opcionales para no romper otros diagnósticos).
+2. **Editar `src/data/diagnostics/gepp.json`**: copiar `findings`, `quickWins` y `exclusionNote` desde `src/data/deals/gepp.json`.
+3. **Crear 2 secciones nuevas** en `DiagnosticPitchPage.tsx`:
+   - `FindingsSection` (renderiza `findings` solo si existe) — entre Hero y Entregables.
+   - `QuickWinsSection` (renderiza `quickWins` solo si existe) — después de Findings.
+4. **Enriquecer `GuaranteeSection`** para que muestre `exclusionNote` cuando exista.
+5. Ambas secciones son opt-in por JSON, así que ningún otro diagnóstico cambia.
 
-## Mi recomendación
+### Resultado
 
-Mándame en un mensaje:
-1. El transcript
-2. Los datos básicos de la sección B (aunque sea con rangos)
-3. Cualquier contexto de C que tengas en la cabeza
+El pitch del diagnóstico de GEPP pasa de "propuesta plantilla bien hecha" a "propuesta que demuestra que entendimos el negocio", sin perder el tono ligero ni inflar el documento. Mantiene el flujo narrativo actual y agrega exactamente las 3 piezas que un dueño operativo de Tlalnepantla — que no estuvo en la call — necesita ver para tomar la reunión en serio.
 
-Con eso arranco. Si después de leer el transcript tengo dudas puntuales, te las hago antes de generar los archivos — no quiero inventarme nada que después se caiga en la siguiente llamada.
